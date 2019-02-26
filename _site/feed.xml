@@ -5,8 +5,8 @@
     <description>Every failure is leading towards success.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 26 Feb 2019 16:41:32 +0800</pubDate>
-    <lastBuildDate>Tue, 26 Feb 2019 16:41:32 +0800</lastBuildDate>
+    <pubDate>Tue, 26 Feb 2019 18:03:06 +0800</pubDate>
+    <lastBuildDate>Tue, 26 Feb 2019 18:03:06 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -65,6 +65,34 @@
       </item>
     
       <item>
+        <title>小米手机的网络连接问题</title>
+        <description>&lt;h1 id=&quot;问题&quot;&gt;问题&lt;/h1&gt;
+
+&lt;p&gt;电脑无法连接手机热点&lt;/p&gt;
+
+&lt;h1 id=&quot;解决办法&quot;&gt;解决办法&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;手机开启热点的方式
+    &lt;ul&gt;
+      &lt;li&gt;个人热点。可选择是否使用密码&lt;/li&gt;
+      &lt;li&gt;USB连接，提供网络连接&lt;/li&gt;
+      &lt;li&gt;蓝牙。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Tue, 26 Feb 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/02/26/phone-network/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/02/26/phone-network/</guid>
+        
+        <category>手机</category>
+        
+        <category>网络</category>
+        
+        
+      </item>
+    
+      <item>
         <title>Optimization</title>
         <description>
 </description>
@@ -104,17 +132,6 @@
         <pubDate>Tue, 26 Feb 2019 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2019/02/26/lstm/</link>
         <guid isPermaLink="true">http://localhost:4000/2019/02/26/lstm/</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Linux Manjaro</title>
-        <description>
-</description>
-        <pubDate>Tue, 26 Feb 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2019/02/26/linux-manjaro/</link>
-        <guid isPermaLink="true">http://localhost:4000/2019/02/26/linux-manjaro/</guid>
         
         
       </item>

@@ -175,11 +175,13 @@
                         
                         <a class="tag" href="/tags/#工具" title="工具">工具</a>
                         
+                        <a class="tag" href="/tags/#博客搭建" title="博客搭建">博客搭建</a>
+                        
                     </div>
                     <h1>博客搭建</h1>
                     
                     
-                    <h2 class="subheading">jekyll命令</h2>
+                    <h2 class="subheading">　#副标题</h2>
                     
                     <span class="meta">Posted by jktian on February 26, 2019</span>
                 </div>
@@ -199,24 +201,67 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-				<h1 id="命令行">命令行</h1>
-<p>gem install jekyll bundler</p>
+				<h1 id="博客迭代">博客迭代</h1>
 
-<p>jekyll new my-awesome-site</p>
+<ol>
+  <li>第一次，用腾讯云主机作为后台，买了域名，用wordpress，mysql, apache, linux搭建。
+    <ul>
+      <li>由于域名需要备案，且云主机第二年优惠消失，所以开始迁移计划</li>
+      <li>本次学到
+        <ul>
+          <li>服务器的配置过程，linux的基本操作</li>
+          <li>在别人以及文档的帮助下，能少走很多弯路</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>第二次，用gitbook搭建。无需后台，像写书一样，但是自由度有限。
+    <ul>
+      <li>由于作为一本书，博客所能写的内容和跨度不能太大，且访问速度慢，所以继续迁移</li>
+      <li>本次学到
+        <ul>
+          <li>markdown写法的熟练操作</li>
+          <li>github不仅能用于资源存储和版本管理，更是社交的地方</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>第三次，即本次，用github作后台，jekyll辅助搭建
+    <ul>
+      <li>用tag来取代具体的类别，让不同的文章自由组成类别，而不是在固定类别下写文章</li>
+      <li>用了百度统计，监督网站动态</li>
+      <li>评论功能开发中</li>
+    </ul>
+  </li>
+</ol>
 
-<p>cd my-awesome-site</p>
+<h1 id="jekyll命令行">jekyll命令行</h1>
 
-<p>bundle install</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem install jekyll bundler
 
-<p>bundle exec jekyll serve</p>
+jekyll new my-awesome-site
 
-<p>or</p>
+cd my-awesome-site
 
-<p>blog目录下：　jekyll s # 本地运行，端口4000</p>
+bundle install
+
+bundle exec jekyll serve
+
+blog目录下：　jekyll s # 本地运行，端口4000
+</code></pre></div></div>
 
 <h1 id="problem">problem</h1>
 <ol>
-  <li>gem的安装，如遇问题，删除之后重新安装</li>
+  <li>gem的安装。如遇问题，删除之后重新安装.
+    <ul>
+      <li>即使有复杂的依赖项关系，也不要慌</li>
+    </ul>
+  </li>
+  <li>缓存问题。浏览器会有网页的缓存，记得修改之后，要删除缓存再查看
+    <ul>
+      <li>适合情况：使用jekyll本地开启端口查看网页</li>
+    </ul>
+  </li>
 </ol>
 
 
@@ -284,6 +329,24 @@
                             
                 				<a href="/tags/#工具" title="工具" rel="2">
                                     工具
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#博客搭建" title="博客搭建" rel="1">
+                                    博客搭建
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#手机" title="手机" rel="1">
+                                    手机
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#网络" title="网络" rel="1">
+                                    网络
                                 </a>
                             
         				
