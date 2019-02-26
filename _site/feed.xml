@@ -5,8 +5,8 @@
     <description>Every failure is leading towards success.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 26 Feb 2019 18:06:57 +0800</pubDate>
-    <lastBuildDate>Tue, 26 Feb 2019 18:06:57 +0800</lastBuildDate>
+    <pubDate>Tue, 26 Feb 2019 19:56:55 +0800</pubDate>
+    <lastBuildDate>Tue, 26 Feb 2019 19:56:55 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -16,6 +16,36 @@
         <pubDate>Tue, 26 Feb 2019 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2019/02/26/unemploy/</link>
         <guid isPermaLink="true">http://localhost:4000/2019/02/26/unemploy/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>马老师的《系统分析与设计课程》</title>
+        <description>&lt;h1 id=&quot;走出新手村&quot;&gt;走出新手村&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;总结归纳模式。走出舒适圈，找到根本原因，用理性代替情绪。
+    &lt;ul&gt;
+      &lt;li&gt;提出目标。例如成本函数或者距离度量方法&lt;/li&gt;
+      &lt;li&gt;根据现实情况，提出多种解决方案&lt;/li&gt;
+      &lt;li&gt;选出最优方案&lt;/li&gt;
+      &lt;li&gt;执行&lt;/li&gt;
+      &lt;li&gt;优化以及维护&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;勇于暴露弱点。在开放的世界中，杂交才会进步。&lt;/li&gt;
+  &lt;li&gt;思维：整体性，科学性，系统性&lt;/li&gt;
+  &lt;li&gt;建立个人知识库&lt;/li&gt;
+  &lt;li&gt;要创新，不要发明。创新是在踏实的基础上。&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Tue, 26 Feb 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/02/26/system/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/02/26/system/</guid>
+        
+        <category>系统分析与设计</category>
+        
+        <category>思维</category>
         
         
       </item>
@@ -115,23 +145,36 @@
       </item>
     
       <item>
-        <title>Mcm2019c</title>
-        <description>
+        <title>我的价值观</title>
+        <description>&lt;p&gt;打小就在追求一种虚幻的东西，没有那么现实。&lt;/p&gt;
+
+&lt;p&gt;从初中到高中，从不相信权威，即老师。在数学课上看物理，在物理课上学英语。&lt;/p&gt;
+
+&lt;p&gt;自主性很高，但是却又没有对于名利的刻意追求。&lt;/p&gt;
+
+&lt;p&gt;考试测验或者公开演讲之前，也会手心冒汗，几天不自然，凌晨五点起床。但这是害怕出现不好的结果，是不安全感的体现，却不是在追求什么。当然，也从没有奢望过别人的表扬。&lt;/p&gt;
+
+&lt;p&gt;我的一切评判标准都在于我的内心，只能说随着年龄的增长和经历的广博，评判标准变得越来越健壮，我越来越能理解很多人，越来越能根据现实的情况去做出理性的分析，但仍然不会被现实约束，我感觉我是自由的鸟，似乎可以放弃一切。&lt;/p&gt;
+
+&lt;p&gt;鲍勃迪伦是一个骗子吗？或许是，但是他可以是他口中的任何一个人。我们没有必要追逐大流，没有必要平庸。当然，无所顾忌的是他，得奖之后小人得志的也是他，这是自由。既然现实已经给了我们那么多的枷锁，我们何必再给自己的思维上枷锁呢。&lt;/p&gt;
+
+&lt;p&gt;所有的文化，所有的传统，所有的现实，就这样存在着。我们也就这样活着。当我们能够衣食无忧的时候，我们会探究“真理”。当我们挨饿的时候，我们就是忙于生存了。&lt;/p&gt;
+
+&lt;p&gt;我对于学术有追求吗？只是为了满足自己的好奇心罢了，我想要一直走在探索路上。我不希望被限制，也不希望去按照培养计划走，成为一些人口中的精英人才。&lt;/p&gt;
+
+&lt;p&gt;我本只是想和富有创造力的人在一起，一起接受外界的刺激，创造出美丽不朽的伟大的事物。但也许中间必定要通过考核。或许，我们会自然地走到一起呢。谁又说现在的教育评价体系精准无误、不容质疑的呢？即刻行动，不追求花架子，接受各种压力，我们自然茁壮成长。做什么，随了谁的心意，我是不会在乎的。&lt;/p&gt;
+
+&lt;p&gt;既然是一场体验，我们总能改变我们的心态，找到乐子。那么，哪条路径又是非走不可的呢，当然不存在这样的路径。&lt;/p&gt;
+
+&lt;p&gt;我们可以因为爱，而忽视时间；我们可以理性地一丝不苟，完成目标。我们就是我们呀。&lt;/p&gt;
 </description>
         <pubDate>Tue, 26 Feb 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2019/02/26/mcm2019c/</link>
-        <guid isPermaLink="true">http://localhost:4000/2019/02/26/mcm2019c/</guid>
+        <link>http://localhost:4000/2019/02/26/me/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/02/26/me/</guid>
         
+        <category>我</category>
         
-      </item>
-    
-      <item>
-        <title>Lstm</title>
-        <description>
-</description>
-        <pubDate>Tue, 26 Feb 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2019/02/26/lstm/</link>
-        <guid isPermaLink="true">http://localhost:4000/2019/02/26/lstm/</guid>
+        <category>思维</category>
         
         
       </item>
