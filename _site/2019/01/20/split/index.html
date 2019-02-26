@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Every failure is leading towards success.">
+    <meta name="keywords"  content="jktian, blog, data-science, algorithm, projects">
+    <meta name="theme-color" content="#000000">
+    
+    <title>藕断丝连，怎么得了 - jktian-logging</title>
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/pwa/manifest.json">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <!-- Safari Webpage Icon    by-BY -->
+    <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="http://localhost:4000/2019/01/20/split/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">LOGGING</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/about/">About Me</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tags/">Tags</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    var __HuxNav__ = {
+        close: function(){
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        },
+        open: function(){
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+
+    // Bind Event
+    $toggle.addEventListener('click', function(e){
+        if ($navbar.className.indexOf('in') > 0) {
+            __HuxNav__.close()
+        }else{
+            __HuxNav__.open()
+        }
+    })
+
+    /**
+     * Since Fastclick is used to delegate 'touchstart' globally
+     * to hack 300ms delay in iOS by performing a fake 'click',
+     * Using 'e.stopPropagation' to stop 'touchstart' event from 
+     * $toggle/$collapse will break global delegation.
+     * 
+     * Instead, we use a 'e.target' filter to prevent handler
+     * added to document close HuxNav.  
+     *
+     * Also, we use 'click' instead of 'touchstart' as compromise
+     */
+    document.addEventListener('click', function(e){
+        if(e.target == $toggle) return;
+        if(e.target.className == 'icon-bar') return;
+        __HuxNav__.close();
+    })
+</script>
+
+
+    <!-- Image to hack wechat -->
+<!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="/img/post-bg-2015.jpg" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        position: relative;
+        background-image: url('/img/post-bg-2015.jpg')
+    }
+
+    
+</style>
+<header class="intro-header" >
+    <div class="header-mask"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#我" title="我">我</a>
+                        
+                        <a class="tag" href="/tags/#思维" title="思维">思维</a>
+                        
+                    </div>
+                    <h1>藕断丝连，怎么得了</h1>
+                    
+                    
+                    <h2 class="subheading">决绝，但也体面</h2>
+                    
+                    <span class="meta">Posted by jktian on January 20, 2019</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+				<p>ok, 那就聊聊这一个寒假的开头吧。</p>
+
+<p>　每次都是这样，放假前雄心壮志，甚至在最后一门考完试之后，我还在和同学一起讨论美赛的事情，火车上也在刷算法。果然，我适合在逆境中学习。
+　</p>
+
+<p>　一回到家，基本算是刷电影，失眠想各种奇葩的问题。抖音、今日头条、微博、知乎，真的时间就这样溜走了。果然，我很爱德云社，很爱悬疑电影的翻转，也很爱一些哲学上的思辨。学长布置的任务基本水过，说好的认真做事，以jeff dean为偶像呢？
+　</p>
+
+<p>　一切都要从前天晚上刷到的知乎问题“中年人的危机”说起：一个兢兢业业的上海数据库高端技术人员，中产阶级，已经买房，最近公司要迁移业务到云端，他不得不投反对票，为了自己和手下人的饭碗。他不得不、非常不想放弃高收入的生活，去bat和年轻人竞争，996。但是混口饭吃嘛。就像天猫前端的学长说的一样，没有更高的追求，老人也可以活得很滋润，不会被淘汰，对业务和架构上的理解，不是一朝一夕的事情，混口饭吃。
+　</p>
+
+<p>　然后，我想到了我们要为什么而活。我想到的答案是家、国、天下。长久以来，我一直在寻找一个无止境的让人兴奋的路径和做事情的无穷动力，我以为那是互联网做产品，我以为那是从事科研。我们不过是挣扎着生存，然后有了如今的社会架构，有了合作，但一切都是出自我们的不安全感和生存需要，没有更加高尚的理由。刻在我们基因里的，是经年累月的经验主义，对，就是活下去。然后，我们需要亲密关系，需要老幼兼顾，需要中年人顶梁柱。都是为了活以及活的更好。这个正好和陈皓，一个孜孜不倦追求技术的人相契合，他如今42岁，到了养娃的年龄，同时晚上看书到凌晨。修身齐家治国平天下。
+　</p>
+
+<p>　于是，我想到了告白，向我最亲爱的阿田，她笨笨的，但是很纯真，身上几乎没有烟火气，和我聊了很多，我想念的是她的酒窝，但是她真的没有刻意追求什么，所以就一直很平庸，随着感情在走。我怕蜜月期一过，我会毁了我们两个，当然，蜜月期可能早就过期一次了，那次去深圳前，我已经有些不再喜欢她的性格，好在她只把我当做人生的聊天伙伴，那句“你没发现，我们不了解吗”确实很扎心。的确，没有什么机会再去相互了解了。可能，我只是曾经被一位低个头，但是学识渊博、爱好广泛、幽默风趣的女孩惊艳过，也在soul上聊到过一位喜欢历史的女孩，当然也有想去爱尔兰的女孩。所以，我更渴望新鲜的边界，不想要平庸把。
+　</p>
+
+<p>　我以为我找到了一条可实现的路径，没有大一那么理想主义了，更加务实，但是好像当我有了很多时间时，我仍然无所适从，看电影和综艺觉得浪费时间，看书又看不下去。这时，我发现一切没有意义了，我找不到了，可能，我只是缺少和外界的交互，所以才觉得一切是那么无聊。什么好奇心，什么不安全感，总是容易被我抛到脑后，可能这太大了，太远了，我需要的是及时反馈，能够让我推迟满足感的及时反馈，我该如何把上进当做习惯呢。用todo-list试试把，为了遇见更优秀，千奇百怪的人，为了更大的事物，为了延伸自我。掌握一项技能也是可以的呀。无欲无求太无聊了。那就开始沉浸呗，什么事都可以，养活自己就行。
+　</p>
+
+<p>　然后，我鼓起莫大的勇气，一夜未眠，疯狂寻找初中我最爱的那个女孩，虽然我从没有真正看清她的样子，但我知道我们只是没有说破，我们一定喜欢这对方，那是８年前了。我向很多人第一次说话，和他们要联系方式，终于我加到了那两个人。一个是口若悬河，一直很酷的男孩子。看了qq空间，发现他留起了长头发，宅男，没了以前的傲气，有些厌世，好像是个愤青。果然，聊天没几句，我就被骂轻佻，被说两人有人格壁垒。我还是道歉了，然后不再联系。
+　</p>
+
+<p>　再有，就是女神了，看qq空间，她居然在追星，并且删了很多说说，她离家的时候也会有伤感。聊天当中，她大多数在发简短的词语，没有深入探讨一些问题的兴趣。说道这里，莫名怀念大一时的那个奇女子，探讨稀奇古怪的问题能聊到凌晨四点。女神说不再把学习当做唯一，开始玩、吃喝，居然她睡到将近中午才起床。生日和我只差两天，我以为她会像我一样思考很多问题，一定在追求着什么，后来发现可能她就是那样一个懂礼貌、想要好好生活的女子。但我还是想和她一起玩，不过，她好像已经不理我啦，真神奇，怕是我要化悲痛为力量了。
+　</p>
+
+<p>　终于到了现在。我怎样才觉得自己一生过得不亏呢，什么才不是遗憾呢。我也想要拥抱呀，爱情的甜蜜谁不想要呢，无奈，可能总是没有那么有共同语言的孩子，可能我又不愿意放弃什么去追求她，我又有什么可以失去的呢。我更愿意随风飘荡，还不是没有人疼，才只能专注于事物，然后发现了技术和工程产品的无穷魅力。自我欺骗，哈哈哈。
+　</p>
+
+<p>　生存而已，上各种高大上的东西，都只是自我陶醉。各种新鲜的事物，也不过是让我们忘却烦恼。变得更强，更优秀，这种东西，才无所谓呢，我们只是需要一个分散注意力的东西，让我们沉醉其中，共同成长。自律和苦痛的确能带来意义，心智二元论中的矛盾确实能让我们更加思辨，但是，进化又有什么意义呢。看见，听见，其实都无所谓的。我们只是怕饿着，我们只是闲着没事干，所以就不停思考呗，所以不停做事，不停设立目标，不停思考解决方案。无论怎样的风景，那都是风景，吾心即宇宙，像梦一样，是梦一场。没有攀比，没有高下，到处都是接口，我们终于学会了忽略，学会了抽象。</p>
+
+
+                <hr style="visibility: hidden;">
+
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                        <a href="/2019/02/26/android/" data-toggle="tooltip" data-placement="top" title="Android">
+                        Next<br>
+                        <span>Android</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+
+
+                <!--Gitalk评论start  -->
+                
+                <!-- Gitalk end -->
+
+                
+
+            </div>  
+
+    <!-- Side Catalog Container -->
+        
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+        
+
+    <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+        				
+                            
+                				<a href="/tags/#我" title="我" rel="2">
+                                    我
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#思维" title="思维" rel="3">
+                                    思维
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#工具" title="工具" rel="1">
+                                    工具
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#博客搭建" title="博客搭建" rel="1">
+                                    博客搭建
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#csapp" title="csapp" rel="1">
+                                    csapp
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#手机" title="手机" rel="1">
+                                    手机
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#网络" title="网络" rel="1">
+                                    网络
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#系统分析与设计" title="系统分析与设计" rel="1">
+                                    系统分析与设计
+                                </a>
+                            
+        				
+        			</div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/anchor-js/1.1.1/anchor.min.js",function(){
+        // BY Fix:去除标题前的‘#’ issues:<https://github.com/qiubaiying/qiubaiying.github.io/issues/137>
+        // anchors.options = {
+        //   visible: 'always',
+        //   placement: 'right',
+        //   icon: '#'
+        // };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    <!-- add jianshu add target = "_blank" to <a> by BY -->
+                    
+                    
+
+                    <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
+                    
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/coolinear">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+
+
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/ixneo">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; LOGGING 2019
+                    <br>
+                    Theme on <a href="https://github.com/ixneo/ixneo.github.io.git">GitHub</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=ixneo&repo=ixneo.github.io&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js "></script>
+
+<!-- Service Worker -->
+
+<script type="text/javascript">
+    if(navigator.serviceWorker){
+        // For security reasons, a service worker can only control the pages that are in the same directory level or below it. That's why we put sw.js at ROOT level.
+        navigator.serviceWorker
+            .register('/sw.js')
+            .then((registration) => {console.log('Service Worker Registered. ', registration)})
+            .catch((error) => {console.log('ServiceWorker registration failed: ', error)})
+    }
+</script>
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/ 
+     - https://github.com/jneen/rouge/wiki/list-of-supported-languages-and-lexers   
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async('/js/jquery.tagcloud.js',function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-90855596-1';
+    var _gaDomain = 'auto';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = 'eecae4e01c28263526649fed53c49b94';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+<!-- Side Catalog -->
+
+<script type="text/javascript">
+    function generateCatalog (selector) {
+        var P = $('div.post-container'),a,n,t,l,i,c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#"+$(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="'+i+'" rel="nofollow">'+t+'</a>');
+            l = $('<li class="'+n+'_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;    
+    }
+
+    generateCatalog(".catalog-body");
+
+    // toggle side catalog
+    $(".catalog-toggle").click((function(e){
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    /*
+     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
+     * Fork by Hux to support padding
+     */
+    async("/js/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="/img/apple-touch-icon.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>
