@@ -5,9 +5,119 @@
     <description>Every failure is leading towards success.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 26 Feb 2019 11:25:13 +0800</pubDate>
-    <lastBuildDate>Tue, 26 Feb 2019 11:25:13 +0800</lastBuildDate>
+    <pubDate>Tue, 26 Feb 2019 16:41:32 +0800</pubDate>
+    <lastBuildDate>Tue, 26 Feb 2019 16:41:32 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>Unemploy</title>
+        <description>
+</description>
+        <pubDate>Tue, 26 Feb 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/02/26/unemploy/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/02/26/unemploy/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Svm</title>
+        <description>
+</description>
+        <pubDate>Tue, 26 Feb 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/02/26/svm/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/02/26/svm/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Senti Analyze</title>
+        <description>
+</description>
+        <pubDate>Tue, 26 Feb 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/02/26/senti-analyze/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/02/26/senti-analyze/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Python</title>
+        <description>
+</description>
+        <pubDate>Tue, 26 Feb 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/02/26/python/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/02/26/python/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Prob Statics</title>
+        <description>
+</description>
+        <pubDate>Tue, 26 Feb 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/02/26/prob-statics/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/02/26/prob-statics/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Optimization</title>
+        <description>
+</description>
+        <pubDate>Tue, 26 Feb 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/02/26/optimization/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/02/26/optimization/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Network</title>
+        <description>
+</description>
+        <pubDate>Tue, 26 Feb 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/02/26/network/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/02/26/network/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Mcm2019c</title>
+        <description>
+</description>
+        <pubDate>Tue, 26 Feb 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/02/26/mcm2019c/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/02/26/mcm2019c/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Lstm</title>
+        <description>
+</description>
+        <pubDate>Tue, 26 Feb 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/02/26/lstm/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/02/26/lstm/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Linux Manjaro</title>
+        <description>
+</description>
+        <pubDate>Tue, 26 Feb 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/02/26/linux-manjaro/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/02/26/linux-manjaro/</guid>
+        
+        
+      </item>
     
   </channel>
 </rss>
