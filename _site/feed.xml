@@ -5,9 +5,376 @@
     <description>Every failure is leading towards success.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 26 Feb 2019 20:52:06 +0800</pubDate>
-    <lastBuildDate>Tue, 26 Feb 2019 20:52:06 +0800</lastBuildDate>
+    <pubDate>Fri, 01 Mar 2019 18:05:32 +0800</pubDate>
+    <lastBuildDate>Fri, 01 Mar 2019 18:05:32 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>oj-怪盗基德的滑翔翼</title>
+        <description>&lt;h1 id=&quot;问题描述&quot;&gt;问题描述&lt;/h1&gt;
+&lt;p&gt;假设城市中一共有N幢建筑排成一条线，每幢建筑的高度各不相同。初始时，怪盗基德可以在任何一幢建筑的顶端。他可以选择一个方向逃跑，但是不能中途改变方向（因为中森警部会在后面追击）。因为滑翔翼动力装置受损，他只能往下滑行（即：只能从较高的建筑滑翔到较低的建筑）。他希望尽可能多地经过不同建筑的顶部，这样可以减缓下降时的冲击力，减少受伤的可能性。请问，他最多可以经过多少幢不同建筑的顶部（包含初始时的建筑）？&lt;/p&gt;
+
+&lt;p&gt;输入
+输入数据第一行是一个整数K（K &amp;lt; 100），代表有K组测试数据。 
+每组测试数据包含两行：第一行是一个整数N(N &amp;lt; 100)，代表有N幢建筑。第二行包含N个不同的整数，每一个对应一幢建筑的高度h（0 &amp;lt; h &amp;lt; 10000），按照建筑的排列顺序给出。
+输出
+对于每一组测试数据，输出一行，包含一个整数，代表怪盗基德最多可以经过的建筑数量。&lt;/p&gt;
+
+&lt;h1 id=&quot;解决方案&quot;&gt;解决方案&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;dfs&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;     #include&amp;lt;iostream&amp;gt;
+     #include&amp;lt;cmath&amp;gt;
+     #include&amp;lt;string&amp;gt;
+     #include&amp;lt;iterator&amp;gt;
+     #include&amp;lt;algorithm&amp;gt;
+
+     using namespace std;
+     /* test-input
+         3
+         8
+         300 207 155 299 298 170 158 65
+         8
+         65 158 170 298 299 155 207 300
+         10
+         2 1 3 4 5 6 7 8 9 10
+     */
+     /* test-output
+         6
+         6
+         9
+     */
+     int buildings[200][200] = {0};
+     int buildTot[200] = {0};
+
+     int dfs(int caseIndex, int curBuilding,int pVal, int tot, int inc){
+     //    cout &amp;lt;&amp;lt; curBuilding &amp;lt;&amp;lt; endl;
+         if(inc==1 &amp;amp;&amp;amp; curBuilding&amp;gt;=buildTot[caseIndex]){
+             return tot;
+         }
+         if(inc==-1 &amp;amp;&amp;amp; curBuilding&amp;lt;0){
+             return tot;
+         }
+         int curVal = buildings[caseIndex][curBuilding];
+         if(curVal&amp;lt;pVal){
+             return max(dfs(caseIndex,curBuilding+inc,pVal, tot, inc),
+                        dfs(caseIndex,curBuilding+inc,curVal, tot+1, inc));
+         }else{
+             return dfs(caseIndex,curBuilding+inc,pVal, tot, inc);
+         }
+     }
+     int main(){
+         // get input
+         int caseNum;
+         cin &amp;gt;&amp;gt; caseNum;
+         for(int i=0;i&amp;lt;caseNum;i++){
+             cin &amp;gt;&amp;gt; buildTot[i];
+             for(int j=0;j&amp;lt;buildTot[i];j++){
+                 cin &amp;gt;&amp;gt; buildings[i][j];
+             }
+         }
+
+         // dfs, two-direction
+         for(int i=0;i&amp;lt;caseNum;i++){
+             int res = 0;
+             int f2b=dfs(i,0,10000,0,1), 							b2f=dfs(i,buildTot[i]-1,10000,0,-1);
+         //  cout &amp;lt;&amp;lt; f2b &amp;lt;&amp;lt; &quot;: &quot; &amp;lt;&amp;lt; b2f &amp;lt;&amp;lt; endl;
+             res = max(res,max(f2b,b2f));
+             cout &amp;lt;&amp;lt; &quot;Case&quot; &amp;lt;&amp;lt; i &amp;lt;&amp;lt; &quot;: &quot; &amp;lt;&amp;lt; res &amp;lt;&amp;lt; endl;
+         }
+         return 0;
+     }  1. dp
+
+     // i表示最大的建筑下标，用于限制子问题
+     // j表示根据i得到的可能倒数第二个建筑下标
+     for(i=0;i&amp;lt;n;i++){
+     a[i]=1;
+     }
+     a[0]=1;
+     for(i=1;i&amp;lt;n;i++){
+     flag=0;
+     for(j=0;j&amp;lt;i;j++){
+     if(buf[j]&amp;gt;buf[i]&amp;amp;&amp;amp;a[i]&amp;lt;a[j]+1){
+     a[i]=a[j]+1;
+     if(!flag)
+     flag=1;
+     }
+     }
+     if(!flag){
+     a[i]=1;
+     }
+        
+     }
+     int mx1=*max_element(a,a+n);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;知识点&quot;&gt;知识点&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;可以用dfs做&lt;/li&gt;
+  &lt;li&gt;确定函数参数，哪些是递归下来的，需要做出改变的，哪些是全局坐标等&lt;/li&gt;
+  &lt;li&gt;确定递归的退出条件&lt;/li&gt;
+  &lt;li&gt;确定递归过程/递推公式，一般是分支或max(dfs(),dfs())&lt;/li&gt;
+  &lt;li&gt;dp做&lt;/li&gt;
+  &lt;li&gt;其他
+    &lt;blockquote&gt;
+      &lt;ol&gt;
+        &lt;li&gt;接受输入后
+          &lt;ol&gt;
+            &lt;li&gt;可以动态分配内存&lt;/li&gt;
+            &lt;li&gt;或者初始化几个很大的全0数组, 然后按需置１&lt;/li&gt;
+          &lt;/ol&gt;
+        &lt;/li&gt;
+        &lt;li&gt;整个流程
+          &lt;ol&gt;
+            &lt;li&gt;可以全部接受输入并存储（很多测试案例）后，统一处理&lt;/li&gt;
+            &lt;li&gt;或者在循环中，每接受一个测试案例，处理一个&lt;/li&gt;
+          &lt;/ol&gt;
+        &lt;/li&gt;
+      &lt;/ol&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Fri, 01 Mar 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/03/01/oj-weird-kid/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/03/01/oj-weird-kid/</guid>
+        
+        <category>oj</category>
+        
+        <category>dp</category>
+        
+        <category>dfs</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>oj-岛屿问题</title>
+        <description>&lt;h1 id=&quot;问题描述&quot;&gt;问题描述&lt;/h1&gt;
+&lt;p&gt;C:岛屿面积
+总时间限制:  1000ms  内存限制:  65536kB
+描述
+用一个n&lt;em&gt;m的二维数组表示地图，1表示陆地，0代表海水，每一格都表示一个1&lt;/em&gt;1的区域。地图中的格子只能横向或者纵向连接（不能对角连接），连接在一起的陆地称作岛屿，同时整个地图都被海水围绕。假设给出的地图中只会有一个岛屿，并且岛屿中不会有湖（即不会有水被陆地包围的情况出现）。请判断所给定的二维地图中岛屿的周长。
+输入
+第一行为n和m，表示地图的大小(1&amp;lt;=n&amp;lt;=100, 1&amp;lt;=m&amp;lt;=100)。接下来n行，每行有m个数，分别描述每一格的数值。数值之间均用空格隔开。
+输出
+只有一行，即岛屿的周长（正整数）。
+样例输入
+3 4
+1 1 1 0
+0 1 0 0
+1 1 0 0
+样例输出
+14&lt;/p&gt;
+
+&lt;h1 id=&quot;解决方案&quot;&gt;解决方案&lt;/h1&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#include&amp;lt;iostream&amp;gt;
+#include&amp;lt;cmath&amp;gt;
+#include&amp;lt;string&amp;gt;
+#include&amp;lt;iterator&amp;gt;
+
+using namespace std;
+
+int main(){
+    // get input
+    int r,c;
+    cin &amp;gt;&amp;gt; r &amp;gt;&amp;gt; c;
+    int **pr = new int*[r];
+    for(int i=0;i&amp;lt;r;i++){
+        pr[i] = new int[c];
+    }
+    for(int i=0;i&amp;lt;r;i++){
+        for(int j=0;j&amp;lt;c;j++){
+            cin &amp;gt;&amp;gt; pr[i][j];
+        }
+    }
+
+    /* test input
+        int pr[3][4] = { {1,1,1,0},
+                      　{0,1,0,0},
+                      　{1,1,0,0} };
+    */
+
+    // calculate c
+    int tot = 0;
+    for(int i=0;i&amp;lt;r;i++){
+        for(int j=0;j&amp;lt;c;j++){
+            if(pr[i][j]==0) continue;
+            if((j-1&amp;gt;=0 &amp;amp;&amp;amp; !pr[i][j-1])
+                    || (j-1&amp;lt;0))  tot++;
+            if((j+1&amp;lt;c &amp;amp;&amp;amp; !pr[i][j+1])
+                    || (j+1&amp;gt;=c))  tot++;
+            if((i-1&amp;gt;=0 &amp;amp;&amp;amp; !pr[i-1][j])
+                    || (i-1&amp;lt;0)) tot++;
+            if((i+1&amp;lt;r &amp;amp;&amp;amp; !pr[i+1][j])
+                    || (i+1&amp;gt;=r))  tot++;
+        }
+    }
+
+    // delete space
+    for(int i=0;i&amp;lt;r;i++){
+        delete[] pr[i];
+    }
+    cout &amp;lt;&amp;lt; tot &amp;lt;&amp;lt; endl;
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;知识点以及优化&quot;&gt;知识点以及优化&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;可以写测试，避免手动重复输入数值&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;可以初始化一个全０的很大的二维数组，并令坐标从１开始，简化判断条件&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; for(i=1;i&amp;lt;=n;i++){
+     for(j=1;j&amp;lt;=m;j++){
+         if(a[i][j]==1){
+             cnt=cnt+4-(a[i-1][j]+a[i+1][j]+a[i][j-1]+a[i][j+1]);
+         }
+     }
+ }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Fri, 01 Mar 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/03/01/oj-island/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/03/01/oj-island/</guid>
+        
+        <category>oj</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>oj-数据类型</title>
+        <description>&lt;h1 id=&quot;cpp&quot;&gt;cpp&lt;/h1&gt;
+
+&lt;p&gt;short int  2个字节&lt;/p&gt;
+
+&lt;p&gt;int 2/4字节&lt;/p&gt;
+
+&lt;p&gt;long 4/8字节&lt;/p&gt;
+
+&lt;p&gt;long long 8字节&lt;/p&gt;
+</description>
+        <pubDate>Fri, 01 Mar 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/03/01/data-type/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/03/01/data-type/</guid>
+        
+        <category>oj</category>
+        
+        <category>计算机基础概念</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>oj-行程长度编码</title>
+        <description>&lt;h1 id=&quot;题目描述&quot;&gt;题目描述&lt;/h1&gt;
+&lt;p&gt;总时间限制:  1000ms  内存限制:  65536kB
+描述
+在数据压缩中，一个常用的方法是行程长度编码压缩。对于一个待压缩的字符串，我们可以依次记录每个字符及重复的次数。例如，待压缩的字符串为”aaabbbbcbb”，压缩结果为(a,3)(b,4)(c,1)(b,2)。这种压缩对于相邻数据重复较多的情况有效，如果重复状况较少，则压缩的效率较低。
+现要求根据输入的字符串，首先将字符串中所有大写字母转化为小写字母，然后将字符串进行压缩。
+输入
+一个字符串，长度大于0，且不超过1000，全部由大写或小写字母组成。
+输出
+输出为编码之后的字符串，形式为：(a,3)(b,4)(c,1)(d,2)，即每对括号内分别为小写字符及重复的次数，不含任何空格。
+样例输入
+aAABBbBCCCaaaaa
+样例输出
+(a,3)(b,4)(c,3)(a,5)&lt;/p&gt;
+
+&lt;h1 id=&quot;题解&quot;&gt;题解&lt;/h1&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#include&amp;lt;iostream&amp;gt;
+#include&amp;lt;cmath&amp;gt;
+#include&amp;lt;string&amp;gt;
+#include&amp;lt;iterator&amp;gt;
+
+// 行程长度编码
+using namespace std;
+
+string l2g(string s){
+    for(auto it=s.begin();it!=s.end();it++){
+        if(*it&amp;gt;='a' &amp;amp;&amp;amp; *it&amp;lt;='z'){
+            *it -= 32;
+        }
+    }
+    return s;
+}
+
+string showLenCode(string s){
+    int len = 1,i=0;
+    string res;
+    for(i=0;i&amp;lt;s.size();i++){
+        if(s[i+1]==s[i]){
+            len++;
+        }else{
+            // 重点关注，不能是: res+＝...
+            res = res + '('+s[i]+','+(char)(len+'0')+')';
+            len = 1;
+        }
+    }
+    return res;
+}
+
+int main(){
+    // get input
+    string s;
+    cin &amp;gt;&amp;gt; s;
+
+    // low-letter to high-letter
+    s = l2g(s);
+
+    // statics
+    string res;
+    res = showLenCode(s);
+    cout &amp;lt;&amp;lt; res &amp;lt;&amp;lt; endl;
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;#　重难点&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;先写注释，搭建基本框架，然后写对应的函数。控制复杂度&lt;/li&gt;
+  &lt;li&gt;小写字母的ascii的编码比大写字母大32&lt;/li&gt;
+  &lt;li&gt;字符串的拼接和格式化。&lt;str&gt; = &lt;str&gt; +... , 不能是&lt;str&gt;+=...&lt;/str&gt;&lt;/str&gt;&lt;/str&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Wed, 27 Feb 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/02/27/oj-string-code/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/02/27/oj-string-code/</guid>
+        
+        <category>oj</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>oj-prime</title>
+        <description>&lt;h1 id=&quot;判定给定两个数范围内的素数个数&quot;&gt;判定给定两个数范围内的素数个数&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;对于1的特殊处理&lt;/li&gt;
+  &lt;li&gt;判断给的两个数的相对大小&lt;/li&gt;
+  &lt;li&gt;可以用筛法，或者找因子（设置标志位）的方法，优化性能&lt;/li&gt;
+  &lt;li&gt;可以把判别是否是素数单独抽象成一个函数&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Wed, 27 Feb 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/02/27/oj-prime/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/02/27/oj-prime/</guid>
+        
+        <category>oj</category>
+        
+        
+      </item>
     
       <item>
         <title>Unemploy</title>
@@ -79,102 +446,6 @@
         <pubDate>Tue, 26 Feb 2019 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2019/02/26/python/</link>
         <guid isPermaLink="true">http://localhost:4000/2019/02/26/python/</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Prob Statics</title>
-        <description>
-</description>
-        <pubDate>Tue, 26 Feb 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2019/02/26/prob-statics/</link>
-        <guid isPermaLink="true">http://localhost:4000/2019/02/26/prob-statics/</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>小米手机的网络连接问题</title>
-        <description>&lt;h1 id=&quot;问题&quot;&gt;问题&lt;/h1&gt;
-
-&lt;p&gt;电脑无法连接手机热点&lt;/p&gt;
-
-&lt;h1 id=&quot;解决办法&quot;&gt;解决办法&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;手机开启热点的方式
-    &lt;ul&gt;
-      &lt;li&gt;个人热点。可选择是否使用密码&lt;/li&gt;
-      &lt;li&gt;USB连接，提供网络连接&lt;/li&gt;
-      &lt;li&gt;蓝牙。&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        <pubDate>Tue, 26 Feb 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2019/02/26/phone-network/</link>
-        <guid isPermaLink="true">http://localhost:4000/2019/02/26/phone-network/</guid>
-        
-        <category>手机</category>
-        
-        <category>网络</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Optimization</title>
-        <description>
-</description>
-        <pubDate>Tue, 26 Feb 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2019/02/26/optimization/</link>
-        <guid isPermaLink="true">http://localhost:4000/2019/02/26/optimization/</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Network</title>
-        <description>
-</description>
-        <pubDate>Tue, 26 Feb 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2019/02/26/network/</link>
-        <guid isPermaLink="true">http://localhost:4000/2019/02/26/network/</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>我的价值观</title>
-        <description>&lt;p&gt;打小就在追求一种虚幻的东西，没有那么现实。&lt;/p&gt;
-
-&lt;p&gt;从初中到高中，从不相信权威，即老师。在数学课上看物理，在物理课上学英语。&lt;/p&gt;
-
-&lt;p&gt;自主性很高，但是却又没有对于名利的刻意追求。&lt;/p&gt;
-
-&lt;p&gt;考试测验或者公开演讲之前，也会手心冒汗，几天不自然，凌晨五点起床。但这是害怕出现不好的结果，是不安全感的体现，却不是在追求什么。当然，也从没有奢望过别人的表扬。&lt;/p&gt;
-
-&lt;p&gt;我的一切评判标准都在于我的内心，只能说随着年龄的增长和经历的广博，评判标准变得越来越健壮，我越来越能理解很多人，越来越能根据现实的情况去做出理性的分析，但仍然不会被现实约束，我感觉我是自由的鸟，似乎可以放弃一切。&lt;/p&gt;
-
-&lt;p&gt;鲍勃迪伦是一个骗子吗？或许是，但是他可以是他口中的任何一个人。我们没有必要追逐大流，没有必要平庸。当然，无所顾忌的是他，得奖之后小人得志的也是他，这是自由。既然现实已经给了我们那么多的枷锁，我们何必再给自己的思维上枷锁呢。&lt;/p&gt;
-
-&lt;p&gt;所有的文化，所有的传统，所有的现实，就这样存在着。我们也就这样活着。当我们能够衣食无忧的时候，我们会探究“真理”。当我们挨饿的时候，我们就是忙于生存了。&lt;/p&gt;
-
-&lt;p&gt;我对于学术有追求吗？只是为了满足自己的好奇心罢了，我想要一直走在探索路上。我不希望被限制，也不希望去按照培养计划走，成为一些人口中的精英人才。&lt;/p&gt;
-
-&lt;p&gt;我本只是想和富有创造力的人在一起，一起接受外界的刺激，创造出美丽不朽的伟大的事物。但也许中间必定要通过考核。或许，我们会自然地走到一起呢。谁又说现在的教育评价体系精准无误、不容质疑的呢？即刻行动，不追求花架子，接受各种压力，我们自然茁壮成长。做什么，随了谁的心意，我是不会在乎的。&lt;/p&gt;
-
-&lt;p&gt;既然是一场体验，我们总能改变我们的心态，找到乐子。那么，哪条路径又是非走不可的呢，当然不存在这样的路径。&lt;/p&gt;
-
-&lt;p&gt;我们可以因为爱，而忽视时间；我们可以理性地一丝不苟，完成目标。我们就是我们呀。&lt;/p&gt;
-</description>
-        <pubDate>Tue, 26 Feb 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2019/02/26/me/</link>
-        <guid isPermaLink="true">http://localhost:4000/2019/02/26/me/</guid>
-        
-        <category>我</category>
-        
-        <category>思维</category>
         
         
       </item>

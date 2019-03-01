@@ -10,7 +10,7 @@
     <meta name="keywords"  content="jktian, blog, data-science, algorithm, projects">
     <meta name="theme-color" content="#000000">
     
-    <title>博客搭建 - jktian-logging</title>
+    <title>oj-岛屿问题 - jktian-logging</title>
 
     <!-- Web App Manifest -->
     <link rel="manifest" href="/pwa/manifest.json">
@@ -22,7 +22,7 @@
     <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="http://localhost:4000/2019/02/26/build-blog/">
+    <link rel="canonical" href="http://localhost:4000/2019/03/01/oj-island/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -173,17 +173,15 @@
                 <div class="post-heading">
                     <div class="tags">
                         
-                        <a class="tag" href="/tags/#工具" title="工具">工具</a>
-                        
-                        <a class="tag" href="/tags/#博客搭建" title="博客搭建">博客搭建</a>
+                        <a class="tag" href="/tags/#oj" title="oj">oj</a>
                         
                     </div>
-                    <h1>博客搭建</h1>
+                    <h1>oj-岛屿问题</h1>
                     
                     
-                    <h2 class="subheading">　</h2>
+                    <h2 class="subheading"></h2>
                     
-                    <span class="meta">Posted by jktian on February 26, 2019</span>
+                    <span class="meta">Posted by jktian on March 1, 2019</span>
                 </div>
             </div>
         </div>
@@ -201,69 +199,92 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-				<h1 id="博客迭代">博客迭代</h1>
+				<h1 id="问题描述">问题描述</h1>
+<p>C:岛屿面积
+总时间限制:  1000ms  内存限制:  65536kB
+描述
+用一个n<em>m的二维数组表示地图，1表示陆地，0代表海水，每一格都表示一个1</em>1的区域。地图中的格子只能横向或者纵向连接（不能对角连接），连接在一起的陆地称作岛屿，同时整个地图都被海水围绕。假设给出的地图中只会有一个岛屿，并且岛屿中不会有湖（即不会有水被陆地包围的情况出现）。请判断所给定的二维地图中岛屿的周长。
+输入
+第一行为n和m，表示地图的大小(1&lt;=n&lt;=100, 1&lt;=m&lt;=100)。接下来n行，每行有m个数，分别描述每一格的数值。数值之间均用空格隔开。
+输出
+只有一行，即岛屿的周长（正整数）。
+样例输入
+3 4
+1 1 1 0
+0 1 0 0
+1 1 0 0
+样例输出
+14</p>
 
-<ol>
-  <li>第一次，用腾讯云主机作为后台，买了域名，用wordpress，mysql, apache, linux搭建。
-    <ul>
-      <li>由于域名需要备案，且云主机第二年优惠消失，所以开始迁移计划</li>
-      <li>本次学到
-        <ul>
-          <li>服务器的配置过程，linux的基本操作</li>
-          <li>在别人以及文档的帮助下，能少走很多弯路</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>第二次，用gitbook搭建。无需后台，像写书一样，但是自由度有限。
-    <ul>
-      <li>由于作为一本书，博客所能写的内容和跨度不能太大，且访问速度慢，所以继续迁移</li>
-      <li>本次学到
-        <ul>
-          <li>markdown写法的熟练操作</li>
-          <li>github不仅能用于资源存储和版本管理，更是社交的地方</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>第三次，即本次，用github作后台，jekyll辅助搭建
-    <ul>
-      <li>用tag来取代具体的类别，让不同的文章自由组成类别，而不是在固定类别下写文章</li>
-      <li>用了百度统计，监督网站动态</li>
-      <li>评论功能开发中</li>
-    </ul>
-  </li>
-</ol>
+<h1 id="解决方案">解决方案</h1>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#include&lt;iostream&gt;
+#include&lt;cmath&gt;
+#include&lt;string&gt;
+#include&lt;iterator&gt;
 
-<h1 id="jekyll命令行">jekyll命令行</h1>
+using namespace std;
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem install jekyll bundler
+int main(){
+    // get input
+    int r,c;
+    cin &gt;&gt; r &gt;&gt; c;
+    int **pr = new int*[r];
+    for(int i=0;i&lt;r;i++){
+        pr[i] = new int[c];
+    }
+    for(int i=0;i&lt;r;i++){
+        for(int j=0;j&lt;c;j++){
+            cin &gt;&gt; pr[i][j];
+        }
+    }
 
-jekyll new my-awesome-site
+    /* test input
+        int pr[3][4] = { {1,1,1,0},
+                      　{0,1,0,0},
+                      　{1,1,0,0} };
+    */
 
-cd my-awesome-site
+    // calculate c
+    int tot = 0;
+    for(int i=0;i&lt;r;i++){
+        for(int j=0;j&lt;c;j++){
+            if(pr[i][j]==0) continue;
+            if((j-1&gt;=0 &amp;&amp; !pr[i][j-1])
+                    || (j-1&lt;0))  tot++;
+            if((j+1&lt;c &amp;&amp; !pr[i][j+1])
+                    || (j+1&gt;=c))  tot++;
+            if((i-1&gt;=0 &amp;&amp; !pr[i-1][j])
+                    || (i-1&lt;0)) tot++;
+            if((i+1&lt;r &amp;&amp; !pr[i+1][j])
+                    || (i+1&gt;=r))  tot++;
+        }
+    }
 
-bundle install
-
-bundle exec jekyll serve
-
-blog目录下：　jekyll s # 本地运行，端口4000
+    // delete space
+    for(int i=0;i&lt;r;i++){
+        delete[] pr[i];
+    }
+    cout &lt;&lt; tot &lt;&lt; endl;
+    return 0;
+}
 </code></pre></div></div>
 
-<h1 id="problem">problem</h1>
+<h1 id="知识点以及优化">知识点以及优化</h1>
 <ol>
-  <li>gem的安装。如遇问题，删除之后重新安装.
-    <ul>
-      <li>即使有复杂的依赖项关系，也不要慌</li>
-    </ul>
-  </li>
-  <li>缓存问题。浏览器会有网页的缓存，记得修改之后，要删除缓存再查看
-    <ul>
-      <li>适合情况：使用jekyll本地开启端口查看网页</li>
-    </ul>
+  <li>可以写测试，避免手动重复输入数值</li>
+  <li>
+    <p>可以初始化一个全０的很大的二维数组，并令坐标从１开始，简化判断条件</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> for(i=1;i&lt;=n;i++){
+     for(j=1;j&lt;=m;j++){
+         if(a[i][j]==1){
+             cnt=cnt+4-(a[i-1][j]+a[i+1][j]+a[i][j-1]+a[i][j+1]);
+         }
+     }
+ }
+</code></pre></div>    </div>
   </li>
 </ol>
-
 
 
                 <hr style="visibility: hidden;">
@@ -271,17 +292,17 @@ blog目录下：　jekyll s # 本地运行，端口4000
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2019/02/26/bayes/" data-toggle="tooltip" data-placement="top" title="Bayes">
+                        <a href="/2019/03/01/data-type/" data-toggle="tooltip" data-placement="top" title="oj-数据类型">
                         Previous<br>
-                        <span>Bayes</span>
+                        <span>oj-数据类型</span>
                         </a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/2019/02/26/chat-robot/" data-toggle="tooltip" data-placement="top" title="Chat Robot">
+                        <a href="/2019/03/01/oj-weird-kid/" data-toggle="tooltip" data-placement="top" title="oj-怪盗基德的滑翔翼">
                         Next<br>
-                        <span>Chat Robot</span>
+                        <span>oj-怪盗基德的滑翔翼</span>
                         </a>
                     </li>
                     

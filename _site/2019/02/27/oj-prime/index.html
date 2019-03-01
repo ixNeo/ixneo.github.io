@@ -10,7 +10,7 @@
     <meta name="keywords"  content="jktian, blog, data-science, algorithm, projects">
     <meta name="theme-color" content="#000000">
     
-    <title>博客搭建 - jktian-logging</title>
+    <title>oj-prime - jktian-logging</title>
 
     <!-- Web App Manifest -->
     <link rel="manifest" href="/pwa/manifest.json">
@@ -22,7 +22,7 @@
     <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="http://localhost:4000/2019/02/26/build-blog/">
+    <link rel="canonical" href="http://localhost:4000/2019/02/27/oj-prime/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -173,17 +173,15 @@
                 <div class="post-heading">
                     <div class="tags">
                         
-                        <a class="tag" href="/tags/#工具" title="工具">工具</a>
-                        
-                        <a class="tag" href="/tags/#博客搭建" title="博客搭建">博客搭建</a>
+                        <a class="tag" href="/tags/#oj" title="oj">oj</a>
                         
                     </div>
-                    <h1>博客搭建</h1>
+                    <h1>oj-prime</h1>
                     
                     
-                    <h2 class="subheading">　</h2>
+                    <h2 class="subheading"></h2>
                     
-                    <span class="meta">Posted by jktian on February 26, 2019</span>
+                    <span class="meta">Posted by jktian on February 27, 2019</span>
                 </div>
             </div>
         </div>
@@ -201,69 +199,14 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-				<h1 id="博客迭代">博客迭代</h1>
+				<h1 id="判定给定两个数范围内的素数个数">判定给定两个数范围内的素数个数</h1>
 
 <ol>
-  <li>第一次，用腾讯云主机作为后台，买了域名，用wordpress，mysql, apache, linux搭建。
-    <ul>
-      <li>由于域名需要备案，且云主机第二年优惠消失，所以开始迁移计划</li>
-      <li>本次学到
-        <ul>
-          <li>服务器的配置过程，linux的基本操作</li>
-          <li>在别人以及文档的帮助下，能少走很多弯路</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>第二次，用gitbook搭建。无需后台，像写书一样，但是自由度有限。
-    <ul>
-      <li>由于作为一本书，博客所能写的内容和跨度不能太大，且访问速度慢，所以继续迁移</li>
-      <li>本次学到
-        <ul>
-          <li>markdown写法的熟练操作</li>
-          <li>github不仅能用于资源存储和版本管理，更是社交的地方</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>第三次，即本次，用github作后台，jekyll辅助搭建
-    <ul>
-      <li>用tag来取代具体的类别，让不同的文章自由组成类别，而不是在固定类别下写文章</li>
-      <li>用了百度统计，监督网站动态</li>
-      <li>评论功能开发中</li>
-    </ul>
-  </li>
+  <li>对于1的特殊处理</li>
+  <li>判断给的两个数的相对大小</li>
+  <li>可以用筛法，或者找因子（设置标志位）的方法，优化性能</li>
+  <li>可以把判别是否是素数单独抽象成一个函数</li>
 </ol>
-
-<h1 id="jekyll命令行">jekyll命令行</h1>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem install jekyll bundler
-
-jekyll new my-awesome-site
-
-cd my-awesome-site
-
-bundle install
-
-bundle exec jekyll serve
-
-blog目录下：　jekyll s # 本地运行，端口4000
-</code></pre></div></div>
-
-<h1 id="problem">problem</h1>
-<ol>
-  <li>gem的安装。如遇问题，删除之后重新安装.
-    <ul>
-      <li>即使有复杂的依赖项关系，也不要慌</li>
-    </ul>
-  </li>
-  <li>缓存问题。浏览器会有网页的缓存，记得修改之后，要删除缓存再查看
-    <ul>
-      <li>适合情况：使用jekyll本地开启端口查看网页</li>
-    </ul>
-  </li>
-</ol>
-
 
 
                 <hr style="visibility: hidden;">
@@ -271,17 +214,17 @@ blog目录下：　jekyll s # 本地运行，端口4000
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2019/02/26/bayes/" data-toggle="tooltip" data-placement="top" title="Bayes">
+                        <a href="/2019/02/26/unemploy/" data-toggle="tooltip" data-placement="top" title="Unemploy">
                         Previous<br>
-                        <span>Bayes</span>
+                        <span>Unemploy</span>
                         </a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/2019/02/26/chat-robot/" data-toggle="tooltip" data-placement="top" title="Chat Robot">
+                        <a href="/2019/02/27/oj-string-code/" data-toggle="tooltip" data-placement="top" title="oj-行程长度编码">
                         Next<br>
-                        <span>Chat Robot</span>
+                        <span>oj-行程长度编码</span>
                         </a>
                     </li>
                     

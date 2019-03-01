@@ -26,67 +26,67 @@ tags:								#标签
 
 1. dfs
 
-    #include<iostream>
-        #include<cmath>
-        #include<string>
-        #include<iterator>
-        #include<algorithm>
-
-        using namespace std;
-        /* test-input
-            3
-            8
-            300 207 155 299 298 170 158 65
-            8
-            65 158 170 298 299 155 207 300
-            10
-            2 1 3 4 5 6 7 8 9 10
-        */
-        /* test-output
-            6
-            6
-            9
-        */
-        int buildings[200][200] = {0};
-        int buildTot[200] = {0};
-        
-        int dfs(int caseIndex, int curBuilding,int pVal, int tot, int inc){
-        //    cout << curBuilding << endl;
-            if(inc==1 && curBuilding>=buildTot[caseIndex]){
-                return tot;
-            }
-            if(inc==-1 && curBuilding<0){
-                return tot;
-            }
-            int curVal = buildings[caseIndex][curBuilding];
-            if(curVal<pVal){
-                return max(dfs(caseIndex,curBuilding+inc,pVal, tot, inc),
-                           dfs(caseIndex,curBuilding+inc,curVal, tot+1, inc));
-            }else{
-                return dfs(caseIndex,curBuilding+inc,pVal, tot, inc);
-            }
-        }
-        int main(){
-            // get input
-            int caseNum;
-            cin >> caseNum;
-            for(int i=0;i<caseNum;i++){
-                cin >> buildTot[i];
-                for(int j=0;j<buildTot[i];j++){
-                    cin >> buildings[i][j];
+            #include<iostream>
+            #include<cmath>
+            #include<string>
+            #include<iterator>
+            #include<algorithm>
+    
+            using namespace std;
+            /* test-input
+                3
+                8
+                300 207 155 299 298 170 158 65
+                8
+                65 158 170 298 299 155 207 300
+                10
+                2 1 3 4 5 6 7 8 9 10
+            */
+            /* test-output
+                6
+                6
+                9
+            */
+            int buildings[200][200] = {0};
+            int buildTot[200] = {0};
+    
+            int dfs(int caseIndex, int curBuilding,int pVal, int tot, int inc){
+            //    cout << curBuilding << endl;
+                if(inc==1 && curBuilding>=buildTot[caseIndex]){
+                    return tot;
+                }
+                if(inc==-1 && curBuilding<0){
+                    return tot;
+                }
+                int curVal = buildings[caseIndex][curBuilding];
+                if(curVal<pVal){
+                    return max(dfs(caseIndex,curBuilding+inc,pVal, tot, inc),
+                               dfs(caseIndex,curBuilding+inc,curVal, tot+1, inc));
+                }else{
+                    return dfs(caseIndex,curBuilding+inc,pVal, tot, inc);
                 }
             }
-        
-            // dfs, two-direction
-            for(int i=0;i<caseNum;i++){
-                int res = 0;
-                int f2b=dfs(i,0,10000,0,1), b2f=dfs(i,buildTot[i]-1,10000,0,-1);
-            //  cout << f2b << ": " << b2f << endl;
-                res = max(res,max(f2b,b2f));
-                cout << "Case" << i << ": " << res << endl;
+            int main(){
+                // get input
+                int caseNum;
+                cin >> caseNum;
+                for(int i=0;i<caseNum;i++){
+                    cin >> buildTot[i];
+                    for(int j=0;j<buildTot[i];j++){
+                        cin >> buildings[i][j];
+                    }
+                }
+    
+                // dfs, two-direction
+                for(int i=0;i<caseNum;i++){
+                    int res = 0;
+                    int f2b=dfs(i,0,10000,0,1), 							b2f=dfs(i,buildTot[i]-1,10000,0,-1);
+                //  cout << f2b << ": " << b2f << endl;
+                    res = max(res,max(f2b,b2f));
+                    cout << "Case" << i << ": " << res << endl;
+                }
+                return 0;
             }
-            return 0;
-        }
     1. dp
     
             // i表示最大的建筑下标，用于限制子问题
@@ -107,7 +107,7 @@ tags:								#标签
             if(!flag){
             a[i]=1;
             }
-    
+            
             }
             int mx1=*max_element(a,a+n);
 
