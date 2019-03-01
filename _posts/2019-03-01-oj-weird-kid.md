@@ -31,7 +31,7 @@ tags:								#标签
         #include<string>
         #include<iterator>
         #include<algorithm>
-    
+
         using namespace std;
         /* test-input
             3
@@ -87,28 +87,29 @@ tags:								#标签
             }
             return 0;
         }
-2. dp
-		// i表示最大的建筑下标，用于限制子问题
-        // j表示根据i得到的可能倒数第二个建筑下标
-	    for(i=0;i<n;i++){
+    1. dp
+    
+            // i表示最大的建筑下标，用于限制子问题
+            // j表示根据i得到的可能倒数第二个建筑下标
+            for(i=0;i<n;i++){
             a[i]=1;
-        }
-        a[0]=1;
-        for(i=1;i<n;i++){
+            }
+            a[0]=1;
+            for(i=1;i<n;i++){
             flag=0;
             for(j=0;j<i;j++){
-                if(buf[j]>buf[i]&&a[i]<a[j]+1){
-                    a[i]=a[j]+1;
-                    if(!flag)
-                        flag=1;
-                }
+            if(buf[j]>buf[i]&&a[i]<a[j]+1){
+            a[i]=a[j]+1;
+            if(!flag)
+            flag=1;
+            }
             }
             if(!flag){
-                a[i]=1;
+            a[i]=1;
             }
     
-        }
-        int mx1=*max_element(a,a+n);
+            }
+            int mx1=*max_element(a,a+n);
 
 # 知识点
 
