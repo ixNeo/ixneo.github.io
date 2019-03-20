@@ -1,605 +1,325 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
-<head>
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Every failure is leading towards success.">
-    <meta name="keywords"  content="jktian, blog, data-science, algorithm, projects">
-    <meta name="theme-color" content="#000000">
-    
-    <title>About Me - jktian-logging</title>
 
-    <!-- Web App Manifest -->
-    <link rel="manifest" href="/pwa/manifest.json">
+    <title>About</title>
+    <meta name="description" content="">
 
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="/img/favicon.ico">
-
-    <!-- Safari Webpage Icon    by-BY -->
-    <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="http://localhost:4000/about/">
-
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/hux-blog.min.css">
-
-    <!-- Pygments Github CSS -->
-    <link rel="stylesheet" href="/css/syntax.css">
-
-    <!-- Custom Fonts -->
-    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
-    <!-- Hux change font-awesome CDN to qiniu -->
-    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="/favicon.ico?" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico?" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_8v3czwksspqlg14i.css">
+    <link rel="stylesheet" href="/css/main.css ">
+    <link rel="canonical" href="http://localhost:4002/about/">
+    <link rel="alternate" type="application/rss+xml" title="jktian-logging" href="http://localhost:4002/feed.xml ">
 
 
-    <!-- Hux Delete, sad but pending in China
-    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
-    css'>
-    -->
-
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- ga & ba script hoook -->
-    <script></script>
-</head>
-
-
-<!-- hack iOS CSS :active style -->
-<body ontouchstart="">
-
-    <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">jk.tian-LOGGING</a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div id="huxblog_navbar">
-            <div class="navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="/">Home</a>
-                    </li>
-                    
-                    <li>
-                        <a href="/about/">About Me</a>
-                    </li>
-                    
-                    <li>
-                        <a href="/tags/">Tags</a>
-                    </li>
-                    
-                </ul>
-            </div>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container -->
-</nav>
-<script>
-    // Drop Bootstarp low-performance Navbar
-    // Use customize navbar with high-quality material design animation
-    // in high-perf jank-free CSS3 implementation
-    var $body   = document.body;
-    var $toggle = document.querySelector('.navbar-toggle');
-    var $navbar = document.querySelector('#huxblog_navbar');
-    var $collapse = document.querySelector('.navbar-collapse');
-
-    var __HuxNav__ = {
-        close: function(){
-            $navbar.className = " ";
-            // wait until animation end.
-            setTimeout(function(){
-                // prevent frequently toggle
-                if($navbar.className.indexOf('in') < 0) {
-                    $collapse.style.height = "0px"
-                }
-            },400)
-        },
-        open: function(){
-            $collapse.style.height = "auto"
-            $navbar.className += " in";
-        }
-    }
-
-    // Bind Event
-    $toggle.addEventListener('click', function(e){
-        if ($navbar.className.indexOf('in') > 0) {
-            __HuxNav__.close()
-        }else{
-            __HuxNav__.open()
-        }
-    })
-
-    /**
-     * Since Fastclick is used to delegate 'touchstart' globally
-     * to hack 300ms delay in iOS by performing a fake 'click',
-     * Using 'e.stopPropagation' to stop 'touchstart' event from 
-     * $toggle/$collapse will break global delegation.
-     * 
-     * Instead, we use a 'e.target' filter to prevent handler
-     * added to document close HuxNav.  
-     *
-     * Also, we use 'click' instead of 'touchstart' as compromise
-     */
-    document.addEventListener('click', function(e){
-        if(e.target == $toggle) return;
-        if(e.target.className == 'icon-bar') return;
-        __HuxNav__.close();
-    })
-</script>
-
-
-    <!-- Page Header -->
-<header class="intro-header" style="background-image: url('/img/post-bg-rwd.jpg')">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>About Me</h1>
-                    <!--<hr class="small">-->
-                    <span class="subheading">boundary</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-
-<!-- Main Content -->
-<div class="container">
-	<div class="row">
-        
-
-<!-- USE SIDEBAR -->
-    <!-- PostList Container -->
-    		<div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                postlist-container
-            ">
-    			<!-- Language Selector -->
-<!-- <select class="sel-lang" onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
-    <option value="0" selected> 中文 Chinese </option>
-    <option value="1"> 英文 English </option>
-</select> -->
-
-<!-- Chinese Version -->
-<div class="zh post-container">
-
-    <!--copied from markdown -->
-    <blockquote><p>世之奇伟、瑰怪、非常之观，常在险远</blockquote>
-
-    <p><strong>jktian</strong>，一个自嗨的人, 正在渡劫中</p>
-
-    <strong>教育背景</strong>
-    <ul><li> DLUT, SE.　大三在读</li></ul>
-
-    <strong>兴趣点</strong>
-    <ul>
-        <li>机器学习，数据挖掘，模型搭建与算法设计</li>
-        <li>重构，软件工程</li>
-        <li>web开发</li>
-    </ul>
-    
-    <strong>技能树</strong>
-    <ul>
-        <li>语言：python, cpp, js, lisp, sql</li>
-        <li>操作系统：linux</li>
-    </ul>
-<!--         <li><a href="http://huangxuan.me/">Hux</a></li>  -->
-        <!-- <li><a href="https://analytics.google.com/analytics">Google Analytics</a></li> -->
-
-<!--         <li><a href="http://huangxuan.me/">Hux</a></li>  -->
-        <!-- <li><a href="https://analytics.google.com/analytics">Google Analytics</a></li> -->
-</div>
-
-<!-- English Version -->
-<!-- <div class="en post-container">
-    <blockquote><p>Yet another iOS Developer. <br>
-    Yet another Life-long Student.</p></blockquote>
-
-    <p>Hi, I am <strong>Baiying Qiu</strong>，you can call me <strong>BY</strong>. I am an iOS software engineer and currently working in Xiamen</p>
-
-    <p>This is my personal blog, through making Github Pages and Jekyll.My GitHub  👉 <a href="http://github.com/qiubaiying">Github·BY</a>.</p>
-    
-    <p>I am a sports enthusiast, I like fitness, running and boxing.</p>
-
-    <h5>Talks</h5>
-
-    <ul>
-    <li><a href="https://github.com">GitHub</a></li>
-    <li><a href="http://jekyll.com.cn/">jekyll</a></li>
-    <li><a href="https://pages.github.com/">GitHub Pages</a></li>
-    <li><a href="https://qiubaiying.github.io">BY</a></li>
-    </ul>
-</div> -->
-
-<!-- Handle Language Change -->
-<script type="text/javascript">
-    // get nodes
-    var $zh = document.querySelector(".zh");
-    var $en = document.querySelector(".en");
-    var $select = document.querySelector("select");
-
-    // bind hashchange event
-    window.addEventListener('hashchange', _render);
-
-    // handle render
-    function _render(){
-        var _hash = window.location.hash;
-        // en
-        if(_hash == "#en"){
-            $select.selectedIndex = 1;
-            $en.style.display = "block";
-            $zh.style.display = "none";
-        // zh by default
-        }else{
-            // not trigger onChange, otherwise cause a loop call.
-            $select.selectedIndex = 0;
-            $zh.style.display = "block";
-            $en.style.display = "none";
-        }
-    }
-
-    // handle select change
-    function onLanChange(index){
-        if(index == 0){
-            window.location.hash = "#zh"
-        }else{
-            window.location.hash = "#en"
-        }
-    }
-
-    // init
-    _render();
-</script>
-
-
-
-
-
-    		</div>
-    <!-- Sidebar Container -->
-            <div class="
-                col-lg-3 col-lg-offset-0
-                col-md-3 col-md-offset-0
-                col-sm-12
-                col-xs-12
-                sidebar-container
-            ">
-                <!-- Featured Tags -->
-                
-                <section>
-                    <hr class="hidden-sm hidden-xs">
-                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
-                    <div class="tags">
-                        
-                            
-                                <a href="/tags/#tools" title="tools" rel="5">
-                                    tools
-                                </a>
-                            
-                        
-                            
-                        
-                            
-                        
-                            
-                                <a href="/tags/#log" title="log" rel="4">
-                                    log
-                                </a>
-                            
-                        
-                            
-                        
-                            
-                        
-                            
-                                <a href="/tags/#oj" title="oj" rel="7">
-                                    oj
-                                </a>
-                            
-                        
-                            
-                        
-                            
-                                <a href="/tags/#python" title="python" rel="5">
-                                    python
-                                </a>
-                            
-                        
-                            
-                        
-                            
-                        
-                            
-                                <a href="/tags/#project" title="project" rel="4">
-                                    project
-                                </a>
-                            
-                        
-                            
-                        
-                            
-                        
-                            
-                        
-                            
-                        
-                            
-                        
-                            
-                        
-                            
-                        
-                            
-                        
-                            
-                        
-                            
-                        
-                    </div>
-                </section>
-                
-
-                <!-- Short About -->
-                <section class="visible-md visible-lg">
-                    <hr><h5><a href="/about/">ABOUT ME</a></h5>
-                    <div class="short-about">
-                        
-                            <a href="/about">
-                                <img src="/img/about-BY-gentle.jpg"/>
-                            </a>
-                        
-                        
-                            <p>Goals determine what you going to be!</p>
-                        
-                        <!-- SNS Link -->
-                        <ul class="list-inline">
-                            
-                            <!-- add jianshu add target = "_blank" to <a> by BY -->
-                            
-                            
-                            
-                            <li>
-                                <a target="_blank" href="https://www.zhihu.com/people/coolinear">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa  fa-stack-1x fa-inverse">知</i>
-                                    </span>
-                                </a>
-                            </li>
-                            
-                            
-                            
-                            
-                            <li>
-                                <a target="_blank" href="https://github.com/ixneo">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            
-                            
-                        </ul>
-                        
-                            <p>✉️ jktian6@gmail.com</p>
-                        
-                    </div>
-                </section>
-                <!-- Friends Blog -->
-                
-    		</div>
-        
-	</div>
-</div>
-
-
-    <!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <ul class="list-inline text-center">
-                    
-                    <!-- add jianshu add target = "_blank" to <a> by BY -->
-                    
-                    
-
-                    <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
-                    
-                    <li>
-                        <a target="_blank" href="https://www.zhihu.com/people/coolinear">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa  fa-stack-1x fa-inverse">知</i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-
-
-                    
-                    
-                    <li>
-                        <a target="_blank" href="https://github.com/ixneo">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                </ul>
-                <p class="copyright text-muted">
-                    Copyright &copy; jk.tian-LOGGING 2019
-                    <br>
-                    Theme on <a href="https://github.com/ixneo/ixneo.github.io.git">GitHub</a> |
-                    <iframe
-                        style="margin-left: 2px; margin-bottom:-5px;"
-                        frameborder="0" scrolling="0" width="100px" height="20px"
-                        src="https://ghbtns.com/github-btn.html?user=ixneo&repo=ixneo.github.io&type=star&count=true" >
-                    </iframe>
-                </p>
-            </div>
-        </div>
-    </div>
-</footer>
-
-<!-- jQuery -->
-<script src="/js/jquery.min.js "></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="/js/bootstrap.min.js "></script>
-
-<!-- Custom Theme JavaScript -->
-<script src="/js/hux-blog.min.js "></script>
-
-<!-- Service Worker -->
-
-<script type="text/javascript">
-    if(navigator.serviceWorker){
-        // For security reasons, a service worker can only control the pages that are in the same directory level or below it. That's why we put sw.js at ROOT level.
-        navigator.serviceWorker
-            .register('/sw.js')
-            .then((registration) => {console.log('Service Worker Registered. ', registration)})
-            .catch((error) => {console.log('ServiceWorker registration failed: ', error)})
-    }
-</script>
-
-
-
-<!-- async load function -->
-<script>
-    function async(u, c) {
-      var d = document, t = 'script',
-          o = d.createElement(t),
-          s = d.getElementsByTagName(t)[0];
-      o.src = u;
-      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-      s.parentNode.insertBefore(o, s);
-    }
-</script>
-
-<!-- 
-     Because of the native support for backtick-style fenced code blocks 
-     right within the Markdown is landed in Github Pages, 
-     From V1.6, There is no need for Highlight.js, 
-     so Huxblog drops it officially.
-
-     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
-     - https://help.github.com/articles/creating-and-highlighting-code-blocks/ 
-     - https://github.com/jneen/rouge/wiki/list-of-supported-languages-and-lexers   
--->
-<!--
     <script>
-        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
-            hljs.initHighlightingOnLoad();
-        })
-    </script>
-    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
--->
-
-
-<!-- jquery.tagcloud.js -->
-<script>
-    // only load tagcloud.js in tag.html
-    if($('#tag_cloud').length !== 0){
-        async('/js/jquery.tagcloud.js',function(){
-            $.fn.tagcloud.defaults = {
-                //size: {start: 1, end: 1, unit: 'em'},
-                color: {start: '#bbbbee', end: '#0085a1'},
-            };
-            $('#tag_cloud a').tagcloud();
-        })
-    }
-</script>
-
-<!--fastClick.js -->
-<script>
-    async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function(){
-        var $nav = document.querySelector("nav");
-        if($nav) FastClick.attach($nav);
-    })
-</script>
-
-
-<!-- Google Analytics -->
-
-<script>
-    // dynamic User by Hux
-    var _gaId = 'UA-90855596-1';
-    var _gaDomain = 'auto';
-
-    // Originial
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', _gaId, _gaDomain);
-    ga('send', 'pageview');
-</script>
-
-
-
-<!-- Baidu Tongji -->
-
-<script>
-    // dynamic User by Hux
-    var _baId = 'eecae4e01c28263526649fed53c49b94';
-
-    // Originial
+    // 百度统计代码
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
-      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      hm.src = "//hm.baidu.com/hm.js?eecae4e01c28263526649fed53c49b94";
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(hm, s);
     })();
-</script>
+    </script>
 
 
 
 
-<!-- Side Catalog -->
+</head>
 
 
+  <body>
+
+    <header id="top">
+    <div class="wrapper">
+        <a href="/" class="brand">jktian-logging</a>
+        <small>majon in data-science</small>
+        <button id="headerMenu" class="menu"><i class="fa fa-bars"></i></button>
+        <nav id="headerNav">
+            <ul>
+                <li>
+                    
+                    <a href="/">
+                    
+                        <i class="fa fa-home"></i>Home
+                    </a>
+                </li>
+
+                
+                    
+                    <li>
+                        
+                        <a href="/archive/">
+                        
+                            <i class="fa fa-archive"></i>Archives
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/category/">
+                        
+                            <i class="fa fa-th-list"></i>Categories
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/tag/">
+                        
+                            <i class="fa fa-tags"></i>Tags
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/collection/">
+                        
+                            <i class="fa fa-bookmark"></i>Collections
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/demo/">
+                        
+                            <i class="fa fa-play"></i>Demo
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a class="active" href="/about/">
+                            
+                            <i class="fa fa-heart"></i>About
+                        </a>
+                    </li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        </nav>
+    </div>
+</header>
 
 
+        <div class="page clearfix" post>
+    <div class="left">
+        <h1>About</h1>
+        <hr>
+        <ul id="markdown-toc">
+  <li><a href="#关于我" id="markdown-toc-关于我">关于我</a></li>
+  <li><a href="#联系我" id="markdown-toc-联系我">联系我</a></li>
+  <li><a href="#关于本站" id="markdown-toc-关于本站">关于本站</a>    <ul>
+      <li><a href="#update-log" id="markdown-toc-update-log">Update Log</a></li>
+    </ul>
+  </li>
+  <li><a href="#友情链接" id="markdown-toc-友情链接">友情链接</a></li>
+  <li><a href="#comments" id="markdown-toc-comments">Comments</a></li>
+</ul>
 
-<!-- Image to hack wechat -->
-<img src="/img/apple-touch-icon.png" width="0" height="0" />
-<!-- Migrate from head to bottom, no longer block render and still work -->
+<h2 id="关于我">关于我</h2>
 
-</body>
+<iframe src="https://githubbadge.appspot.com/gaohaoyang?s=1" style="border: 0;height: 142px;width: 200px;overflow: hidden;" frameborder="0"></iframe>
+
+<p>就职于阿里巴巴集团天猫事业部，前端开发工程师，花名川轼。</p>
+
+<p>主要兴趣集中在前端开发，大前端的概念深入我心。将更多的业务逻辑放在前端中，这很有趣。同时，将自己构想的内容实现出来，这种感觉很愉快。</p>
+
+<p>热爱美好的事物，热爱摇滚乐，组过乐队，卖过唱。</p>
+
+<p>很喜欢崔健的歌词：现实像块石头，精神像个蛋，石头虽然坚硬，可蛋里才是生命。</p>
+
+<p>还有，学习是一个非常愉快的过程。共同加油！</p>
+
+<ul>
+  <li>2016.6.30 入职阿里巴巴天猫事业部</li>
+  <li>2016.6 毕业于西安交通大学 软件工程硕士</li>
+  <li>2015.12 获得2014-2015学年二等奖学金</li>
+  <li>2015.7-2015.8 联想服务，前端开发工程师（实习生）</li>
+  <li>2013.6 毕业于西安交通大学 理学院</li>
+  <li>2001 获得西航四校总成绩年级排名第八名</li>
+</ul>
+
+<h2 id="联系我">联系我</h2>
+
+<ul>
+  <li>GitHub：<a href="https://github.com/Gaohaoyang">Gaohaoyang</a></li>
+  <li>email：gaohaoyang126@126.com</li>
+  <li><a href="http://weibo.com/3115521wh">Weibo</a></li>
+  <li><a href="https://www.zhihu.com/people/gaohaoyang">知乎</a></li>
+  <li><a href="https://www.facebook.com/gaohaoyang.water">Facebook</a></li>
+  <li><a href="https://twitter.com/gaohaoyang126">Twitter</a></li>
+  <li><a href="https://www.douban.com/people/42525035/">豆瓣</a></li>
+  <li><a href="https://site.douban.com/haoyangaiyinyue/">豆瓣音乐人-浩阳的小站</a></li>
+</ul>
+
+<h2 id="关于本站">关于本站</h2>
+
+<p><strong>若您想使用这个 jekyll 博客主题，请访问：<a href="https://github.com/Gaohaoyang/gaohaoyang.github.io">https://github.com/Gaohaoyang/gaohaoyang.github.io</a></strong></p>
+
+<p>~欢迎使用~</p>
+
+<p>欢迎大家提一些对本站主题的建议，可以直接在下面留言或者新建一个 <a href="https://github.com/Gaohaoyang/gaohaoyang.github.io/issues">Issue</a>。</p>
+
+<h3 id="update-log">Update Log</h3>
+
+<p><em>2017.2.28</em></p>
+
+<ul>
+  <li><code class="highlighter-rouge">[^]</code> 修复目录滚动 bug <a href="https://github.com/Gaohaoyang/gaohaoyang.github.io/issues/22">#22</a>, <a href="https://github.com/Gaohaoyang/gaohaoyang.github.io/issues/48">#48</a></li>
+</ul>
+
+<p><em>2016.6.20</em></p>
+
+<ul>
+  <li><code class="highlighter-rouge">[+]</code> 在文章页中添加上一篇和下一篇文章链接。</li>
+  <li><code class="highlighter-rouge">[^]</code> 修改 font-family 顺序，避免微软雅黑将单引号解析为全角。</li>
+  <li><code class="highlighter-rouge">[^]</code> 修复标签云算法中被除数为零的 bug。<a href="https://github.com/Gaohaoyang/gaohaoyang.github.io/issues/26">#26</a>, <a href="https://github.com/Gaohaoyang/gaohaoyang.github.io/issues/28">#28</a>, <a href="https://github.com/Gaohaoyang/gaohaoyang.github.io/issues/30">#30</a></li>
+</ul>
+
+<p><em>2016.5.11 v2.0.1</em></p>
+
+<ul>
+  <li><code class="highlighter-rouge">[^]</code> 优化代码，将页面中的大段评论相关代码抽离出来，放入<code class="highlighter-rouge">comments.html</code></li>
+  <li><code class="highlighter-rouge">[+]</code> 添加百度统计和Google分析代码，在<code class="highlighter-rouge">_config.yml</code>中配置相关参数即可</li>
+  <li><code class="highlighter-rouge">[+]</code> 更新文档，添加博客主题使用方法，便于上手</li>
+  <li><code class="highlighter-rouge">[+]</code> 添加了<code class="highlighter-rouge">favicon.ico</code></li>
+  <li><code class="highlighter-rouge">[^]</code> 修复 bug，目录太长时，滚动到最底部时隐藏到footer下面。修复后长目录在滚动到底部时使用<code class="highlighter-rouge">position:absolute</code></li>
+  <li><code class="highlighter-rouge">[^]</code> 修改目录区的滚动条样式（仅针对<code class="highlighter-rouge">webkit</code>内核浏览器）</li>
+  <li><code class="highlighter-rouge">[^]</code> 修改 demo 页中 disqus 评论区 a 标签的颜色 bug，修改 blockqoute 中 p 标签的 margin</li>
+  <li><code class="highlighter-rouge">[+]</code> 添加不蒜子计数功能，在footer上显示访问量</li>
+  <li><code class="highlighter-rouge">[+]</code> 添加回到顶部功能</li>
+</ul>
+
+<p><em>2016.4.27 v2.0.0</em></p>
+
+<ul>
+  <li><code class="highlighter-rouge">[^]</code> 基于 jekyll 3.1.2 重构了所有代码</li>
+  <li><code class="highlighter-rouge">[+]</code> 主页添加了摘要，在正文中使用4个换行符来分割，可在<code class="highlighter-rouge">_config.yml</code>中修改</li>
+  <li><code class="highlighter-rouge">[+]</code> 主页添加了近期文章、分类列表和标签云</li>
+  <li><code class="highlighter-rouge">[+]</code> 主页导航区做了视觉优化，阴影效果</li>
+  <li><code class="highlighter-rouge">[+]</code> 增加了归档、标签和分类页面</li>
+  <li><code class="highlighter-rouge">[+]</code> 增加了收藏页面</li>
+  <li><code class="highlighter-rouge">[+]</code> 评论插件可以选择 disqus 或 多说，直接在<code class="highlighter-rouge">_config.yml</code>中修改</li>
+  <li><code class="highlighter-rouge">[+]</code> 适配移动端</li>
+  <li><code class="highlighter-rouge">[+]</code> 页面滚动时，文章目录固定在右侧</li>
+  <li><code class="highlighter-rouge">[+]</code> 页面内容较少时，固定 footer 在页面底部</li>
+  <li><code class="highlighter-rouge">[^]</code> 使用 GitHub 风格的代码高亮写法，即```的写法，去除<code class="highlighter-rouge">highlight.js</code>代码高亮插件的使用</li>
+  <li><code class="highlighter-rouge">[^]</code> 使用 Masonry 重写了 Demo 页中的瀑布流布局，响应式交互体验更好</li>
+  <li>
+    <p><code class="highlighter-rouge">[-]</code> 去除了 jQuery 和 BootStrap，使得加载速度更快</p>
+  </li>
+  <li>2016.3-2016.4 进行了一次大的改版和重构，详见 <a href="https://github.com/Gaohaoyang/gaohaoyang.github.io/blob/master/README.md">README</a> 和博文 <a href="http://gaohaoyang.github.io/2016/03/12/jekyll-theme-version-2.0/">对这个 jekyll 博客主题的改版和重构</a></li>
+  <li>2015.3-2015.4 完成了这个博客主题的第一版。</li>
+</ul>
+
+<h2 id="友情链接">友情链接</h2>
+
+<p><a href="http://zhangwenli.com/blog">羡辙杂俎</a> | <a href="https://www.anotherhome.net">Anotherhome</a> | <a href="http://reverland.org/">Reverland</a> | <a href="http://lizhipower.github.io/">ZhiLi</a> | <a href="http://simmer-jun.github.io/">Simmer</a> | <a href="http://awthink.net/">awthink</a> | <a href="http://aralic.github.io/">Aralic</a> | <a href="http://www.chen9.info/">zchen9</a> | <a href="http://wuhuaji.me/">wuhuaji</a> | <a href="http://www.lishengcn.cn/">lisheng</a> | <a href="http://axuebin.com/blog/">薛彬XueBin</a> | <a href="http://www.tboox.org/cn/">TBOOX</a> |  <a href="http://linglinyp.com/">Ling</a></p>
+
+<h2 id="comments">Comments</h2>
+
+
+    </div>
+    <button class="anchor"><i class="fa fa-anchor"></i></button>
+    <div class="right">
+        <div class="wrap">
+
+            <!-- Content -->
+            <div class="side content">
+                <div>
+                    Content
+                </div>
+                <ul id="content-side" class="content-ul">
+                </ul>
+            </div>
+            <!-- 其他div框放到这里 -->
+            <!-- <div class="side">bbbb</div> -->
+        </div>
+    </div>
+</div>
+<script src="/js/pageContent.js " charset="utf-8"></script>
+
+
+    <footer class="site-footer">
+
+
+    <div class="wrapper">
+
+        <p class="description">
+             来自jktian的个人专栏！ 
+        </p>
+        <p class="contact">
+            Contact me at: 
+            <a href="https://github.com/ixneo" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>  
+            <a href="mailto:932154199@qq.com" title="email"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>  
+            <a href="http://weibo.com/coolinear" title="Weibo"><i class="fa fa-weibo" aria-hidden="true"></i></a>  
+            <a href="https://www.zhihu.com/people/coolinear" title="Zhihu"><i class="iconfont icon-daoruzhihu"></i></a>      
+        </p>
+        <p>
+            本站总访问量<span id="busuanzi_value_site_pv"></span>次，本站访客数<span id="busuanzi_value_site_uv"></span>人次，本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+        </p>
+        <p class="power">
+            <span>
+                Site powered by <a href="https://jekyllrb.com/">Jekyll</a> & <a href="https://pages.github.com/">Github Pages</a>.
+            </span>
+            <span>
+                Theme designed by <a href="https://github.com/Gaohaoyang">HyG</a>.
+            </span>
+        </p>
+    </div>
+</footer>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <div class="back-to-top">
+    <a href="#top" data-scroll>
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    </a>
+</div>
+
+    <script src=" /js/main.js " charset="utf-8"></script>
+    <script src=" /js/smooth-scroll.min.js " charset="utf-8"></script>
+    <script type="text/javascript">
+      smoothScroll.init({
+        speed: 500, // Integer. How fast to complete the scroll in milliseconds
+        easing: 'easeInOutCubic', // Easing pattern to use
+        offset: 20, // Integer. How far to offset the scrolling anchor location in pixels
+      });
+    </script>
+    <!-- <script src=" /js/scroll.min.js " charset="utf-8"></script> -->
+  </body>
 
 </html>

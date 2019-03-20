@@ -1,93 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>jk.tian-LOGGING</title>
-    <description>Every failure is leading towards success.</description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 20 Mar 2019 17:13:05 +0800</pubDate>
-    <lastBuildDate>Wed, 20 Mar 2019 17:13:05 +0800</lastBuildDate>
+    <title>jktian-logging</title>
+    <description></description>
+    <link>http://localhost:4002/</link>
+    <atom:link href="http://localhost:4002/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 21 Mar 2019 00:05:09 +0800</pubDate>
+    <lastBuildDate>Thu, 21 Mar 2019 00:05:09 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
         <title>神经网络</title>
-        <description>&lt;h1 id=&quot;神经网络&quot;&gt;神经网络&lt;/h1&gt;
-&lt;p&gt;激励函数: elu/relu/linear/prelu/leaky_relu/softplus
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#神经网络&quot; id=&quot;markdown-toc-神经网络&quot;&gt;神经网络&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;神经网络&quot;&gt;神经网络&lt;/h1&gt;
+
+激励函数: elu/relu/linear/prelu/leaky_relu/softplus
+
 优化办法/梯度算法: adam/mom/msprop/sgd(随机梯度下降)
-神经网络是一种监督学习,需要大量的样本以及对应标签&lt;/p&gt;
 
-&lt;h1 id=&quot;激活函数&quot;&gt;激活函数:&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;线性:&lt;/li&gt;
-  &lt;li&gt;非线性:sigmoid、tanh、relu. sigmoid/tanh比较常见于全连接层，后者relu常见于卷积层.ReLu是神经网络中的一个激活函数，其优于tanh和sigmoid函数
-    &lt;ul&gt;
-      &lt;li&gt;sigmoid函数的功能是相当于把一个实数压缩至0到1之间。当z是非常大的正数时，g(z)会趋近于1，而z是非常小的负数时，则g(z)会趋近于0。把激活函数看作一种“分类的概率”&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+神经网络是一种监督学习,需要大量的样本以及对应标签
 
-&lt;h3 id=&quot;引入relu的原因&quot;&gt;引入ReLu的原因&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;采用sigmoid等函数，算激活函数时（指数运算），&lt;strong&gt;计算量大&lt;/strong&gt;，反向传播求误差梯度时，求导涉及除法，计算量相对大，而采用Relu激活函数，整个过程的计算量节省很多。&lt;/li&gt;
-  &lt;li&gt;对于深层网络，sigmoid函数反向传播时，很容易就会出现 &lt;strong&gt;梯度消失&lt;/strong&gt; 的情况（在sigmoid接近饱和区时，变换太缓慢，导数趋于0，这种情况会造成信息丢失），从而无法完成深层网络的训练。&lt;/li&gt;
-  &lt;li&gt;ReLu会使一部分神经元的输出为0，这样就造成了 &lt;strong&gt;网络的稀疏性&lt;/strong&gt;，并且减少了参数的相互依存关系，&lt;strong&gt;缓解了过拟合&lt;/strong&gt;问题的发生。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;cnn&quot;&gt;CNN&lt;/h1&gt;
-&lt;h3 id=&quot;一般构造&quot;&gt;一般构造&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;输入层, 卷积层,池化层,卷积层,池化层,全连接层(即普通层),全连接层,分类器层&lt;/li&gt;
-  &lt;li&gt;输入层(数据清洗/归一化/去均值)==&amp;gt;卷积层(图像窗口和滤波器做内积)==&amp;gt;(激励函数)/激励层==&amp;gt;池化层(局部区域取最大)==&amp;gt;全连接层==&amp;gt;输出层&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;几个概念&quot;&gt;几个概念&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;滤波器filter（带着一组固定权重的神经元）对局部输入数据进行卷积计算。每计算完一个数据窗口内的局部数据后，数据窗口不断平移滑动，直到计算完所有数据. 一个神经元对应一个滤波器.&lt;/li&gt;
-  &lt;li&gt;深度/步长/填充值&lt;/li&gt;
-  &lt;li&gt;卷积层：对原始图像进行特征提取。&lt;/li&gt;
-  &lt;li&gt;最大池化层：没有参数。压缩图像，体积变小。&lt;/li&gt;
-  &lt;li&gt;全连接层：把卷积提取的特征组合在一起，用组合到一起的特征再进行分类。
-    &lt;ul&gt;
-      &lt;li&gt;全连接的目的:因为传统的网络我们的输出都是分类，也就是几个类别的概率甚至就是一个数–类别号，那么全连接层就是高度提纯的特征了，方便交给最后的分类器或者回归。&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;前面的卷积和池化相当于做特征工程，后面的全连接相当于做特征加权。&lt;/p&gt;
-
-&lt;h1 id=&quot;dqn&quot;&gt;DQN&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;experience replay: 存储数据,然后随机采样,进行训练/梯度下降&lt;/li&gt;
-  &lt;li&gt;和qlearning的联系: 输入状态数据,输出所有行为的q值. 目标函数/loss是q_target, qlearning为deep-learning提供了损失函数
-缺点: 训练时间长, 通用性有限
-特点:输入维度多,输出维度少
-    &lt;h3 id=&quot;步骤&quot;&gt;步骤&lt;/h3&gt;
-    &lt;p&gt;fixed-value. dqn中有两个结构相同的网络,一个用于实时输出不同action的q_value,存的是现值(估计值), 一个用于存储target值,存下一个状态.每隔一段时间被更新一次. 两个网络的出现是qlearning公式的必然
-存储经验,
-大的框架仍然是qlearning, 只是每隔几步,神经网络学习一次&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;rnn&quot;&gt;RNN&lt;/h1&gt;
-&lt;p&gt;LSTM属于循环神经网络&lt;/p&gt;
-
-&lt;h1 id=&quot;过拟合的解决方案&quot;&gt;过拟合的解决方案&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;加大数据量&lt;/li&gt;
-  &lt;li&gt;正规化,对过大或过小的w进行惩罚&lt;/li&gt;
-  &lt;li&gt;dropout, 随机去掉一些神经元,避免对某些神经元的过度依赖&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;tensorflow框架&quot;&gt;tensorflow框架&lt;/h1&gt;
-&lt;h3 id=&quot;术语&quot;&gt;术语&lt;/h3&gt;
-&lt;p&gt;（1）batchsize：批大小。在深度学习中，一般采用SGD训练，即每次训练在训练集中取batchsize个样本训练；
-（2）iteration：1个iteration等于使用batchsize个样本训练一次；
-（3）epoch：1个epoch等于使用训练集中的全部样本训练一次；&lt;/p&gt;
 </description>
         <pubDate>Wed, 20 Mar 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2019/03/20/nn/</link>
-        <guid isPermaLink="true">http://localhost:4000/2019/03/20/nn/</guid>
+        <link>http://localhost:4002/2019/03/20/nn/</link>
+        <guid isPermaLink="true">http://localhost:4002/2019/03/20/nn/</guid>
         
         <category>神经网络</category>
         
@@ -95,228 +33,13 @@
       </item>
     
       <item>
-        <title>博客搭建</title>
-        <description>&lt;h1 id=&quot;1-常用命令&quot;&gt;1 常用命令&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;查找端口并删除进程:
-    &lt;ul&gt;
-      &lt;li&gt;$ lsof -i:&lt;post&gt;&lt;/post&gt;&lt;/li&gt;
-      &lt;li&gt;$ kill -9 &lt;pid&gt;&lt;/pid&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Wed, 20 Mar 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2019/03/20/linux-manjaro/</link>
-        <guid isPermaLink="true">http://localhost:4000/2019/03/20/linux-manjaro/</guid>
-        
-        <category>tools</category>
-        
-        <category>linux</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>python黑魔法</title>
-        <description>&lt;h1 id=&quot;with&quot;&gt;with&lt;/h1&gt;
-&lt;p&gt;with只适用于上下文管理器的调用，除了文件外，with还支持 threading、decimal等模块，当然我们也可以自己定义可以给with调用的上下文管理器
-使用类定义上下文管理器。&lt;/p&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__enter__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-            &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'f'&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__exit__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'exit'&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h1 id=&quot;time&quot;&gt;time&lt;/h1&gt;
-
-&lt;p&gt;time.sleep()模拟时间延迟/读写数据延迟/网络延迟
-计算耗时：time.time()用于记录起始和结束时间&lt;/p&gt;
-</description>
-        <pubDate>Sat, 16 Mar 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2019/03/16/python-magic/</link>
-        <guid isPermaLink="true">http://localhost:4000/2019/03/16/python-magic/</guid>
-        
-        <category>python</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>python多进程/多进程</title>
-        <description>&lt;h1 id=&quot;进程线程&quot;&gt;进程＆线程&lt;/h1&gt;
-&lt;p&gt;进程只是用来把资源集中到一起（进程只是一个资源单位，或者说资源集合），而线程才是cpu上的执行单位．进程之间的内存空间是隔离的
-多线程（即多个控制线程）的概念是，在一个进程中存在多个控制线程，多个控制线程共享该进程的地址空间
-进程之间是竞争关系，线程之间是协作关系&lt;/p&gt;
-
-&lt;p&gt;利用multiprocessing库，使用多进程，而不是多线程，充分利用多核cpu资源&lt;/p&gt;
-
-&lt;p&gt;多线程指的是，在一个进程中开启多个线程，简单的讲：如果多个任务共用一块地址空间，那么必须在一个进程内开启多个线程。详细的讲分为4点：&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;多线程共享一个进程的地址空间&lt;/li&gt;
-  &lt;li&gt;线程比进程更轻量级，线程比进程更容易创建可撤销，在许多操作系统中，创建一个线程比创建一个进程要快10-100倍，在有大量线程需要动态和快速修改时，这一特性很有用&lt;/li&gt;
-  &lt;li&gt;若多个线程都是cpu密集型的，那么并不能获得性能上的增强，但是如果存在大量的计算和大量的I/O处理，拥有多个线程允许这些活动彼此重叠运行，从而会加快程序执行的速度。&lt;/li&gt;
-  &lt;li&gt;在多cpu系统中，为了最大限度的利用多核，可以开启多个线程，比开进程开销要小的多。（这一条并不适用于python）&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;多线程用于IO密集型，如socket，爬虫，web
-多进程用于计算密集型，如金融分析&lt;/p&gt;
-
-&lt;h1 id=&quot;process&quot;&gt;Process&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;两种创建方式：
-    &lt;ol&gt;
-      &lt;li&gt;创建进程，传入参数为要执行的函数以及函数参数。一个进程就是一个Proccess类的实例&lt;/li&gt;
-      &lt;li&gt;自定义类，继承Process类，重载run函数&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;进程的deamon属性。若为true, 表示父进程结束，则子进程自动终止&lt;/li&gt;
-  &lt;li&gt;子进程的join函数。表示父进程等待子进程执行完毕&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;lock&quot;&gt;Lock&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;避免并行导致输出错位。让同一时间只有一个进程操作临时资源&lt;/li&gt;
-  &lt;li&gt;Lock类的实例。有acquire()和release()方法&lt;/li&gt;
-  &lt;li&gt;Pcocess之间不共享数据，但是共享同一套文件系统，所以访问同一文件或同一个终端，会存在访问冲突。即，可以用文件来让进程间通信/共享数据，但存在效率问题和需要自己加锁处理&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;gil&quot;&gt;GIL&lt;/h1&gt;
-&lt;p&gt;GIL本质就是一把互斥锁，既然是互斥锁，所有互斥锁的本质都一样，都是将并发运行变成串行，以此来控制同一时间内共享数据只能被一个任务所修改，进而保证数据安全。&lt;/p&gt;
-
-&lt;p&gt;可以肯定的一点是：保护不同的数据的安全，就应该加不同的锁。&lt;/p&gt;
-
-&lt;p&gt;要想了解GIL，首先确定一点：每次执行python程序，都会产生一个独立的进程。例如python test.py，python aaa.py，python bbb.py会产生3个不同的python进程&lt;/p&gt;
-
-&lt;p&gt;GIL保护的是解释器级的数据，保护用户自己的数据则需要自己加锁处理&lt;/p&gt;
-
-&lt;p&gt;有了GIL的存在，同一时刻同一进程中只有一个线程被执行&lt;/p&gt;
-
-&lt;h1 id=&quot;semaphore信号量&quot;&gt;Semaphore　信号量&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;控制临界资源的数量，保证进程之间的互斥和同步&lt;/li&gt;
-  &lt;li&gt;semaphore和mutex结合使用。mutex是互斥锁&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;ipc&quot;&gt;IPC&lt;/h1&gt;
-&lt;p&gt;进程彼此之间互相隔离，要实现进程间通信（IPC），multiprocessing模块支持两种形式：队列和管道，这两种方式都是使用消息传递的&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;生产者消费者模型利用了阻塞队列&lt;/li&gt;
-  &lt;li&gt;队列就是管道加锁实现的
-    &lt;h2 id=&quot;queue共享队列&quot;&gt;Queue　共享队列&lt;/h2&gt;
-  &lt;/li&gt;
-  &lt;li&gt;用于进程间通信，不同与普通的队列。&lt;/li&gt;
-  &lt;li&gt;有空异常和满异常
-    &lt;h2 id=&quot;pipe&quot;&gt;Pipe&lt;/h2&gt;
-  &lt;/li&gt;
-  &lt;li&gt;一端的进程发，一端的进程收&lt;/li&gt;
-  &lt;li&gt;单向或双向&lt;/li&gt;
-  &lt;li&gt;shell解释器中，一个命令就是一个进程，可以通过管道通信&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;ol&gt;
-    &lt;li&gt;加锁可以保证多个进程修改同一块数据时，同一时间只能有一个任务可以进行修改，即串行的修改，没错，速度是慢了，但牺牲了速度却保证了数据安全。
-  虽然可以用文件共享数据实现进程间通信，但问题是：
-      &lt;ul&gt;
-        &lt;li&gt;效率低（共享数据基于文件，而文件是硬盘上的数据）&lt;/li&gt;
-        &lt;li&gt;需要自己加锁处理&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/li&gt;
-    &lt;li&gt;因此我们最好找寻一种解决方案能够兼顾：1、效率高（多个进程共享一块内存的数据）2、帮我们处理好锁问题。这就是mutiprocessing模块为我们提供的基于消息的IPC通信机制：队列和管道。
-      &lt;ul&gt;
-        &lt;li&gt;队列和管道都是将数据存放于内存中&lt;/li&gt;
-        &lt;li&gt;队列又是基于（管道+锁）实现的，可以让我们从复杂的锁问题中解脱出来，
- 我们应该尽量避免使用共享数据，尽可能使用消息传递和队列，避免处理复杂的同步和锁问题，而且在进程数目增多时，往往可以获得更好的可获展性。&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/blockquote&gt;
-
-&lt;h1 id=&quot;pool进程池&quot;&gt;Pool　进程池&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;不再手动创建进程。用pool指定数量，如果没满，创建新的；如果满的，等待&lt;/li&gt;
-  &lt;li&gt;阻塞式和非阻塞式&lt;/li&gt;
-  &lt;li&gt;map函数&lt;/li&gt;
-  &lt;li&gt;进程池可以得到进程执行的结果，而普通的进程是将结果存在队列中。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;同步异步阻塞非阻塞&quot;&gt;同步/异步/阻塞/非阻塞&lt;/h1&gt;
-&lt;p&gt;同步与异步针对的是函数/任务的调用方式：同步就是当一个进程发起一个函数（任务）调用的时候，一直等到函数（任务）完成，
-而进程继续处于激活状态。而异步情况下是当一个进程发起一个函数（任务）调用的时候，不会等函数返回，而是继续往下执行当，
-函数返回的时候通过状态、通知、事件等方式通知进程任务完成。&lt;/p&gt;
-
-&lt;p&gt;阻塞与非阻塞针对的是进程或线程：阻塞是当请求不能满足的时候就将进程挂起，而非阻塞则不会阻塞当前进程&lt;/p&gt;
-
-&lt;h1 id=&quot;僵尸进程孤儿进程&quot;&gt;僵尸进程＆孤儿进程&lt;/h1&gt;
-&lt;p&gt;僵尸进程和孤儿进程：僵尸进程是没有被父进程释放资源的进程，需要父进程调用wail()或者join()（join方法中使用了wait方法）；孤儿进程是父进程已经被kill的进程，会被init进程接受然后释放资源&lt;/p&gt;
-
-&lt;h1 id=&quot;生产者消费者模型&quot;&gt;生产者消费者模型&lt;/h1&gt;
-&lt;p&gt;生产者消费者模式是通过一个容器来解决生产者的强耦合问题。生产者和消费者彼此之间不直接通讯而通过阻塞队列来进行通讯，所以生产者生产
-完数据之后不用等待消费者处理，直接扔给阻塞队列，消费者不找生产者要数据，而是直接从阻塞队列里取，阻塞队列就相当于一个缓冲区，平衡
-了生产者和消费者的处理能力。&lt;/p&gt;
-
-&lt;p&gt;通过消息队列交换数据。这样极大地减少了对使用锁定和其他同步手段的需求&lt;/p&gt;
-
-&lt;h1 id=&quot;event事件&quot;&gt;Event　事件&lt;/h1&gt;
-&lt;p&gt;Event对象（包含一个可由线程设置的信号标志），用于线程间的同步，线程等待某个事件，否则一直处于阻塞状态&lt;/p&gt;
-</description>
-        <pubDate>Sat, 16 Mar 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2019/03/16/python-multiprocess/</link>
-        <guid isPermaLink="true">http://localhost:4000/2019/03/16/python-multiprocess/</guid>
-        
-        <category>python</category>
-        
-        <category>多进程</category>
-        
-        <category>多线程</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>cpp/c在oj</title>
-        <description>&lt;h1 id=&quot;cpp&quot;&gt;cpp&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;取消科学计数法: 头文件&lt;iomanip&gt;
-  cout.setf(ios::fixed,ios::floatfield);&lt;/iomanip&gt;&lt;/li&gt;
-  &lt;li&gt;保留小数精度: cout « fixed « setpresicion(1) « num ;&lt;/li&gt;
-  &lt;li&gt;流式写法: 每次接受一个输入,立刻判断处理.一次循环.&lt;/li&gt;
-  &lt;li&gt;缓冲式写法: 批量写入数据,批量处理.多个单循环&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Fri, 15 Mar 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2019/03/15/cpp/</link>
-        <guid isPermaLink="true">http://localhost:4000/2019/03/15/cpp/</guid>
-        
-        <category>cpp</category>
-        
-        <category>oj</category>
-        
-        
-      </item>
-    
-      <item>
         <title>java模拟路由表构建</title>
         <description>&lt;h1 id=&quot;项目内容&quot;&gt;项目内容&lt;/h1&gt;
-&lt;p&gt;java模拟路由表构建
+java模拟路由表构建
 socket
-multi-thread&lt;/p&gt;
+multi-thread
 &lt;h1 id=&quot;properties文件读取&quot;&gt;properties文件读取&lt;/h1&gt;
-&lt;p&gt;Java 开发中，需要将一些易变的配置参数放置再 XML 配置文件或者 properties 配置文件中。然而 XML 配置文件需要通过 DOM 或 SAX 方式解析，而读取 properties 配置文件就比较容易&lt;/p&gt;
+Java 开发中，需要将一些易变的配置参数放置再 XML 配置文件或者 properties 配置文件中。然而 XML 配置文件需要通过 DOM 或 SAX 方式解析，而读取 properties 配置文件就比较容易
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;         Properties prop = new Properties();
          String value = null;
@@ -329,53 +52,53 @@ multi-thread&lt;/p&gt;
 		value = prop.getProperty(keyWord);
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;h1 id=&quot;文件读写操作&quot;&gt;文件读写操作&lt;/h1&gt;
-&lt;p&gt;inputstream是filestream的父类
+inputstream是filestream的父类
 BufferedInputStream和BufferedoutputStream是FilterInputStream和FilterOutputStream的子类，可以避免每次发送或者
-写数据的时候，进行实际的写操作，使用的是缓冲区；&lt;/p&gt;
+写数据的时候，进行实际的写操作，使用的是缓冲区；
 
-&lt;p&gt;不应用缓冲区的时候，每次读取一个字节，写入一个字节，由于操作磁盘比内存慢的很多，所以不应用缓冲区效率很低；
+不应用缓冲区的时候，每次读取一个字节，写入一个字节，由于操作磁盘比内存慢的很多，所以不应用缓冲区效率很低；
 应用缓冲区，可以一次读取多个字节，先不写入磁盘，而是放入内存之中，到了缓冲区大小的时候，在写入磁盘，减少了对磁盘的操作，效率高；
 应用缓冲流，在结束的时候，调用flush和close方法，将缓冲区的数据都清理出来，，写入磁盘，否则可能无数据；
 InputStreamReader类是从字节流到字符流的桥接器
 InputStreamReader(InputStream in, String charsetName)
 byteArrayInputStream(byte buf[])
-objectStream&lt;/p&gt;
+objectStream
 
 &lt;h1 id=&quot;java语言的特点&quot;&gt;java语言的特点&lt;/h1&gt;
-&lt;p&gt;安全,虚拟机,规范/一板一眼&lt;/p&gt;
+安全,虚拟机,规范/一板一眼
 &lt;h1 id=&quot;hashmap--hashset&quot;&gt;hashmap &amp;amp; hashset&lt;/h1&gt;
-&lt;p&gt;HashSet实现了Set接口，它不允许集合中出现重复元素。当我们提到HashSet时，第一件事就是在将对象存储在HashSet之前，要确保重写hashCode（）方法和equals（）方法，这样才能比较对象的值是否相等.HashSet使用成员对象来计算hashcode值对于两个对象来说hashcode可能相同，
-所以equals()方法用来判断对象的相等性，如果两个对象不同的话，那么返回false&lt;/p&gt;
+HashSet实现了Set接口，它不允许集合中出现重复元素。当我们提到HashSet时，第一件事就是在将对象存储在HashSet之前，要确保重写hashCode（）方法和equals（）方法，这样才能比较对象的值是否相等.HashSet使用成员对象来计算hashcode值对于两个对象来说hashcode可能相同，
+所以equals()方法用来判断对象的相等性，如果两个对象不同的话，那么返回false
 
-&lt;p&gt;HashMap实现了Map接口，Map接口对键值对进行映射。Map中不允许出现重复的键（Key）。Map接口有两个基本的实现
+HashMap实现了Map接口，Map接口对键值对进行映射。Map中不允许出现重复的键（Key）。Map接口有两个基本的实现
 TreeMap和HashMap。TreeMap保存了对象的排列次序，而HashMap不能。HashMap可以有空的键值对（Key（null）-Value（null））
 HashMap是非线程安全的（非Synchronize），要想实现线程安全，那么需要调用collections类的静态方法synchronizeMap（）实现。
-HashMap使用键（Key）计算Hashcode&lt;/p&gt;
+HashMap使用键（Key）计算Hashcode
 &lt;h1 id=&quot;实现serialable接口&quot;&gt;实现serialable接口&lt;/h1&gt;
-&lt;p&gt;实现serializabel接口的作用是就是可以把对象存到字节流，然后可以恢复，所以你想如果你的对象没实现序列化怎么才能进行持久化和网络传输呢，要持久化和网络传输就得转为字节流，所以在分布式应用中及设计数据持久化的场景中，你就得实现序列化&lt;/p&gt;
+实现serializabel接口的作用是就是可以把对象存到字节流，然后可以恢复，所以你想如果你的对象没实现序列化怎么才能进行持久化和网络传输呢，要持久化和网络传输就得转为字节流，所以在分布式应用中及设计数据持久化的场景中，你就得实现序列化
 &lt;h1 id=&quot;--equals--hashcode&quot;&gt;== &amp;amp; equals() &amp;amp; hashcode()&lt;/h1&gt;
-&lt;p&gt;==直接比较jvm中的内存地址
+==直接比较jvm中的内存地址
 equals()默认调用==, 可以重载,如string中首先比较内存地址,其次比较字符本身
-hashcode()返回32位的jvm内存地址&lt;/p&gt;
+hashcode()返回32位的jvm内存地址
 
-&lt;p&gt;(1)绑定。当equals方法被重写时，通常有必要重写 hashCode 方法，以维护 hashCode 方法的常规协定，该协定声明相等对象必须具有相等的哈希码。&lt;/p&gt;
+(1)绑定。当equals方法被重写时，通常有必要重写 hashCode 方法，以维护 hashCode 方法的常规协定，该协定声明相等对象必须具有相等的哈希码。
 
-&lt;p&gt;(2)绑定原因。Hashtable实现一个哈希表，为了成功地在哈希表中存储和检索对象，用作键的对象必须实现 hashCode 方法和 equals 方法。同(1)，必须保证equals相等的对象，hashCode 也相等。因为哈希表通过hashCode检索对象。&lt;/p&gt;
+(2)绑定原因。Hashtable实现一个哈希表，为了成功地在哈希表中存储和检索对象，用作键的对象必须实现 hashCode 方法和 equals 方法。同(1)，必须保证equals相等的对象，hashCode 也相等。因为哈希表通过hashCode检索对象。
 
-&lt;p&gt;(3)默认。&lt;/p&gt;
+(3)默认。
 
-&lt;p&gt;　　==默认比较对象在JVM中的地址。&lt;/p&gt;
+　　==默认比较对象在JVM中的地址。
 
-&lt;p&gt;　　hashCode 默认返回对象在JVM中的存储地址。&lt;/p&gt;
+　　hashCode 默认返回对象在JVM中的存储地址。
 
-&lt;p&gt;　　equal比较对象，默认也是比较对象在JVM中的地址，同==
-　　&lt;/p&gt;
+　　equal比较对象，默认也是比较对象在JVM中的地址，同==
+　　
 
 &lt;h1 id=&quot;包装类&quot;&gt;包装类&lt;/h1&gt;
 </description>
-        <pubDate>Fri, 15 Mar 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2019/03/15/java-socket/</link>
-        <guid isPermaLink="true">http://localhost:4000/2019/03/15/java-socket/</guid>
+        <pubDate>Wed, 20 Mar 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4002/2019/03/20/java-socket/</link>
+        <guid isPermaLink="true">http://localhost:4002/2019/03/20/java-socket/</guid>
         
         <category>java</category>
         
@@ -387,129 +110,223 @@ hashcode()返回32位的jvm内存地址&lt;/p&gt;
       </item>
     
       <item>
-        <title>关于降低员工离职率的策略研究</title>
-        <description>&lt;h1 id=&quot;降低员工离职率的方案&quot;&gt;降低员工离职率的方案&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;多层感知机预测员工离职率&lt;/li&gt;
-  &lt;li&gt;定义元动作和元成本&lt;/li&gt;
-  &lt;li&gt;运用强化学习方法, Q-learning/SARSA算法进行最优策略的输出&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;论文问题&quot;&gt;论文问题&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;写有研究型论文深度不够，应该写应用型论文&lt;/li&gt;
-  &lt;li&gt;语言有问题，不像学术论文，偏白话&lt;/li&gt;
-  &lt;li&gt;风格不行，没有按照论文的基本套路来，建议先读两篇应用型论文，然后严格按照套路来（可以在百度学术－－＞计算机工程与应用上选几篇应用型的参考）&lt;/li&gt;
-  &lt;li&gt;摘要过少，应该能从摘要里读取主要内容&lt;/li&gt;
-  &lt;li&gt;工作量过少，还有最后实验结果不能只有一组，要几组结果互相对比，显示出优越性&lt;/li&gt;
-  &lt;li&gt;编辑者会根据自己的期刊对论文的格式进行修改，需要word文件．图片／表格／公式／字号／标题&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;几种方法的比较&quot;&gt;几种方法的比较&lt;/h1&gt;
-&lt;h2 id=&quot;q-learning--sarsa&quot;&gt;Q-learning &amp;amp; SARSA&lt;/h2&gt;
-&lt;p&gt;Q-learning算法是off-policy的, 较为大胆,在本状态下对下一状态下采取的动作估计,并不一定代表真实的动作
-Sarsa算法是on-policy的&lt;/p&gt;
-&lt;h2 id=&quot;本方案和dqn&quot;&gt;本方案和DQN&lt;/h2&gt;
+        <title>用户评论情感极性分析（三分类）</title>
+        <description>&lt;h1 id=&quot;数据总览--预处理&quot;&gt;数据总览 &amp;amp; 预处理&lt;/h1&gt;
 &lt;ul&gt;
-  &lt;li&gt;本方案是先利用神经网络进行员工离职率的计算,之后仍然利用Q-table进行更新,Q-table中的状态为员工的离职率,以0.01为间隔,从0.60到0.80, 设置0.80为成功标志&lt;/li&gt;
-  &lt;li&gt;DQN是针对Q-table的状态数过多而提出的方案,利用两个神经网络, 输入状态,即特征向量,将Q-target作为标签, 两大特点:fixed-value和double-nn. 但是训练时间长&lt;/li&gt;
+  &lt;li&gt;
+    训练数据
+
+    &lt;table&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;th style=&quot;text-align: center&quot;&gt;数据类型&lt;/th&gt;
+          &lt;th style=&quot;text-align: center&quot;&gt;列号范围&lt;/th&gt;
+          &lt;th style=&quot;text-align: center&quot;&gt;行数&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;食品餐饮&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;（1，13655）&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;13655&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;旅游住宿&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;（13656，32590）&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;18935&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;金融服务&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;（32591，46934）&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;14344&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;医疗服务&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;（46935，67246）&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;20312&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;物流快递&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;（67247,82025）&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;14779&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    测试数据
+
+    &lt;table&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;th style=&quot;text-align: center&quot;&gt;数据类型&lt;/th&gt;
+          &lt;th style=&quot;text-align: center&quot;&gt;列号范围&lt;/th&gt;
+          &lt;th style=&quot;text-align: center&quot;&gt;行数&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;食品餐饮&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;（1，5853）&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;5853&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;旅游住宿&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;（5854，13968）&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;8115&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;金融服务&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;（13969，20116）&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;6148&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;医疗服务&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;（20117，28822）&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;8706&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;物流快递&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;（28823,35157）&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;6335&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    评判标准
+  综合准确率和召回率，得到得分
+    &lt;h1 id=&quot;模型搭建--优化--得分结果&quot;&gt;模型搭建 &amp;amp; 优化 &amp;amp; 得分结果&lt;/h1&gt;
+    &lt;ol&gt;
+      &lt;li&gt;数据分类（预处理）&lt;/li&gt;
+    &lt;/ol&gt;
+
+    &lt;table&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;th style=&quot;text-align: center&quot;&gt;分类与否&lt;/th&gt;
+          &lt;th style=&quot;text-align: center&quot;&gt;得分&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;有分类&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;0.8703&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;无分类&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;0.64&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;jieba分词
+    &lt;ul&gt;
+      &lt;li&gt;三种分词模式：精确模式、全模式、搜索引擎模式。选择精确模式&lt;/li&gt;
+      &lt;li&gt;默认启用HMM模型&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    停用词表的选择
+
+    &lt;ul&gt;
+      &lt;li&gt;中科院计算机所的停用词表&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    word2vec：字符串词向量 ==&amp;gt; 数值化词向量
+
+    &lt;table&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;th style=&quot;text-align: center&quot;&gt;word2vec的size（词向量的维度）&lt;/th&gt;
+          &lt;th style=&quot;text-align: center&quot;&gt;得分&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;100&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;0.8703&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;200&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;0.8747&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;300&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;0.8768&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;400&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;0.8724&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+  &lt;li&gt;SVM（支持向量机）分类器，生成分类器模型
+    &lt;ol&gt;
+      &lt;li&gt;核函数的选择
+        &lt;ul&gt;
+          &lt;li&gt;rbf，gaussian为未知情况的选择&lt;/li&gt;
+          &lt;li&gt;线性、多项式为大概有图景时的选择&lt;/li&gt;
+          &lt;li&gt;softmax用于后续神经网络的搭建&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        惩罚系数
+
+        | 惩罚系数 | 得分|
+ |:—:|:—:|
+ | 0.1 | 0.8636 |
+ |1|0.8780|
+ |100|0.8815|
+ |500|0.8851|
+ |1000|待测|
+        &lt;blockquote&gt;
+          &lt;ul&gt;
+            &lt;li&gt;以上为word2vec的size为300时的具体情况：&lt;/li&gt;
+            &lt;li&gt;惩罚系数: 越高越好，越费时，过拟合的风险越大&lt;/li&gt;
+            &lt;li&gt;用时：5个类别，每个类别两个svm模型，共十个模型。c=500时，每个模型10-20min&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/blockquote&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;查找并补全缺失项&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;通过现实情况，多种方案间的对比，进行人工加工&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;心得体会&quot;&gt;心得体会&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;数据分析的根本目的是描述或者预测，具体的应用方法和分析手段并不重要，重要的是那个结果，即输出。中间可以掺杂多种分析手段，可以混合机器和人工&lt;/li&gt;
+  &lt;li&gt;例如，可以混合使用wps查看excel和用python批量处理数据&lt;/li&gt;
+  &lt;li&gt;遍的理念，用于控制复杂度。根据不同的目的，对全体数据进行多遍处理，类似编译器的制作。
+    &lt;ol&gt;
+      &lt;li&gt;第一遍进行分词，第二遍进行词法分析，第三遍语义处理&lt;/li&gt;
+      &lt;li&gt;本次查找并补全缺失项中。第一遍查找缺失的行，第二遍进行补充
+        &lt;blockquote&gt;
+          要有针对性，想要一次性地做好全部事情的想法，是不现实的。分步骤来
+        &lt;/blockquote&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
 </description>
-        <pubDate>Fri, 15 Mar 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2019/03/15/suoni-projecct/</link>
-        <guid isPermaLink="true">http://localhost:4000/2019/03/15/suoni-projecct/</guid>
+        <pubDate>Wed, 20 Mar 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4002/2019/03/20/senti-contest/</link>
+        <guid isPermaLink="true">http://localhost:4002/2019/03/20/senti-contest/</guid>
         
-        <category>paper</category>
+        <category>log</category>
+        
+        <category>nlp</category>
         
         <category>project</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>web前端——开发案例第一次上机</title>
-        <description>&lt;h1 id=&quot;软件开发案例第一次上机&quot;&gt;软件开发案例——第一次上机&lt;/h1&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;收获主要是页面布局方面&lt;/p&gt;
-  &lt;ul&gt;
-    &lt;li&gt;综合使用浏览器开发者选项，查看元素以及父子链接关系&lt;/li&gt;
-    &lt;li&gt;查看官方文档&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;表格布局&quot;&gt;表格布局&lt;/h2&gt;
-&lt;p&gt;task: 注册页面的制作
-直接表格布局table==&amp;gt;tr==&amp;gt;td, form表单是其中一个tr.td&lt;/p&gt;
-&lt;h2 id=&quot;div布局&quot;&gt;div布局&lt;/h2&gt;
-&lt;p&gt;task: 北京银行的首页制作
-div嵌套着table/div/p.span. 只需要限制每个div的宽度和高度即可，偶尔需要float&lt;/p&gt;
-</description>
-        <pubDate>Fri, 15 Mar 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2019/03/15/webfront/</link>
-        <guid isPermaLink="true">http://localhost:4000/2019/03/15/webfront/</guid>
-        
-        <category>web</category>
-        
-        <category>campus</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Q-learning / SARSA</title>
-        <description>&lt;h1 id=&quot;q-learning&quot;&gt;Q-learning&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;初始化q-table. row为状态，column为动作．选择动作时，通过找值最大的单元格的列坐标&lt;/li&gt;
-  &lt;li&gt;更新显示，通过判断是否终止，选择如何显示. time.sleep()&lt;/li&gt;
-  &lt;li&gt;选取动作：根据epslon&amp;gt;0.9, 随机选取或挑选q-table中最大的动作&lt;/li&gt;
-  &lt;li&gt;得到下一个状态以及由s_i==&amp;gt;s_{i+1}奖励值．if判断，应该可以从r表中得到
-    &lt;blockquote&gt;
-      &lt;p&gt;奖励表是先验的，是人为设置的．q-table是动态更新的
-奖励是到达某一个状态的值，由到达的状态决定．q-table是联系自身状态得到的综合值&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;q-learning--sarsa--sarsalambda&quot;&gt;Q-learning / SARSA / SARSA(lambda)&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;同：
-  两者都会根据当前状态，根据epslon和q-table选取动作. 要考虑当前的利益r+下一步的利益gamma*max(q(s_next,a))+自身的状态＋学习率&lt;/li&gt;
-  &lt;li&gt;异：
-    &lt;ul&gt;
-      &lt;li&gt;之后．qlearning会根据q-table表，选取下一状态中值最大的那一个（max），去更新q-table的当前状态项,off-policy. 进入下一状态后，执行的动作仍然用epslon-greedy；　&lt;/li&gt;
-      &lt;li&gt;sarsa是说到做到，进入下一个状态后，动作不再使用epslon，直接选用上一步确定好的，但是在为此状态选取下一状态时，要用epslon. 相当于，sarsa把q-learning的epslon换为了确定，将其的max换为epslon
-q-learning比较冒险拿宝藏最重要．sarsa实际，保命最重要&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Sarsa(lambda) 　表示走lambda步之后，进行一次更新．用回合更新代替单步更新
- dqn: q-learning+神经网络: 解决state和action表格太大的问题&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;任何一个求最值的模型，都会引入随机值以避免局部最优解，如模拟退火算法或者此处的epslon-greedy策略&lt;/p&gt;
-
-&lt;h1 id=&quot;reward--vlaue&quot;&gt;reward / vlaue&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;reward: 可以根据表中某个状态为定值，也可以根据现场的局势判断得到reward, 但一定是短期的
-    &lt;ul&gt;
-      &lt;li&gt;在某个状态下，进行某个动作，会得到多少reward．可以动态得到&lt;/li&gt;
-      &lt;li&gt;Reward 定义了强化学习问题中的目标。在每个时间步，环境向agent发送一个称为reward的单个数字。Agent的唯一目标是最大化其长期收到的total reward。&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;value: 长期的，基于reward. 有利于最终reward最大化. 综合考虑当前状态和未来状态&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;如果说reward表明的是在短时间内什么是好的，那么value function则指出从长远来看什么是好的&lt;/p&gt;
-
-&lt;p&gt;reward基本上由环境直接给出，但value必须根据agent在其整个生命周期中所做的观察序列来估计和重新估计&lt;/p&gt;
-
-&lt;p&gt;参考链接: &lt;a href=&quot;https://morvanzhou.github.io/tutorials/machine-learning/reinforcement-learning/2-2-A-q-learning/&quot;&gt;莫烦python&lt;/a&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 15 Mar 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2019/03/15/sarsa/</link>
-        <guid isPermaLink="true">http://localhost:4000/2019/03/15/sarsa/</guid>
-        
-        <category>强化学习</category>
         
         
       </item>
@@ -519,18 +336,18 @@ q-learning比较冒险拿宝藏最重要．sarsa实际，保命最重要&lt;/li&
         <description>&lt;h1 id=&quot;1-todo-done&quot;&gt;1 TODO	(DONE)&lt;/h1&gt;
 &lt;ol&gt;
   &lt;li&gt;
-    &lt;p&gt;重构代码，易扩展性&lt;/p&gt;
+    重构代码，易扩展性
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;加入数据库存储&lt;/p&gt;
+    加入数据库存储
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;爬虫优化：尝试scrapy框架&lt;/p&gt;
+    爬虫优化：尝试scrapy框架
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;推荐算法设计&lt;/p&gt;
+    推荐算法设计
 
-    &lt;p&gt;&lt;a href=&quot;https://github.com/ixNeo/ChatRobot&quot;&gt;项目地址&lt;/a&gt;&lt;/p&gt;
+    &lt;a href=&quot;https://github.com/ixNeo/ChatRobot&quot;&gt;项目地址&lt;/a&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 
@@ -542,7 +359,7 @@ q-learning比较冒险拿宝藏最重要．sarsa实际，保命最重要&lt;/li&
   &lt;li&gt;linux中的python无法正常显示中文。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;​	$ cp *.ttf /usr/share/fonts/TTF&lt;/p&gt;
+​	$ cp *.ttf /usr/share/fonts/TTF
 
 &lt;table&gt;
   &lt;tbody&gt;
@@ -553,32 +370,32 @@ q-learning比较冒险拿宝藏最重要．sarsa实际，保命最重要&lt;/li&
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;p&gt;​	$ fc-cache -fv	# 刷新，f表示force, v表示view&lt;/p&gt;
+​	$ fc-cache -fv	# 刷新，f表示force, v表示view
 
 &lt;ul&gt;
   &lt;li&gt;查看python安装路径&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;​	python交互环境下：&lt;/p&gt;
+​	python交互环境下：
 
-&lt;p&gt;​		$ import sys&lt;/p&gt;
+​		$ import sys
 
-&lt;p&gt;​		$ sys.path&lt;/p&gt;
+​		$ sys.path
 
-&lt;p&gt;​	catfish搜索
- 	从anaconda入手搜索&lt;/p&gt;
+​	catfish搜索
+ 	从anaconda入手搜索
 
-&lt;p&gt;​	一步步$ ls	$ subl3 查看源码文件&lt;/p&gt;
+​	一步步$ ls	$ subl3 查看源码文件
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;包可能存在的目录&lt;/p&gt;
+    包可能存在的目录
 
-    &lt;p&gt;/opt/anaconda/lib&lt;/p&gt;
+    /opt/anaconda/lib
 
-    &lt;p&gt;~/.conda/envs/python36/lib/python3.6/site-packages&lt;/p&gt;
+    ~/.conda/envs/python36/lib/python3.6/site-packages
 
-    &lt;p&gt;/home/jktian/.conda/envs/python36/lib/python3.6/tkinter/font.py&lt;/p&gt;
+    /home/jktian/.conda/envs/python36/lib/python3.6/tkinter/font.py
   &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -603,12 +420,12 @@ q-learning比较冒险拿宝藏最重要．sarsa实际，保命最重要&lt;/li&
 &lt;/ol&gt;
 
 &lt;h4 id=&quot;扩展&quot;&gt;扩展&lt;/h4&gt;
-&lt;p&gt;类比tkinter：css中引入外部字体，使用任意外部字体文件。通过@font-face. 字体文件后缀.TTF/EOT/SVG&lt;/p&gt;
+类比tkinter：css中引入外部字体，使用任意外部字体文件。通过@font-face. 字体文件后缀.TTF/EOT/SVG
 &lt;blockquote&gt;
-  &lt;p&gt;css支持引入外部字体文件，但tkinter函数库不支持
+  css支持引入外部字体文件，但tkinter函数库不支持
 在“现代”Linux上 ，有2级字体支持：
 第一种是  “native”X支持，
-第二个是由图形工具包提供的使用（Qt与KDE，但我认为OpenOffice和FireFox使用Gtk）。  	不幸的是，tk  - 因此Tkinter  - 只看到X处的字体水平，而不是Qt / Gtk水平。&lt;/p&gt;
+第二个是由图形工具包提供的使用（Qt与KDE，但我认为OpenOffice和FireFox使用Gtk）。  	不幸的是，tk  - 因此Tkinter  - 只看到X处的字体水平，而不是Qt / Gtk水平。
 &lt;/blockquote&gt;
 
 &lt;h2 id=&quot;22-几个批量操作自动化&quot;&gt;2.2 几个批量操作（自动化）&lt;/h2&gt;
@@ -616,14 +433,14 @@ q-learning比较冒险拿宝藏最重要．sarsa实际，保命最重要&lt;/li&
   &lt;li&gt;批量创建函数（无问题，每一个函数确实是不同的）&lt;/li&gt;
   &lt;li&gt;批量将按钮和函数关联（由于执行顺序问题，所有按钮都关联到最后一个函数，因为改变了self, 动态类型就是这样）
     &lt;blockquote&gt;
-      &lt;p&gt;解决方案：
+      解决方案：
 	- 不要在一个消息类中创建所有联系人。要创建一个联系人类，每个联系人作为一个实例。
-	- 本质：类和对象的关系，选择使用要谨慎&lt;/p&gt;
+	- 本质：类和对象的关系，选择使用要谨慎
     &lt;/blockquote&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;抽象出联系人类，继承类有Bolt,People,Translator,MovieRecomm类
- 问题：按钮的转换有问题，由于联系人类是Msg类的成员变量，无法访问并修改Msg类的其他成员变量，所以按钮的对应函数无法正常工作，即无法完成切换联系人功能&lt;/p&gt;
+    抽象出联系人类，继承类有Bolt,People,Translator,MovieRecomm类
+ 问题：按钮的转换有问题，由于联系人类是Msg类的成员变量，无法访问并修改Msg类的其他成员变量，所以按钮的对应函数无法正常工作，即无法完成切换联系人功能
 
     &lt;ul&gt;
       &lt;li&gt;矛盾点：想要批量操作，逻辑清晰。但作用域存在问题&lt;/li&gt;
@@ -698,8 +515,8 @@ q-learning比较冒险拿宝藏最重要．sarsa实际，保命最重要&lt;/li&
 &lt;/table&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;问题：真实的聊天记录不是问答式的，不是单向的，在整个上下文中，问答角色的确立是模糊的。所以很难根据输入确定输出。直接按照名字和话语列表为一行，然后按照周围的其他角色当做回复
-  |姓名|输入|输入分词|&lt;/p&gt;
+  问题：真实的聊天记录不是问答式的，不是单向的，在整个上下文中，问答角色的确立是模糊的。所以很难根据输入确定输出。直接按照名字和话语列表为一行，然后按照周围的其他角色当做回复
+  |姓名|输入|输入分词|
 &lt;/blockquote&gt;
 
 &lt;h4 id=&quot;summary-2&quot;&gt;summary&lt;/h4&gt;
@@ -710,7 +527,7 @@ q-learning比较冒险拿宝藏最重要．sarsa实际，保命最重要&lt;/li&
 &lt;/ol&gt;
 
 &lt;h4 id=&quot;后续研究方向&quot;&gt;后续研究方向&lt;/h4&gt;
-&lt;p&gt;一个句子的构成是多种多样的，可以由不同类型以及不同顺序的词性构成，但又存在顺序规律，不是完全随机的。需要在几个固定模式下进行随机，效果会更好。未考虑相邻词的联系&lt;/p&gt;
+一个句子的构成是多种多样的，可以由不同类型以及不同顺序的词性构成，但又存在顺序规律，不是完全随机的。需要在几个固定模式下进行随机，效果会更好。未考虑相邻词的联系
 
 &lt;h3 id=&quot;数据库选择--基本使用&quot;&gt;数据库选择 &amp;amp; 基本使用&lt;/h3&gt;
 &lt;ul&gt;
@@ -720,14 +537,14 @@ q-learning比较冒险拿宝藏最重要．sarsa实际，保命最重要&lt;/li&
       &lt;li&gt;登录&lt;/li&gt;
       &lt;li&gt;选择数据库
         &lt;blockquote&gt;
-          &lt;p&gt;$ show databases
-$ use database_name&lt;/p&gt;
+          $ show databases
+$ use database_name
         &lt;/blockquote&gt;
       &lt;/li&gt;
       &lt;li&gt;选择查看表
         &lt;blockquote&gt;
-          &lt;p&gt;desc table_name 查看表结构
-在Python中操作数据库时，要先导入数据库对应的驱动，然后，通过Connection对象和Cursor对象操作数据。数据以.db形式存储，读取文件用建立连接的方式。最后conn要提交，关闭&lt;/p&gt;
+          desc table_name 查看表结构
+在Python中操作数据库时，要先导入数据库对应的驱动，然后，通过Connection对象和Cursor对象操作数据。数据以.db形式存储，读取文件用建立连接的方式。最后conn要提交，关闭
         &lt;/blockquote&gt;
       &lt;/li&gt;
     &lt;/ol&gt;
@@ -735,32 +552,333 @@ $ use database_name&lt;/p&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;python字符串和列表的转换&quot;&gt;python字符串和列表的转换&lt;/h3&gt;
-&lt;p&gt;数据库中，需要保存分词结果，是一个内部为元组的列表，只能先转换为字符串，然后取出后转换为列表，普通的分隔符无效，需要设置特殊的分隔符。&lt;/p&gt;
+数据库中，需要保存分词结果，是一个内部为元组的列表，只能先转换为字符串，然后取出后转换为列表，普通的分隔符无效，需要设置特殊的分隔符。
 &lt;ul&gt;
   &lt;li&gt;字符串==》list:   str.split(‘’)  , 直接用list()是按单个字符划分&lt;/li&gt;
   &lt;li&gt;列表==》字符串：	““.join(list), 直接用str()会把[]包含进去&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h1 id=&quot;3-最终改动&quot;&gt;3 最终改动&lt;/h1&gt;
-&lt;h3 id=&quot;消息记录的存储&quot;&gt;消息记录的存储&lt;/h3&gt;
-&lt;p&gt;在class_msg.py中的sendmsg函数中，即和发送按钮关联的命令函数中，添加数据库的插入操作，紧跟两个窗口显示消息的操作之后。&lt;/p&gt;
-&lt;h3 id=&quot;智能回复&quot;&gt;智能回复&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;之前是随机数输出，文件操作&lt;/li&gt;
-  &lt;li&gt;现在把文件中的内容存储在数据库中。以xiaochen_and_me数据表为例，改动class_conn_people.py中的auto_reply()函数，对fin_msg进行赋值操作
-    &lt;blockquote&gt;
-      &lt;p&gt;此处并未修改，仍然为随机数输出，但在database_about/intell_reply.py中，做了详细的说明，代码已跑通，有三种算法模式供选择&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
 </description>
-        <pubDate>Sun, 10 Mar 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2019/03/10/chatbolt/</link>
-        <guid isPermaLink="true">http://localhost:4000/2019/03/10/chatbolt/</guid>
+        <pubDate>Wed, 20 Mar 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4002/2019/03/20/chatbolt/</link>
+        <guid isPermaLink="true">http://localhost:4002/2019/03/20/chatbolt/</guid>
         
         <category>log</category>
         
         <category>project</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>博客搭建</title>
+        <description>&lt;h1 id=&quot;1-常用命令&quot;&gt;1 常用命令&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;查找端口并删除进程:
+    &lt;ul&gt;
+      &lt;li&gt;$ lsof -i:&lt;post&gt;&lt;/post&gt;&lt;/li&gt;
+      &lt;li&gt;$ kill -9 &lt;pid&gt;&lt;/pid&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Wed, 20 Mar 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4002/2019/03/20/linux-manjaro/</link>
+        <guid isPermaLink="true">http://localhost:4002/2019/03/20/linux-manjaro/</guid>
+        
+        <category>tools</category>
+        
+        <category>linux</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>数据库常见操作</title>
+        <description>&lt;h1 id=&quot;数据库&quot;&gt;数据库&lt;/h1&gt;
+oracle数据库有默认的几张表,可以用于练习sql语句的书写
+
+数据类型;
+	char, varchar, date, number
+创建表,  对每个列进行约束:
+	默认值,主键,外键,非空
+增加:
+	insert into &amp;lt;table&amp;gt; values (col1,col2,…)
+删除:
+	drop table &lt;table_name&gt; # 直接删除表的定义,删除结构
+	drop database &lt;database_name&gt;
+	delete * from &lt;table_name&gt; # 删除数据
+改:	
+	alter table student drop age # 更改结构
+	update &lt;table_name&gt; set &lt;col_name&gt;=&lt;value&gt; where ... # 更改数据,中间可以有select语句
+查:
+	select dept_name dname, job
+	from table1, table2
+	where deptno in (select deptno from dept)
+	group by deptno
+	having avg(sal)&amp;gt;2000
+	order by desc;&lt;/value&gt;&lt;/col_name&gt;&lt;/table_name&gt;&lt;/table_name&gt;&lt;/database_name&gt;&lt;/table_name&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;为表起别名,
+自查询,多表联合查询,分组查询,嵌套查询(select可以出现在任何地方)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Wed, 20 Mar 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4002/2019/03/20/database/</link>
+        <guid isPermaLink="true">http://localhost:4002/2019/03/20/database/</guid>
+        
+        <category>database</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Q-learning / SARSA</title>
+        <description>&lt;h1 id=&quot;q-learning&quot;&gt;Q-learning&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;初始化q-table. row为状态，column为动作．选择动作时，通过找值最大的单元格的列坐标&lt;/li&gt;
+  &lt;li&gt;更新显示，通过判断是否终止，选择如何显示. time.sleep()&lt;/li&gt;
+  &lt;li&gt;选取动作：根据epslon&amp;gt;0.9, 随机选取或挑选q-table中最大的动作&lt;/li&gt;
+  &lt;li&gt;得到下一个状态以及由s_i==&amp;gt;s_{i+1}奖励值．if判断，应该可以从r表中得到
+    &lt;blockquote&gt;
+      奖励表是先验的，是人为设置的．q-table是动态更新的
+奖励是到达某一个状态的值，由到达的状态决定．q-table是联系自身状态得到的综合值
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;q-learning--sarsa--sarsalambda&quot;&gt;Q-learning / SARSA / SARSA(lambda)&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;同：
+  两者都会根据当前状态，根据epslon和q-table选取动作. 要考虑当前的利益r+下一步的利益gamma*max(q(s_next,a))+自身的状态＋学习率&lt;/li&gt;
+  &lt;li&gt;异：
+    &lt;ul&gt;
+      &lt;li&gt;之后．qlearning会根据q-table表，选取下一状态中值最大的那一个（max），去更新q-table的当前状态项,off-policy. 进入下一状态后，执行的动作仍然用epslon-greedy；　&lt;/li&gt;
+      &lt;li&gt;sarsa是说到做到，进入下一个状态后，动作不再使用epslon，直接选用上一步确定好的，但是在为此状态选取下一状态时，要用epslon. 相当于，sarsa把q-learning的epslon换为了确定，将其的max换为epslon
+q-learning比较冒险拿宝藏最重要．sarsa实际，保命最重要&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Sarsa(lambda) 　表示走lambda步之后，进行一次更新．用回合更新代替单步更新
+ dqn: q-learning+神经网络: 解决state和action表格太大的问题&lt;/li&gt;
+&lt;/ul&gt;
+
+任何一个求最值的模型，都会引入随机值以避免局部最优解，如模拟退火算法或者此处的epslon-greedy策略
+
+&lt;h1 id=&quot;reward--vlaue&quot;&gt;reward / vlaue&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;reward: 可以根据表中某个状态为定值，也可以根据现场的局势判断得到reward, 但一定是短期的
+    &lt;ul&gt;
+      &lt;li&gt;在某个状态下，进行某个动作，会得到多少reward．可以动态得到&lt;/li&gt;
+      &lt;li&gt;Reward 定义了强化学习问题中的目标。在每个时间步，环境向agent发送一个称为reward的单个数字。Agent的唯一目标是最大化其长期收到的total reward。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;value: 长期的，基于reward. 有利于最终reward最大化. 综合考虑当前状态和未来状态&lt;/li&gt;
+&lt;/ul&gt;
+
+如果说reward表明的是在短时间内什么是好的，那么value function则指出从长远来看什么是好的
+
+reward基本上由环境直接给出，但value必须根据agent在其整个生命周期中所做的观察序列来估计和重新估计
+
+参考链接: &lt;a href=&quot;https://morvanzhou.github.io/tutorials/machine-learning/reinforcement-learning/2-2-A-q-learning/&quot;&gt;莫烦python&lt;/a&gt;
+
+</description>
+        <pubDate>Wed, 20 Mar 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4002/2019/03/20/sarsa/</link>
+        <guid isPermaLink="true">http://localhost:4002/2019/03/20/sarsa/</guid>
+        
+        <category>强化学习</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>python黑魔法</title>
+        <description>&lt;h1 id=&quot;with&quot;&gt;with&lt;/h1&gt;
+with只适用于上下文管理器的调用，除了文件外，with还支持 threading、decimal等模块，当然我们也可以自己定义可以给with调用的上下文管理器
+使用类定义上下文管理器。
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__enter__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+            &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'f'&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__exit__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'exit'&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;time&quot;&gt;time&lt;/h1&gt;
+
+time.sleep()模拟时间延迟/读写数据延迟/网络延迟
+计算耗时：time.time()用于记录起始和结束时间
+</description>
+        <pubDate>Sat, 16 Mar 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4002/2019/03/16/python-magic/</link>
+        <guid isPermaLink="true">http://localhost:4002/2019/03/16/python-magic/</guid>
+        
+        <category>python</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>python多进程/多进程</title>
+        <description>&lt;h1 id=&quot;进程线程&quot;&gt;进程＆线程&lt;/h1&gt;
+进程只是用来把资源集中到一起（进程只是一个资源单位，或者说资源集合），而线程才是cpu上的执行单位．进程之间的内存空间是隔离的
+多线程（即多个控制线程）的概念是，在一个进程中存在多个控制线程，多个控制线程共享该进程的地址空间
+进程之间是竞争关系，线程之间是协作关系
+
+利用multiprocessing库，使用多进程，而不是多线程，充分利用多核cpu资源
+
+多线程指的是，在一个进程中开启多个线程，简单的讲：如果多个任务共用一块地址空间，那么必须在一个进程内开启多个线程。详细的讲分为4点：
+&lt;ol&gt;
+  &lt;li&gt;多线程共享一个进程的地址空间&lt;/li&gt;
+  &lt;li&gt;线程比进程更轻量级，线程比进程更容易创建可撤销，在许多操作系统中，创建一个线程比创建一个进程要快10-100倍，在有大量线程需要动态和快速修改时，这一特性很有用&lt;/li&gt;
+  &lt;li&gt;若多个线程都是cpu密集型的，那么并不能获得性能上的增强，但是如果存在大量的计算和大量的I/O处理，拥有多个线程允许这些活动彼此重叠运行，从而会加快程序执行的速度。&lt;/li&gt;
+  &lt;li&gt;在多cpu系统中，为了最大限度的利用多核，可以开启多个线程，比开进程开销要小的多。（这一条并不适用于python）&lt;/li&gt;
+&lt;/ol&gt;
+
+多线程用于IO密集型，如socket，爬虫，web
+多进程用于计算密集型，如金融分析
+
+&lt;h1 id=&quot;process&quot;&gt;Process&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;两种创建方式：
+    &lt;ol&gt;
+      &lt;li&gt;创建进程，传入参数为要执行的函数以及函数参数。一个进程就是一个Proccess类的实例&lt;/li&gt;
+      &lt;li&gt;自定义类，继承Process类，重载run函数&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;进程的deamon属性。若为true, 表示父进程结束，则子进程自动终止&lt;/li&gt;
+  &lt;li&gt;子进程的join函数。表示父进程等待子进程执行完毕&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;lock&quot;&gt;Lock&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;避免并行导致输出错位。让同一时间只有一个进程操作临时资源&lt;/li&gt;
+  &lt;li&gt;Lock类的实例。有acquire()和release()方法&lt;/li&gt;
+  &lt;li&gt;Pcocess之间不共享数据，但是共享同一套文件系统，所以访问同一文件或同一个终端，会存在访问冲突。即，可以用文件来让进程间通信/共享数据，但存在效率问题和需要自己加锁处理&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;gil&quot;&gt;GIL&lt;/h1&gt;
+GIL本质就是一把互斥锁，既然是互斥锁，所有互斥锁的本质都一样，都是将并发运行变成串行，以此来控制同一时间内共享数据只能被一个任务所修改，进而保证数据安全。
+
+可以肯定的一点是：保护不同的数据的安全，就应该加不同的锁。
+
+要想了解GIL，首先确定一点：每次执行python程序，都会产生一个独立的进程。例如python test.py，python aaa.py，python bbb.py会产生3个不同的python进程
+
+GIL保护的是解释器级的数据，保护用户自己的数据则需要自己加锁处理
+
+有了GIL的存在，同一时刻同一进程中只有一个线程被执行
+
+&lt;h1 id=&quot;semaphore信号量&quot;&gt;Semaphore　信号量&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;控制临界资源的数量，保证进程之间的互斥和同步&lt;/li&gt;
+  &lt;li&gt;semaphore和mutex结合使用。mutex是互斥锁&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;ipc&quot;&gt;IPC&lt;/h1&gt;
+进程彼此之间互相隔离，要实现进程间通信（IPC），multiprocessing模块支持两种形式：队列和管道，这两种方式都是使用消息传递的
+&lt;ul&gt;
+  &lt;li&gt;生产者消费者模型利用了阻塞队列&lt;/li&gt;
+  &lt;li&gt;队列就是管道加锁实现的
+    &lt;h2 id=&quot;queue共享队列&quot;&gt;Queue　共享队列&lt;/h2&gt;
+  &lt;/li&gt;
+  &lt;li&gt;用于进程间通信，不同与普通的队列。&lt;/li&gt;
+  &lt;li&gt;有空异常和满异常
+    &lt;h2 id=&quot;pipe&quot;&gt;Pipe&lt;/h2&gt;
+  &lt;/li&gt;
+  &lt;li&gt;一端的进程发，一端的进程收&lt;/li&gt;
+  &lt;li&gt;单向或双向&lt;/li&gt;
+  &lt;li&gt;shell解释器中，一个命令就是一个进程，可以通过管道通信&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;ol&gt;
+    &lt;li&gt;加锁可以保证多个进程修改同一块数据时，同一时间只能有一个任务可以进行修改，即串行的修改，没错，速度是慢了，但牺牲了速度却保证了数据安全。
+  虽然可以用文件共享数据实现进程间通信，但问题是：
+      &lt;ul&gt;
+        &lt;li&gt;效率低（共享数据基于文件，而文件是硬盘上的数据）&lt;/li&gt;
+        &lt;li&gt;需要自己加锁处理&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;因此我们最好找寻一种解决方案能够兼顾：1、效率高（多个进程共享一块内存的数据）2、帮我们处理好锁问题。这就是mutiprocessing模块为我们提供的基于消息的IPC通信机制：队列和管道。
+      &lt;ul&gt;
+        &lt;li&gt;队列和管道都是将数据存放于内存中&lt;/li&gt;
+        &lt;li&gt;队列又是基于（管道+锁）实现的，可以让我们从复杂的锁问题中解脱出来，
+ 我们应该尽量避免使用共享数据，尽可能使用消息传递和队列，避免处理复杂的同步和锁问题，而且在进程数目增多时，往往可以获得更好的可获展性。&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&quot;pool进程池&quot;&gt;Pool　进程池&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;不再手动创建进程。用pool指定数量，如果没满，创建新的；如果满的，等待&lt;/li&gt;
+  &lt;li&gt;阻塞式和非阻塞式&lt;/li&gt;
+  &lt;li&gt;map函数&lt;/li&gt;
+  &lt;li&gt;进程池可以得到进程执行的结果，而普通的进程是将结果存在队列中。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;同步异步阻塞非阻塞&quot;&gt;同步/异步/阻塞/非阻塞&lt;/h1&gt;
+同步与异步针对的是函数/任务的调用方式：同步就是当一个进程发起一个函数（任务）调用的时候，一直等到函数（任务）完成，
+而进程继续处于激活状态。而异步情况下是当一个进程发起一个函数（任务）调用的时候，不会等函数返回，而是继续往下执行当，
+函数返回的时候通过状态、通知、事件等方式通知进程任务完成。
+
+阻塞与非阻塞针对的是进程或线程：阻塞是当请求不能满足的时候就将进程挂起，而非阻塞则不会阻塞当前进程
+
+&lt;h1 id=&quot;僵尸进程孤儿进程&quot;&gt;僵尸进程＆孤儿进程&lt;/h1&gt;
+僵尸进程和孤儿进程：僵尸进程是没有被父进程释放资源的进程，需要父进程调用wail()或者join()（join方法中使用了wait方法）；孤儿进程是父进程已经被kill的进程，会被init进程接受然后释放资源
+
+&lt;h1 id=&quot;生产者消费者模型&quot;&gt;生产者消费者模型&lt;/h1&gt;
+生产者消费者模式是通过一个容器来解决生产者的强耦合问题。生产者和消费者彼此之间不直接通讯而通过阻塞队列来进行通讯，所以生产者生产
+完数据之后不用等待消费者处理，直接扔给阻塞队列，消费者不找生产者要数据，而是直接从阻塞队列里取，阻塞队列就相当于一个缓冲区，平衡
+了生产者和消费者的处理能力。
+
+通过消息队列交换数据。这样极大地减少了对使用锁定和其他同步手段的需求
+
+&lt;h1 id=&quot;event事件&quot;&gt;Event　事件&lt;/h1&gt;
+Event对象（包含一个可由线程设置的信号标志），用于线程间的同步，线程等待某个事件，否则一直处于阻塞状态
+</description>
+        <pubDate>Sat, 16 Mar 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4002/2019/03/16/python-multiprocess/</link>
+        <guid isPermaLink="true">http://localhost:4002/2019/03/16/python-multiprocess/</guid>
+        
+        <category>python</category>
+        
+        <category>多进程</category>
+        
+        <category>多线程</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>cpp/c在oj</title>
+        <description>&lt;h1 id=&quot;cpp&quot;&gt;cpp&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;取消科学计数法: 头文件&lt;iomanip&gt;
+  cout.setf(ios::fixed,ios::floatfield);&lt;/iomanip&gt;&lt;/li&gt;
+  &lt;li&gt;保留小数精度: cout « fixed « setpresicion(1) « num ;&lt;/li&gt;
+  &lt;li&gt;流式写法: 每次接受一个输入,立刻判断处理.一次循环.&lt;/li&gt;
+  &lt;li&gt;缓冲式写法: 批量写入数据,批量处理.多个单循环&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 15 Mar 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4002/2019/03/15/cpp/</link>
+        <guid isPermaLink="true">http://localhost:4002/2019/03/15/cpp/</guid>
+        
+        <category>cpp</category>
+        
+        <category>oj</category>
         
         
       </item>

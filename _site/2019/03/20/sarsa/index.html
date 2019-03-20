@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Q-learning / SARSA</title>
+    <meta name="description" content="Q-learning  初始化q-table. row为状态，column为动作．选择动作时，通过找值最大的单元格的列坐标  更新显示，通过判断是否终止，选择如何显示. time.sleep()  选取动作：根据epslon&gt;0.9, 随机选取或挑选q-table中最大的动作  得到下一个状态以及由s_i=...">
+
+    <link rel="shortcut icon" href="/favicon.ico?" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico?" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_8v3czwksspqlg14i.css">
+    <link rel="stylesheet" href="/css/main.css ">
+    <link rel="canonical" href="http://localhost:4002/2019/03/20/sarsa/">
+    <link rel="alternate" type="application/rss+xml" title="jktian-logging" href="http://localhost:4002/feed.xml ">
+
+
+    <script>
+    // 百度统计代码
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?eecae4e01c28263526649fed53c49b94";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
+
+
+
+</head>
+
+
+  <body>
+
+    <header id="top">
+    <div class="wrapper">
+        <a href="/" class="brand">jktian-logging</a>
+        <small>majon in data-science</small>
+        <button id="headerMenu" class="menu"><i class="fa fa-bars"></i></button>
+        <nav id="headerNav">
+            <ul>
+                <li>
+                    
+                    <a href="/">
+                    
+                        <i class="fa fa-home"></i>Home
+                    </a>
+                </li>
+
+                
+                    
+                    <li>
+                        
+                        <a href="/archive/">
+                        
+                            <i class="fa fa-archive"></i>Archives
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/category/">
+                        
+                            <i class="fa fa-th-list"></i>Categories
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/tag/">
+                        
+                            <i class="fa fa-tags"></i>Tags
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/collection/">
+                        
+                            <i class="fa fa-bookmark"></i>Collections
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/demo/">
+                        
+                            <i class="fa fa-play"></i>Demo
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/about/">
+                        
+                            <i class="fa fa-heart"></i>About
+                        </a>
+                    </li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+        <div class="page clearfix" post>
+    <div class="left">
+        <h1>Q-learning / SARSA</h1>
+        <div class="label">
+
+            <div class="label-card">
+                <i class="fa fa-calendar"></i>2019-03-20
+            </div>
+
+            <div class="label-card">
+                <i class="fa fa-user"></i>jktian
+                
+            </div>
+            <div class="label-card">
+                <p>阅读：<span id="busuanzi_value_page_pv"></span></p>
+            </div>
+            <div class="label-card">
+                
+            </div>
+
+            <div class="label-card">
+            
+
+
+
+            </div>
+
+            <div class="label-card">
+            
+<!-- <span class="point">•</span> -->
+<span class="pageTag">
+  <i class="fa fa-tags"></i>
+  
+    
+        <!--a href="/tag/#%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0" title="Tag: 强化学习" rel="tag">强化学习</a-->
+        <a href="/tag/#强化学习" title="Tag: 强化学习" rel="tag">强化学习</a>
+    
+  
+
+</span>
+
+            </div>
+
+        </div>
+        <hr>
+        <article itemscope itemtype="http://schema.org/BlogPosting">
+        <h1 id="q-learning">Q-learning</h1>
+<ol>
+  <li>初始化q-table. row为状态，column为动作．选择动作时，通过找值最大的单元格的列坐标</li>
+  <li>更新显示，通过判断是否终止，选择如何显示. time.sleep()</li>
+  <li>选取动作：根据epslon&gt;0.9, 随机选取或挑选q-table中最大的动作</li>
+  <li>得到下一个状态以及由s_i==&gt;s_{i+1}奖励值．if判断，应该可以从r表中得到
+    <blockquote>
+      <p>奖励表是先验的，是人为设置的．q-table是动态更新的
+奖励是到达某一个状态的值，由到达的状态决定．q-table是联系自身状态得到的综合值</p>
+    </blockquote>
+  </li>
+</ol>
+
+<h1 id="q-learning--sarsa--sarsalambda">Q-learning / SARSA / SARSA(lambda)</h1>
+<ul>
+  <li>同：
+  两者都会根据当前状态，根据epslon和q-table选取动作. 要考虑当前的利益r+下一步的利益gamma*max(q(s_next,a))+自身的状态＋学习率</li>
+  <li>异：
+    <ul>
+      <li>之后．qlearning会根据q-table表，选取下一状态中值最大的那一个（max），去更新q-table的当前状态项,off-policy. 进入下一状态后，执行的动作仍然用epslon-greedy；　</li>
+      <li>sarsa是说到做到，进入下一个状态后，动作不再使用epslon，直接选用上一步确定好的，但是在为此状态选取下一状态时，要用epslon. 相当于，sarsa把q-learning的epslon换为了确定，将其的max换为epslon
+q-learning比较冒险拿宝藏最重要．sarsa实际，保命最重要</li>
+    </ul>
+  </li>
+  <li>Sarsa(lambda) 　表示走lambda步之后，进行一次更新．用回合更新代替单步更新
+ dqn: q-learning+神经网络: 解决state和action表格太大的问题</li>
+</ul>
+
+<p>任何一个求最值的模型，都会引入随机值以避免局部最优解，如模拟退火算法或者此处的epslon-greedy策略</p>
+
+<h1 id="reward--vlaue">reward / vlaue</h1>
+<ul>
+  <li>reward: 可以根据表中某个状态为定值，也可以根据现场的局势判断得到reward, 但一定是短期的
+    <ul>
+      <li>在某个状态下，进行某个动作，会得到多少reward．可以动态得到</li>
+      <li>Reward 定义了强化学习问题中的目标。在每个时间步，环境向agent发送一个称为reward的单个数字。Agent的唯一目标是最大化其长期收到的total reward。</li>
+    </ul>
+  </li>
+  <li>value: 长期的，基于reward. 有利于最终reward最大化. 综合考虑当前状态和未来状态</li>
+</ul>
+
+<p>如果说reward表明的是在短时间内什么是好的，那么value function则指出从长远来看什么是好的</p>
+
+<p>reward基本上由环境直接给出，但value必须根据agent在其整个生命周期中所做的观察序列来估计和重新估计</p>
+
+<p>参考链接: <a href="https://morvanzhou.github.io/tutorials/machine-learning/reinforcement-learning/2-2-A-q-learning/">莫烦python</a></p>
+
+
+        </article>
+        <hr>
+
+        
+        
+            
+            
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
+
+        <div class="post-recent">
+    <div class="pre">
+        
+        <p><strong>上一篇</strong> <a href="/2019/03/16/python-magic/">python黑魔法</a></p>
+        
+    </div>
+    <div class="nex">
+
+        
+        <p><strong>下一篇</strong> <a href="/2019/03/20/database/">数据库常见操作</a></p>
+        
+    </div>
+</div>
+
+
+        <h2 id="comments">Comments</h2>
+        
+
+
+
+
+
+    </div>
+    <button class="anchor"><i class="fa fa-anchor"></i></button>
+    <div class="right">
+        <div class="wrap">
+
+            <!-- Content -->
+            <div class="side content">
+                <div>
+                    Content
+                </div>
+                <ul id="content-side" class="content-ul">
+                    
+                    <li><a href="#comments">Comments</a></li>
+                </ul>
+            </div>
+            <!-- 其他div框放到这里 -->
+            <!-- <div class="side">bbbb</div> -->
+        </div>
+    </div>
+</div>
+<script>
+/**
+ * target _blank
+ */
+(function() {
+    var aTags = document.querySelectorAll('article a:not([id])')
+    for (var i = 0; i < aTags.length; i++) {
+        aTags[i].setAttribute('target', '_blank')
+    }
+}());
+</script>
+<script src="/js/pageContent.js " charset="utf-8"></script>
+
+
+    <footer class="site-footer">
+
+
+    <div class="wrapper">
+
+        <p class="description">
+             来自jktian的个人专栏！ 
+        </p>
+        <p class="contact">
+            Contact me at: 
+            <a href="https://github.com/ixneo" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>  
+            <a href="mailto:932154199@qq.com" title="email"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>  
+            <a href="http://weibo.com/coolinear" title="Weibo"><i class="fa fa-weibo" aria-hidden="true"></i></a>  
+            <a href="https://www.zhihu.com/people/coolinear" title="Zhihu"><i class="iconfont icon-daoruzhihu"></i></a>      
+        </p>
+        <p>
+            本站总访问量<span id="busuanzi_value_site_pv"></span>次，本站访客数<span id="busuanzi_value_site_uv"></span>人次，本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+        </p>
+        <p class="power">
+            <span>
+                Site powered by <a href="https://jekyllrb.com/">Jekyll</a> & <a href="https://pages.github.com/">Github Pages</a>.
+            </span>
+            <span>
+                Theme designed by <a href="https://github.com/Gaohaoyang">HyG</a>.
+            </span>
+        </p>
+    </div>
+</footer>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <div class="back-to-top">
+    <a href="#top" data-scroll>
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    </a>
+</div>
+
+    <script src=" /js/main.js " charset="utf-8"></script>
+    <script src=" /js/smooth-scroll.min.js " charset="utf-8"></script>
+    <script type="text/javascript">
+      smoothScroll.init({
+        speed: 500, // Integer. How fast to complete the scroll in milliseconds
+        easing: 'easeInOutCubic', // Easing pattern to use
+        offset: 20, // Integer. How far to offset the scrolling anchor location in pixels
+      });
+    </script>
+    <!-- <script src=" /js/scroll.min.js " charset="utf-8"></script> -->
+  </body>
+
+</html>

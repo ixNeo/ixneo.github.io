@@ -1,670 +1,1027 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
-<head>
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Every failure is leading towards success.">
-    <meta name="keywords"  content="jktian, blog, data-science, algorithm, projects">
-    <meta name="theme-color" content="#000000">
-    
+
     <title>jktian-logging</title>
+    <meta name="description" content="">
 
-    <!-- Web App Manifest -->
-    <link rel="manifest" href="/pwa/manifest.json">
-
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="/img/favicon.ico">
-
-    <!-- Safari Webpage Icon    by-BY -->
-    <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="http://localhost:4000/page4/">
-
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/hux-blog.min.css">
-
-    <!-- Pygments Github CSS -->
-    <link rel="stylesheet" href="/css/syntax.css">
-
-    <!-- Custom Fonts -->
-    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
-    <!-- Hux change font-awesome CDN to qiniu -->
-    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="/favicon.ico?" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico?" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_8v3czwksspqlg14i.css">
+    <link rel="stylesheet" href="/css/main.css ">
+    <link rel="canonical" href="http://localhost:4002/page4/">
+    <link rel="alternate" type="application/rss+xml" title="jktian-logging" href="http://localhost:4002/feed.xml ">
 
 
-    <!-- Hux Delete, sad but pending in China
-    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
-    css'>
-    -->
-
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- ga & ba script hoook -->
-    <script></script>
-</head>
-
-
-<!-- hack iOS CSS :active style -->
-<body ontouchstart="">
-
-    <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">jk.tian-LOGGING</a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div id="huxblog_navbar">
-            <div class="navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="/">Home</a>
-                    </li>
-                    
-                    <li>
-                        <a href="/about/">About Me</a>
-                    </li>
-                    
-                    <li>
-                        <a href="/tags/">Tags</a>
-                    </li>
-                    
-                </ul>
-            </div>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container -->
-</nav>
-<script>
-    // Drop Bootstarp low-performance Navbar
-    // Use customize navbar with high-quality material design animation
-    // in high-perf jank-free CSS3 implementation
-    var $body   = document.body;
-    var $toggle = document.querySelector('.navbar-toggle');
-    var $navbar = document.querySelector('#huxblog_navbar');
-    var $collapse = document.querySelector('.navbar-collapse');
-
-    var __HuxNav__ = {
-        close: function(){
-            $navbar.className = " ";
-            // wait until animation end.
-            setTimeout(function(){
-                // prevent frequently toggle
-                if($navbar.className.indexOf('in') < 0) {
-                    $collapse.style.height = "0px"
-                }
-            },400)
-        },
-        open: function(){
-            $collapse.style.height = "auto"
-            $navbar.className += " in";
-        }
-    }
-
-    // Bind Event
-    $toggle.addEventListener('click', function(e){
-        if ($navbar.className.indexOf('in') > 0) {
-            __HuxNav__.close()
-        }else{
-            __HuxNav__.open()
-        }
-    })
-
-    /**
-     * Since Fastclick is used to delegate 'touchstart' globally
-     * to hack 300ms delay in iOS by performing a fake 'click',
-     * Using 'e.stopPropagation' to stop 'touchstart' event from 
-     * $toggle/$collapse will break global delegation.
-     * 
-     * Instead, we use a 'e.target' filter to prevent handler
-     * added to document close HuxNav.  
-     *
-     * Also, we use 'click' instead of 'touchstart' as compromise
-     */
-    document.addEventListener('click', function(e){
-        if(e.target == $toggle) return;
-        if(e.target.className == 'icon-bar') return;
-        __HuxNav__.close();
-    })
-</script>
-
-
-    <!-- Page Header -->
-<header class="intro-header" style="background-image: url('/')">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>jk.tian-LOGGING</h1>
-                    <!--<hr class="small">-->
-                    <span class="subheading">Thinking will not overcome fear but action will.</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-
-<!-- Main Content -->
-<div class="container">
-	<div class="row">
-        
-
-<!-- USE SIDEBAR -->
-    <!-- PostList Container -->
-    		<div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                postlist-container
-            ">
-    			
-<div class="post-preview">
-    <a href="/2019/02/26/english/">
-        <h2 class="post-title">
-            English
-        </h2>
-        
-        <div class="post-content-preview">
-            
-
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by jk.tian-LOGGING on February 26, 2019
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/2019/02/26/emacs/">
-        <h2 class="post-title">
-            Emacs
-        </h2>
-        
-        <div class="post-content-preview">
-            
-
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by jk.tian-LOGGING on February 26, 2019
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/2019/02/26/database/">
-        <h2 class="post-title">
-            Database
-        </h2>
-        
-        <div class="post-content-preview">
-            
-
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by jk.tian-LOGGING on February 26, 2019
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/2019/02/26/csapp/">
-        <h2 class="post-title">
-            《深入理解计算机系统》
-        </h2>
-        
-        <div class="post-content-preview">
-            
-  位级操作，字节级表示
-    
-      天地不仁以万物为刍狗
-    
-  
-  机器级表示。依赖于具体的硬件。
-    
-      ISA：指令集体系架构
-    
-  
-  处理器
-    
-      流水线
-    
-  
-  程序的性能优化
-    
-      在程序的易读性、可解释性、易扩展性和性能之间做平衡。
-      从编译器的角度考量，写出易于优化的代码
- ...
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by jktian on February 26, 2019
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/2019/02/26/compile/">
-        <h2 class="post-title">
-            Compile
-        </h2>
-        
-        <div class="post-content-preview">
-            
-
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by jk.tian-LOGGING on February 26, 2019
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/2019/02/26/build-blog/">
-        <h2 class="post-title">
-            博客搭建
-        </h2>
-        
-        <h3 class="post-subtitle">
-            　
-        </h3>
-        
-        <div class="post-content-preview">
-            博客迭代
-
-
-  第一次，用腾讯云主机作为后台，买了域名，用wordpress，mysql, apache, linux搭建。
-    
-      由于域名需要备案，且云主机第二年优惠消失，所以开始迁移计划
-      本次学到
-        
-          服务器的配置过程，linux的基本操作
-          在别人以及文档的帮助下，能少走很多弯路
-        
-   ...
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by jktian on February 26, 2019
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/2019/02/26/android/">
-        <h2 class="post-title">
-            Android
-        </h2>
-        
-        <div class="post-content-preview">
-            
-
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by jk.tian-LOGGING on February 26, 2019
-    </p>
-</div>
-<hr>
-
-
-<!-- Pager -->
-
-<ul class="pager">
-    
-    <li class="previous">
-        <a href="/page3">&larr; Newer Posts</a>
-    </li>
-    
-    
-</ul>
-
-
-    		</div>
-    <!-- Sidebar Container -->
-            <div class="
-                col-lg-3 col-lg-offset-0
-                col-md-3 col-md-offset-0
-                col-sm-12
-                col-xs-12
-                sidebar-container
-            ">
-                <!-- Featured Tags -->
-                
-                <section>
-                    <hr class="hidden-sm hidden-xs">
-                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
-                    <div class="tags">
-                        
-                            
-                                <a href="/tags/#tools" title="tools" rel="5">
-                                    tools
-                                </a>
-                            
-                        
-                            
-                        
-                            
-                        
-                            
-                                <a href="/tags/#log" title="log" rel="4">
-                                    log
-                                </a>
-                            
-                        
-                            
-                        
-                            
-                        
-                            
-                                <a href="/tags/#oj" title="oj" rel="7">
-                                    oj
-                                </a>
-                            
-                        
-                            
-                        
-                            
-                                <a href="/tags/#python" title="python" rel="5">
-                                    python
-                                </a>
-                            
-                        
-                            
-                        
-                            
-                        
-                            
-                                <a href="/tags/#project" title="project" rel="4">
-                                    project
-                                </a>
-                            
-                        
-                            
-                        
-                            
-                        
-                            
-                        
-                            
-                        
-                            
-                        
-                            
-                        
-                            
-                        
-                            
-                        
-                            
-                        
-                            
-                        
-                    </div>
-                </section>
-                
-
-                <!-- Short About -->
-                <section class="visible-md visible-lg">
-                    <hr><h5><a href="/about/">ABOUT ME</a></h5>
-                    <div class="short-about">
-                        
-                            <a href="/about">
-                                <img src="/img/about-BY-gentle.jpg"/>
-                            </a>
-                        
-                        
-                            <p>Goals determine what you going to be!</p>
-                        
-                        <!-- SNS Link -->
-                        <ul class="list-inline">
-                            
-                            <!-- add jianshu add target = "_blank" to <a> by BY -->
-                            
-                            
-                            
-                            <li>
-                                <a target="_blank" href="https://www.zhihu.com/people/coolinear">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa  fa-stack-1x fa-inverse">知</i>
-                                    </span>
-                                </a>
-                            </li>
-                            
-                            
-                            
-                            
-                            <li>
-                                <a target="_blank" href="https://github.com/ixneo">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            
-                            
-                        </ul>
-                        
-                            <p>✉️ jktian6@gmail.com</p>
-                        
-                    </div>
-                </section>
-                <!-- Friends Blog -->
-                
-    		</div>
-        
-	</div>
-</div>
-
-
-    <!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <ul class="list-inline text-center">
-                    
-                    <!-- add jianshu add target = "_blank" to <a> by BY -->
-                    
-                    
-
-                    <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
-                    
-                    <li>
-                        <a target="_blank" href="https://www.zhihu.com/people/coolinear">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa  fa-stack-1x fa-inverse">知</i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-
-
-                    
-                    
-                    <li>
-                        <a target="_blank" href="https://github.com/ixneo">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                </ul>
-                <p class="copyright text-muted">
-                    Copyright &copy; jk.tian-LOGGING 2019
-                    <br>
-                    Theme on <a href="https://github.com/ixneo/ixneo.github.io.git">GitHub</a> |
-                    <iframe
-                        style="margin-left: 2px; margin-bottom:-5px;"
-                        frameborder="0" scrolling="0" width="100px" height="20px"
-                        src="https://ghbtns.com/github-btn.html?user=ixneo&repo=ixneo.github.io&type=star&count=true" >
-                    </iframe>
-                </p>
-            </div>
-        </div>
-    </div>
-</footer>
-
-<!-- jQuery -->
-<script src="/js/jquery.min.js "></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="/js/bootstrap.min.js "></script>
-
-<!-- Custom Theme JavaScript -->
-<script src="/js/hux-blog.min.js "></script>
-
-<!-- Service Worker -->
-
-<script type="text/javascript">
-    if(navigator.serviceWorker){
-        // For security reasons, a service worker can only control the pages that are in the same directory level or below it. That's why we put sw.js at ROOT level.
-        navigator.serviceWorker
-            .register('/sw.js')
-            .then((registration) => {console.log('Service Worker Registered. ', registration)})
-            .catch((error) => {console.log('ServiceWorker registration failed: ', error)})
-    }
-</script>
-
-
-
-<!-- async load function -->
-<script>
-    function async(u, c) {
-      var d = document, t = 'script',
-          o = d.createElement(t),
-          s = d.getElementsByTagName(t)[0];
-      o.src = u;
-      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-      s.parentNode.insertBefore(o, s);
-    }
-</script>
-
-<!-- 
-     Because of the native support for backtick-style fenced code blocks 
-     right within the Markdown is landed in Github Pages, 
-     From V1.6, There is no need for Highlight.js, 
-     so Huxblog drops it officially.
-
-     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
-     - https://help.github.com/articles/creating-and-highlighting-code-blocks/ 
-     - https://github.com/jneen/rouge/wiki/list-of-supported-languages-and-lexers   
--->
-<!--
     <script>
-        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
-            hljs.initHighlightingOnLoad();
-        })
-    </script>
-    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
--->
-
-
-<!-- jquery.tagcloud.js -->
-<script>
-    // only load tagcloud.js in tag.html
-    if($('#tag_cloud').length !== 0){
-        async('/js/jquery.tagcloud.js',function(){
-            $.fn.tagcloud.defaults = {
-                //size: {start: 1, end: 1, unit: 'em'},
-                color: {start: '#bbbbee', end: '#0085a1'},
-            };
-            $('#tag_cloud a').tagcloud();
-        })
-    }
-</script>
-
-<!--fastClick.js -->
-<script>
-    async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function(){
-        var $nav = document.querySelector("nav");
-        if($nav) FastClick.attach($nav);
-    })
-</script>
-
-
-<!-- Google Analytics -->
-
-<script>
-    // dynamic User by Hux
-    var _gaId = 'UA-90855596-1';
-    var _gaDomain = 'auto';
-
-    // Originial
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', _gaId, _gaDomain);
-    ga('send', 'pageview');
-</script>
-
-
-
-<!-- Baidu Tongji -->
-
-<script>
-    // dynamic User by Hux
-    var _baId = 'eecae4e01c28263526649fed53c49b94';
-
-    // Originial
+    // 百度统计代码
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
-      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      hm.src = "//hm.baidu.com/hm.js?eecae4e01c28263526649fed53c49b94";
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(hm, s);
     })();
-</script>
+    </script>
 
 
 
 
-<!-- Side Catalog -->
+</head>
+
+
+  <body>
+
+    <header id="top">
+    <div class="wrapper">
+        <a href="/" class="brand">jktian-logging</a>
+        <small>majon in data-science</small>
+        <button id="headerMenu" class="menu"><i class="fa fa-bars"></i></button>
+        <nav id="headerNav">
+            <ul>
+                <li>
+                    
+                    <a href="/">
+                    
+                        <i class="fa fa-home"></i>Home
+                    </a>
+                </li>
+
+                
+                    
+                    <li>
+                        
+                        <a href="/archive/">
+                        
+                            <i class="fa fa-archive"></i>Archives
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/category/">
+                        
+                            <i class="fa fa-th-list"></i>Categories
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/tag/">
+                        
+                            <i class="fa fa-tags"></i>Tags
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/collection/">
+                        
+                            <i class="fa fa-bookmark"></i>Collections
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/demo/">
+                        
+                            <i class="fa fa-play"></i>Demo
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/about/">
+                        
+                            <i class="fa fa-heart"></i>About
+                        </a>
+                    </li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+        <div class="page clearfix" index>
+    <div class="left">
+        <h1>Welcome to jktian's blog </h1>
+        <small>故世之奇伟瑰怪非常之观,常在于险远</small>
+        <hr>
+        <ul>
+            
+              <li>
+                <h2>
+                  <a class="post-link" href="/2019/03/01/oj-weird-kid/">oj-怪盗基德的滑翔翼</a>
+                </h2>
+                <div class="label">
+                    <div class="label-card">
+                        <i class="fa fa-calendar"></i>2019-03-01
+                    </div>
+                    <div class="label-card">
+                        <i class="fa fa-user"></i>jktian
+                        
+                    </div>
+                    <div class="label-card">
+                        
+                    </div>
+
+                    <div class="label-card">
+                    
 
 
 
+                    </div>
+
+                    <div class="label-card">
+                    
+<!-- <span class="point">•</span> -->
+<span class="pageTag">
+  <i class="fa fa-tags"></i>
+  
+    
+        <a href="/tag/#oj" title="Tag: oj" rel="tag">oj</a>
+    
+  
+
+</span>
+
+                    </div>
+                </div>
+                <div class="excerpt">
+                    <h1 id="问题描述">问题描述</h1>
+<p>假设城市中一共有N幢建筑排成一条线，每幢建筑的高度各不相同。初始时，怪盗基德可以在任何一幢建筑的顶端。他可以选择一个方向逃跑，但是不能中途改变方向（因为中森警部会在后面追击）。因为滑翔翼动力装置受损，他只能往下滑行（即：只能从较高的建筑滑翔到较低的建筑）。他希望尽可能多地经过不同建筑的顶部，这样可以减缓下降时的冲击力，减少受伤的可能性。请问，他最多可以经过多少幢不同建筑的顶部（包含初始时的建筑）？</p>
+
+<p>输入
+输入数据第一行是一个整数K（K &lt; 100），代表有K组测试数据。 
+每组测试数据包含两行：第一行是一个整数N(N &lt; 100)，代表有N幢建筑。第二行包含N个不同的整数，每一个对应一幢建筑的高度h（0 &lt; h &lt; 10000），按照建筑的排列顺序给出。
+输出
+对于每一组测试数据，输出一行，包含一个整数，代表怪盗基德最多可以经过的建筑数量。</p>
+
+<h1 id="解决方案">解决方案</h1>
+
+<ol>
+  <li>
+    <p>dfs</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     #include&lt;iostream&gt;
+     #include&lt;cmath&gt;
+     #include&lt;string&gt;
+     #include&lt;iterator&gt;
+     #include&lt;algorithm&gt;
+    
+     using namespace std;
+     /* test-input
+         3
+         8
+         300 207 155 299 298 170 158 65
+         8
+         65 158 170 298 299 155 207 300
+         10
+         2 1 3 4 5 6 7 8 9 10
+     */
+     /* test-output
+         6
+         6
+         9
+     */
+     int buildings[200][200] = {0};
+     int buildTot[200] = {0};
+    
+     int dfs(int caseIndex, int curBuilding,int pVal, int tot, int inc){
+     //    cout &lt;&lt; curBuilding &lt;&lt; endl;
+         if(inc==1 &amp;&amp; curBuilding&gt;=buildTot[caseIndex]){
+             return tot;
+         }
+         if(inc==-1 &amp;&amp; curBuilding&lt;0){
+             return tot;
+         }
+         int curVal = buildings[caseIndex][curBuilding];
+         if(curVal&lt;pVal){
+             return max(dfs(caseIndex,curBuilding+inc,pVal, tot, inc),
+                        dfs(caseIndex,curBuilding+inc,curVal, tot+1, inc));
+         }else{
+             return dfs(caseIndex,curBuilding+inc,pVal, tot, inc);
+         }
+     }
+     int main(){
+         // get input
+         int caseNum;
+         cin &gt;&gt; caseNum;
+         for(int i=0;i&lt;caseNum;i++){
+             cin &gt;&gt; buildTot[i];
+             for(int j=0;j&lt;buildTot[i];j++){
+                 cin &gt;&gt; buildings[i][j];
+             }
+         }
+    
+         // dfs, two-direction
+         for(int i=0;i&lt;caseNum;i++){
+             int res = 0;
+             int f2b=dfs(i,0,10000,0,1), 							b2f=dfs(i,buildTot[i]-1,10000,0,-1);
+         //  cout &lt;&lt; f2b &lt;&lt; ": " &lt;&lt; b2f &lt;&lt; endl;
+             res = max(res,max(f2b,b2f));
+             cout &lt;&lt; "Case" &lt;&lt; i &lt;&lt; ": " &lt;&lt; res &lt;&lt; endl;
+         }
+         return 0;
+     }  1. dp
+
+     // i表示最大的建筑下标，用于限制子问题
+     // j表示根据i得到的可能倒数第二个建筑下标
+     for(i=0;i&lt;n;i++){
+     a[i]=1;
+     }
+     a[0]=1;
+     for(i=1;i&lt;n;i++){
+     flag=0;
+     for(j=0;j&lt;i;j++){
+     if(buf[j]&gt;buf[i]&amp;&amp;a[i]&lt;a[j]+1){
+     a[i]=a[j]+1;
+     if(!flag)
+     flag=1;
+     }
+     }
+     if(!flag){
+     a[i]=1;
+     }
+        
+     }
+     int mx1=*max_element(a,a+n);
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h1 id="知识点">知识点</h1>
+
+<ol>
+  <li>可以用dfs做</li>
+  <li>确定函数参数，哪些是递归下来的，需要做出改变的，哪些是全局坐标等</li>
+  <li>确定递归的退出条件</li>
+  <li>确定递归过程/递推公式，一般是分支或max(dfs(),dfs())</li>
+  <li>dp做</li>
+  <li>其他
+    <blockquote>
+      <ol>
+        <li>接受输入后
+          <ol>
+            <li>可以动态分配内存</li>
+            <li>或者初始化几个很大的全0数组, 然后按需置１</li>
+          </ol>
+        </li>
+        <li>整个流程
+          <ol>
+            <li>可以全部接受输入并存储（很多测试案例）后，统一处理</li>
+            <li>或者在循环中，每接受一个测试案例，处理一个</li>
+          </ol>
+        </li>
+      </ol>
+    </blockquote>
+  </li>
+</ol>
+
+                </div>
+                <div class="read-all">
+                    <a  href="/2019/03/01/oj-weird-kid/"><i class="fa fa-newspaper-o"></i>Read All</a>
+                </div>
+                <hr>
+              </li>
+            
+              <li>
+                <h2>
+                  <a class="post-link" href="/2019/03/01/oj-island/">oj-岛屿问题</a>
+                </h2>
+                <div class="label">
+                    <div class="label-card">
+                        <i class="fa fa-calendar"></i>2019-03-01
+                    </div>
+                    <div class="label-card">
+                        <i class="fa fa-user"></i>jktian
+                        
+                    </div>
+                    <div class="label-card">
+                        
+                    </div>
+
+                    <div class="label-card">
+                    
 
 
-<!-- Image to hack wechat -->
-<img src="/img/apple-touch-icon.png" width="0" height="0" />
-<!-- Migrate from head to bottom, no longer block render and still work -->
 
-</body>
+                    </div>
+
+                    <div class="label-card">
+                    
+<!-- <span class="point">•</span> -->
+<span class="pageTag">
+  <i class="fa fa-tags"></i>
+  
+    
+        <a href="/tag/#oj" title="Tag: oj" rel="tag">oj</a>
+    
+  
+
+</span>
+
+                    </div>
+                </div>
+                <div class="excerpt">
+                    <h1 id="问题描述">问题描述</h1>
+<p>C:岛屿面积
+总时间限制:  1000ms  内存限制:  65536kB
+描述
+用一个n<em>m的二维数组表示地图，1表示陆地，0代表海水，每一格都表示一个1</em>1的区域。地图中的格子只能横向或者纵向连接（不能对角连接），连接在一起的陆地称作岛屿，同时整个地图都被海水围绕。假设给出的地图中只会有一个岛屿，并且岛屿中不会有湖（即不会有水被陆地包围的情况出现）。请判断所给定的二维地图中岛屿的周长。
+输入
+第一行为n和m，表示地图的大小(1&lt;=n&lt;=100, 1&lt;=m&lt;=100)。接下来n行，每行有m个数，分别描述每一格的数值。数值之间均用空格隔开。
+输出
+只有一行，即岛屿的周长（正整数）。
+样例输入
+3 4
+1 1 1 0
+0 1 0 0
+1 1 0 0
+样例输出
+14</p>
+
+<h1 id="解决方案">解决方案</h1>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#include&lt;iostream&gt;
+#include&lt;cmath&gt;
+#include&lt;string&gt;
+#include&lt;iterator&gt;
+
+using namespace std;
+
+int main(){
+    // get input
+    int r,c;
+    cin &gt;&gt; r &gt;&gt; c;
+    int **pr = new int*[r];
+    for(int i=0;i&lt;r;i++){
+        pr[i] = new int[c];
+    }
+    for(int i=0;i&lt;r;i++){
+        for(int j=0;j&lt;c;j++){
+            cin &gt;&gt; pr[i][j];
+        }
+    }
+
+    /* test input
+        int pr[3][4] = { {1,1,1,0},
+                      　{0,1,0,0},
+                      　{1,1,0,0} };
+    */
+
+    // calculate c
+    int tot = 0;
+    for(int i=0;i&lt;r;i++){
+        for(int j=0;j&lt;c;j++){
+            if(pr[i][j]==0) continue;
+            if((j-1&gt;=0 &amp;&amp; !pr[i][j-1])
+                    || (j-1&lt;0))  tot++;
+            if((j+1&lt;c &amp;&amp; !pr[i][j+1])
+                    || (j+1&gt;=c))  tot++;
+            if((i-1&gt;=0 &amp;&amp; !pr[i-1][j])
+                    || (i-1&lt;0)) tot++;
+            if((i+1&lt;r &amp;&amp; !pr[i+1][j])
+                    || (i+1&gt;=r))  tot++;
+        }
+    }
+
+    // delete space
+    for(int i=0;i&lt;r;i++){
+        delete[] pr[i];
+    }
+    cout &lt;&lt; tot &lt;&lt; endl;
+    return 0;
+}
+</code></pre></div></div>
+
+<h1 id="知识点以及优化">知识点以及优化</h1>
+<ol>
+  <li>可以写测试，避免手动重复输入数值</li>
+  <li>
+    <p>可以初始化一个全０的很大的二维数组，并令坐标从１开始，简化判断条件</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> for(i=1;i&lt;=n;i++){
+     for(j=1;j&lt;=m;j++){
+         if(a[i][j]==1){
+             cnt=cnt+4-(a[i-1][j]+a[i+1][j]+a[i][j-1]+a[i][j+1]);
+         }
+     }
+ }
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+                </div>
+                <div class="read-all">
+                    <a  href="/2019/03/01/oj-island/"><i class="fa fa-newspaper-o"></i>Read All</a>
+                </div>
+                <hr>
+              </li>
+            
+              <li>
+                <h2>
+                  <a class="post-link" href="/2019/03/01/data-type/">oj-数据类型</a>
+                </h2>
+                <div class="label">
+                    <div class="label-card">
+                        <i class="fa fa-calendar"></i>2019-03-01
+                    </div>
+                    <div class="label-card">
+                        <i class="fa fa-user"></i>jktian
+                        
+                    </div>
+                    <div class="label-card">
+                        
+                    </div>
+
+                    <div class="label-card">
+                    
+
+
+
+                    </div>
+
+                    <div class="label-card">
+                    
+<!-- <span class="point">•</span> -->
+<span class="pageTag">
+  <i class="fa fa-tags"></i>
+  
+    
+        <a href="/tag/#oj" title="Tag: oj" rel="tag">oj</a>
+    
+  
+
+</span>
+
+                    </div>
+                </div>
+                <div class="excerpt">
+                    <h1 id="cpp">cpp</h1>
+
+<p>short int  2个字节</p>
+
+<p>int 2/4字节</p>
+
+<p>long 4/8字节</p>
+
+<p>long long 8字节</p>
+
+                </div>
+                <div class="read-all">
+                    <a  href="/2019/03/01/data-type/"><i class="fa fa-newspaper-o"></i>Read All</a>
+                </div>
+                <hr>
+              </li>
+            
+              <li>
+                <h2>
+                  <a class="post-link" href="/2019/02/27/oj-string-code/">oj-行程长度编码</a>
+                </h2>
+                <div class="label">
+                    <div class="label-card">
+                        <i class="fa fa-calendar"></i>2019-02-27
+                    </div>
+                    <div class="label-card">
+                        <i class="fa fa-user"></i>jktian
+                        
+                    </div>
+                    <div class="label-card">
+                        
+                    </div>
+
+                    <div class="label-card">
+                    
+
+
+
+                    </div>
+
+                    <div class="label-card">
+                    
+<!-- <span class="point">•</span> -->
+<span class="pageTag">
+  <i class="fa fa-tags"></i>
+  
+    
+        <a href="/tag/#oj" title="Tag: oj" rel="tag">oj</a>
+    
+  
+
+</span>
+
+                    </div>
+                </div>
+                <div class="excerpt">
+                    <h1 id="题目描述">题目描述</h1>
+<p>总时间限制:  1000ms  内存限制:  65536kB
+描述
+在数据压缩中，一个常用的方法是行程长度编码压缩。对于一个待压缩的字符串，我们可以依次记录每个字符及重复的次数。例如，待压缩的字符串为”aaabbbbcbb”，压缩结果为(a,3)(b,4)(c,1)(b,2)。这种压缩对于相邻数据重复较多的情况有效，如果重复状况较少，则压缩的效率较低。
+现要求根据输入的字符串，首先将字符串中所有大写字母转化为小写字母，然后将字符串进行压缩。
+输入
+一个字符串，长度大于0，且不超过1000，全部由大写或小写字母组成。
+输出
+输出为编码之后的字符串，形式为：(a,3)(b,4)(c,1)(d,2)，即每对括号内分别为小写字符及重复的次数，不含任何空格。
+样例输入
+aAABBbBCCCaaaaa
+样例输出
+(a,3)(b,4)(c,3)(a,5)</p>
+
+<h1 id="题解">题解</h1>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#include&lt;iostream&gt;
+#include&lt;cmath&gt;
+#include&lt;string&gt;
+#include&lt;iterator&gt;
+
+// 行程长度编码
+using namespace std;
+
+string l2g(string s){
+    for(auto it=s.begin();it!=s.end();it++){
+        if(*it&gt;='a' &amp;&amp; *it&lt;='z'){
+            *it -= 32;
+        }
+    }
+    return s;
+}
+
+string showLenCode(string s){
+    int len = 1,i=0;
+    string res;
+    for(i=0;i&lt;s.size();i++){
+        if(s[i+1]==s[i]){
+            len++;
+        }else{
+            // 重点关注，不能是: res+＝...
+            res = res + '('+s[i]+','+(char)(len+'0')+')';
+            len = 1;
+        }
+    }
+    return res;
+}
+
+int main(){
+    // get input
+    string s;
+    cin &gt;&gt; s;
+
+    // low-letter to high-letter
+    s = l2g(s);
+
+    // statics
+    string res;
+    res = showLenCode(s);
+    cout &lt;&lt; res &lt;&lt; endl;
+    return 0;
+}
+</code></pre></div></div>
+
+<p>#　重难点</p>
+<ol>
+  <li>先写注释，搭建基本框架，然后写对应的函数。控制复杂度</li>
+  <li>小写字母的ascii的编码比大写字母大32</li>
+  <li>字符串的拼接和格式化。<str> = <str> +... , 不能是<str>+=...</str></str></str></li>
+</ol>
+
+                </div>
+                <div class="read-all">
+                    <a  href="/2019/02/27/oj-string-code/"><i class="fa fa-newspaper-o"></i>Read All</a>
+                </div>
+                <hr>
+              </li>
+            
+              <li>
+                <h2>
+                  <a class="post-link" href="/2019/02/27/oj-prime/">oj-prime</a>
+                </h2>
+                <div class="label">
+                    <div class="label-card">
+                        <i class="fa fa-calendar"></i>2019-02-27
+                    </div>
+                    <div class="label-card">
+                        <i class="fa fa-user"></i>jktian
+                        
+                    </div>
+                    <div class="label-card">
+                        
+                    </div>
+
+                    <div class="label-card">
+                    
+
+
+
+                    </div>
+
+                    <div class="label-card">
+                    
+<!-- <span class="point">•</span> -->
+<span class="pageTag">
+  <i class="fa fa-tags"></i>
+  
+    
+        <a href="/tag/#oj" title="Tag: oj" rel="tag">oj</a>
+    
+  
+
+</span>
+
+                    </div>
+                </div>
+                <div class="excerpt">
+                    <h1 id="判定给定两个数范围内的素数个数">判定给定两个数范围内的素数个数</h1>
+
+<ol>
+  <li>对于1的特殊处理</li>
+  <li>判断给的两个数的相对大小</li>
+  <li>可以用筛法，或者找因子（设置标志位）的方法，优化性能</li>
+  <li>可以把判别是否是素数单独抽象成一个函数</li>
+</ol>
+
+                </div>
+                <div class="read-all">
+                    <a  href="/2019/02/27/oj-prime/"><i class="fa fa-newspaper-o"></i>Read All</a>
+                </div>
+                <hr>
+              </li>
+            
+              <li>
+                <h2>
+                  <a class="post-link" href="/2019/02/26/git/">git</a>
+                </h2>
+                <div class="label">
+                    <div class="label-card">
+                        <i class="fa fa-calendar"></i>2019-02-26
+                    </div>
+                    <div class="label-card">
+                        <i class="fa fa-user"></i>jktian
+                        
+                    </div>
+                    <div class="label-card">
+                        
+                    </div>
+
+                    <div class="label-card">
+                    
+
+
+
+                    </div>
+
+                    <div class="label-card">
+                    
+<!-- <span class="point">•</span> -->
+<span class="pageTag">
+  <i class="fa fa-tags"></i>
+  
+    
+        <a href="/tag/#tools" title="Tag: tools" rel="tag">tools</a>&nbsp;
+    
+        <a href="/tag/#git" title="Tag: git" rel="tag">git</a>
+    
+  
+
+</span>
+
+                    </div>
+                </div>
+                <div class="excerpt">
+                    <h1 id="常用命令">常用命令</h1>
+<p>git status
+git add .
+git commit -m “”
+git commit -am “”
+git reset –hard HEAD^
+git log
+git reflog</p>
+
+                </div>
+                <div class="read-all">
+                    <a  href="/2019/02/26/git/"><i class="fa fa-newspaper-o"></i>Read All</a>
+                </div>
+                <hr>
+              </li>
+            
+        </ul>
+
+
+
+        <!-- Pagination links -->
+        <div class="pagination">
+          
+            <a href="/index.html" class="previous"><i class="fa fa-angle-double-left"></i></a>
+            <a href="/page3" class="previous"><i class="fa fa-angle-left"></i></a>
+          
+          <span class="page_number ">4/6</span>
+          
+            <a href="/page5" class="next"><i class="fa fa-angle-right"></i></a>
+            <a href="/page6" class="next"><i class="fa fa-angle-double-right"></i></a>
+          
+        </div>
+    </div>
+    <!-- <button class="anchor"><i class="fa fa-anchor"></i></button> -->
+    <div class="right">
+        <div class="wrap">
+            <div class="side">
+                <div>
+                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                    Recent Posts
+                </div>
+                <ul class="content-ul" recent>
+                    
+                        <li><a href="/2019/03/20/nn/">神经网络</a></li>
+                    
+                        <li><a href="/2019/03/20/java-socket/">java模拟路由表构建</a></li>
+                    
+                        <li><a href="/2019/03/20/senti-contest/">用户评论情感极性分析（三分类）</a></li>
+                    
+                        <li><a href="/2019/03/20/chatbolt/">多功能工具包（聊天机器人）</a></li>
+                    
+                        <li><a href="/2019/03/20/linux-manjaro/">博客搭建</a></li>
+                    
+                        <li><a href="/2019/03/20/database/">数据库常见操作</a></li>
+                    
+                        <li><a href="/2019/03/20/sarsa/">Q-learning / SARSA</a></li>
+                    
+                        <li><a href="/2019/03/16/python-magic/">python黑魔法</a></li>
+                    
+                        <li><a href="/2019/03/16/python-multiprocess/">python多进程/多进程</a></li>
+                    
+                        <li><a href="/2019/03/15/cpp/">cpp/c在oj</a></li>
+                    
+                </ul>
+            </div>
+
+            <!-- Content -->
+            <div class="side ">
+                <div>
+                    <i class="fa fa-th-list"></i>
+                    Categories
+                </div>
+                <ul class="content-ul" cate>
+                    
+                </ul>
+            </div>
+            <!-- 其他div框放到这里 -->
+            <div class="side">
+                <div>
+                    <i class="fa fa-tags"></i>
+                    Tags
+                </div>
+                <div class="tags-cloud">
+                    
+                    
+                    
+                    
+
+                    
+
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#tools" style="font-size: 15pt; color: #333;">tools</a>
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#博客搭建" style="font-size: 9pt; color: #999;">博客搭建</a>
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#csapp" style="font-size: 9pt; color: #999;">csapp</a>
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#log" style="font-size: 13.5pt; color: #444;">log</a>
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#杂谈" style="font-size: 9pt; color: #999;">杂谈</a>
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#git" style="font-size: 9pt; color: #999;">git</a>
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#oj" style="font-size: 18pt; color: #000;">oj</a>
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#科学上网" style="font-size: 9pt; color: #999;">科学上网</a>
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#python" style="font-size: 15pt; color: #333;">python</a>
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#database" style="font-size: 10.5pt; color: #777;">database</a>
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#linux" style="font-size: 10.5pt; color: #777;">linux</a>
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#web" style="font-size: 9pt; color: #999;">web</a>
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#campus" style="font-size: 9pt; color: #999;">campus</a>
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#cpp" style="font-size: 9pt; color: #999;">cpp</a>
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#多进程" style="font-size: 10.5pt; color: #777;">多进程</a>
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#多线程" style="font-size: 9pt; color: #999;">多线程</a>
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#强化学习" style="font-size: 9pt; color: #999;">强化学习</a>
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#project" style="font-size: 12pt; color: #666;">project</a>
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#nlp" style="font-size: 9pt; color: #999;">nlp</a>
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#java" style="font-size: 9pt; color: #999;">java</a>
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#神经网络" style="font-size: 9pt; color: #999;">神经网络</a>
+                    
+                </div>
+            </div>
+
+            <!-- <div class="side">
+                <div>
+                    <i class="fa fa-external-link"></i>
+                    Links
+                </div>
+                <ul  class="content-ul">
+
+                </ul>
+            </div> -->
+        </div>
+    </div>
+</div>
+<!-- <script src="/js/scroll.min.js " charset="utf-8"></script> -->
+<!-- <script src="/js/pageContent.js " charset="utf-8"></script> -->
+
+
+    <footer class="site-footer">
+
+
+    <div class="wrapper">
+
+        <p class="description">
+             来自jktian的个人专栏！ 
+        </p>
+        <p class="contact">
+            Contact me at: 
+            <a href="https://github.com/ixneo" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>  
+            <a href="mailto:932154199@qq.com" title="email"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>  
+            <a href="http://weibo.com/coolinear" title="Weibo"><i class="fa fa-weibo" aria-hidden="true"></i></a>  
+            <a href="https://www.zhihu.com/people/coolinear" title="Zhihu"><i class="iconfont icon-daoruzhihu"></i></a>      
+        </p>
+        <p>
+            本站总访问量<span id="busuanzi_value_site_pv"></span>次，本站访客数<span id="busuanzi_value_site_uv"></span>人次，本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+        </p>
+        <p class="power">
+            <span>
+                Site powered by <a href="https://jekyllrb.com/">Jekyll</a> & <a href="https://pages.github.com/">Github Pages</a>.
+            </span>
+            <span>
+                Theme designed by <a href="https://github.com/Gaohaoyang">HyG</a>.
+            </span>
+        </p>
+    </div>
+</footer>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <div class="back-to-top">
+    <a href="#top" data-scroll>
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    </a>
+</div>
+
+    <script src=" /js/main.js " charset="utf-8"></script>
+    <script src=" /js/smooth-scroll.min.js " charset="utf-8"></script>
+    <script type="text/javascript">
+      smoothScroll.init({
+        speed: 500, // Integer. How fast to complete the scroll in milliseconds
+        easing: 'easeInOutCubic', // Easing pattern to use
+        offset: 20, // Integer. How far to offset the scrolling anchor location in pixels
+      });
+    </script>
+    <!-- <script src=" /js/scroll.min.js " charset="utf-8"></script> -->
+  </body>
 
 </html>

@@ -1,791 +1,1268 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
-<head>
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Every failure is leading towards success.">
-    <meta name="keywords"  content="jktian, blog, data-science, algorithm, projects">
-    <meta name="theme-color" content="#000000">
-    
+
     <title>jktian-logging</title>
+    <meta name="description" content="">
 
-    <!-- Web App Manifest -->
-    <link rel="manifest" href="/pwa/manifest.json">
+    <link rel="shortcut icon" href="/favicon.ico?" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico?" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_8v3czwksspqlg14i.css">
+    <link rel="stylesheet" href="/css/main.css ">
+    <link rel="canonical" href="http://localhost:4002/">
+    <link rel="alternate" type="application/rss+xml" title="jktian-logging" href="http://localhost:4002/feed.xml ">
 
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <!-- Safari Webpage Icon    by-BY -->
-    <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="http://localhost:4000/">
-
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/hux-blog.min.css">
-
-    <!-- Pygments Github CSS -->
-    <link rel="stylesheet" href="/css/syntax.css">
-
-    <!-- Custom Fonts -->
-    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
-    <!-- Hux change font-awesome CDN to qiniu -->
-    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-
-    <!-- Hux Delete, sad but pending in China
-    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
-    css'>
-    -->
-
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- ga & ba script hoook -->
-    <script></script>
-</head>
-
-
-<!-- hack iOS CSS :active style -->
-<body ontouchstart="">
-
-    <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">jk.tian-LOGGING</a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div id="huxblog_navbar">
-            <div class="navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="/">Home</a>
-                    </li>
-                    
-                    <li>
-                        <a href="/about/">About Me</a>
-                    </li>
-                    
-                    <li>
-                        <a href="/tags/">Tags</a>
-                    </li>
-                    
-                </ul>
-            </div>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container -->
-</nav>
-<script>
-    // Drop Bootstarp low-performance Navbar
-    // Use customize navbar with high-quality material design animation
-    // in high-perf jank-free CSS3 implementation
-    var $body   = document.body;
-    var $toggle = document.querySelector('.navbar-toggle');
-    var $navbar = document.querySelector('#huxblog_navbar');
-    var $collapse = document.querySelector('.navbar-collapse');
-
-    var __HuxNav__ = {
-        close: function(){
-            $navbar.className = " ";
-            // wait until animation end.
-            setTimeout(function(){
-                // prevent frequently toggle
-                if($navbar.className.indexOf('in') < 0) {
-                    $collapse.style.height = "0px"
-                }
-            },400)
-        },
-        open: function(){
-            $collapse.style.height = "auto"
-            $navbar.className += " in";
-        }
-    }
-
-    // Bind Event
-    $toggle.addEventListener('click', function(e){
-        if ($navbar.className.indexOf('in') > 0) {
-            __HuxNav__.close()
-        }else{
-            __HuxNav__.open()
-        }
-    })
-
-    /**
-     * Since Fastclick is used to delegate 'touchstart' globally
-     * to hack 300ms delay in iOS by performing a fake 'click',
-     * Using 'e.stopPropagation' to stop 'touchstart' event from 
-     * $toggle/$collapse will break global delegation.
-     * 
-     * Instead, we use a 'e.target' filter to prevent handler
-     * added to document close HuxNav.  
-     *
-     * Also, we use 'click' instead of 'touchstart' as compromise
-     */
-    document.addEventListener('click', function(e){
-        if(e.target == $toggle) return;
-        if(e.target.className == 'icon-bar') return;
-        __HuxNav__.close();
-    })
-</script>
-
-
-    <!-- Page Header -->
-<header class="intro-header" style="background-image: url('/')">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>jk.tian-LOGGING</h1>
-                    <!--<hr class="small">-->
-                    <span class="subheading">Thinking will not overcome fear but action will.</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-
-<!-- Main Content -->
-<div class="container">
-	<div class="row">
-        
-
-<!-- USE SIDEBAR -->
-    <!-- PostList Container -->
-    		<div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                postlist-container
-            ">
-    			
-<div class="post-preview">
-    <a href="/2019/03/20/nn/">
-        <h2 class="post-title">
-            神经网络
-        </h2>
-        
-        <div class="post-content-preview">
-            神经网络
-激励函数: elu/relu/linear/prelu/leaky_relu/softplus
-优化办法/梯度算法: adam/mom/msprop/sgd(随机梯度下降)
-神经网络是一种监督学习,需要大量的样本以及对应标签
-
-激活函数:
-
-  线性:
-  非线性:sigmoid、tanh、relu. sigmoid/tanh比较常见于全连接层，后者relu常见于卷积层.ReLu是...
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by jktian on March 20, 2019
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/2019/03/20/linux-manjaro/">
-        <h2 class="post-title">
-            博客搭建
-        </h2>
-        
-        <h3 class="post-subtitle">
-            　
-        </h3>
-        
-        <div class="post-content-preview">
-            1 常用命令
-
-  查找端口并删除进程:
-    
-      $ lsof -i:
-      $ kill -9 
-    
-  
-
-
-
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by jktian on March 20, 2019
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/2019/03/16/python-magic/">
-        <h2 class="post-title">
-            python黑魔法
-        </h2>
-        
-        <div class="post-content-preview">
-            with
-with只适用于上下文管理器的调用，除了文件外，with还支持 threading、decimal等模块，当然我们也可以自己定义可以给with调用的上下文管理器
-使用类定义上下文管理器。
-    class A():
-        def __enter__(self):
-            self.a=1
-            return self
-        d...
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by jktian on March 16, 2019
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/2019/03/16/python-multiprocess/">
-        <h2 class="post-title">
-            python多进程/多进程
-        </h2>
-        
-        <div class="post-content-preview">
-            进程＆线程
-进程只是用来把资源集中到一起（进程只是一个资源单位，或者说资源集合），而线程才是cpu上的执行单位．进程之间的内存空间是隔离的
-多线程（即多个控制线程）的概念是，在一个进程中存在多个控制线程，多个控制线程共享该进程的地址空间
-进程之间是竞争关系，线程之间是协作关系
-
-利用multiprocessing库，使用多进程，而不是多线程，充分利用多核cpu资源
-
-多线程指的是，在一个进程...
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by jktian on March 16, 2019
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/2019/03/15/cpp/">
-        <h2 class="post-title">
-            cpp/c在oj
-        </h2>
-        
-        <div class="post-content-preview">
-            cpp
-
-
-  取消科学计数法: 头文件
-  cout.setf(ios::fixed,ios::floatfield);
-  保留小数精度: cout « fixed « setpresicion(1) « num ;
-  流式写法: 每次接受一个输入,立刻判断处理.一次循环.
-  缓冲式写法: 批量写入数据,批量处理.多个单循环
-
-
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by jktian on March 15, 2019
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/2019/03/15/java-socket/">
-        <h2 class="post-title">
-            java模拟路由表构建
-        </h2>
-        
-        <div class="post-content-preview">
-            项目内容
-java模拟路由表构建
-socket
-multi-thread
-properties文件读取
-Java 开发中，需要将一些易变的配置参数放置再 XML 配置文件或者 properties 配置文件中。然而 XML 配置文件需要通过 DOM 或 SAX 方式解析，而读取 properties 配置文件就比较容易
-
-         Properties prop = new Prop...
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by jktian on March 15, 2019
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/2019/03/15/suoni-projecct/">
-        <h2 class="post-title">
-            关于降低员工离职率的策略研究
-        </h2>
-        
-        <div class="post-content-preview">
-            降低员工离职率的方案
-
-  多层感知机预测员工离职率
-  定义元动作和元成本
-  运用强化学习方法, Q-learning/SARSA算法进行最优策略的输出
-
-
-论文问题
-
-  写有研究型论文深度不够，应该写应用型论文
-  语言有问题，不像学术论文，偏白话
-  风格不行，没有按照论文的基本套路来，建议先读两篇应用型论文，然后严格按照套路来（可以在百度学术－－＞计算机工程与应用上选几篇应用型的...
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by jktian on March 15, 2019
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/2019/03/15/webfront/">
-        <h2 class="post-title">
-            web前端——开发案例第一次上机
-        </h2>
-        
-        <div class="post-content-preview">
-            软件开发案例——第一次上机
-
-  收获主要是页面布局方面
-  
-    综合使用浏览器开发者选项，查看元素以及父子链接关系
-    查看官方文档
-  
-
-
-表格布局
-task: 注册页面的制作
-直接表格布局table==&gt;tr==&gt;td, form表单是其中一个tr.td
-div布局
-task: 北京银行的首页制作
-div嵌套着table/div/p.span. 只需要限制每个d...
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by jktian on March 15, 2019
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/2019/03/15/sarsa/">
-        <h2 class="post-title">
-            Q-learning / SARSA
-        </h2>
-        
-        <div class="post-content-preview">
-            Q-learning
-
-  初始化q-table. row为状态，column为动作．选择动作时，通过找值最大的单元格的列坐标
-  更新显示，通过判断是否终止，选择如何显示. time.sleep()
-  选取动作：根据epslon&gt;0.9, 随机选取或挑选q-table中最大的动作
-  得到下一个状态以及由s_i==&gt;s_{i+1}奖励值．if判断，应该可以从r表中得到
-   ...
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by jktian on March 15, 2019
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/2019/03/10/chatbolt/">
-        <h2 class="post-title">
-            多功能工具包（聊天机器人）
-        </h2>
-        
-        <div class="post-content-preview">
-            1 TODO	(DONE)
-
-  
-    重构代码，易扩展性
-  
-  
-    加入数据库存储
-  
-  
-    爬虫优化：尝试scrapy框架
-  
-  
-    推荐算法设计
-
-    项目地址
-  
-
-
-2 问题以及解决
-
-2.1 字体显示问题
-
-
-  linux中的python无法正常显示中文。
-
-
-​	$ cp *.ttf /usr/share/fonts/TTF
-
-
-  
-...
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by jktian on March 10, 2019
-    </p>
-</div>
-<hr>
-
-
-<!-- Pager -->
-
-<ul class="pager">
-    
-    
-    <li class="next">
-        <a href="/page2">Older Posts &rarr;</a>
-    </li>
-    
-</ul>
-
-
-    		</div>
-    <!-- Sidebar Container -->
-            <div class="
-                col-lg-3 col-lg-offset-0
-                col-md-3 col-md-offset-0
-                col-sm-12
-                col-xs-12
-                sidebar-container
-            ">
-                <!-- Featured Tags -->
-                
-                <section>
-                    <hr class="hidden-sm hidden-xs">
-                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
-                    <div class="tags">
-                        
-                            
-                                <a href="/tags/#tools" title="tools" rel="5">
-                                    tools
-                                </a>
-                            
-                        
-                            
-                        
-                            
-                        
-                            
-                                <a href="/tags/#log" title="log" rel="4">
-                                    log
-                                </a>
-                            
-                        
-                            
-                        
-                            
-                        
-                            
-                                <a href="/tags/#oj" title="oj" rel="7">
-                                    oj
-                                </a>
-                            
-                        
-                            
-                        
-                            
-                                <a href="/tags/#python" title="python" rel="5">
-                                    python
-                                </a>
-                            
-                        
-                            
-                        
-                            
-                        
-                            
-                                <a href="/tags/#project" title="project" rel="4">
-                                    project
-                                </a>
-                            
-                        
-                            
-                        
-                            
-                        
-                            
-                        
-                            
-                        
-                            
-                        
-                            
-                        
-                            
-                        
-                            
-                        
-                            
-                        
-                            
-                        
-                    </div>
-                </section>
-                
-
-                <!-- Short About -->
-                <section class="visible-md visible-lg">
-                    <hr><h5><a href="/about/">ABOUT ME</a></h5>
-                    <div class="short-about">
-                        
-                            <a href="/about">
-                                <img src="/img/about-BY-gentle.jpg"/>
-                            </a>
-                        
-                        
-                            <p>Goals determine what you going to be!</p>
-                        
-                        <!-- SNS Link -->
-                        <ul class="list-inline">
-                            
-                            <!-- add jianshu add target = "_blank" to <a> by BY -->
-                            
-                            
-                            
-                            <li>
-                                <a target="_blank" href="https://www.zhihu.com/people/coolinear">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa  fa-stack-1x fa-inverse">知</i>
-                                    </span>
-                                </a>
-                            </li>
-                            
-                            
-                            
-                            
-                            <li>
-                                <a target="_blank" href="https://github.com/ixneo">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            
-                            
-                        </ul>
-                        
-                            <p>✉️ jktian6@gmail.com</p>
-                        
-                    </div>
-                </section>
-                <!-- Friends Blog -->
-                
-    		</div>
-        
-	</div>
-</div>
-
-
-    <!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <ul class="list-inline text-center">
-                    
-                    <!-- add jianshu add target = "_blank" to <a> by BY -->
-                    
-                    
-
-                    <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
-                    
-                    <li>
-                        <a target="_blank" href="https://www.zhihu.com/people/coolinear">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa  fa-stack-1x fa-inverse">知</i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-
-
-                    
-                    
-                    <li>
-                        <a target="_blank" href="https://github.com/ixneo">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                </ul>
-                <p class="copyright text-muted">
-                    Copyright &copy; jk.tian-LOGGING 2019
-                    <br>
-                    Theme on <a href="https://github.com/ixneo/ixneo.github.io.git">GitHub</a> |
-                    <iframe
-                        style="margin-left: 2px; margin-bottom:-5px;"
-                        frameborder="0" scrolling="0" width="100px" height="20px"
-                        src="https://ghbtns.com/github-btn.html?user=ixneo&repo=ixneo.github.io&type=star&count=true" >
-                    </iframe>
-                </p>
-            </div>
-        </div>
-    </div>
-</footer>
-
-<!-- jQuery -->
-<script src="/js/jquery.min.js "></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="/js/bootstrap.min.js "></script>
-
-<!-- Custom Theme JavaScript -->
-<script src="/js/hux-blog.min.js "></script>
-
-<!-- Service Worker -->
-
-<script type="text/javascript">
-    if(navigator.serviceWorker){
-        // For security reasons, a service worker can only control the pages that are in the same directory level or below it. That's why we put sw.js at ROOT level.
-        navigator.serviceWorker
-            .register('/sw.js')
-            .then((registration) => {console.log('Service Worker Registered. ', registration)})
-            .catch((error) => {console.log('ServiceWorker registration failed: ', error)})
-    }
-</script>
-
-
-
-<!-- async load function -->
-<script>
-    function async(u, c) {
-      var d = document, t = 'script',
-          o = d.createElement(t),
-          s = d.getElementsByTagName(t)[0];
-      o.src = u;
-      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-      s.parentNode.insertBefore(o, s);
-    }
-</script>
-
-<!-- 
-     Because of the native support for backtick-style fenced code blocks 
-     right within the Markdown is landed in Github Pages, 
-     From V1.6, There is no need for Highlight.js, 
-     so Huxblog drops it officially.
-
-     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
-     - https://help.github.com/articles/creating-and-highlighting-code-blocks/ 
-     - https://github.com/jneen/rouge/wiki/list-of-supported-languages-and-lexers   
--->
-<!--
     <script>
-        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
-            hljs.initHighlightingOnLoad();
-        })
-    </script>
-    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
--->
-
-
-<!-- jquery.tagcloud.js -->
-<script>
-    // only load tagcloud.js in tag.html
-    if($('#tag_cloud').length !== 0){
-        async('/js/jquery.tagcloud.js',function(){
-            $.fn.tagcloud.defaults = {
-                //size: {start: 1, end: 1, unit: 'em'},
-                color: {start: '#bbbbee', end: '#0085a1'},
-            };
-            $('#tag_cloud a').tagcloud();
-        })
-    }
-</script>
-
-<!--fastClick.js -->
-<script>
-    async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function(){
-        var $nav = document.querySelector("nav");
-        if($nav) FastClick.attach($nav);
-    })
-</script>
-
-
-<!-- Google Analytics -->
-
-<script>
-    // dynamic User by Hux
-    var _gaId = 'UA-90855596-1';
-    var _gaDomain = 'auto';
-
-    // Originial
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', _gaId, _gaDomain);
-    ga('send', 'pageview');
-</script>
-
-
-
-<!-- Baidu Tongji -->
-
-<script>
-    // dynamic User by Hux
-    var _baId = 'eecae4e01c28263526649fed53c49b94';
-
-    // Originial
+    // 百度统计代码
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
-      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      hm.src = "//hm.baidu.com/hm.js?eecae4e01c28263526649fed53c49b94";
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(hm, s);
     })();
-</script>
+    </script>
 
 
 
 
-<!-- Side Catalog -->
+</head>
+
+
+  <body>
+
+    <header id="top">
+    <div class="wrapper">
+        <a href="/" class="brand">jktian-logging</a>
+        <small>majon in data-science</small>
+        <button id="headerMenu" class="menu"><i class="fa fa-bars"></i></button>
+        <nav id="headerNav">
+            <ul>
+                <li>
+                    
+                    <a class="active" href="/">
+                        
+                        <i class="fa fa-home"></i>Home
+                    </a>
+                </li>
+
+                
+                    
+                    <li>
+                        
+                        <a href="/archive/">
+                        
+                            <i class="fa fa-archive"></i>Archives
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/category/">
+                        
+                            <i class="fa fa-th-list"></i>Categories
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/tag/">
+                        
+                            <i class="fa fa-tags"></i>Tags
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/collection/">
+                        
+                            <i class="fa fa-bookmark"></i>Collections
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/demo/">
+                        
+                            <i class="fa fa-play"></i>Demo
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/about/">
+                        
+                            <i class="fa fa-heart"></i>About
+                        </a>
+                    </li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+        <div class="page clearfix" index>
+    <div class="left">
+        <h1>Welcome to jktian's blog </h1>
+        <small>故世之奇伟瑰怪非常之观,常在于险远</small>
+        <hr>
+        <ul>
+            
+              <li>
+                <h2>
+                  <a class="post-link" href="/2019/03/20/nn/">神经网络</a>
+                </h2>
+                <div class="label">
+                    <div class="label-card">
+                        <i class="fa fa-calendar"></i>2019-03-20
+                    </div>
+                    <div class="label-card">
+                        <i class="fa fa-user"></i>jktian
+                        
+                    </div>
+                    <div class="label-card">
+                        
+                    </div>
+
+                    <div class="label-card">
+                    
 
 
 
+                    </div>
+
+                    <div class="label-card">
+                    
+<!-- <span class="point">•</span> -->
+<span class="pageTag">
+  <i class="fa fa-tags"></i>
+  
+    
+        <a href="/tag/#神经网络" title="Tag: 神经网络" rel="tag">神经网络</a>
+    
+  
+
+</span>
+
+                    </div>
+                </div>
+                <div class="excerpt">
+                    <ul id="markdown-toc">
+  <li><a href="#神经网络" id="markdown-toc-神经网络">神经网络</a></li>
+</ul>
+<h1 id="神经网络">神经网络</h1>
+
+<p>激励函数: elu/relu/linear/prelu/leaky_relu/softplus</p>
+
+<p>优化办法/梯度算法: adam/mom/msprop/sgd(随机梯度下降)</p>
+
+<p>神经网络是一种监督学习,需要大量的样本以及对应标签</p>
 
 
-<!-- Image to hack wechat -->
-<img src="/img/apple-touch-icon.png" width="0" height="0" />
-<!-- Migrate from head to bottom, no longer block render and still work -->
+                </div>
+                <div class="read-all">
+                    <a  href="/2019/03/20/nn/"><i class="fa fa-newspaper-o"></i>Read All</a>
+                </div>
+                <hr>
+              </li>
+            
+              <li>
+                <h2>
+                  <a class="post-link" href="/2019/03/20/java-socket/">java模拟路由表构建</a>
+                </h2>
+                <div class="label">
+                    <div class="label-card">
+                        <i class="fa fa-calendar"></i>2019-03-20
+                    </div>
+                    <div class="label-card">
+                        <i class="fa fa-user"></i>jktian
+                        
+                    </div>
+                    <div class="label-card">
+                        
+                    </div>
 
-</body>
+                    <div class="label-card">
+                    
+
+
+
+                    </div>
+
+                    <div class="label-card">
+                    
+<!-- <span class="point">•</span> -->
+<span class="pageTag">
+  <i class="fa fa-tags"></i>
+  
+    
+        <a href="/tag/#java" title="Tag: java" rel="tag">java</a>&nbsp;
+    
+        <a href="/tag/#project" title="Tag: project" rel="tag">project</a>&nbsp;
+    
+        <a href="/tag/#多进程" title="Tag: 多进程" rel="tag">多进程</a>
+    
+  
+
+</span>
+
+                    </div>
+                </div>
+                <div class="excerpt">
+                    <h1 id="项目内容">项目内容</h1>
+<p>java模拟路由表构建
+socket
+multi-thread</p>
+<h1 id="properties文件读取">properties文件读取</h1>
+<p>Java 开发中，需要将一些易变的配置参数放置再 XML 配置文件或者 properties 配置文件中。然而 XML 配置文件需要通过 DOM 或 SAX 方式解析，而读取 properties 配置文件就比较容易</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>         Properties prop = new Properties();
+         String value = null;
+         try {
+             // 通过输入缓冲流进行读取配置文件
+             InputStream InputStream = new BufferedInputStream(new FileInputStream(new File(filePath)));
+             // 加载输入流
+             prop.load(InputStream);
+             // 根据关键字获取value值
+		value = prop.getProperty(keyWord);
+</code></pre></div></div>
+<h1 id="文件读写操作">文件读写操作</h1>
+<p>inputstream是filestream的父类
+BufferedInputStream和BufferedoutputStream是FilterInputStream和FilterOutputStream的子类，可以避免每次发送或者
+写数据的时候，进行实际的写操作，使用的是缓冲区；</p>
+
+<p>不应用缓冲区的时候，每次读取一个字节，写入一个字节，由于操作磁盘比内存慢的很多，所以不应用缓冲区效率很低；
+应用缓冲区，可以一次读取多个字节，先不写入磁盘，而是放入内存之中，到了缓冲区大小的时候，在写入磁盘，减少了对磁盘的操作，效率高；
+应用缓冲流，在结束的时候，调用flush和close方法，将缓冲区的数据都清理出来，，写入磁盘，否则可能无数据；
+InputStreamReader类是从字节流到字符流的桥接器
+InputStreamReader(InputStream in, String charsetName)
+byteArrayInputStream(byte buf[])
+objectStream</p>
+
+<h1 id="java语言的特点">java语言的特点</h1>
+<p>安全,虚拟机,规范/一板一眼</p>
+<h1 id="hashmap--hashset">hashmap &amp; hashset</h1>
+<p>HashSet实现了Set接口，它不允许集合中出现重复元素。当我们提到HashSet时，第一件事就是在将对象存储在HashSet之前，要确保重写hashCode（）方法和equals（）方法，这样才能比较对象的值是否相等.HashSet使用成员对象来计算hashcode值对于两个对象来说hashcode可能相同，
+所以equals()方法用来判断对象的相等性，如果两个对象不同的话，那么返回false</p>
+
+<p>HashMap实现了Map接口，Map接口对键值对进行映射。Map中不允许出现重复的键（Key）。Map接口有两个基本的实现
+TreeMap和HashMap。TreeMap保存了对象的排列次序，而HashMap不能。HashMap可以有空的键值对（Key（null）-Value（null））
+HashMap是非线程安全的（非Synchronize），要想实现线程安全，那么需要调用collections类的静态方法synchronizeMap（）实现。
+HashMap使用键（Key）计算Hashcode</p>
+<h1 id="实现serialable接口">实现serialable接口</h1>
+<p>实现serializabel接口的作用是就是可以把对象存到字节流，然后可以恢复，所以你想如果你的对象没实现序列化怎么才能进行持久化和网络传输呢，要持久化和网络传输就得转为字节流，所以在分布式应用中及设计数据持久化的场景中，你就得实现序列化</p>
+<h1 id="--equals--hashcode">== &amp; equals() &amp; hashcode()</h1>
+<p>==直接比较jvm中的内存地址
+equals()默认调用==, 可以重载,如string中首先比较内存地址,其次比较字符本身
+hashcode()返回32位的jvm内存地址</p>
+
+<p>(1)绑定。当equals方法被重写时，通常有必要重写 hashCode 方法，以维护 hashCode 方法的常规协定，该协定声明相等对象必须具有相等的哈希码。</p>
+
+<p>(2)绑定原因。Hashtable实现一个哈希表，为了成功地在哈希表中存储和检索对象，用作键的对象必须实现 hashCode 方法和 equals 方法。同(1)，必须保证equals相等的对象，hashCode 也相等。因为哈希表通过hashCode检索对象。</p>
+
+<p>(3)默认。</p>
+
+<p>　　==默认比较对象在JVM中的地址。</p>
+
+<p>　　hashCode 默认返回对象在JVM中的存储地址。</p>
+
+<p>　　equal比较对象，默认也是比较对象在JVM中的地址，同==
+　　</p>
+
+<h1 id="包装类">包装类</h1>
+
+                </div>
+                <div class="read-all">
+                    <a  href="/2019/03/20/java-socket/"><i class="fa fa-newspaper-o"></i>Read All</a>
+                </div>
+                <hr>
+              </li>
+            
+              <li>
+                <h2>
+                  <a class="post-link" href="/2019/03/20/senti-contest/">用户评论情感极性分析（三分类）</a>
+                </h2>
+                <div class="label">
+                    <div class="label-card">
+                        <i class="fa fa-calendar"></i>2019-03-20
+                    </div>
+                    <div class="label-card">
+                        <i class="fa fa-user"></i>jktian
+                        
+                    </div>
+                    <div class="label-card">
+                        
+                    </div>
+
+                    <div class="label-card">
+                    
+
+
+
+                    </div>
+
+                    <div class="label-card">
+                    
+<!-- <span class="point">•</span> -->
+<span class="pageTag">
+  <i class="fa fa-tags"></i>
+  
+    
+        <a href="/tag/#log" title="Tag: log" rel="tag">log</a>&nbsp;
+    
+        <a href="/tag/#nlp" title="Tag: nlp" rel="tag">nlp</a>&nbsp;
+    
+        <a href="/tag/#project" title="Tag: project" rel="tag">project</a>
+    
+  
+
+</span>
+
+                    </div>
+                </div>
+                <div class="excerpt">
+                    <h1 id="数据总览--预处理">数据总览 &amp; 预处理</h1>
+<ul>
+  <li>
+    <p>训练数据</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: center">数据类型</th>
+          <th style="text-align: center">列号范围</th>
+          <th style="text-align: center">行数</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: center">食品餐饮</td>
+          <td style="text-align: center">（1，13655）</td>
+          <td style="text-align: center">13655</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">旅游住宿</td>
+          <td style="text-align: center">（13656，32590）</td>
+          <td style="text-align: center">18935</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">金融服务</td>
+          <td style="text-align: center">（32591，46934）</td>
+          <td style="text-align: center">14344</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">医疗服务</td>
+          <td style="text-align: center">（46935，67246）</td>
+          <td style="text-align: center">20312</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">物流快递</td>
+          <td style="text-align: center">（67247,82025）</td>
+          <td style="text-align: center">14779</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <p>测试数据</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: center">数据类型</th>
+          <th style="text-align: center">列号范围</th>
+          <th style="text-align: center">行数</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: center">食品餐饮</td>
+          <td style="text-align: center">（1，5853）</td>
+          <td style="text-align: center">5853</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">旅游住宿</td>
+          <td style="text-align: center">（5854，13968）</td>
+          <td style="text-align: center">8115</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">金融服务</td>
+          <td style="text-align: center">（13969，20116）</td>
+          <td style="text-align: center">6148</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">医疗服务</td>
+          <td style="text-align: center">（20117，28822）</td>
+          <td style="text-align: center">8706</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">物流快递</td>
+          <td style="text-align: center">（28823,35157）</td>
+          <td style="text-align: center">6335</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <p>评判标准
+  综合准确率和召回率，得到得分</p>
+    <h1 id="模型搭建--优化--得分结果">模型搭建 &amp; 优化 &amp; 得分结果</h1>
+    <ol>
+      <li>数据分类（预处理）</li>
+    </ol>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: center">分类与否</th>
+          <th style="text-align: center">得分</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: center">有分类</td>
+          <td style="text-align: center">0.8703</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">无分类</td>
+          <td style="text-align: center">0.64</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<ol>
+  <li>jieba分词
+    <ul>
+      <li>三种分词模式：精确模式、全模式、搜索引擎模式。选择精确模式</li>
+      <li>默认启用HMM模型</li>
+    </ul>
+  </li>
+  <li>
+    <p>停用词表的选择</p>
+
+    <ul>
+      <li>中科院计算机所的停用词表</li>
+    </ul>
+  </li>
+  <li>
+    <p>word2vec：字符串词向量 ==&gt; 数值化词向量</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: center">word2vec的size（词向量的维度）</th>
+          <th style="text-align: center">得分</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: center">100</td>
+          <td style="text-align: center">0.8703</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">200</td>
+          <td style="text-align: center">0.8747</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">300</td>
+          <td style="text-align: center">0.8768</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">400</td>
+          <td style="text-align: center">0.8724</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>SVM（支持向量机）分类器，生成分类器模型
+    <ol>
+      <li>核函数的选择
+        <ul>
+          <li>rbf，gaussian为未知情况的选择</li>
+          <li>线性、多项式为大概有图景时的选择</li>
+          <li>softmax用于后续神经网络的搭建</li>
+        </ul>
+      </li>
+      <li>
+        <p>惩罚系数</p>
+
+        <p>| 惩罚系数 | 得分|
+ |:—:|:—:|
+ | 0.1 | 0.8636 |
+ |1|0.8780|
+ |100|0.8815|
+ |500|0.8851|
+ |1000|待测|</p>
+        <blockquote>
+          <ul>
+            <li>以上为word2vec的size为300时的具体情况：</li>
+            <li>惩罚系数: 越高越好，越费时，过拟合的风险越大</li>
+            <li>用时：5个类别，每个类别两个svm模型，共十个模型。c=500时，每个模型10-20min</li>
+          </ul>
+        </blockquote>
+      </li>
+    </ol>
+  </li>
+  <li>查找并补全缺失项</li>
+</ol>
+
+<ul>
+  <li>通过现实情况，多种方案间的对比，进行人工加工</li>
+</ul>
+
+<h1 id="心得体会">心得体会</h1>
+<ol>
+  <li>数据分析的根本目的是描述或者预测，具体的应用方法和分析手段并不重要，重要的是那个结果，即输出。中间可以掺杂多种分析手段，可以混合机器和人工</li>
+  <li>例如，可以混合使用wps查看excel和用python批量处理数据</li>
+  <li>遍的理念，用于控制复杂度。根据不同的目的，对全体数据进行多遍处理，类似编译器的制作。
+    <ol>
+      <li>第一遍进行分词，第二遍进行词法分析，第三遍语义处理</li>
+      <li>本次查找并补全缺失项中。第一遍查找缺失的行，第二遍进行补充
+        <blockquote>
+          <p>要有针对性，想要一次性地做好全部事情的想法，是不现实的。分步骤来</p>
+        </blockquote>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+                </div>
+                <div class="read-all">
+                    <a  href="/2019/03/20/senti-contest/"><i class="fa fa-newspaper-o"></i>Read All</a>
+                </div>
+                <hr>
+              </li>
+            
+              <li>
+                <h2>
+                  <a class="post-link" href="/2019/03/20/chatbolt/">多功能工具包（聊天机器人）</a>
+                </h2>
+                <div class="label">
+                    <div class="label-card">
+                        <i class="fa fa-calendar"></i>2019-03-20
+                    </div>
+                    <div class="label-card">
+                        <i class="fa fa-user"></i>jktian
+                        
+                    </div>
+                    <div class="label-card">
+                        
+                    </div>
+
+                    <div class="label-card">
+                    
+
+
+
+                    </div>
+
+                    <div class="label-card">
+                    
+<!-- <span class="point">•</span> -->
+<span class="pageTag">
+  <i class="fa fa-tags"></i>
+  
+    
+        <a href="/tag/#log" title="Tag: log" rel="tag">log</a>&nbsp;
+    
+        <a href="/tag/#project" title="Tag: project" rel="tag">project</a>
+    
+  
+
+</span>
+
+                    </div>
+                </div>
+                <div class="excerpt">
+                    <h1 id="1-todo-done">1 TODO	(DONE)</h1>
+<ol>
+  <li>
+    <p>重构代码，易扩展性</p>
+  </li>
+  <li>
+    <p>加入数据库存储</p>
+  </li>
+  <li>
+    <p>爬虫优化：尝试scrapy框架</p>
+  </li>
+  <li>
+    <p>推荐算法设计</p>
+
+    <p><a href="https://github.com/ixNeo/ChatRobot">项目地址</a></p>
+  </li>
+</ol>
+
+<h1 id="2-问题以及解决">2 问题以及解决</h1>
+
+<h2 id="21-字体显示问题">2.1 字体显示问题</h2>
+
+<ul>
+  <li>linux中的python无法正常显示中文。</li>
+</ul>
+
+<p>​	$ cp *.ttf /usr/share/fonts/TTF</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>​	$ fc-list</td>
+      <td>grep</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>​	$ fc-cache -fv	# 刷新，f表示force, v表示view</p>
+
+<ul>
+  <li>查看python安装路径</li>
+</ul>
+
+<p>​	python交互环境下：</p>
+
+<p>​		$ import sys</p>
+
+<p>​		$ sys.path</p>
+
+<p>​	catfish搜索
+ 	从anaconda入手搜索</p>
+
+<p>​	一步步$ ls	$ subl3 查看源码文件</p>
+
+<ul>
+  <li>
+    <p>包可能存在的目录</p>
+
+    <p>/opt/anaconda/lib</p>
+
+    <p>~/.conda/envs/python36/lib/python3.6/site-packages</p>
+
+    <p>/home/jktian/.conda/envs/python36/lib/python3.6/tkinter/font.py</p>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 查看tkinter支持的字体
+</span><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">tkinter.font</span> <span class="k">as</span> <span class="n">tkFont</span>
+<span class="n">root</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">tkFont</span><span class="o">.</span><span class="n">families</span><span class="p">())</span>
+</code></pre></div></div>
+
+<ol>
+  <li>给linux系统安装中文字体，并找到字体文件的具体位置</li>
+  <li>希望在python-tkinter的库函数中直接按照文件名调用字体；未找到代码实现，即使找到了tkinter的源代码</li>
+  <li>通过tkinter提供的函数，找到支持的系统字体（即当前平台可用的字体），并筛选出支持中文的字体
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">font_list</span> <span class="o">=</span> <span class="p">[</span><span class="s">'sampige'</span><span class="p">,</span><span class="s">'likhan'</span><span class="p">,</span><span class="s">'orya'</span><span class="p">,</span><span class="s">'akrutimal2'</span><span class="p">,</span><span class="s">'droid naskh shift alt'</span><span class="p">,</span><span class="s">'gurbanibolilite'</span><span class="p">,</span><span class="s">'pothana2000'</span><span class="p">,</span><span class="s">'tscu_comic'</span><span class="p">,</span><span class="s">'malotf'</span><span class="p">,</span><span class="s">'tscu_times'</span><span class="p">,</span><span class="s">'sagar'</span><span class="p">,</span><span class="s">'padmaa'</span><span class="p">,</span><span class="s">'akaash'</span><span class="p">]</span> <span class="c1"># 不完全
+</span></code></pre></div>    </div>
+    <h4 id="summary">summary</h4>
+  </li>
+  <li>不同的图形函数库对跨平台的支持性不同，要选择合适的库进行图形界面的开发。
+  	- 可选项：python:tkinter, pyqt</li>
+  <li>对于字体的支持。不仅要操作系统支持，还要图形函数库的支持，所以只有.ttf文件是不够的</li>
+</ol>
+
+<h4 id="扩展">扩展</h4>
+<p>类比tkinter：css中引入外部字体，使用任意外部字体文件。通过@font-face. 字体文件后缀.TTF/EOT/SVG</p>
+<blockquote>
+  <p>css支持引入外部字体文件，但tkinter函数库不支持
+在“现代”Linux上 ，有2级字体支持：
+第一种是  “native”X支持，
+第二个是由图形工具包提供的使用（Qt与KDE，但我认为OpenOffice和FireFox使用Gtk）。  	不幸的是，tk  - 因此Tkinter  - 只看到X处的字体水平，而不是Qt / Gtk水平。</p>
+</blockquote>
+
+<h2 id="22-几个批量操作自动化">2.2 几个批量操作（自动化）</h2>
+<ol>
+  <li>批量创建函数（无问题，每一个函数确实是不同的）</li>
+  <li>批量将按钮和函数关联（由于执行顺序问题，所有按钮都关联到最后一个函数，因为改变了self, 动态类型就是这样）
+    <blockquote>
+      <p>解决方案：
+	- 不要在一个消息类中创建所有联系人。要创建一个联系人类，每个联系人作为一个实例。
+	- 本质：类和对象的关系，选择使用要谨慎</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>抽象出联系人类，继承类有Bolt,People,Translator,MovieRecomm类
+ 问题：按钮的转换有问题，由于联系人类是Msg类的成员变量，无法访问并修改Msg类的其他成员变量，所以按钮的对应函数无法正常工作，即无法完成切换联系人功能</p>
+
+    <ul>
+      <li>矛盾点：想要批量操作，逻辑清晰。但作用域存在问题</li>
+      <li>解决方案：将Msg类的实例(即self)传入Msg的成员变量Connector类中，则Connector类可以对Msg实例进行修改
+        <h4 id="summary-1">summary</h4>
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- 面向接口编程。先定义接口，假设底层函数已经写好
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="23-数据库--智能回复算法设计">2.3 数据库 &amp; 智能回复算法设计</h2>
+<h3 id="jieba概览">jieba概览</h3>
+<ul>
+  <li>分词模式。精确，全、搜索引擎</li>
+  <li>关键词以及其权重提取</li>
+  <li>词性标注-基于分词
+    <h3 id="目标">目标</h3>
+    <ol>
+      <li>数据库预处理。得到对应输入和输出，以及其分词以及词性标注</li>
+    </ol>
+  </li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>输入</th>
+      <th>输出</th>
+      <th>输入分词</th>
+      <th>输出分词</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>你是谁</td>
+      <td>我是你</td>
+      <td>[(你，n),]</td>
+      <td>[（我，n）,]</td>
+    </tr>
+  </tbody>
+</table>
+
+<ol>
+  <li>用户输入数据。分词
+    <ul>
+      <li>方案一（已实现）：对输入分词，找到和先验输入的距离，根据距离前几的输出以及词性，进行混合输出（每个词性中随机挑选某个输入）。
+        <ul>
+          <li>难点：灵活度很大，一句话的组成成分很复杂，可以是动宾短语，可以是整句。词性的组合是难点。</li>
+          <li>理论依据：根据现实中对方的应答，做出回复</li>
+          <li>此处对所有词性的顺序打乱，是否输出按照概率，输出哪一个词按照概率。没有考虑具体如何成句（考虑到网上聊天的随意性，好像此处假设合理）</li>
+        </ul>
+      </li>
+      <li>方案二（不合适）：数据库预处理，得到新表。对得到的输出句子的重复数目进行统计，挑选前几名，根据词性进行混合</li>
+      <li>方案三（已实现）：直接根据输入，和对方的所有输出进行距离计算，算出距离最小的。理论依据：对话的内容相关即可。之后可以根据词性进行混合
+        <ul>
+          <li>只能在原有的输出中原样输出</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<table>
+  <tbody>
+    <tr>
+      <td>（词语，词性）</td>
+      <td>可能的输出句子</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>问题：真实的聊天记录不是问答式的，不是单向的，在整个上下文中，问答角色的确立是模糊的。所以很难根据输入确定输出。直接按照名字和话语列表为一行，然后按照周围的其他角色当做回复
+  |姓名|输入|输入分词|</p>
+</blockquote>
+
+<h4 id="summary-2">summary</h4>
+<ol>
+  <li>按照框架，搭脚手架</li>
+  <li>根据不同的方案，比对结果</li>
+  <li>理论依据：对话的内容相关即可。之后可以根据词性进行混合</li>
+</ol>
+
+<h4 id="后续研究方向">后续研究方向</h4>
+<p>一个句子的构成是多种多样的，可以由不同类型以及不同顺序的词性构成，但又存在顺序规律，不是完全随机的。需要在几个固定模式下进行随机，效果会更好。未考虑相邻词的联系</p>
+
+<h3 id="数据库选择--基本使用">数据库选择 &amp; 基本使用</h3>
+<ul>
+  <li>SQLite: 适合桌面端和移动端，轻量级，可嵌入</li>
+  <li>MySQL: 服务器端，支持高并发访问，占用的内存大
+    <ol>
+      <li>登录</li>
+      <li>选择数据库
+        <blockquote>
+          <p>$ show databases
+$ use database_name</p>
+        </blockquote>
+      </li>
+      <li>选择查看表
+        <blockquote>
+          <p>desc table_name 查看表结构
+在Python中操作数据库时，要先导入数据库对应的驱动，然后，通过Connection对象和Cursor对象操作数据。数据以.db形式存储，读取文件用建立连接的方式。最后conn要提交，关闭</p>
+        </blockquote>
+      </li>
+    </ol>
+  </li>
+</ul>
+
+<h3 id="python字符串和列表的转换">python字符串和列表的转换</h3>
+<p>数据库中，需要保存分词结果，是一个内部为元组的列表，只能先转换为字符串，然后取出后转换为列表，普通的分隔符无效，需要设置特殊的分隔符。</p>
+<ul>
+  <li>字符串==》list:   str.split(‘’)  , 直接用list()是按单个字符划分</li>
+  <li>列表==》字符串：	““.join(list), 直接用str()会把[]包含进去</li>
+</ul>
+
+
+                </div>
+                <div class="read-all">
+                    <a  href="/2019/03/20/chatbolt/"><i class="fa fa-newspaper-o"></i>Read All</a>
+                </div>
+                <hr>
+              </li>
+            
+              <li>
+                <h2>
+                  <a class="post-link" href="/2019/03/20/linux-manjaro/">博客搭建</a>
+                </h2>
+                <div class="label">
+                    <div class="label-card">
+                        <i class="fa fa-calendar"></i>2019-03-20
+                    </div>
+                    <div class="label-card">
+                        <i class="fa fa-user"></i>jktian
+                        
+                    </div>
+                    <div class="label-card">
+                        
+                    </div>
+
+                    <div class="label-card">
+                    
+
+
+
+                    </div>
+
+                    <div class="label-card">
+                    
+<!-- <span class="point">•</span> -->
+<span class="pageTag">
+  <i class="fa fa-tags"></i>
+  
+    
+        <a href="/tag/#tools" title="Tag: tools" rel="tag">tools</a>&nbsp;
+    
+        <a href="/tag/#linux" title="Tag: linux" rel="tag">linux</a>
+    
+  
+
+</span>
+
+                    </div>
+                </div>
+                <div class="excerpt">
+                    <h1 id="1-常用命令">1 常用命令</h1>
+<ul>
+  <li>查找端口并删除进程:
+    <ul>
+      <li>$ lsof -i:<post></post></li>
+      <li>$ kill -9 <pid></pid></li>
+    </ul>
+  </li>
+</ul>
+
+
+                </div>
+                <div class="read-all">
+                    <a  href="/2019/03/20/linux-manjaro/"><i class="fa fa-newspaper-o"></i>Read All</a>
+                </div>
+                <hr>
+              </li>
+            
+              <li>
+                <h2>
+                  <a class="post-link" href="/2019/03/20/database/">数据库常见操作</a>
+                </h2>
+                <div class="label">
+                    <div class="label-card">
+                        <i class="fa fa-calendar"></i>2019-03-20
+                    </div>
+                    <div class="label-card">
+                        <i class="fa fa-user"></i>jktian
+                        
+                    </div>
+                    <div class="label-card">
+                        
+                    </div>
+
+                    <div class="label-card">
+                    
+
+
+
+                    </div>
+
+                    <div class="label-card">
+                    
+<!-- <span class="point">•</span> -->
+<span class="pageTag">
+  <i class="fa fa-tags"></i>
+  
+    
+        <a href="/tag/#database" title="Tag: database" rel="tag">database</a>
+    
+  
+
+</span>
+
+                    </div>
+                </div>
+                <div class="excerpt">
+                    <h1 id="数据库">数据库</h1>
+<p>oracle数据库有默认的几张表,可以用于练习sql语句的书写</p>
+
+<p>数据类型;
+	char, varchar, date, number
+创建表,  对每个列进行约束:
+	默认值,主键,外键,非空
+增加:
+	insert into &lt;table&gt; values (col1,col2,…)
+删除:
+	drop table <table_name> # 直接删除表的定义,删除结构
+	drop database <database_name>
+	delete * from <table_name> # 删除数据
+改:	
+	alter table student drop age # 更改结构
+	update <table_name> set <col_name>=<value> where ... # 更改数据,中间可以有select语句
+查:
+	select dept_name dname, job
+	from table1, table2
+	where deptno in (select deptno from dept)
+	group by deptno
+	having avg(sal)&gt;2000
+	order by desc;</value></col_name></table_name></table_name></database_name></table_name></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>为表起别名,
+自查询,多表联合查询,分组查询,嵌套查询(select可以出现在任何地方)
+</code></pre></div></div>
+
+                </div>
+                <div class="read-all">
+                    <a  href="/2019/03/20/database/"><i class="fa fa-newspaper-o"></i>Read All</a>
+                </div>
+                <hr>
+              </li>
+            
+        </ul>
+
+
+
+        <!-- Pagination links -->
+        <div class="pagination">
+          
+            <span class="previous disable"><i class="fa fa-angle-double-left"></i></span>
+            <span class="previous disable"><i class="fa fa-angle-left"></i></span>
+          
+          <span class="page_number ">1/6</span>
+          
+            <a href="/page2" class="next"><i class="fa fa-angle-right"></i></a>
+            <a href="/page6" class="next"><i class="fa fa-angle-double-right"></i></a>
+          
+        </div>
+    </div>
+    <!-- <button class="anchor"><i class="fa fa-anchor"></i></button> -->
+    <div class="right">
+        <div class="wrap">
+            <div class="side">
+                <div>
+                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                    Recent Posts
+                </div>
+                <ul class="content-ul" recent>
+                    
+                        <li><a href="/2019/03/20/nn/">神经网络</a></li>
+                    
+                        <li><a href="/2019/03/20/java-socket/">java模拟路由表构建</a></li>
+                    
+                        <li><a href="/2019/03/20/senti-contest/">用户评论情感极性分析（三分类）</a></li>
+                    
+                        <li><a href="/2019/03/20/chatbolt/">多功能工具包（聊天机器人）</a></li>
+                    
+                        <li><a href="/2019/03/20/linux-manjaro/">博客搭建</a></li>
+                    
+                        <li><a href="/2019/03/20/database/">数据库常见操作</a></li>
+                    
+                        <li><a href="/2019/03/20/sarsa/">Q-learning / SARSA</a></li>
+                    
+                        <li><a href="/2019/03/16/python-magic/">python黑魔法</a></li>
+                    
+                        <li><a href="/2019/03/16/python-multiprocess/">python多进程/多进程</a></li>
+                    
+                        <li><a href="/2019/03/15/cpp/">cpp/c在oj</a></li>
+                    
+                </ul>
+            </div>
+
+            <!-- Content -->
+            <div class="side ">
+                <div>
+                    <i class="fa fa-th-list"></i>
+                    Categories
+                </div>
+                <ul class="content-ul" cate>
+                    
+                </ul>
+            </div>
+            <!-- 其他div框放到这里 -->
+            <div class="side">
+                <div>
+                    <i class="fa fa-tags"></i>
+                    Tags
+                </div>
+                <div class="tags-cloud">
+                    
+                    
+                    
+                    
+
+                    
+
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#tools" style="font-size: 15pt; color: #333;">tools</a>
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#博客搭建" style="font-size: 9pt; color: #999;">博客搭建</a>
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#csapp" style="font-size: 9pt; color: #999;">csapp</a>
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#log" style="font-size: 13.5pt; color: #444;">log</a>
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#杂谈" style="font-size: 9pt; color: #999;">杂谈</a>
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#git" style="font-size: 9pt; color: #999;">git</a>
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#oj" style="font-size: 18pt; color: #000;">oj</a>
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#科学上网" style="font-size: 9pt; color: #999;">科学上网</a>
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#python" style="font-size: 15pt; color: #333;">python</a>
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#database" style="font-size: 10.5pt; color: #777;">database</a>
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#linux" style="font-size: 10.5pt; color: #777;">linux</a>
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#web" style="font-size: 9pt; color: #999;">web</a>
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#campus" style="font-size: 9pt; color: #999;">campus</a>
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#cpp" style="font-size: 9pt; color: #999;">cpp</a>
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#多进程" style="font-size: 10.5pt; color: #777;">多进程</a>
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#多线程" style="font-size: 9pt; color: #999;">多线程</a>
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#强化学习" style="font-size: 9pt; color: #999;">强化学习</a>
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#project" style="font-size: 12pt; color: #666;">project</a>
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#nlp" style="font-size: 9pt; color: #999;">nlp</a>
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#java" style="font-size: 9pt; color: #999;">java</a>
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#神经网络" style="font-size: 9pt; color: #999;">神经网络</a>
+                    
+                </div>
+            </div>
+
+            <!-- <div class="side">
+                <div>
+                    <i class="fa fa-external-link"></i>
+                    Links
+                </div>
+                <ul  class="content-ul">
+
+                </ul>
+            </div> -->
+        </div>
+    </div>
+</div>
+<!-- <script src="/js/scroll.min.js " charset="utf-8"></script> -->
+<!-- <script src="/js/pageContent.js " charset="utf-8"></script> -->
+
+
+    <footer class="site-footer">
+
+
+    <div class="wrapper">
+
+        <p class="description">
+             来自jktian的个人专栏！ 
+        </p>
+        <p class="contact">
+            Contact me at: 
+            <a href="https://github.com/ixneo" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>  
+            <a href="mailto:932154199@qq.com" title="email"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>  
+            <a href="http://weibo.com/coolinear" title="Weibo"><i class="fa fa-weibo" aria-hidden="true"></i></a>  
+            <a href="https://www.zhihu.com/people/coolinear" title="Zhihu"><i class="iconfont icon-daoruzhihu"></i></a>      
+        </p>
+        <p>
+            本站总访问量<span id="busuanzi_value_site_pv"></span>次，本站访客数<span id="busuanzi_value_site_uv"></span>人次，本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+        </p>
+        <p class="power">
+            <span>
+                Site powered by <a href="https://jekyllrb.com/">Jekyll</a> & <a href="https://pages.github.com/">Github Pages</a>.
+            </span>
+            <span>
+                Theme designed by <a href="https://github.com/Gaohaoyang">HyG</a>.
+            </span>
+        </p>
+    </div>
+</footer>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <div class="back-to-top">
+    <a href="#top" data-scroll>
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    </a>
+</div>
+
+    <script src=" /js/main.js " charset="utf-8"></script>
+    <script src=" /js/smooth-scroll.min.js " charset="utf-8"></script>
+    <script type="text/javascript">
+      smoothScroll.init({
+        speed: 500, // Integer. How fast to complete the scroll in milliseconds
+        easing: 'easeInOutCubic', // Easing pattern to use
+        offset: 20, // Integer. How far to offset the scrolling anchor location in pixels
+      });
+    </script>
+    <!-- <script src=" /js/scroll.min.js " charset="utf-8"></script> -->
+  </body>
 
 </html>
