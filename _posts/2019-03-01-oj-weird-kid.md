@@ -8,8 +8,6 @@ header-img: img/post-bg-2015.jpg 	#这篇文章标题背景图片
 catalog: true 						# 是否归档
 tags:								#标签
     - oj
-    - dp
-    - dfs
 ---
 
 # 问题描述
@@ -31,7 +29,7 @@ tags:								#标签
             #include<string>
             #include<iterator>
             #include<algorithm>
-    
+        
             using namespace std;
             /* test-input
                 3
@@ -49,7 +47,7 @@ tags:								#标签
             */
             int buildings[200][200] = {0};
             int buildTot[200] = {0};
-    
+        
             int dfs(int caseIndex, int curBuilding,int pVal, int tot, int inc){
             //    cout << curBuilding << endl;
                 if(inc==1 && curBuilding>=buildTot[caseIndex]){
@@ -76,7 +74,7 @@ tags:								#标签
                         cin >> buildings[i][j];
                     }
                 }
-    
+        
                 // dfs, two-direction
                 for(int i=0;i<caseNum;i++){
                     int res = 0;

@@ -8,8 +8,8 @@ header-img: img/post-bg-2015.jpg 	#这篇文章标题背景图片
 catalog: true 						# 是否归档
 tags:								#标签
     - python
-    - multi-process
-    - multi-thread
+    - 多进程
+    - 多线程
 ---
 
 # 进程＆线程

@@ -72,7 +72,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">LOGGING</a>
+            <a class="navbar-brand" href="/">jk.tian-LOGGING</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -153,12 +153,12 @@
 
 
     <!-- Page Header -->
-<header class="intro-header" style="background-image: url('/img/post-bg-desk.jpg')">
+<header class="intro-header" style="background-image: url('/')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
                 <div class="site-heading">
-                    <h1>LOGGING</h1>
+                    <h1>jk.tian-LOGGING</h1>
                     <!--<hr class="small">-->
                     <span class="subheading">Thinking will not overcome fear but action will.</span>
                 </div>
@@ -183,195 +183,269 @@
             ">
     			
 <div class="post-preview">
-    <a href="/2019/02/26/prob-statics/">
+    <a href="/2019/03/08/anaconda/">
         <h2 class="post-title">
-            Prob Statics
+            python in linux
         </h2>
         
         <div class="post-content-preview">
-            
+            python in linux
 
+$ where is python 	# 找到Python可执行文件的位置
+
+~/.conda/envs/python36/bin/python
+
+# sublime 安装插件
+ 选项卡：preferences ==&gt; package-settings ==&gt; package-control–user
+ 位置：~/.config/sublime-...
         </div>
     </a>
     <p class="post-meta">
-        Posted by LOGGING on February 26, 2019
+        Posted by jktian on March 8, 2019
     </p>
 </div>
 <hr>
 
 <div class="post-preview">
-    <a href="/2019/02/26/phone-network/">
+    <a href="/2019/03/04/tf-cv-install/">
         <h2 class="post-title">
-            小米手机的网络连接问题
+            环境搭建
         </h2>
         
-        <h3 class="post-subtitle">
-            　
-        </h3>
+        <div class="post-content-preview">
+            conda
+
+  conda install &lt;url/package_name&gt;	# 可能需要事先切换到python36，代替py37
+  conda info 	# 打印关于包的信息，有不同版本的tar.gz下载url
+
+
+tensorflow
+
+  根据conda info, 得到依赖项。不仅要安装tensorflow本身，同时也要conda info 依赖项，来安装依赖的...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by jktian on March 4, 2019
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2019/03/04/senti-contest/">
+        <h2 class="post-title">
+            用户评论情感极性分析（三分类）
+        </h2>
         
         <div class="post-content-preview">
-            问题
+            数据总览 &amp; 预处理
 
-电脑无法连接手机热点
+  
+    训练数据
 
-解决办法
-
-  手机开启热点的方式
     
-      个人热点。可选择是否使用密码
-      USB连接，提供网络连接
-      蓝牙。
+      
+        
+          数据类型
+          列号范围
+          行数
+        
+      
+      
+        
+          食品餐饮
+          （1，13655）
+          13655
+        
+        
+   ...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by jktian on March 4, 2019
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2019/03/04/db-oracle/">
+        <h2 class="post-title">
+            python命令＆工具使用
+        </h2>
+        
+        <div class="post-content-preview">
+            总结
+
+  shell操作。命令行解释器的设置。如提示符样式等
+  改变显示界面样式。
+    
+      set命令，如是否回显、分隔符设置、显示执行时间、限制显示行数等
+      表的结构
+    
+  
+  基本概念：connect、commit(原子操作)
+  脚本装载与执行
+  操作流程：
+    
+      连接数据库，输入密码
+      增删改查
+    
+  
+  备...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by jktian on March 4, 2019
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2019/03/04/climb-mountain/">
+        <h2 class="post-title">
+            小土山-不周山闲逛
+        </h2>
+        
+        <div class="post-content-preview">
+            线性代数
+
+  行列式的计算
+  线性代数要解决的问题：线性方程组的求解
+  向量，方程组，矩阵。三者在一定条件下，相互等价。
+  秩(rank)
+  特征值与特征向量
+    概率和统计
+  
+  卡方分布： 探究自变量的类别是否与因变量相关
+    
+      置信度和置信区间。在多次实验中，位于置信区间内的次数/总实验次数
+      样本和总体。根据样本，做出假设 ==》根据假设，...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by jktian on March 4, 2019
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2019/03/01/py-tools/">
+        <h2 class="post-title">
+            python命令＆工具使用
+        </h2>
+        
+        <div class="post-content-preview">
+            requirement.txt文件
+
+  创建
+    
+      当前环境的依赖
+ pip freeze &gt; requirement.txt
+      当前项目的依赖
+ pip install pipreqs
+ pipreqs ./
+    
+  
+  使用
+ pip install -r requirement.txt
+
+
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by jktian on March 1, 2019
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2019/03/01/oj-bignum/">
+        <h2 class="post-title">
+            oj-大数的四则运算
+        </h2>
+        
+        <div class="post-content-preview">
+            知识点
+
+  文本文件是字符均为ascii编码的文件；其余为二进制文件
+  注意’0’在char和int之间的作用
+  第一步。对输入的数据标准化，明确每个数据/变量的含义、类型，增强代码的可解释性
+  测试用例的挑选。选最小的规模的能体现问题所在的用例。一旦出现问题，马上进行分析更改，脑中运行后，再开始run, 节省机器运行时间
+  解决问题的思路：搭建步骤框架，解决最小子问题（构建积木）...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by jktian on March 1, 2019
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2019/03/01/laddder/">
+        <h2 class="post-title">
+            搬瓦工vps+shadowsocks
+        </h2>
+        
+        <div class="post-content-preview">
+            流程
+
+  手机用shadowsocks
+  pc端也要配置
+    问题
+  
+  端口问题，不要用 80 8888 8080 443这些主流端口
+  网络问题
+    
+      校园网dlut可以pip和conda install成功。但是翻墙速度慢
+      移动网pip一直retrying, 但是可以访问谷歌
+      dlut-eda均可
     
   
 
 
+重新安装
+
+v...
         </div>
     </a>
     <p class="post-meta">
-        Posted by jktian on February 26, 2019
+        Posted by jktian on March 1, 2019
     </p>
 </div>
 <hr>
 
 <div class="post-preview">
-    <a href="/2019/02/26/optimization/">
+    <a href="/2019/03/01/oj-weird-kid/">
         <h2 class="post-title">
-            Optimization
+            oj-怪盗基德的滑翔翼
         </h2>
         
         <div class="post-content-preview">
-            
-
+            问题描述
+假设城市中一共有N幢建筑排成一条线，每幢建筑的高度各不相同。初始时，怪盗基德可以在任何一幢建筑的顶端。他可以选择一个方向逃跑，但是不能中途改变方向（因为中森警部会在后面追击）。因为滑翔翼动力装置受损，他只能往下滑行（即：只能从较高的建筑滑翔到较低的建筑）。他希望尽可能多地经过不同建筑的顶部，这样可以减缓下降时的冲击力，减少受伤的可能性。请问，他最多可以经过多少幢不同建筑的顶部（包含...
         </div>
     </a>
     <p class="post-meta">
-        Posted by LOGGING on February 26, 2019
+        Posted by jktian on March 1, 2019
     </p>
 </div>
 <hr>
 
 <div class="post-preview">
-    <a href="/2019/02/26/network/">
+    <a href="/2019/03/01/oj-island/">
         <h2 class="post-title">
-            Network
+            oj-岛屿问题
         </h2>
         
         <div class="post-content-preview">
-            
-
+            问题描述
+C:岛屿面积
+总时间限制:  1000ms  内存限制:  65536kB
+描述
+用一个nm的二维数组表示地图，1表示陆地，0代表海水，每一格都表示一个11的区域。地图中的格子只能横向或者纵向连接（不能对角连接），连接在一起的陆地称作岛屿，同时整个地图都被海水围绕。假设给出的地图中只会有一个岛屿，并且岛屿中不会有湖（即不会有水被陆地包围的情况出现）。请判断所给定的二维地图中岛屿的周...
         </div>
     </a>
     <p class="post-meta">
-        Posted by LOGGING on February 26, 2019
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/2019/02/26/me/">
-        <h2 class="post-title">
-            我的价值观
-        </h2>
-        
-        <div class="post-content-preview">
-            打小就在追求一种虚幻的东西，没有那么现实。
-
-从初中到高中，从不相信权威，即老师。在数学课上看物理，在物理课上学英语。
-
-自主性很高，但是却又没有对于名利的刻意追求。
-
-考试测验或者公开演讲之前，也会手心冒汗，几天不自然，凌晨五点起床。但这是害怕出现不好的结果，是不安全感的体现，却不是在追求什么。当然，也从没有奢望过别人的表扬。
-
-我的一切评判标准都在于我的内心，只能说随着年龄的增长和经历的...
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by jktian on February 26, 2019
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/2019/02/26/mcm2019c/">
-        <h2 class="post-title">
-            Mcm2019c
-        </h2>
-        
-        <div class="post-content-preview">
-            
-
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by LOGGING on February 26, 2019
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/2019/02/26/lstm/">
-        <h2 class="post-title">
-            Lstm
-        </h2>
-        
-        <div class="post-content-preview">
-            
-
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by LOGGING on February 26, 2019
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/2019/02/26/linux-manjaro/">
-        <h2 class="post-title">
-            Linux Manjaro
-        </h2>
-        
-        <div class="post-content-preview">
-            
-
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by LOGGING on February 26, 2019
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/2019/02/26/latex/">
-        <h2 class="post-title">
-            Latex
-        </h2>
-        
-        <div class="post-content-preview">
-            
-
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by LOGGING on February 26, 2019
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/2019/02/26/js/">
-        <h2 class="post-title">
-            Js
-        </h2>
-        
-        <div class="post-content-preview">
-            
-
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by LOGGING on February 26, 2019
+        Posted by jktian on March 1, 2019
     </p>
 </div>
 <hr>
@@ -410,75 +484,67 @@
                     <div class="tags">
                         
                             
-                                <a href="/tags/#我" title="我" rel="2">
-                                    我
+                                <a href="/tags/#tools" title="tools" rel="5">
+                                    tools
                                 </a>
                             
                         
                             
-                                <a href="/tags/#思维" title="思维" rel="3">
-                                    思维
+                        
+                            
+                        
+                            
+                                <a href="/tags/#log" title="log" rel="4">
+                                    log
                                 </a>
                             
                         
                             
-                                <a href="/tags/#工具" title="工具" rel="1">
-                                    工具
-                                </a>
+                        
                             
                         
                             
-                                <a href="/tags/#博客搭建" title="博客搭建" rel="1">
-                                    博客搭建
-                                </a>
-                            
-                        
-                            
-                                <a href="/tags/#csapp" title="csapp" rel="1">
-                                    csapp
-                                </a>
-                            
-                        
-                            
-                                <a href="/tags/#手机" title="手机" rel="1">
-                                    手机
-                                </a>
-                            
-                        
-                            
-                                <a href="/tags/#网络" title="网络" rel="1">
-                                    网络
-                                </a>
-                            
-                        
-                            
-                                <a href="/tags/#系统分析与设计" title="系统分析与设计" rel="1">
-                                    系统分析与设计
-                                </a>
-                            
-                        
-                            
-                                <a href="/tags/#oj" title="oj" rel="5">
+                                <a href="/tags/#oj" title="oj" rel="7">
                                     oj
                                 </a>
                             
                         
                             
-                                <a href="/tags/#计算机基础概念" title="计算机基础概念" rel="1">
-                                    计算机基础概念
+                        
+                            
+                                <a href="/tags/#python" title="python" rel="5">
+                                    python
                                 </a>
                             
                         
                             
-                                <a href="/tags/#dp" title="dp" rel="1">
-                                    dp
+                        
+                            
+                        
+                            
+                                <a href="/tags/#project" title="project" rel="4">
+                                    project
                                 </a>
                             
                         
                             
-                                <a href="/tags/#dfs" title="dfs" rel="1">
-                                    dfs
-                                </a>
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
                             
                         
                     </div>
@@ -579,7 +645,7 @@
                     
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; LOGGING 2019
+                    Copyright &copy; jk.tian-LOGGING 2019
                     <br>
                     Theme on <a href="https://github.com/ixneo/ixneo.github.io.git">GitHub</a> |
                     <iframe

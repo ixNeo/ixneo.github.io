@@ -72,7 +72,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">LOGGING</a>
+            <a class="navbar-brand" href="/">jk.tian-LOGGING</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -153,12 +153,12 @@
 
 
     <!-- Page Header -->
-<header class="intro-header" style="background-image: url('/img/post-bg-desk.jpg')">
+<header class="intro-header" style="background-image: url('/')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
                 <div class="site-heading">
-                    <h1>LOGGING</h1>
+                    <h1>jk.tian-LOGGING</h1>
                     <!--<hr class="small">-->
                     <span class="subheading">Thinking will not overcome fear but action will.</span>
                 </div>
@@ -183,205 +183,274 @@
             ">
     			
 <div class="post-preview">
-    <a href="/2019/03/01/oj-weird-kid/">
+    <a href="/2019/03/20/nn/">
         <h2 class="post-title">
-            oj-怪盗基德的滑翔翼
+            神经网络
         </h2>
         
         <div class="post-content-preview">
-            问题描述
-假设城市中一共有N幢建筑排成一条线，每幢建筑的高度各不相同。初始时，怪盗基德可以在任何一幢建筑的顶端。他可以选择一个方向逃跑，但是不能中途改变方向（因为中森警部会在后面追击）。因为滑翔翼动力装置受损，他只能往下滑行（即：只能从较高的建筑滑翔到较低的建筑）。他希望尽可能多地经过不同建筑的顶部，这样可以减缓下降时的冲击力，减少受伤的可能性。请问，他最多可以经过多少幢不同建筑的顶部（包含...
+            神经网络
+激励函数: elu/relu/linear/prelu/leaky_relu/softplus
+优化办法/梯度算法: adam/mom/msprop/sgd(随机梯度下降)
+神经网络是一种监督学习,需要大量的样本以及对应标签
+
+激活函数:
+
+  线性:
+  非线性:sigmoid、tanh、relu. sigmoid/tanh比较常见于全连接层，后者relu常见于卷积层.ReLu是...
         </div>
     </a>
     <p class="post-meta">
-        Posted by jktian on March 1, 2019
+        Posted by jktian on March 20, 2019
     </p>
 </div>
 <hr>
 
 <div class="post-preview">
-    <a href="/2019/03/01/oj-island/">
+    <a href="/2019/03/20/linux-manjaro/">
         <h2 class="post-title">
-            oj-岛屿问题
+            博客搭建
         </h2>
         
+        <h3 class="post-subtitle">
+            　
+        </h3>
+        
         <div class="post-content-preview">
-            问题描述
-C:岛屿面积
-总时间限制:  1000ms  内存限制:  65536kB
-描述
-用一个nm的二维数组表示地图，1表示陆地，0代表海水，每一格都表示一个11的区域。地图中的格子只能横向或者纵向连接（不能对角连接），连接在一起的陆地称作岛屿，同时整个地图都被海水围绕。假设给出的地图中只会有一个岛屿，并且岛屿中不会有湖（即不会有水被陆地包围的情况出现）。请判断所给定的二维地图中岛屿的周...
+            1 常用命令
+
+  查找端口并删除进程:
+    
+      $ lsof -i:
+      $ kill -9 
+    
+  
+
+
+
         </div>
     </a>
     <p class="post-meta">
-        Posted by jktian on March 1, 2019
+        Posted by jktian on March 20, 2019
     </p>
 </div>
 <hr>
 
 <div class="post-preview">
-    <a href="/2019/03/01/data-type/">
+    <a href="/2019/03/16/python-magic/">
         <h2 class="post-title">
-            oj-数据类型
+            python黑魔法
+        </h2>
+        
+        <div class="post-content-preview">
+            with
+with只适用于上下文管理器的调用，除了文件外，with还支持 threading、decimal等模块，当然我们也可以自己定义可以给with调用的上下文管理器
+使用类定义上下文管理器。
+    class A():
+        def __enter__(self):
+            self.a=1
+            return self
+        d...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by jktian on March 16, 2019
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2019/03/16/python-multiprocess/">
+        <h2 class="post-title">
+            python多进程/多进程
+        </h2>
+        
+        <div class="post-content-preview">
+            进程＆线程
+进程只是用来把资源集中到一起（进程只是一个资源单位，或者说资源集合），而线程才是cpu上的执行单位．进程之间的内存空间是隔离的
+多线程（即多个控制线程）的概念是，在一个进程中存在多个控制线程，多个控制线程共享该进程的地址空间
+进程之间是竞争关系，线程之间是协作关系
+
+利用multiprocessing库，使用多进程，而不是多线程，充分利用多核cpu资源
+
+多线程指的是，在一个进程...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by jktian on March 16, 2019
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2019/03/15/cpp/">
+        <h2 class="post-title">
+            cpp/c在oj
         </h2>
         
         <div class="post-content-preview">
             cpp
 
-short int  2个字节
 
-int 2/4字节
-
-long 4/8字节
-
-long long 8字节
-
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by jktian on March 1, 2019
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/2019/02/27/oj-string-code/">
-        <h2 class="post-title">
-            oj-行程长度编码
-        </h2>
-        
-        <div class="post-content-preview">
-            题目描述
-总时间限制:  1000ms  内存限制:  65536kB
-描述
-在数据压缩中，一个常用的方法是行程长度编码压缩。对于一个待压缩的字符串，我们可以依次记录每个字符及重复的次数。例如，待压缩的字符串为”aaabbbbcbb”，压缩结果为(a,3)(b,4)(c,1)(b,2)。这种压缩对于相邻数据重复较多的情况有效，如果重复状况较少，则压缩的效率较低。
-现要求根据输入的字符串，首先...
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by jktian on February 27, 2019
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/2019/02/27/oj-prime/">
-        <h2 class="post-title">
-            oj-prime
-        </h2>
-        
-        <div class="post-content-preview">
-            判定给定两个数范围内的素数个数
-
-
-  对于1的特殊处理
-  判断给的两个数的相对大小
-  可以用筛法，或者找因子（设置标志位）的方法，优化性能
-  可以把判别是否是素数单独抽象成一个函数
+  取消科学计数法: 头文件
+  cout.setf(ios::fixed,ios::floatfield);
+  保留小数精度: cout « fixed « setpresicion(1) « num ;
+  流式写法: 每次接受一个输入,立刻判断处理.一次循环.
+  缓冲式写法: 批量写入数据,批量处理.多个单循环
 
 
         </div>
     </a>
     <p class="post-meta">
-        Posted by jktian on February 27, 2019
+        Posted by jktian on March 15, 2019
     </p>
 </div>
 <hr>
 
 <div class="post-preview">
-    <a href="/2019/02/26/unemploy/">
+    <a href="/2019/03/15/java-socket/">
         <h2 class="post-title">
-            Unemploy
+            java模拟路由表构建
         </h2>
         
         <div class="post-content-preview">
-            
+            项目内容
+java模拟路由表构建
+socket
+multi-thread
+properties文件读取
+Java 开发中，需要将一些易变的配置参数放置再 XML 配置文件或者 properties 配置文件中。然而 XML 配置文件需要通过 DOM 或 SAX 方式解析，而读取 properties 配置文件就比较容易
 
+         Properties prop = new Prop...
         </div>
     </a>
     <p class="post-meta">
-        Posted by LOGGING on February 26, 2019
+        Posted by jktian on March 15, 2019
     </p>
 </div>
 <hr>
 
 <div class="post-preview">
-    <a href="/2019/02/26/system/">
+    <a href="/2019/03/15/suoni-projecct/">
         <h2 class="post-title">
-            马老师的《系统分析与设计课程》
+            关于降低员工离职率的策略研究
         </h2>
         
         <div class="post-content-preview">
-            走出新手村
+            降低员工离职率的方案
 
-  总结归纳模式。走出舒适圈，找到根本原因，用理性代替情绪。
-    
-      提出目标。例如成本函数或者距离度量方法
-      根据现实情况，提出多种解决方案
-      选出最优方案
-      执行
-      优化以及维护
-    
+  多层感知机预测员工离职率
+  定义元动作和元成本
+  运用强化学习方法, Q-learning/SARSA算法进行最优策略的输出
+
+
+论文问题
+
+  写有研究型论文深度不够，应该写应用型论文
+  语言有问题，不像学术论文，偏白话
+  风格不行，没有按照论文的基本套路来，建议先读两篇应用型论文，然后严格按照套路来（可以在百度学术－－＞计算机工程与应用上选几篇应用型的...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by jktian on March 15, 2019
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2019/03/15/webfront/">
+        <h2 class="post-title">
+            web前端——开发案例第一次上机
+        </h2>
+        
+        <div class="post-content-preview">
+            软件开发案例——第一次上机
+
+  收获主要是页面布局方面
   
-  勇于暴露弱点。在开放的世界中，杂交才会进步。
-  思维：整体性，科学性，系统性
-  建立个人知识库
-  要创新，不要发明。...
+    综合使用浏览器开发者选项，查看元素以及父子链接关系
+    查看官方文档
+  
+
+
+表格布局
+task: 注册页面的制作
+直接表格布局table==&gt;tr==&gt;td, form表单是其中一个tr.td
+div布局
+task: 北京银行的首页制作
+div嵌套着table/div/p.span. 只需要限制每个d...
         </div>
     </a>
     <p class="post-meta">
-        Posted by jktian on February 26, 2019
+        Posted by jktian on March 15, 2019
     </p>
 </div>
 <hr>
 
 <div class="post-preview">
-    <a href="/2019/02/26/svm/">
+    <a href="/2019/03/15/sarsa/">
         <h2 class="post-title">
-            Svm
+            Q-learning / SARSA
         </h2>
         
         <div class="post-content-preview">
-            
+            Q-learning
 
+  初始化q-table. row为状态，column为动作．选择动作时，通过找值最大的单元格的列坐标
+  更新显示，通过判断是否终止，选择如何显示. time.sleep()
+  选取动作：根据epslon&gt;0.9, 随机选取或挑选q-table中最大的动作
+  得到下一个状态以及由s_i==&gt;s_{i+1}奖励值．if判断，应该可以从r表中得到
+   ...
         </div>
     </a>
     <p class="post-meta">
-        Posted by LOGGING on February 26, 2019
+        Posted by jktian on March 15, 2019
     </p>
 </div>
 <hr>
 
 <div class="post-preview">
-    <a href="/2019/02/26/senti-analyze/">
+    <a href="/2019/03/10/chatbolt/">
         <h2 class="post-title">
-            Senti Analyze
+            多功能工具包（聊天机器人）
         </h2>
         
         <div class="post-content-preview">
-            
+            1 TODO	(DONE)
 
+  
+    重构代码，易扩展性
+  
+  
+    加入数据库存储
+  
+  
+    爬虫优化：尝试scrapy框架
+  
+  
+    推荐算法设计
+
+    项目地址
+  
+
+
+2 问题以及解决
+
+2.1 字体显示问题
+
+
+  linux中的python无法正常显示中文。
+
+
+​	$ cp *.ttf /usr/share/fonts/TTF
+
+
+  
+...
         </div>
     </a>
     <p class="post-meta">
-        Posted by LOGGING on February 26, 2019
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/2019/02/26/python/">
-        <h2 class="post-title">
-            Python
-        </h2>
-        
-        <div class="post-content-preview">
-            
-
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by LOGGING on February 26, 2019
+        Posted by jktian on March 10, 2019
     </p>
 </div>
 <hr>
@@ -416,75 +485,67 @@ long long 8字节
                     <div class="tags">
                         
                             
-                                <a href="/tags/#我" title="我" rel="2">
-                                    我
+                                <a href="/tags/#tools" title="tools" rel="5">
+                                    tools
                                 </a>
                             
                         
                             
-                                <a href="/tags/#思维" title="思维" rel="3">
-                                    思维
+                        
+                            
+                        
+                            
+                                <a href="/tags/#log" title="log" rel="4">
+                                    log
                                 </a>
                             
                         
                             
-                                <a href="/tags/#工具" title="工具" rel="1">
-                                    工具
-                                </a>
+                        
                             
                         
                             
-                                <a href="/tags/#博客搭建" title="博客搭建" rel="1">
-                                    博客搭建
-                                </a>
-                            
-                        
-                            
-                                <a href="/tags/#csapp" title="csapp" rel="1">
-                                    csapp
-                                </a>
-                            
-                        
-                            
-                                <a href="/tags/#手机" title="手机" rel="1">
-                                    手机
-                                </a>
-                            
-                        
-                            
-                                <a href="/tags/#网络" title="网络" rel="1">
-                                    网络
-                                </a>
-                            
-                        
-                            
-                                <a href="/tags/#系统分析与设计" title="系统分析与设计" rel="1">
-                                    系统分析与设计
-                                </a>
-                            
-                        
-                            
-                                <a href="/tags/#oj" title="oj" rel="5">
+                                <a href="/tags/#oj" title="oj" rel="7">
                                     oj
                                 </a>
                             
                         
                             
-                                <a href="/tags/#计算机基础概念" title="计算机基础概念" rel="1">
-                                    计算机基础概念
+                        
+                            
+                                <a href="/tags/#python" title="python" rel="5">
+                                    python
                                 </a>
                             
                         
                             
-                                <a href="/tags/#dp" title="dp" rel="1">
-                                    dp
+                        
+                            
+                        
+                            
+                                <a href="/tags/#project" title="project" rel="4">
+                                    project
                                 </a>
                             
                         
                             
-                                <a href="/tags/#dfs" title="dfs" rel="1">
-                                    dfs
-                                </a>
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
                             
                         
                     </div>
@@ -585,7 +646,7 @@ long long 8字节
                     
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; LOGGING 2019
+                    Copyright &copy; jk.tian-LOGGING 2019
                     <br>
                     Theme on <a href="https://github.com/ixneo/ixneo.github.io.git">GitHub</a> |
                     <iframe

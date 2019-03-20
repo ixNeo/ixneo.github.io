@@ -1,14 +1,14 @@
 ---
 layout:     post   				    # 使用的布局（不需要改）
-title:      小土山-不周山闲逛			# 标题 
+title:      环境搭建			# 标题 
 subtitle:  	 
 date:       2019-03-04				# 时间
 author:     jktian 						# 作者
 header-img: img/post-bg-2015.jpg 	#这篇文章标题背景图片
 catalog: true 						# 是否归档
 tags:								#标签
-    - 不周山
-    - log
+    - python
+    - tools
 ---
 # conda
 1. conda install <url/package_name>	# 可能需要事先切换到python36，代替py37
