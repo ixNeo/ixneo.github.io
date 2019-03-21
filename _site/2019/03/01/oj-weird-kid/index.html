@@ -7,15 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>oj-怪盗基德的滑翔翼</title>
-    <meta name="description" content="问题描述假设城市中一共有N幢建筑排成一条线，每幢建筑的高度各不相同。初始时，怪盗基德可以在任何一幢建筑的顶端。他可以选择一个方向逃跑，但是不能中途改变方向（因为中森警部会在后面追击）。因为滑翔翼动力装置受损，他只能往下滑行（即：只能从较高的建筑滑翔到较低的建筑）。他希望尽可能多地经过不同建筑的顶部，这样可以减缓下...">
+    <meta name="description" content="  问题描述问题描述假设城市中一共有N幢建筑排成一条线，每幢建筑的高度各不相同。初始时，怪盗基德可以在任何一幢建筑的顶端。他可以选择一个方向逃跑，但是不能中途改变方向（因为中森警部会在后面追击）。因为滑翔翼动力装置受损，他只能往下滑行（即：只能从较高的建筑滑翔到较低的建筑）。他希望尽可能多地经过不同建筑的顶部，这...">
 
     <link rel="shortcut icon" href="/favicon.ico?" type="image/x-icon">
     <link rel="icon" href="/favicon.ico?" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://at.alicdn.com/t/font_8v3czwksspqlg14i.css">
     <link rel="stylesheet" href="/css/main.css ">
-    <link rel="canonical" href="http://localhost:4002/2019/03/01/oj-weird-kid/">
-    <link rel="alternate" type="application/rss+xml" title="jktian-logging" href="http://localhost:4002/feed.xml ">
+    <link rel="canonical" href="http://localhost:4001/2019/03/01/oj-weird-kid/">
+    <link rel="alternate" type="application/rss+xml" title="jk.tian" href="http://localhost:4001/feed.xml ">
 
 
     <script>
@@ -39,8 +39,8 @@
 
     <header id="top">
     <div class="wrapper">
-        <a href="/" class="brand">jktian-logging</a>
-        <small>majon in data-science</small>
+        <a href="/" class="brand">jk.tian</a>
+        <small>major in data-science</small>
         <button id="headerMenu" class="menu"><i class="fa fa-bars"></i></button>
         <nav id="headerNav">
             <ul>
@@ -129,6 +129,8 @@
                 
                     
                 
+                    
+                
             </ul>
         </nav>
     </div>
@@ -159,6 +161,18 @@
             
 
 
+<!-- <span class="point">•</span> -->
+<span class="categories">
+  <i class="fa fa-th-list"></i>
+  
+    
+        <a href="/category/#慧越泉--杂谈日志" title="Category: 慧越泉--杂谈日志" rel="category">慧越泉--杂谈日志</a>
+    
+  
+
+  <!-- <span class="point">•</span> -->
+</span>
+
 
             </div>
 
@@ -181,7 +195,12 @@
         </div>
         <hr>
         <article itemscope itemtype="http://schema.org/BlogPosting">
-        <h1 id="问题描述">问题描述</h1>
+        <ul id="markdown-toc">
+  <li><a href="#问题描述" id="markdown-toc-问题描述">问题描述</a></li>
+  <li><a href="#解决方案" id="markdown-toc-解决方案">解决方案</a></li>
+  <li><a href="#知识点" id="markdown-toc-知识点">知识点</a></li>
+</ul>
+<h1 id="问题描述">问题描述</h1>
 <p>假设城市中一共有N幢建筑排成一条线，每幢建筑的高度各不相同。初始时，怪盗基德可以在任何一幢建筑的顶端。他可以选择一个方向逃跑，但是不能中途改变方向（因为中森警部会在后面追击）。因为滑翔翼动力装置受损，他只能往下滑行（即：只能从较高的建筑滑翔到较低的建筑）。他希望尽可能多地经过不同建筑的顶部，这样可以减缓下降时的冲击力，减少受伤的可能性。请问，他最多可以经过多少幢不同建筑的顶部（包含初始时的建筑）？</p>
 
 <p>输入
@@ -201,7 +220,7 @@
      #include&lt;string&gt;
      #include&lt;iterator&gt;
      #include&lt;algorithm&gt;
-    
+        
      using namespace std;
      /* test-input
          3
@@ -219,7 +238,7 @@
      */
      int buildings[200][200] = {0};
      int buildTot[200] = {0};
-    
+        
      int dfs(int caseIndex, int curBuilding,int pVal, int tot, int inc){
      //    cout &lt;&lt; curBuilding &lt;&lt; endl;
          if(inc==1 &amp;&amp; curBuilding&gt;=buildTot[caseIndex]){
@@ -246,7 +265,7 @@
                  cin &gt;&gt; buildings[i][j];
              }
          }
-    
+        
          // dfs, two-direction
          for(int i=0;i&lt;caseNum;i++){
              int res = 0;
@@ -333,31 +352,8 @@
                     
                 
             
-                
-                    
-                
-            
         
             
-            
-                
-                    
-                
-            
-                
-                    
-                
-            
-                
-                    
-                
-            
-        
-            
-            
-                
-                    
-                
             
                 
                     
@@ -402,9 +398,8 @@
                     
                 
             
-                
-                    
-                
+        
+            
             
                 
                     
@@ -419,23 +414,13 @@
             
                 
                     
-                        
-                        <h2 id="similar_posts">Similar Posts</h2>
-                        <ul>
-                        
-                        <li class="relatedPost">
-                            <a href="/2019/03/15/cpp/">cpp/c在oj
-                            
-                            </a>
-                        </li>
-                        
-                        
+                
+            
+                
                     
                 
             
         
-        
-            </ul>
         
 
         <div class="post-recent">
@@ -472,8 +457,6 @@
                 </div>
                 <ul id="content-side" class="content-ul">
                     
-                    <li><a href="#similar_posts">Similar Posts</a></li>
-                    
                     <li><a href="#comments">Comments</a></li>
                 </ul>
             </div>
@@ -509,7 +492,7 @@
             <a href="https://github.com/ixneo" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>  
             <a href="mailto:932154199@qq.com" title="email"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>  
             <a href="http://weibo.com/coolinear" title="Weibo"><i class="fa fa-weibo" aria-hidden="true"></i></a>  
-            <a href="https://www.zhihu.com/people/coolinear" title="Zhihu"><i class="iconfont icon-daoruzhihu"></i></a>      
+            <a href="https://www.zhihu.com/people/te-si-la-48-5" title="Zhihu"><i class="iconfont icon-daoruzhihu"></i></a>      
         </p>
         <p>
             本站总访问量<span id="busuanzi_value_site_pv"></span>次，本站访客数<span id="busuanzi_value_site_uv"></span>人次，本文总阅读量<span id="busuanzi_value_page_pv"></span>次

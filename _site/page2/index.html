@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>jktian-logging</title>
+    <title>jk.tian</title>
     <meta name="description" content="">
 
     <link rel="shortcut icon" href="/favicon.ico?" type="image/x-icon">
@@ -14,8 +14,8 @@
     <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://at.alicdn.com/t/font_8v3czwksspqlg14i.css">
     <link rel="stylesheet" href="/css/main.css ">
-    <link rel="canonical" href="http://localhost:4002/page2/">
-    <link rel="alternate" type="application/rss+xml" title="jktian-logging" href="http://localhost:4002/feed.xml ">
+    <link rel="canonical" href="http://localhost:4001/page2/">
+    <link rel="alternate" type="application/rss+xml" title="jk.tian" href="http://localhost:4001/feed.xml ">
 
 
     <script>
@@ -39,8 +39,8 @@
 
     <header id="top">
     <div class="wrapper">
-        <a href="/" class="brand">jktian-logging</a>
-        <small>majon in data-science</small>
+        <a href="/" class="brand">jk.tian</a>
+        <small>major in data-science</small>
         <button id="headerMenu" class="menu"><i class="fa fa-bars"></i></button>
         <nav id="headerNav">
             <ul>
@@ -129,6 +129,8 @@
                 
                     
                 
+                    
+                
             </ul>
         </nav>
     </div>
@@ -141,6 +143,75 @@
         <small>故世之奇伟瑰怪非常之观,常在于险远</small>
         <hr>
         <ul>
+            
+              <li>
+                <h2>
+                  <a class="post-link" href="/2019/03/20/database/">数据库常见操作</a>
+                </h2>
+                <div class="label">
+                    <div class="label-card">
+                        <i class="fa fa-calendar"></i>2019-03-20
+                    </div>
+                    <div class="label-card">
+                        <i class="fa fa-user"></i>jktian
+                        
+                    </div>
+                    <div class="label-card">
+                        
+                    </div>
+
+                    <div class="label-card">
+                    
+
+
+<!-- <span class="point">•</span> -->
+<span class="categories">
+  <i class="fa fa-th-list"></i>
+  
+    
+        <a href="/category/#缘因洞--计算机理论" title="Category: 缘因洞--计算机理论" rel="category">缘因洞--计算机理论</a>
+    
+  
+
+  <!-- <span class="point">•</span> -->
+</span>
+
+
+                    </div>
+
+                    <div class="label-card">
+                    
+<!-- <span class="point">•</span> -->
+<span class="pageTag">
+  <i class="fa fa-tags"></i>
+  
+    
+        <a href="/tag/#database" title="Tag: database" rel="tag">database</a>
+    
+  
+
+</span>
+
+                    </div>
+                </div>
+                <div class="excerpt">
+                    <ul id="markdown-toc">
+  <li><a href="#数据库" id="markdown-toc-数据库">数据库</a></li>
+</ul>
+<h1 id="数据库">数据库</h1>
+
+<p>oracle数据库有默认的几张表,可以用于练习sql语句的书写</p>
+
+<p>数据类型;
+	char, varchar, date, number</p>
+
+
+                </div>
+                <div class="read-all">
+                    <a  href="/2019/03/20/database/"><i class="fa fa-newspaper-o"></i>Read All</a>
+                </div>
+                <hr>
+              </li>
             
               <li>
                 <h2>
@@ -162,6 +233,18 @@
                     
 
 
+<!-- <span class="point">•</span> -->
+<span class="categories">
+  <i class="fa fa-th-list"></i>
+  
+    
+        <a href="/category/#缘因洞--计算机理论" title="Category: 缘因洞--计算机理论" rel="category">缘因洞--计算机理论</a>
+    
+  
+
+  <!-- <span class="point">•</span> -->
+</span>
+
 
                     </div>
 
@@ -181,7 +264,11 @@
                     </div>
                 </div>
                 <div class="excerpt">
-                    <h1 id="q-learning">Q-learning</h1>
+                    <ul id="markdown-toc">
+  <li><a href="#q-learning" id="markdown-toc-q-learning">Q-learning</a></li>
+</ul>
+<h1 id="q-learning">Q-learning</h1>
+
 <ol>
   <li>初始化q-table. row为状态，column为动作．选择动作时，通过找值最大的单元格的列坐标</li>
   <li>更新显示，通过判断是否终止，选择如何显示. time.sleep()</li>
@@ -193,40 +280,6 @@
     </blockquote>
   </li>
 </ol>
-
-<h1 id="q-learning--sarsa--sarsalambda">Q-learning / SARSA / SARSA(lambda)</h1>
-<ul>
-  <li>同：
-  两者都会根据当前状态，根据epslon和q-table选取动作. 要考虑当前的利益r+下一步的利益gamma*max(q(s_next,a))+自身的状态＋学习率</li>
-  <li>异：
-    <ul>
-      <li>之后．qlearning会根据q-table表，选取下一状态中值最大的那一个（max），去更新q-table的当前状态项,off-policy. 进入下一状态后，执行的动作仍然用epslon-greedy；　</li>
-      <li>sarsa是说到做到，进入下一个状态后，动作不再使用epslon，直接选用上一步确定好的，但是在为此状态选取下一状态时，要用epslon. 相当于，sarsa把q-learning的epslon换为了确定，将其的max换为epslon
-q-learning比较冒险拿宝藏最重要．sarsa实际，保命最重要</li>
-    </ul>
-  </li>
-  <li>Sarsa(lambda) 　表示走lambda步之后，进行一次更新．用回合更新代替单步更新
- dqn: q-learning+神经网络: 解决state和action表格太大的问题</li>
-</ul>
-
-<p>任何一个求最值的模型，都会引入随机值以避免局部最优解，如模拟退火算法或者此处的epslon-greedy策略</p>
-
-<h1 id="reward--vlaue">reward / vlaue</h1>
-<ul>
-  <li>reward: 可以根据表中某个状态为定值，也可以根据现场的局势判断得到reward, 但一定是短期的
-    <ul>
-      <li>在某个状态下，进行某个动作，会得到多少reward．可以动态得到</li>
-      <li>Reward 定义了强化学习问题中的目标。在每个时间步，环境向agent发送一个称为reward的单个数字。Agent的唯一目标是最大化其长期收到的total reward。</li>
-    </ul>
-  </li>
-  <li>value: 长期的，基于reward. 有利于最终reward最大化. 综合考虑当前状态和未来状态</li>
-</ul>
-
-<p>如果说reward表明的是在短时间内什么是好的，那么value function则指出从长远来看什么是好的</p>
-
-<p>reward基本上由环境直接给出，但value必须根据agent在其整个生命周期中所做的观察序列来估计和重新估计</p>
-
-<p>参考链接: <a href="https://morvanzhou.github.io/tutorials/machine-learning/reinforcement-learning/2-2-A-q-learning/">莫烦python</a></p>
 
 
                 </div>
@@ -256,6 +309,18 @@ q-learning比较冒险拿宝藏最重要．sarsa实际，保命最重要</li>
                     
 
 
+<!-- <span class="point">•</span> -->
+<span class="categories">
+  <i class="fa fa-th-list"></i>
+  
+    
+        <a href="/category/#攀天索--工具" title="Category: 攀天索--工具" rel="category">攀天索--工具</a>
+    
+  
+
+  <!-- <span class="point">•</span> -->
+</span>
+
 
                     </div>
 
@@ -275,30 +340,14 @@ q-learning比较冒险拿宝藏最重要．sarsa实际，保命最重要</li>
                     </div>
                 </div>
                 <div class="excerpt">
-                    <h1 id="with">with</h1>
+                    <ul id="markdown-toc">
+  <li><a href="#with" id="markdown-toc-with">with</a></li>
+</ul>
+
+<h1 id="with">with</h1>
 <p>with只适用于上下文管理器的调用，除了文件外，with还支持 threading、decimal等模块，当然我们也可以自己定义可以给with调用的上下文管理器
 使用类定义上下文管理器。</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">class</span> <span class="nc">A</span><span class="p">():</span>
-        <span class="k">def</span> <span class="nf">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span>
-            <span class="k">return</span> <span class="bp">self</span>
-        <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-            <span class="k">print</span> <span class="s">'f'</span>
-        <span class="k">def</span> <span class="nf">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">):</span>
-            <span class="k">print</span> <span class="s">'exit'</span>
-    <span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
-        <span class="k">return</span> <span class="n">A</span><span class="p">()</span>
 
-    <span class="k">with</span> <span class="n">A</span><span class="p">()</span> <span class="k">as</span> <span class="n">a</span><span class="p">:</span>
-        <span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
-        <span class="n">a</span><span class="o">.</span><span class="n">f</span><span class="p">()</span>
-        <span class="k">print</span> <span class="n">a</span><span class="o">.</span><span class="n">a</span>
-</code></pre></div></div>
-
-<h1 id="time">time</h1>
-
-<p>time.sleep()模拟时间延迟/读写数据延迟/网络延迟
-计算耗时：time.time()用于记录起始和结束时间</p>
 
                 </div>
                 <div class="read-all">
@@ -327,6 +376,18 @@ q-learning比较冒险拿宝藏最重要．sarsa实际，保命最重要</li>
                     
 
 
+<!-- <span class="point">•</span> -->
+<span class="categories">
+  <i class="fa fa-th-list"></i>
+  
+    
+        <a href="/category/#缘因洞--计算机理论" title="Category: 缘因洞--计算机理论" rel="category">缘因洞--计算机理论</a>
+    
+  
+
+  <!-- <span class="point">•</span> -->
+</span>
+
 
                     </div>
 
@@ -350,122 +411,17 @@ q-learning比较冒险拿宝藏最重要．sarsa实际，保命最重要</li>
                     </div>
                 </div>
                 <div class="excerpt">
-                    <h1 id="进程线程">进程＆线程</h1>
+                    <ul id="markdown-toc">
+  <li><a href="#进程线程" id="markdown-toc-进程线程">进程＆线程</a></li>
+</ul>
+
+<h1 id="进程线程">进程＆线程</h1>
 <p>进程只是用来把资源集中到一起（进程只是一个资源单位，或者说资源集合），而线程才是cpu上的执行单位．进程之间的内存空间是隔离的
 多线程（即多个控制线程）的概念是，在一个进程中存在多个控制线程，多个控制线程共享该进程的地址空间
 进程之间是竞争关系，线程之间是协作关系</p>
 
 <p>利用multiprocessing库，使用多进程，而不是多线程，充分利用多核cpu资源</p>
 
-<p>多线程指的是，在一个进程中开启多个线程，简单的讲：如果多个任务共用一块地址空间，那么必须在一个进程内开启多个线程。详细的讲分为4点：</p>
-<ol>
-  <li>多线程共享一个进程的地址空间</li>
-  <li>线程比进程更轻量级，线程比进程更容易创建可撤销，在许多操作系统中，创建一个线程比创建一个进程要快10-100倍，在有大量线程需要动态和快速修改时，这一特性很有用</li>
-  <li>若多个线程都是cpu密集型的，那么并不能获得性能上的增强，但是如果存在大量的计算和大量的I/O处理，拥有多个线程允许这些活动彼此重叠运行，从而会加快程序执行的速度。</li>
-  <li>在多cpu系统中，为了最大限度的利用多核，可以开启多个线程，比开进程开销要小的多。（这一条并不适用于python）</li>
-</ol>
-
-<p>多线程用于IO密集型，如socket，爬虫，web
-多进程用于计算密集型，如金融分析</p>
-
-<h1 id="process">Process</h1>
-<ul>
-  <li>两种创建方式：
-    <ol>
-      <li>创建进程，传入参数为要执行的函数以及函数参数。一个进程就是一个Proccess类的实例</li>
-      <li>自定义类，继承Process类，重载run函数</li>
-    </ol>
-  </li>
-  <li>进程的deamon属性。若为true, 表示父进程结束，则子进程自动终止</li>
-  <li>子进程的join函数。表示父进程等待子进程执行完毕</li>
-</ul>
-
-<h1 id="lock">Lock</h1>
-<ul>
-  <li>避免并行导致输出错位。让同一时间只有一个进程操作临时资源</li>
-  <li>Lock类的实例。有acquire()和release()方法</li>
-  <li>Pcocess之间不共享数据，但是共享同一套文件系统，所以访问同一文件或同一个终端，会存在访问冲突。即，可以用文件来让进程间通信/共享数据，但存在效率问题和需要自己加锁处理</li>
-</ul>
-
-<h1 id="gil">GIL</h1>
-<p>GIL本质就是一把互斥锁，既然是互斥锁，所有互斥锁的本质都一样，都是将并发运行变成串行，以此来控制同一时间内共享数据只能被一个任务所修改，进而保证数据安全。</p>
-
-<p>可以肯定的一点是：保护不同的数据的安全，就应该加不同的锁。</p>
-
-<p>要想了解GIL，首先确定一点：每次执行python程序，都会产生一个独立的进程。例如python test.py，python aaa.py，python bbb.py会产生3个不同的python进程</p>
-
-<p>GIL保护的是解释器级的数据，保护用户自己的数据则需要自己加锁处理</p>
-
-<p>有了GIL的存在，同一时刻同一进程中只有一个线程被执行</p>
-
-<h1 id="semaphore信号量">Semaphore　信号量</h1>
-<ul>
-  <li>控制临界资源的数量，保证进程之间的互斥和同步</li>
-  <li>semaphore和mutex结合使用。mutex是互斥锁</li>
-</ul>
-
-<h1 id="ipc">IPC</h1>
-<p>进程彼此之间互相隔离，要实现进程间通信（IPC），multiprocessing模块支持两种形式：队列和管道，这两种方式都是使用消息传递的</p>
-<ul>
-  <li>生产者消费者模型利用了阻塞队列</li>
-  <li>队列就是管道加锁实现的
-    <h2 id="queue共享队列">Queue　共享队列</h2>
-  </li>
-  <li>用于进程间通信，不同与普通的队列。</li>
-  <li>有空异常和满异常
-    <h2 id="pipe">Pipe</h2>
-  </li>
-  <li>一端的进程发，一端的进程收</li>
-  <li>单向或双向</li>
-  <li>shell解释器中，一个命令就是一个进程，可以通过管道通信</li>
-</ul>
-
-<blockquote>
-  <ol>
-    <li>加锁可以保证多个进程修改同一块数据时，同一时间只能有一个任务可以进行修改，即串行的修改，没错，速度是慢了，但牺牲了速度却保证了数据安全。
-  虽然可以用文件共享数据实现进程间通信，但问题是：
-      <ul>
-        <li>效率低（共享数据基于文件，而文件是硬盘上的数据）</li>
-        <li>需要自己加锁处理</li>
-      </ul>
-    </li>
-    <li>因此我们最好找寻一种解决方案能够兼顾：1、效率高（多个进程共享一块内存的数据）2、帮我们处理好锁问题。这就是mutiprocessing模块为我们提供的基于消息的IPC通信机制：队列和管道。
-      <ul>
-        <li>队列和管道都是将数据存放于内存中</li>
-        <li>队列又是基于（管道+锁）实现的，可以让我们从复杂的锁问题中解脱出来，
- 我们应该尽量避免使用共享数据，尽可能使用消息传递和队列，避免处理复杂的同步和锁问题，而且在进程数目增多时，往往可以获得更好的可获展性。</li>
-      </ul>
-    </li>
-  </ol>
-</blockquote>
-
-<h1 id="pool进程池">Pool　进程池</h1>
-<ul>
-  <li>不再手动创建进程。用pool指定数量，如果没满，创建新的；如果满的，等待</li>
-  <li>阻塞式和非阻塞式</li>
-  <li>map函数</li>
-  <li>进程池可以得到进程执行的结果，而普通的进程是将结果存在队列中。</li>
-</ul>
-
-<h1 id="同步异步阻塞非阻塞">同步/异步/阻塞/非阻塞</h1>
-<p>同步与异步针对的是函数/任务的调用方式：同步就是当一个进程发起一个函数（任务）调用的时候，一直等到函数（任务）完成，
-而进程继续处于激活状态。而异步情况下是当一个进程发起一个函数（任务）调用的时候，不会等函数返回，而是继续往下执行当，
-函数返回的时候通过状态、通知、事件等方式通知进程任务完成。</p>
-
-<p>阻塞与非阻塞针对的是进程或线程：阻塞是当请求不能满足的时候就将进程挂起，而非阻塞则不会阻塞当前进程</p>
-
-<h1 id="僵尸进程孤儿进程">僵尸进程＆孤儿进程</h1>
-<p>僵尸进程和孤儿进程：僵尸进程是没有被父进程释放资源的进程，需要父进程调用wail()或者join()（join方法中使用了wait方法）；孤儿进程是父进程已经被kill的进程，会被init进程接受然后释放资源</p>
-
-<h1 id="生产者消费者模型">生产者消费者模型</h1>
-<p>生产者消费者模式是通过一个容器来解决生产者的强耦合问题。生产者和消费者彼此之间不直接通讯而通过阻塞队列来进行通讯，所以生产者生产
-完数据之后不用等待消费者处理，直接扔给阻塞队列，消费者不找生产者要数据，而是直接从阻塞队列里取，阻塞队列就相当于一个缓冲区，平衡
-了生产者和消费者的处理能力。</p>
-
-<p>通过消息队列交换数据。这样极大地减少了对使用锁定和其他同步手段的需求</p>
-
-<h1 id="event事件">Event　事件</h1>
-<p>Event对象（包含一个可由线程设置的信号标志），用于线程间的同步，线程等待某个事件，否则一直处于阻塞状态</p>
 
                 </div>
                 <div class="read-all">
@@ -494,6 +450,18 @@ q-learning比较冒险拿宝藏最重要．sarsa实际，保命最重要</li>
                     
 
 
+<!-- <span class="point">•</span> -->
+<span class="categories">
+  <i class="fa fa-th-list"></i>
+  
+    
+        <a href="/category/#攀天索--工具" title="Category: 攀天索--工具" rel="category">攀天索--工具</a>
+    
+  
+
+  <!-- <span class="point">•</span> -->
+</span>
+
 
                     </div>
 
@@ -515,7 +483,10 @@ q-learning比较冒险拿宝藏最重要．sarsa实际，保命最重要</li>
                     </div>
                 </div>
                 <div class="excerpt">
-                    <h1 id="cpp">cpp</h1>
+                    <ul id="markdown-toc">
+  <li><a href="#cpp" id="markdown-toc-cpp">cpp</a></li>
+</ul>
+<h1 id="cpp">cpp</h1>
 
 <ul>
   <li>取消科学计数法: 头文件<iomanip>
@@ -552,6 +523,18 @@ q-learning比较冒险拿宝藏最重要．sarsa实际，保命最重要</li>
                     
 
 
+<!-- <span class="point">•</span> -->
+<span class="categories">
+  <i class="fa fa-th-list"></i>
+  
+    
+        <a href="/category/#慧越泉--杂谈日志" title="Category: 慧越泉--杂谈日志" rel="category">慧越泉--杂谈日志</a>
+    
+  
+
+  <!-- <span class="point">•</span> -->
+</span>
+
 
                     </div>
 
@@ -573,7 +556,15 @@ q-learning比较冒险拿宝藏最重要．sarsa实际，保命最重要</li>
                     </div>
                 </div>
                 <div class="excerpt">
-                    <h1 id="软件开发案例第一次上机">软件开发案例——第一次上机</h1>
+                    <ul id="markdown-toc">
+  <li><a href="#软件开发案例第一次上机" id="markdown-toc-软件开发案例第一次上机">软件开发案例——第一次上机</a>    <ul>
+      <li><a href="#表格布局" id="markdown-toc-表格布局">表格布局</a></li>
+      <li><a href="#div布局" id="markdown-toc-div布局">div布局</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="软件开发案例第一次上机">软件开发案例——第一次上机</h1>
 <blockquote>
   <p>收获主要是页面布局方面</p>
   <ul>
@@ -596,106 +587,6 @@ div嵌套着table/div/p.span. 只需要限制每个div的宽度和高度即可�
                 <hr>
               </li>
             
-              <li>
-                <h2>
-                  <a class="post-link" href="/2019/03/08/anaconda/">python in linux</a>
-                </h2>
-                <div class="label">
-                    <div class="label-card">
-                        <i class="fa fa-calendar"></i>2019-03-08
-                    </div>
-                    <div class="label-card">
-                        <i class="fa fa-user"></i>jktian
-                        
-                    </div>
-                    <div class="label-card">
-                        
-                    </div>
-
-                    <div class="label-card">
-                    
-
-
-
-                    </div>
-
-                    <div class="label-card">
-                    
-<!-- <span class="point">•</span> -->
-<span class="pageTag">
-  <i class="fa fa-tags"></i>
-  
-    
-        <a href="/tag/#python" title="Tag: python" rel="tag">python</a>&nbsp;
-    
-        <a href="/tag/#linux" title="Tag: linux" rel="tag">linux</a>
-    
-  
-
-</span>
-
-                    </div>
-                </div>
-                <div class="excerpt">
-                    <h1 id="python-in-linux">python in linux</h1>
-
-<p>$ where is python 	# 找到Python可执行文件的位置</p>
-
-<p>~/.conda/envs/python36/bin/python</p>
-
-<p># sublime 安装插件
- 选项卡：preferences ==&gt; package-settings ==&gt; package-control–user
- 位置：~/.config/sublime-text-3/Packages/User
- 文件package control.sublime-settings–user: 人工下载channel.json文件
-     “channels”:[
-            “/home/jktian/sublime3-channel/channel_v3.json”
-        ],</p>
-
-<h1 id="anaconda">anaconda</h1>
-
-<p>python36的位置：/home/jktian/.conda/envs/python36/bin/python</p>
-
-<h1 id="解决方法">解决方法</h1>
-
-<p>eval(): 将字符串str当成有效的表达式来求值并返回计算结果。最终的结果是一个右值
-globals(): 左值。返回的是当前模块的全局变量。若此模块中定义了类，则包含类
-locals()：s返回的是当前所在最小命名空间的局部变量的一个拷贝。如果在类的一个函数中，则是函数内的局部变量.只读
-vars()：返回对象object的属性和属性值的<strong>字典对象</strong>。如果默认不输入参数，就打印当前调用位置的属性和属性值，相当于locals()的功能。如果有参数输入，就只打印这个参数相应的属性和属性值
-setattr()/getattr()</p>
-
-<h1 id="类和实例的命名空间">类和实例的命名空间</h1>
-<p>两者的__dict__不同
-self.var表示的是实例的成员变量，只出现在实例.__dict__中
-dir()命令查看模块的属性和成员变量
-类的实例动态增加属性和方法</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">locals</span><span class="p">()[</span><span class="s">'self'</span><span class="p">]</span><span class="o">.</span><span class="nb">setattr</span><span class="p">(</span><span class="s">'but_cnt'</span><span class="o">+</span><span class="n">name</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">Button</span><span class="p">(</span><span class="n">frame</span><span class="o">.</span><span class="n">fra_cnt</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="n">name</span><span class="p">,</span><span class="n">font</span><span class="o">=</span><span class="n">font</span><span class="p">,</span><span class="n">fg</span><span class="o">=</span><span class="n">fg_color</span><span class="p">,</span><span class="n">bg</span><span class="o">=</span><span class="n">bg_color</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span><span class="n">command</span><span class="o">=</span><span class="n">funcname</span><span class="p">)</span>
-</code></pre></div></div>
-<p>当python在使用变量时，会按照下面的步骤去搜索：
-函数或类的局部变量。
-全局变量。
-内置变量。 
-setattr()
-getattr()</p>
-
-<h3 id="困境">困境</h3>
-<p>globals()是全局的，可读可写，但是只有类的属性，即不是self的，修改了没用
-locals()可以返回具体的对象的属性，但是是深赋值。
-本质上是动态和静态。只能在动态运行时才能确定的，只能用setattr(),地址传递</p>
-<h1 id="函数的嵌套与返回">函数的嵌套与返回</h1>
-<p>装饰器的原理：返回一个函数名</p>
-
-<h1 id="从windows迁移到linux">从windows迁移到linux</h1>
-<p>原本python程序tkinter在Linux上显示不友好，认为界面编程还是windows优于linux
-结果，window7还要更新组件才能运行
-果断返回Linux</p>
-
-                </div>
-                <div class="read-all">
-                    <a  href="/2019/03/08/anaconda/"><i class="fa fa-newspaper-o"></i>Read All</a>
-                </div>
-                <hr>
-              </li>
-            
         </ul>
 
 
@@ -706,10 +597,10 @@ locals()可以返回具体的对象的属性，但是是深赋值。
             <a href="/index.html" class="previous"><i class="fa fa-angle-double-left"></i></a>
             <a href="/" class="previous"><i class="fa fa-angle-left"></i></a>
           
-          <span class="page_number ">2/6</span>
+          <span class="page_number ">2/7</span>
           
             <a href="/page3" class="next"><i class="fa fa-angle-right"></i></a>
-            <a href="/page6" class="next"><i class="fa fa-angle-double-right"></i></a>
+            <a href="/page7" class="next"><i class="fa fa-angle-double-right"></i></a>
           
         </div>
     </div>
@@ -727,6 +618,8 @@ locals()可以返回具体的对象的属性，但是是深赋值。
                     
                         <li><a href="/2019/03/20/java-socket/">java模拟路由表构建</a></li>
                     
+                        <li><a href="/2019/03/20/suoni-projecct/">关于降低员工离职率的策略研究</a></li>
+                    
                         <li><a href="/2019/03/20/senti-contest/">用户评论情感极性分析（三分类）</a></li>
                     
                         <li><a href="/2019/03/20/chatbolt/">多功能工具包（聊天机器人）</a></li>
@@ -741,8 +634,6 @@ locals()可以返回具体的对象的属性，但是是深赋值。
                     
                         <li><a href="/2019/03/16/python-multiprocess/">python多进程/多进程</a></li>
                     
-                        <li><a href="/2019/03/15/cpp/">cpp/c在oj</a></li>
-                    
                 </ul>
             </div>
 
@@ -753,6 +644,42 @@ locals()可以返回具体的对象的属性，但是是深赋值。
                     Categories
                 </div>
                 <ul class="content-ul" cate>
+                    
+                    <li>
+                        <a href="/category/#攀天索--工具" class="categories-list-item" cate="攀天索--工具">
+                            <span class="name">
+                                攀天索--工具
+                            </span>
+                            <span class="badge">9</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/category/#缘因洞--计算机理论" class="categories-list-item" cate="缘因洞--计算机理论">
+                            <span class="name">
+                                缘因洞--计算机理论
+                            </span>
+                            <span class="badge">8</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/category/#慧越泉--杂谈日志" class="categories-list-item" cate="慧越泉--杂谈日志">
+                            <span class="name">
+                                慧越泉--杂谈日志
+                            </span>
+                            <span class="badge">8</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/category/#历劫桥--项目实战" class="categories-list-item" cate="历劫桥--项目实战">
+                            <span class="name">
+                                历劫桥--项目实战
+                            </span>
+                            <span class="badge">4</span>
+                        </a>
+                    </li>
                     
                 </ul>
             </div>
@@ -776,13 +703,6 @@ locals()可以返回具体的对象的属性，但是是深赋值。
                       
                       
                       
-                      <a href="/tag/#tools" style="font-size: 15pt; color: #333;">tools</a>
-                    
-                      
-                      
-                      
-                      
-                      
                       <a href="/tag/#博客搭建" style="font-size: 9pt; color: #999;">博客搭建</a>
                     
                       
@@ -797,14 +717,14 @@ locals()可以返回具体的对象的属性，但是是深赋值。
                       
                       
                       
-                      <a href="/tag/#log" style="font-size: 13.5pt; color: #444;">log</a>
+                      <a href="/tag/#log" style="font-size: 12pt; color: #666;">log</a>
                     
                       
                       
                       
                       
                       
-                      <a href="/tag/#杂谈" style="font-size: 9pt; color: #999;">杂谈</a>
+                      <a href="/tag/#思维" style="font-size: 9pt; color: #999;">思维</a>
                     
                       
                       
@@ -833,6 +753,13 @@ locals()可以返回具体的对象的属性，但是是深赋值。
                       
                       
                       <a href="/tag/#python" style="font-size: 15pt; color: #333;">python</a>
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#小土刀" style="font-size: 9pt; color: #999;">小土刀</a>
                     
                       
                       
@@ -895,14 +822,14 @@ locals()可以返回具体的对象的属性，但是是深赋值。
                       
                       
                       
-                      <a href="/tag/#project" style="font-size: 12pt; color: #666;">project</a>
+                      <a href="/tag/#nlp" style="font-size: 9pt; color: #999;">nlp</a>
                     
                       
                       
                       
                       
                       
-                      <a href="/tag/#nlp" style="font-size: 9pt; color: #999;">nlp</a>
+                      <a href="/tag/#paper" style="font-size: 9pt; color: #999;">paper</a>
                     
                       
                       
@@ -950,7 +877,7 @@ locals()可以返回具体的对象的属性，但是是深赋值。
             <a href="https://github.com/ixneo" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>  
             <a href="mailto:932154199@qq.com" title="email"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>  
             <a href="http://weibo.com/coolinear" title="Weibo"><i class="fa fa-weibo" aria-hidden="true"></i></a>  
-            <a href="https://www.zhihu.com/people/coolinear" title="Zhihu"><i class="iconfont icon-daoruzhihu"></i></a>      
+            <a href="https://www.zhihu.com/people/te-si-la-48-5" title="Zhihu"><i class="iconfont icon-daoruzhihu"></i></a>      
         </p>
         <p>
             本站总访问量<span id="busuanzi_value_site_pv"></span>次，本站访客数<span id="busuanzi_value_site_uv"></span>人次，本文总阅读量<span id="busuanzi_value_page_pv"></span>次

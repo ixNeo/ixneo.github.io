@@ -7,15 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>python多进程/多进程</title>
-    <meta name="description" content="进程＆线程进程只是用来把资源集中到一起（进程只是一个资源单位，或者说资源集合），而线程才是cpu上的执行单位．进程之间的内存空间是隔离的多线程（即多个控制线程）的概念是，在一个进程中存在多个控制线程，多个控制线程共享该进程的地址空间进程之间是竞争关系，线程之间是协作关系利用multiprocessing库，使用多...">
+    <meta name="description" content="  进程＆线程进程＆线程进程只是用来把资源集中到一起（进程只是一个资源单位，或者说资源集合），而线程才是cpu上的执行单位．进程之间的内存空间是隔离的多线程（即多个控制线程）的概念是，在一个进程中存在多个控制线程，多个控制线程共享该进程的地址空间进程之间是竞争关系，线程之间是协作关系利用multiprocessi...">
 
     <link rel="shortcut icon" href="/favicon.ico?" type="image/x-icon">
     <link rel="icon" href="/favicon.ico?" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://at.alicdn.com/t/font_8v3czwksspqlg14i.css">
     <link rel="stylesheet" href="/css/main.css ">
-    <link rel="canonical" href="http://localhost:4002/2019/03/16/python-multiprocess/">
-    <link rel="alternate" type="application/rss+xml" title="jktian-logging" href="http://localhost:4002/feed.xml ">
+    <link rel="canonical" href="http://localhost:4001/2019/03/16/python-multiprocess/">
+    <link rel="alternate" type="application/rss+xml" title="jk.tian" href="http://localhost:4001/feed.xml ">
 
 
     <script>
@@ -39,8 +39,8 @@
 
     <header id="top">
     <div class="wrapper">
-        <a href="/" class="brand">jktian-logging</a>
-        <small>majon in data-science</small>
+        <a href="/" class="brand">jk.tian</a>
+        <small>major in data-science</small>
         <button id="headerMenu" class="menu"><i class="fa fa-bars"></i></button>
         <nav id="headerNav">
             <ul>
@@ -129,6 +129,8 @@
                 
                     
                 
+                    
+                
             </ul>
         </nav>
     </div>
@@ -159,6 +161,18 @@
             
 
 
+<!-- <span class="point">•</span> -->
+<span class="categories">
+  <i class="fa fa-th-list"></i>
+  
+    
+        <a href="/category/#缘因洞--计算机理论" title="Category: 缘因洞--计算机理论" rel="category">缘因洞--计算机理论</a>
+    
+  
+
+  <!-- <span class="point">•</span> -->
+</span>
+
 
             </div>
 
@@ -187,7 +201,25 @@
         </div>
         <hr>
         <article itemscope itemtype="http://schema.org/BlogPosting">
-        <h1 id="进程线程">进程＆线程</h1>
+        <ul id="markdown-toc">
+  <li><a href="#进程线程" id="markdown-toc-进程线程">进程＆线程</a></li>
+  <li><a href="#process" id="markdown-toc-process">Process</a></li>
+  <li><a href="#lock" id="markdown-toc-lock">Lock</a></li>
+  <li><a href="#gil" id="markdown-toc-gil">GIL</a></li>
+  <li><a href="#semaphore信号量" id="markdown-toc-semaphore信号量">Semaphore　信号量</a></li>
+  <li><a href="#ipc" id="markdown-toc-ipc">IPC</a>    <ul>
+      <li><a href="#queue共享队列" id="markdown-toc-queue共享队列">Queue　共享队列</a></li>
+      <li><a href="#pipe" id="markdown-toc-pipe">Pipe</a></li>
+    </ul>
+  </li>
+  <li><a href="#pool进程池" id="markdown-toc-pool进程池">Pool　进程池</a></li>
+  <li><a href="#同步异步阻塞非阻塞" id="markdown-toc-同步异步阻塞非阻塞">同步/异步/阻塞/非阻塞</a></li>
+  <li><a href="#僵尸进程孤儿进程" id="markdown-toc-僵尸进程孤儿进程">僵尸进程＆孤儿进程</a></li>
+  <li><a href="#生产者消费者模型" id="markdown-toc-生产者消费者模型">生产者消费者模型</a></li>
+  <li><a href="#event事件" id="markdown-toc-event事件">Event　事件</a></li>
+</ul>
+
+<h1 id="进程线程">进程＆线程</h1>
 <p>进程只是用来把资源集中到一起（进程只是一个资源单位，或者说资源集合），而线程才是cpu上的执行单位．进程之间的内存空间是隔离的
 多线程（即多个控制线程）的概念是，在一个进程中存在多个控制线程，多个控制线程共享该进程的地址空间
 进程之间是竞争关系，线程之间是协作关系</p>
@@ -195,6 +227,7 @@
 <p>利用multiprocessing库，使用多进程，而不是多线程，充分利用多核cpu资源</p>
 
 <p>多线程指的是，在一个进程中开启多个线程，简单的讲：如果多个任务共用一块地址空间，那么必须在一个进程内开启多个线程。详细的讲分为4点：</p>
+
 <ol>
   <li>多线程共享一个进程的地址空间</li>
   <li>线程比进程更轻量级，线程比进程更容易创建可撤销，在许多操作系统中，创建一个线程比创建一个进程要快10-100倍，在有大量线程需要动态和快速修改时，这一特性很有用</li>
@@ -334,14 +367,6 @@
                     
                 
                     
-                
-                    
-                
-            
-                
-                    
-                
-                    
                         
                         <h2 id="similar_posts">Similar Posts</h2>
                         <ul>
@@ -369,22 +394,6 @@
                     
                 
             
-                
-                    
-                
-                    
-                
-                    
-                
-            
-                
-                    
-                
-                    
-                
-                    
-                
-            
         
             
             
@@ -414,6 +423,9 @@
                 
                     
                 
+            
+        
+            
             
                 
                     
@@ -458,25 +470,6 @@
                         </li>
                         
                         
-                    
-                
-                    
-                
-                    
-                
-            
-        
-            
-            
-                
-                    
-                
-                    
-                
-                    
-                
-            
-                
                     
                 
                     
@@ -579,7 +572,7 @@
             <a href="https://github.com/ixneo" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>  
             <a href="mailto:932154199@qq.com" title="email"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>  
             <a href="http://weibo.com/coolinear" title="Weibo"><i class="fa fa-weibo" aria-hidden="true"></i></a>  
-            <a href="https://www.zhihu.com/people/coolinear" title="Zhihu"><i class="iconfont icon-daoruzhihu"></i></a>      
+            <a href="https://www.zhihu.com/people/te-si-la-48-5" title="Zhihu"><i class="iconfont icon-daoruzhihu"></i></a>      
         </p>
         <p>
             本站总访问量<span id="busuanzi_value_site_pv"></span>次，本站访客数<span id="busuanzi_value_site_uv"></span>人次，本文总阅读量<span id="busuanzi_value_page_pv"></span>次

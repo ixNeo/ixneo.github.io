@@ -6,15 +6,27 @@ date:       2019-03-04				# 时间
 author:     jktian 						# 作者
 header-img: img/post-bg-2015.jpg 	#这篇文章标题背景图片
 catalog: true 						# 是否归档
+category: 攀天索--工具
 tags:								#标签
     - python
-    - tools
 ---
+* content
+{:toc}
 # conda
+
 1. conda install <url/package_name>	# 可能需要事先切换到python36，代替py37
 2. conda info <package_name>	# 打印关于包的信息，有不同版本的tar.gz下载url
 
+
+
+
+
+
+
+
+
 # tensorflow
+
 1. 根据conda info, 得到依赖项。不仅要安装tensorflow本身，同时也要conda info 依赖项，来安装依赖的包
 2. 和tensorboard
    1. 可能会有版本问题

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>jktian-logging</title>
+    <title>jk.tian</title>
     <meta name="description" content="">
 
     <link rel="shortcut icon" href="/favicon.ico?" type="image/x-icon">
@@ -14,8 +14,8 @@
     <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://at.alicdn.com/t/font_8v3czwksspqlg14i.css">
     <link rel="stylesheet" href="/css/main.css ">
-    <link rel="canonical" href="http://localhost:4002/page3/">
-    <link rel="alternate" type="application/rss+xml" title="jktian-logging" href="http://localhost:4002/feed.xml ">
+    <link rel="canonical" href="http://localhost:4001/page3/">
+    <link rel="alternate" type="application/rss+xml" title="jk.tian" href="http://localhost:4001/feed.xml ">
 
 
     <script>
@@ -39,8 +39,8 @@
 
     <header id="top">
     <div class="wrapper">
-        <a href="/" class="brand">jktian-logging</a>
-        <small>majon in data-science</small>
+        <a href="/" class="brand">jk.tian</a>
+        <small>major in data-science</small>
         <button id="headerMenu" class="menu"><i class="fa fa-bars"></i></button>
         <nav id="headerNav">
             <ul>
@@ -129,6 +129,8 @@
                 
                     
                 
+                    
+                
             </ul>
         </nav>
     </div>
@@ -141,6 +143,74 @@
         <small>故世之奇伟瑰怪非常之观,常在于险远</small>
         <hr>
         <ul>
+            
+              <li>
+                <h2>
+                  <a class="post-link" href="/2019/03/08/anaconda/">python in linux</a>
+                </h2>
+                <div class="label">
+                    <div class="label-card">
+                        <i class="fa fa-calendar"></i>2019-03-08
+                    </div>
+                    <div class="label-card">
+                        <i class="fa fa-user"></i>jktian
+                        
+                    </div>
+                    <div class="label-card">
+                        
+                    </div>
+
+                    <div class="label-card">
+                    
+
+
+<!-- <span class="point">•</span> -->
+<span class="categories">
+  <i class="fa fa-th-list"></i>
+  
+    
+        <a href="/category/#攀天索--工具" title="Category: 攀天索--工具" rel="category">攀天索--工具</a>
+    
+  
+
+  <!-- <span class="point">•</span> -->
+</span>
+
+
+                    </div>
+
+                    <div class="label-card">
+                    
+<!-- <span class="point">•</span> -->
+<span class="pageTag">
+  <i class="fa fa-tags"></i>
+  
+    
+        <a href="/tag/#python" title="Tag: python" rel="tag">python</a>&nbsp;
+    
+        <a href="/tag/#linux" title="Tag: linux" rel="tag">linux</a>
+    
+  
+
+</span>
+
+                    </div>
+                </div>
+                <div class="excerpt">
+                    <ul id="markdown-toc">
+  <li><a href="#python-in-linux" id="markdown-toc-python-in-linux">python in linux</a></li>
+</ul>
+<h1 id="python-in-linux">python in linux</h1>
+
+<p>$ where is python 	# 找到Python可执行文件的位置</p>
+
+
+                </div>
+                <div class="read-all">
+                    <a  href="/2019/03/08/anaconda/"><i class="fa fa-newspaper-o"></i>Read All</a>
+                </div>
+                <hr>
+              </li>
             
               <li>
                 <h2>
@@ -162,6 +232,18 @@
                     
 
 
+<!-- <span class="point">•</span> -->
+<span class="categories">
+  <i class="fa fa-th-list"></i>
+  
+    
+        <a href="/category/#攀天索--工具" title="Category: 攀天索--工具" rel="category">攀天索--工具</a>
+    
+  
+
+  <!-- <span class="point">•</span> -->
+</span>
+
 
                     </div>
 
@@ -172,9 +254,7 @@
   <i class="fa fa-tags"></i>
   
     
-        <a href="/tag/#python" title="Tag: python" rel="tag">python</a>&nbsp;
-    
-        <a href="/tag/#tools" title="Tag: tools" rel="tag">tools</a>
+        <a href="/tag/#python" title="Tag: python" rel="tag">python</a>
     
   
 
@@ -183,40 +263,16 @@
                     </div>
                 </div>
                 <div class="excerpt">
-                    <h1 id="conda">conda</h1>
+                    <ul id="markdown-toc">
+  <li><a href="#conda" id="markdown-toc-conda">conda</a></li>
+</ul>
+<h1 id="conda">conda</h1>
+
 <ol>
   <li>conda install &lt;url/package_name&gt;	# 可能需要事先切换到python36，代替py37</li>
   <li>conda info <package_name>	# 打印关于包的信息，有不同版本的tar.gz下载url</package_name></li>
 </ol>
 
-<h1 id="tensorflow">tensorflow</h1>
-<ol>
-  <li>根据conda info, 得到依赖项。不仅要安装tensorflow本身，同时也要conda info 依赖项，来安装依赖的包</li>
-  <li>和tensorboard
-    <ol>
-      <li>可能会有版本问题</li>
-      <li>重新安装大法好。pip upgrade不靠谱，直接uninstall再install即可</li>
-      <li>命令：tensorboard –logdir <log_path>
-</log_path>        <blockquote>
-          <p>调试技巧：
-	判断大概位置，逐步调试，验证假设，模块化问题点</p>
-        </blockquote>
-      </li>
-    </ol>
-  </li>
-</ol>
-
-<h1 id="opencv">opencv</h1>
-<ol>
-  <li>import cv2</li>
-</ol>
-
-<h1 id="python包的安装方式">python包的安装方式</h1>
-<ol>
-  <li>pip install</li>
-  <li>conda info, 然后conda install <url></url></li>
-  <li>setup.py, 安装.whl</li>
-</ol>
 
                 </div>
                 <div class="read-all">
@@ -245,6 +301,18 @@
                     
 
 
+<!-- <span class="point">•</span> -->
+<span class="categories">
+  <i class="fa fa-th-list"></i>
+  
+    
+        <a href="/category/#缘因洞--计算机理论" title="Category: 缘因洞--计算机理论" rel="category">缘因洞--计算机理论</a>
+    
+  
+
+  <!-- <span class="point">•</span> -->
+</span>
+
 
                     </div>
 
@@ -264,7 +332,11 @@
                     </div>
                 </div>
                 <div class="excerpt">
-                    <h1 id="总结">总结</h1>
+                    <ul id="markdown-toc">
+  <li><a href="#总结" id="markdown-toc-总结">总结</a></li>
+</ul>
+
+<h1 id="总结">总结</h1>
 <ol>
   <li>shell操作。命令行解释器的设置。如提示符样式等</li>
   <li>改变显示界面样式。
@@ -311,6 +383,18 @@
                     
 
 
+<!-- <span class="point">•</span> -->
+<span class="categories">
+  <i class="fa fa-th-list"></i>
+  
+    
+        <a href="/category/#缘因洞--计算机理论" title="Category: 缘因洞--计算机理论" rel="category">缘因洞--计算机理论</a>
+    
+  
+
+  <!-- <span class="point">•</span> -->
+</span>
+
 
                     </div>
 
@@ -321,7 +405,7 @@
   <i class="fa fa-tags"></i>
   
     
-        <a href="/tag/#log" title="Tag: log" rel="tag">log</a>
+        <a href="/tag/#小土刀" title="Tag: 小土刀" rel="tag">小土刀</a>
     
   
 
@@ -330,79 +414,7 @@
                     </div>
                 </div>
                 <div class="excerpt">
-                    <h1 id="线性代数">线性代数</h1>
-<ol>
-  <li>行列式的计算</li>
-  <li>线性代数要解决的问题：线性方程组的求解</li>
-  <li>向量，方程组，矩阵。三者在一定条件下，相互等价。</li>
-  <li>秩(rank)</li>
-  <li>特征值与特征向量
-    <h1 id="概率和统计">概率和统计</h1>
-  </li>
-  <li>卡方分布： 探究自变量的类别是否与因变量相关
-    <ol>
-      <li>置信度和置信区间。在多次实验中，位于置信区间内的次数/总实验次数</li>
-      <li>样本和总体。根据样本，做出假设 ==》根据假设，得到理论值 ==》根据理论值和样本值，得到卡方分布的统计量 ==》 统计量对表，选择是否接受假设。</li>
-      <li>点估计和区间估计。点估计对于某个样本，精确度高。区间估计，丧失了精确度，保留了置信度，一般选择95%</li>
-    </ol>
-  </li>
-  <li>统计学的意义：用统计量来表征原始数据。原始数据的误差也要考虑在内，即样本的选取。
-    <ol>
-      <li>从经验出发，得出反直观的结论。不同于方程式。
-        <h1 id="htmlcss">html/css</h1>
-      </li>
-    </ol>
-  </li>
-  <li>标签的语义，像报纸一样。</li>
-  <li>一样有抽象，即抽离出公共部分
-    <h1 id="python">python</h1>
-  </li>
-  <li>内存管理。原子类型，容器类型。变量基本都是引用。操作符和函数类似。根据原子类型被引用的次数，来进行垃圾回收
-    <ol>
-      <li>直接赋值：等号</li>
-      <li>深复制。copy.copy()</li>
-      <li>浅复制。copy.deepcopy()</li>
-    </ol>
-  </li>
-  <li>运行机制：先编译为字节码，然后在虚拟机上解释执行。pyc是被编译过的文件，一般当文件作为模块被其他文件引用时，被引用的文件会生成.pyc</li>
-  <li>装饰器。sys库执行脚本命令
-    <h1 id="shell脚本">shell脚本</h1>
-  </li>
-  <li>管道操作。短路技巧。</li>
-  <li>直接和系统级的命令打交道。</li>
-  <li>有：变量，数据类型（整数，实数），数据结构（数组，字典），控制结构
-    <h1 id="代码整洁之道编码规范">代码整洁之道（编码规范）</h1>
-  </li>
-  <li>变量名、函数名：下划线分割，全部小写；少用驼峰法</li>
-  <li>类名驼峰法，首字母大写</li>
-  <li>注释规范。可以写TODO(maill@example.com):task
-    <h1 id="数据科学">数据科学</h1>
-  </li>
-  <li>搜索：爬虫爬取、搜索引擎优化（SEO）、链接分析
-    <ol>
-      <li>评价指标：准确率（查中的/返回的结果），召回率（查中的/真实的结果）</li>
-    </ol>
-  </li>
-  <li>数据挖掘与数据库（采集==》预处理==》加工==》模式识别）
-    <ol>
-      <li>预测型任务</li>
-      <li>描述型任务（聚类，解释数据）</li>
-    </ol>
-  </li>
-  <li>自然语言处理</li>
-</ol>
-
-<h1 id="微积分">微积分</h1>
-<h1 id="深度学习入门">深度学习入门</h1>
-<ol>
-  <li>tensorflow框架的安装（三种方式）
-    <ol>
-      <li>virtualenv: 隔离的环境</li>
-      <li>pip</li>
-      <li>docker</li>
-    </ol>
-  </li>
-</ol>
+                    
 
                 </div>
                 <div class="read-all">
@@ -431,6 +443,18 @@
                     
 
 
+<!-- <span class="point">•</span> -->
+<span class="categories">
+  <i class="fa fa-th-list"></i>
+  
+    
+        <a href="/category/#攀天索--工具" title="Category: 攀天索--工具" rel="category">攀天索--工具</a>
+    
+  
+
+  <!-- <span class="point">•</span> -->
+</span>
+
 
                     </div>
 
@@ -441,9 +465,7 @@
   <i class="fa fa-tags"></i>
   
     
-        <a href="/tag/#python" title="Tag: python" rel="tag">python</a>&nbsp;
-    
-        <a href="/tag/#tools" title="Tag: tools" rel="tag">tools</a>
+        <a href="/tag/#python" title="Tag: python" rel="tag">python</a>
     
   
 
@@ -452,7 +474,11 @@
                     </div>
                 </div>
                 <div class="excerpt">
-                    <h1 id="requirementtxt文件">requirement.txt文件</h1>
+                    <ul id="markdown-toc">
+  <li><a href="#requirementtxt文件" id="markdown-toc-requirementtxt文件">requirement.txt文件</a></li>
+</ul>
+
+<h1 id="requirementtxt文件">requirement.txt文件</h1>
 <ol>
   <li>创建
     <ol>
@@ -494,6 +520,18 @@
                     
 
 
+<!-- <span class="point">•</span> -->
+<span class="categories">
+  <i class="fa fa-th-list"></i>
+  
+    
+        <a href="/category/#慧越泉--杂谈日志" title="Category: 慧越泉--杂谈日志" rel="category">慧越泉--杂谈日志</a>
+    
+  
+
+  <!-- <span class="point">•</span> -->
+</span>
+
 
                     </div>
 
@@ -513,7 +551,11 @@
                     </div>
                 </div>
                 <div class="excerpt">
-                    <h1 id="知识点">知识点</h1>
+                    <ul id="markdown-toc">
+  <li><a href="#知识点" id="markdown-toc-知识点">知识点</a></li>
+</ul>
+
+<h1 id="知识点">知识点</h1>
 <ol>
   <li>文本文件是字符均为ascii编码的文件；其余为二进制文件</li>
   <li>注意’0’在char和int之间的作用</li>
@@ -526,386 +568,10 @@
   </li>
 </ol>
 
-<h1 id="加法">加法</h1>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    #include&lt;iostream&gt;
-    #include&lt;cmath&gt;
-    #include&lt;string&gt;
-    #include&lt;iterator&gt;
-    #include&lt;algorithm&gt;
-
-    using namespace std;
-    
-    // big num add
-    string bigNumAdd(string num1,string num2){
-        // reverse
-        reverse(num1.begin(),num1.end());
-        reverse(num2.begin(),num2.end());
-
-        // standard-process data
-        string bignum,smallnum,sumnum;
-        if(num1.size()&gt;num2.size()){
-            bignum = num1; smallnum = num2;
-        }else{
-            bignum = num2; smallnum = num1;
-        }
-        sumnum = bignum;
-
-        // add
-        for(int i=0;i&lt;smallnum.size();i++){
-            int lowposVal = smallnum[i]-'0'+sumnum[i]-'0';
-            int lowpos = i;
-            sumnum[lowpos] = lowposVal+'0';
-            while(lowposVal&gt;9){
-                sumnum[lowpos] = lowposVal+'0'-10;
-                if(lowpos+1&gt;=sumnum.size()){
-                    sumnum.append(1,'0');
-                }
-                sumnum[lowpos+1] += 1;
-                lowposVal = sumnum[lowpos+1]-'0';
-                lowpos += 1;
-            }
-
-        }
-
-        // return
-        reverse(sumnum.begin(),sumnum.end());
-        cout &lt;&lt;  sumnum &lt;&lt; endl;
-        return sumnum;
-    }
-
-    int main(){
-        string num1,num2,sumnum;
-        cin &gt;&gt; num1 &gt;&gt; num2;
-        sumnum = bigNumAdd(num1,num2);
-        return 0;
-    }
-</code></pre></div></div>
-
-<h1 id="减法">减法</h1>
-<ol>
-  <li>
-    <p>在加法的基础上改动，增加了符号判断函数</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> char cmpStr(string num1,string num2){
-     char sign = '+';
-     // 1.size; 2. equation
-    if(num1.size()&gt;num2.size()){
-        sign = '+';
-    }else if(num1.size()&lt;num2.size()){
-        sign = '-';
-    }else{
-        for(int i=0;i&lt;num1.size();i++){
-            if(num1[i]&gt;num2[i]){
-                sign = '+';  break;
-            }else if(num1[i]&lt;num2[i]){
-                sign = '-';  break;
-            }else{}
-        }
-    }
-    return sign;
- }
- // big num sub
- string bigNumSub(string num1,string num2){
-     // get-sign
-     char sign = cmpStr(num1,num2);
-    
-     // reverse
-     reverse(num1.begin(),num1.end());
-     reverse(num2.begin(),num2.end());
-    
-     // standard-process data
-     string bignum,smallnum,sumnum;
-     if(sign=='+'){
-         bignum = num1; smallnum = num2;
-     }else{
-         bignum = num2; smallnum = num1;
-     }
-     sumnum = bignum;
-    
-     // sub
-     for(int i=0;i&lt;smallnum.size();i++){
-         int lowposVal = sumnum[i]-smallnum[i];
-         int lowpos = i;
-         sumnum[lowpos] = lowposVal+'0';
-         while(lowposVal&lt;0){
-             sumnum[lowpos] = 10+lowposVal+'0';
- //            if(lowpos+1&gt;=sumnum.size()){
- //                sumnum.append(1,'0');
- //            }
-             sumnum[lowpos+1] -= 1;
-             lowposVal = sumnum[lowpos+1]-'0';
-             lowpos += 1;
-         }
-    
-     }
-    
-     // return
-     reverse(sumnum.begin(),sumnum.end());
-     cout &lt;&lt;  sign &lt;&lt; sumnum &lt;&lt; endl;
-     return sumnum;
- }
-</code></pre></div>    </div>
-  </li>
-</ol>
-
-<h1 id="乘法">乘法</h1>
-<ol>
-  <li>
-    <p>先写出函数，实现大数与一位整数相乘</p>
-
-    <p>#include<iostream>
- #include<cmath>
- #include<string>
- #include<iterator>
- #include<algorithm>
- #include "bignumadd.h"
- using namespace std; 
- string mulOnepos(string bignum, char smallOne){
-     string res;
-     int curNum=0, lowNum=0, highNum=0;</algorithm></iterator></string></cmath></iostream></p>
-
-    <p>// reverse(bignum.begin(),bignum.end());</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> for(int i=0;i&lt;bignum.size();i++){
-     curNum = highNum + (bignum[i]-'0')*(smallOne-'0');
-     lowNum = curNum % 10;
-     if(curNum&gt;=10){
-         highNum = curNum / 10;
-     }else{
-         highNum = 0;
-     }
-     res.append(1,lowNum+'0');
- }
- if(highNum!=0){
-     res.append(1,highNum+'0');
- }
- reverse(res.begin(),res.end());
- return res;  }
-</code></pre></div>    </div>
-
-    <p>// big num multiply
- string bigNumMul(string num1,string num2){
-     // reverse
-     reverse(num1.begin(),num1.end());
-     reverse(num2.begin(),num2.end());</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> // standard-process data
- string bignum,smallnum,sumnum;
- if(num1.size()&gt;num2.size()){
-     bignum = num1; smallnum = num2;
- }else{
-     bignum = num2; smallnum = num1;
- }
-    
- // multiply
- for(int i=0;i&lt;smallnum.size();i++){
-     string tmp = mulOnepos(bignum, smallnum[i]);
-     tmp.append(i,'0');  //        cout &lt;&lt; i &lt;&lt; " : tmp after o-add: " &lt;&lt; tmp &lt;&lt; endl;
-     sumnum = bigNumAdd(tmp,sumnum);  //        cout &lt;&lt; i &lt;&lt; " : sumnum " &lt;&lt; sumnum &lt;&lt; endl;
- }
-</code></pre></div>    </div>
-
-    <p>//    reverse(sumnum.begin(),sumnum.end());
-     cout «  sumnum « endl;
-     return sumnum;
- }</p>
-
-    <p>int main(){
-     string num1,num2,sumnum;
-     cin » num1 » num2;
-     sumnum = bigNumMul(num1,num2);
- //    cout « mulOnepos(num1,num2[0]) « endl;
-     return 0;
- }</p>
-  </li>
-</ol>
-
-<h1 id="除法">除法</h1>
-<ol>
-  <li>基于减法操作</li>
-  <li>
-    <p>符号判断时，要加入为０的判断。同时，要去除前缀的冗余０</p>
-
-    <p>string rmDupZero(string num1){
-     int len = num1.size(),i;
-     for(i=0;i&lt;len;i++){
-         if(num1[i]!=’0’){
-             break;
-         }
-     }
-     num1 = num1.substr(i,len-i);
-     return num1;
- }
- char cmpStr(string num1,string num2){
-     char sign = ‘+’;
-     // remove duplicate-zero
-     num1 = rmDupZero(num1);
-     num2 = rmDupZero(num2);</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 1.size; 2. equation
-if(num1.size()&gt;num2.size()){
-    sign = '+';
-}else if(num1.size()&lt;num2.size()){
-    sign = '-';
-}else{
-    for(int i=0;i&lt;num1.size();i++){
-        if(num1[i]&gt;num2[i]){
-            sign = '+';  break;
-        }else if(num1[i]&lt;num2[i]){
-            sign = '-';  break;
-        }else{
-            sign = '=';
-        }
-    }
-}
-return sign;  }  // big num sub  string bigNumSub(string num1,string num2){
- // get-sign
- char sign = cmpStr(num1,num2);
-
- // reverse
- reverse(num1.begin(),num1.end());
- reverse(num2.begin(),num2.end());
-
- // standard-process data
- string bignum,smallnum,sumnum;
- if(sign=='+'){
-     bignum = num1; smallnum = num2;
- }else{
-     bignum = num2; smallnum = num1;
- }
- sumnum = bignum;
-
- // sub
- for(int i=0;i&lt;smallnum.size();i++){
-     int lowposVal = sumnum[i]-smallnum[i];
-     int lowpos = i;
-     sumnum[lowpos] = lowposVal+'0';
-     while(lowposVal&lt;0){
-         sumnum[lowpos] = 10+lowposVal+'0';  //            if(lowpos+1&gt;=sumnum.size()){  //                sumnum.append(1,'0');  //            }
-         sumnum[lowpos+1] -= 1;
-         lowposVal = sumnum[lowpos+1]-'0';
-         lowpos += 1;
-     }
-
- }
-
- // return
- reverse(sumnum.begin(),sumnum.end());  //    cout &lt;&lt;  sign &lt;&lt; sumnum &lt;&lt; endl;
- return sign+sumnum;  }
-</code></pre></div>    </div>
-
-    <p>string bigNumDiv(string num1, string num2){
-     if(num2[0]==’0’){
-         string hint = “zero-error”;
-         return hint;
-     }
-     string res,tmp;
-     string num1Copy = num1, num2Copy = num2;
-     int len1 = num1.size();
-     int len2 = num2.size();
-     int dlen = len1 - len2;
-     for(int i=0;i&lt;=dlen;i++){
-         res.append(1,’0’);
-         num2.append(dlen-i,’0’);
-         tmp = bigNumSub(num1,num2);
-         while(tmp[0]==’+’){
-             res[i] += 1;
-             num1 = tmp.substr(1,tmp.size()-1);</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>         cout &lt;&lt; "num1(after-sub): num2(division) = " &lt;&lt; num1 &lt;&lt; " , " &lt;&lt; num2&lt;&lt; endl;
-         cout &lt;&lt; "res: " &lt;&lt; res &lt;&lt; endl;
-         tmp = bigNumSub(num1,num2);
-         cout &lt;&lt; "tmp(next-try): " &lt;&lt; tmp &lt;&lt; endl;
-         cout &lt;&lt; "******************" &lt;&lt; endl;
-     }
-     num2 = num2Copy;
- }
- if(tmp[0]=='='){
-     res[res.size()-1] += 1;
- }
- cout &lt;&lt; res &lt;&lt; endl;
- return res;  }
-</code></pre></div>    </div>
-  </li>
-</ol>
 
                 </div>
                 <div class="read-all">
                     <a  href="/2019/03/01/oj-bignum/"><i class="fa fa-newspaper-o"></i>Read All</a>
-                </div>
-                <hr>
-              </li>
-            
-              <li>
-                <h2>
-                  <a class="post-link" href="/2019/03/01/laddder/">搬瓦工vps+shadowsocks</a>
-                </h2>
-                <div class="label">
-                    <div class="label-card">
-                        <i class="fa fa-calendar"></i>2019-03-01
-                    </div>
-                    <div class="label-card">
-                        <i class="fa fa-user"></i>jktian
-                        
-                    </div>
-                    <div class="label-card">
-                        
-                    </div>
-
-                    <div class="label-card">
-                    
-
-
-
-                    </div>
-
-                    <div class="label-card">
-                    
-<!-- <span class="point">•</span> -->
-<span class="pageTag">
-  <i class="fa fa-tags"></i>
-  
-    
-        <a href="/tag/#科学上网" title="Tag: 科学上网" rel="tag">科学上网</a>
-    
-  
-
-</span>
-
-                    </div>
-                </div>
-                <div class="excerpt">
-                    <h1 id="流程">流程</h1>
-<ol>
-  <li>手机用shadowsocks</li>
-  <li>pc端也要配置
-    <h1 id="问题">问题</h1>
-  </li>
-  <li>端口问题，不要用 80 8888 8080 443这些主流端口</li>
-  <li>网络问题
-    <ol>
-      <li>校园网dlut可以pip和conda install成功。但是翻墙速度慢</li>
-      <li>移动网pip一直retrying, 但是可以访问谷歌</li>
-      <li>dlut-eda均可</li>
-    </ol>
-  </li>
-</ol>
-
-<h1 id="重新安装">重新安装</h1>
-
-<p>vps直接重新安装系统</p>
-
-<p>​	https://www.banpie.info/shadowsocks-pac-gfw/</p>
-
-<p>打开隐藏网址，跑脚本，安装ss</p>
-
-<p>​	https://kiwivm.64clouds.com/main-exec.php?mode=extras_shadowsocks</p>
-
-<p>pc端和手机端可以用二维码分享</p>
-
-                </div>
-                <div class="read-all">
-                    <a  href="/2019/03/01/laddder/"><i class="fa fa-newspaper-o"></i>Read All</a>
                 </div>
                 <hr>
               </li>
@@ -920,10 +586,10 @@ return sign;  }  // big num sub  string bigNumSub(string num1,string num2){
             <a href="/index.html" class="previous"><i class="fa fa-angle-double-left"></i></a>
             <a href="/page2" class="previous"><i class="fa fa-angle-left"></i></a>
           
-          <span class="page_number ">3/6</span>
+          <span class="page_number ">3/7</span>
           
             <a href="/page4" class="next"><i class="fa fa-angle-right"></i></a>
-            <a href="/page6" class="next"><i class="fa fa-angle-double-right"></i></a>
+            <a href="/page7" class="next"><i class="fa fa-angle-double-right"></i></a>
           
         </div>
     </div>
@@ -941,6 +607,8 @@ return sign;  }  // big num sub  string bigNumSub(string num1,string num2){
                     
                         <li><a href="/2019/03/20/java-socket/">java模拟路由表构建</a></li>
                     
+                        <li><a href="/2019/03/20/suoni-projecct/">关于降低员工离职率的策略研究</a></li>
+                    
                         <li><a href="/2019/03/20/senti-contest/">用户评论情感极性分析（三分类）</a></li>
                     
                         <li><a href="/2019/03/20/chatbolt/">多功能工具包（聊天机器人）</a></li>
@@ -955,8 +623,6 @@ return sign;  }  // big num sub  string bigNumSub(string num1,string num2){
                     
                         <li><a href="/2019/03/16/python-multiprocess/">python多进程/多进程</a></li>
                     
-                        <li><a href="/2019/03/15/cpp/">cpp/c在oj</a></li>
-                    
                 </ul>
             </div>
 
@@ -967,6 +633,42 @@ return sign;  }  // big num sub  string bigNumSub(string num1,string num2){
                     Categories
                 </div>
                 <ul class="content-ul" cate>
+                    
+                    <li>
+                        <a href="/category/#攀天索--工具" class="categories-list-item" cate="攀天索--工具">
+                            <span class="name">
+                                攀天索--工具
+                            </span>
+                            <span class="badge">9</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/category/#缘因洞--计算机理论" class="categories-list-item" cate="缘因洞--计算机理论">
+                            <span class="name">
+                                缘因洞--计算机理论
+                            </span>
+                            <span class="badge">8</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/category/#慧越泉--杂谈日志" class="categories-list-item" cate="慧越泉--杂谈日志">
+                            <span class="name">
+                                慧越泉--杂谈日志
+                            </span>
+                            <span class="badge">8</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/category/#历劫桥--项目实战" class="categories-list-item" cate="历劫桥--项目实战">
+                            <span class="name">
+                                历劫桥--项目实战
+                            </span>
+                            <span class="badge">4</span>
+                        </a>
+                    </li>
                     
                 </ul>
             </div>
@@ -990,13 +692,6 @@ return sign;  }  // big num sub  string bigNumSub(string num1,string num2){
                       
                       
                       
-                      <a href="/tag/#tools" style="font-size: 15pt; color: #333;">tools</a>
-                    
-                      
-                      
-                      
-                      
-                      
                       <a href="/tag/#博客搭建" style="font-size: 9pt; color: #999;">博客搭建</a>
                     
                       
@@ -1011,14 +706,14 @@ return sign;  }  // big num sub  string bigNumSub(string num1,string num2){
                       
                       
                       
-                      <a href="/tag/#log" style="font-size: 13.5pt; color: #444;">log</a>
+                      <a href="/tag/#log" style="font-size: 12pt; color: #666;">log</a>
                     
                       
                       
                       
                       
                       
-                      <a href="/tag/#杂谈" style="font-size: 9pt; color: #999;">杂谈</a>
+                      <a href="/tag/#思维" style="font-size: 9pt; color: #999;">思维</a>
                     
                       
                       
@@ -1047,6 +742,13 @@ return sign;  }  // big num sub  string bigNumSub(string num1,string num2){
                       
                       
                       <a href="/tag/#python" style="font-size: 15pt; color: #333;">python</a>
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#小土刀" style="font-size: 9pt; color: #999;">小土刀</a>
                     
                       
                       
@@ -1109,14 +811,14 @@ return sign;  }  // big num sub  string bigNumSub(string num1,string num2){
                       
                       
                       
-                      <a href="/tag/#project" style="font-size: 12pt; color: #666;">project</a>
+                      <a href="/tag/#nlp" style="font-size: 9pt; color: #999;">nlp</a>
                     
                       
                       
                       
                       
                       
-                      <a href="/tag/#nlp" style="font-size: 9pt; color: #999;">nlp</a>
+                      <a href="/tag/#paper" style="font-size: 9pt; color: #999;">paper</a>
                     
                       
                       
@@ -1164,7 +866,7 @@ return sign;  }  // big num sub  string bigNumSub(string num1,string num2){
             <a href="https://github.com/ixneo" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>  
             <a href="mailto:932154199@qq.com" title="email"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>  
             <a href="http://weibo.com/coolinear" title="Weibo"><i class="fa fa-weibo" aria-hidden="true"></i></a>  
-            <a href="https://www.zhihu.com/people/coolinear" title="Zhihu"><i class="iconfont icon-daoruzhihu"></i></a>      
+            <a href="https://www.zhihu.com/people/te-si-la-48-5" title="Zhihu"><i class="iconfont icon-daoruzhihu"></i></a>      
         </p>
         <p>
             本站总访问量<span id="busuanzi_value_site_pv"></span>次，本站访客数<span id="busuanzi_value_site_uv"></span>人次，本文总阅读量<span id="busuanzi_value_page_pv"></span>次

@@ -7,15 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>oj-大数的四则运算</title>
-    <meta name="description" content="知识点  文本文件是字符均为ascii编码的文件；其余为二进制文件  注意’0’在char和int之间的作用  第一步。对输入的数据标准化，明确每个数据/变量的含义、类型，增强代码的可解释性  测试用例的挑选。选最小的规模的能体现问题所在的用例。一旦出现问题，马上进行分析更改，脑中运行后，再开始run, 节省机器...">
+    <meta name="description" content="  知识点知识点  文本文件是字符均为ascii编码的文件；其余为二进制文件  注意’0’在char和int之间的作用  第一步。对输入的数据标准化，明确每个数据/变量的含义、类型，增强代码的可解释性  测试用例的挑选。选最小的规模的能体现问题所在的用例。一旦出现问题，马上进行分析更改，脑中运行后，再开始run,...">
 
     <link rel="shortcut icon" href="/favicon.ico?" type="image/x-icon">
     <link rel="icon" href="/favicon.ico?" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://at.alicdn.com/t/font_8v3czwksspqlg14i.css">
     <link rel="stylesheet" href="/css/main.css ">
-    <link rel="canonical" href="http://localhost:4002/2019/03/01/oj-bignum/">
-    <link rel="alternate" type="application/rss+xml" title="jktian-logging" href="http://localhost:4002/feed.xml ">
+    <link rel="canonical" href="http://localhost:4001/2019/03/01/oj-bignum/">
+    <link rel="alternate" type="application/rss+xml" title="jk.tian" href="http://localhost:4001/feed.xml ">
 
 
     <script>
@@ -39,8 +39,8 @@
 
     <header id="top">
     <div class="wrapper">
-        <a href="/" class="brand">jktian-logging</a>
-        <small>majon in data-science</small>
+        <a href="/" class="brand">jk.tian</a>
+        <small>major in data-science</small>
         <button id="headerMenu" class="menu"><i class="fa fa-bars"></i></button>
         <nav id="headerNav">
             <ul>
@@ -129,6 +129,8 @@
                 
                     
                 
+                    
+                
             </ul>
         </nav>
     </div>
@@ -159,6 +161,18 @@
             
 
 
+<!-- <span class="point">•</span> -->
+<span class="categories">
+  <i class="fa fa-th-list"></i>
+  
+    
+        <a href="/category/#慧越泉--杂谈日志" title="Category: 慧越泉--杂谈日志" rel="category">慧越泉--杂谈日志</a>
+    
+  
+
+  <!-- <span class="point">•</span> -->
+</span>
+
 
             </div>
 
@@ -181,7 +195,15 @@
         </div>
         <hr>
         <article itemscope itemtype="http://schema.org/BlogPosting">
-        <h1 id="知识点">知识点</h1>
+        <ul id="markdown-toc">
+  <li><a href="#知识点" id="markdown-toc-知识点">知识点</a></li>
+  <li><a href="#加法" id="markdown-toc-加法">加法</a></li>
+  <li><a href="#减法" id="markdown-toc-减法">减法</a></li>
+  <li><a href="#乘法" id="markdown-toc-乘法">乘法</a></li>
+  <li><a href="#除法" id="markdown-toc-除法">除法</a></li>
+</ul>
+
+<h1 id="知识点">知识点</h1>
 <ol>
   <li>文本文件是字符均为ascii编码的文件；其余为二进制文件</li>
   <li>注意’0’在char和int之间的作用</li>
@@ -195,6 +217,7 @@
 </ol>
 
 <h1 id="加法">加法</h1>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    #include&lt;iostream&gt;
     #include&lt;cmath&gt;
     #include&lt;string&gt;
@@ -519,31 +542,8 @@ return sign;  }  // big num sub  string bigNumSub(string num1,string num2){
                     
                 
             
-                
-                    
-                
-            
         
             
-            
-                
-                    
-                
-            
-                
-                    
-                
-            
-                
-                    
-                
-            
-        
-            
-            
-                
-                    
-                
             
                 
                     
@@ -588,9 +588,8 @@ return sign;  }  // big num sub  string bigNumSub(string num1,string num2){
                     
                 
             
-                
-                    
-                
+        
+            
             
                 
                     
@@ -605,23 +604,13 @@ return sign;  }  // big num sub  string bigNumSub(string num1,string num2){
             
                 
                     
-                        
-                        <h2 id="similar_posts">Similar Posts</h2>
-                        <ul>
-                        
-                        <li class="relatedPost">
-                            <a href="/2019/03/15/cpp/">cpp/c在oj
-                            
-                            </a>
-                        </li>
-                        
-                        
+                
+            
+                
                     
                 
             
         
-        
-            </ul>
         
 
         <div class="post-recent">
@@ -658,8 +647,6 @@ return sign;  }  // big num sub  string bigNumSub(string num1,string num2){
                 </div>
                 <ul id="content-side" class="content-ul">
                     
-                    <li><a href="#similar_posts">Similar Posts</a></li>
-                    
                     <li><a href="#comments">Comments</a></li>
                 </ul>
             </div>
@@ -695,7 +682,7 @@ return sign;  }  // big num sub  string bigNumSub(string num1,string num2){
             <a href="https://github.com/ixneo" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>  
             <a href="mailto:932154199@qq.com" title="email"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>  
             <a href="http://weibo.com/coolinear" title="Weibo"><i class="fa fa-weibo" aria-hidden="true"></i></a>  
-            <a href="https://www.zhihu.com/people/coolinear" title="Zhihu"><i class="iconfont icon-daoruzhihu"></i></a>      
+            <a href="https://www.zhihu.com/people/te-si-la-48-5" title="Zhihu"><i class="iconfont icon-daoruzhihu"></i></a>      
         </p>
         <p>
             本站总访问量<span id="busuanzi_value_site_pv"></span>次，本站访客数<span id="busuanzi_value_site_uv"></span>人次，本文总阅读量<span id="busuanzi_value_page_pv"></span>次

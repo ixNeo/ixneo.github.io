@@ -6,17 +6,34 @@ date:       2019-03-20			# 时间
 author:     jktian 						# 作者
 header-img: img/post-bg-2015.jpg 	#这篇文章标题背景图片
 catalog: true 						# 是否归档
+category: 历劫桥--项目实战
 tags:								#标签
     - java
-    - project
     - 多进程
 ---
 
+* content
+{:toc}
 # 项目内容
+
 java模拟路由表构建
+
 socket
+
 multi-thread
+
+
+
+
+
+
+
+
+
+
+
 # properties文件读取
+
 Java 开发中，需要将一些易变的配置参数放置再 XML 配置文件或者 properties 配置文件中。然而 XML 配置文件需要通过 DOM 或 SAX 方式解析，而读取 properties 配置文件就比较容易
 
 ```

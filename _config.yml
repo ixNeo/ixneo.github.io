@@ -6,7 +6,7 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: jktian-logging
+title: jk.tian
 brief-intro: major in data-science 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://ixneo.github.io" # the base hostname & protocol for your site
@@ -19,7 +19,7 @@ facebook_username: #gaohaoyang.water
 github_username:  ixneo
 email: 932154199@qq.com
 weibo_username: coolinear
-zhihu_username: coolinear
+zhihu_username: te-si-la-48-5
 linkedIn_username: 
 dribbble_username:
 
@@ -58,4 +58,4 @@ excerpt_separator: "\n\n\n\n"
 # paginate
 plugins: [jekyll-paginate]
 paginate: 6
-port: 4002
+port: 4001

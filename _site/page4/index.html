@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>jktian-logging</title>
+    <title>jk.tian</title>
     <meta name="description" content="">
 
     <link rel="shortcut icon" href="/favicon.ico?" type="image/x-icon">
@@ -14,8 +14,8 @@
     <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://at.alicdn.com/t/font_8v3czwksspqlg14i.css">
     <link rel="stylesheet" href="/css/main.css ">
-    <link rel="canonical" href="http://localhost:4002/page4/">
-    <link rel="alternate" type="application/rss+xml" title="jktian-logging" href="http://localhost:4002/feed.xml ">
+    <link rel="canonical" href="http://localhost:4001/page4/">
+    <link rel="alternate" type="application/rss+xml" title="jk.tian" href="http://localhost:4001/feed.xml ">
 
 
     <script>
@@ -39,8 +39,8 @@
 
     <header id="top">
     <div class="wrapper">
-        <a href="/" class="brand">jktian-logging</a>
-        <small>majon in data-science</small>
+        <a href="/" class="brand">jk.tian</a>
+        <small>major in data-science</small>
         <button id="headerMenu" class="menu"><i class="fa fa-bars"></i></button>
         <nav id="headerNav">
             <ul>
@@ -129,6 +129,8 @@
                 
                     
                 
+                    
+                
             </ul>
         </nav>
     </div>
@@ -141,6 +143,75 @@
         <small>故世之奇伟瑰怪非常之观,常在于险远</small>
         <hr>
         <ul>
+            
+              <li>
+                <h2>
+                  <a class="post-link" href="/2019/03/01/laddder/">搬瓦工vps+shadowsocks</a>
+                </h2>
+                <div class="label">
+                    <div class="label-card">
+                        <i class="fa fa-calendar"></i>2019-03-01
+                    </div>
+                    <div class="label-card">
+                        <i class="fa fa-user"></i>jktian
+                        
+                    </div>
+                    <div class="label-card">
+                        
+                    </div>
+
+                    <div class="label-card">
+                    
+
+
+<!-- <span class="point">•</span> -->
+<span class="categories">
+  <i class="fa fa-th-list"></i>
+  
+    
+        <a href="/category/#攀天索--工具" title="Category: 攀天索--工具" rel="category">攀天索--工具</a>
+    
+  
+
+  <!-- <span class="point">•</span> -->
+</span>
+
+
+                    </div>
+
+                    <div class="label-card">
+                    
+<!-- <span class="point">•</span> -->
+<span class="pageTag">
+  <i class="fa fa-tags"></i>
+  
+    
+        <a href="/tag/#科学上网" title="Tag: 科学上网" rel="tag">科学上网</a>
+    
+  
+
+</span>
+
+                    </div>
+                </div>
+                <div class="excerpt">
+                    <ul id="markdown-toc">
+  <li><a href="#流程" id="markdown-toc-流程">流程</a></li>
+</ul>
+
+<h1 id="流程">流程</h1>
+<ol>
+  <li>手机用shadowsocks</li>
+  <li>pc端也要配置</li>
+</ol>
+
+
+                </div>
+                <div class="read-all">
+                    <a  href="/2019/03/01/laddder/"><i class="fa fa-newspaper-o"></i>Read All</a>
+                </div>
+                <hr>
+              </li>
             
               <li>
                 <h2>
@@ -162,6 +233,18 @@
                     
 
 
+<!-- <span class="point">•</span> -->
+<span class="categories">
+  <i class="fa fa-th-list"></i>
+  
+    
+        <a href="/category/#慧越泉--杂谈日志" title="Category: 慧越泉--杂谈日志" rel="category">慧越泉--杂谈日志</a>
+    
+  
+
+  <!-- <span class="point">•</span> -->
+</span>
+
 
                     </div>
 
@@ -181,7 +264,10 @@
                     </div>
                 </div>
                 <div class="excerpt">
-                    <h1 id="问题描述">问题描述</h1>
+                    <ul id="markdown-toc">
+  <li><a href="#问题描述" id="markdown-toc-问题描述">问题描述</a></li>
+</ul>
+<h1 id="问题描述">问题描述</h1>
 <p>假设城市中一共有N幢建筑排成一条线，每幢建筑的高度各不相同。初始时，怪盗基德可以在任何一幢建筑的顶端。他可以选择一个方向逃跑，但是不能中途改变方向（因为中森警部会在后面追击）。因为滑翔翼动力装置受损，他只能往下滑行（即：只能从较高的建筑滑翔到较低的建筑）。他希望尽可能多地经过不同建筑的顶部，这样可以减缓下降时的冲击力，减少受伤的可能性。请问，他最多可以经过多少幢不同建筑的顶部（包含初始时的建筑）？</p>
 
 <p>输入
@@ -190,126 +276,6 @@
 输出
 对于每一组测试数据，输出一行，包含一个整数，代表怪盗基德最多可以经过的建筑数量。</p>
 
-<h1 id="解决方案">解决方案</h1>
-
-<ol>
-  <li>
-    <p>dfs</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     #include&lt;iostream&gt;
-     #include&lt;cmath&gt;
-     #include&lt;string&gt;
-     #include&lt;iterator&gt;
-     #include&lt;algorithm&gt;
-    
-     using namespace std;
-     /* test-input
-         3
-         8
-         300 207 155 299 298 170 158 65
-         8
-         65 158 170 298 299 155 207 300
-         10
-         2 1 3 4 5 6 7 8 9 10
-     */
-     /* test-output
-         6
-         6
-         9
-     */
-     int buildings[200][200] = {0};
-     int buildTot[200] = {0};
-    
-     int dfs(int caseIndex, int curBuilding,int pVal, int tot, int inc){
-     //    cout &lt;&lt; curBuilding &lt;&lt; endl;
-         if(inc==1 &amp;&amp; curBuilding&gt;=buildTot[caseIndex]){
-             return tot;
-         }
-         if(inc==-1 &amp;&amp; curBuilding&lt;0){
-             return tot;
-         }
-         int curVal = buildings[caseIndex][curBuilding];
-         if(curVal&lt;pVal){
-             return max(dfs(caseIndex,curBuilding+inc,pVal, tot, inc),
-                        dfs(caseIndex,curBuilding+inc,curVal, tot+1, inc));
-         }else{
-             return dfs(caseIndex,curBuilding+inc,pVal, tot, inc);
-         }
-     }
-     int main(){
-         // get input
-         int caseNum;
-         cin &gt;&gt; caseNum;
-         for(int i=0;i&lt;caseNum;i++){
-             cin &gt;&gt; buildTot[i];
-             for(int j=0;j&lt;buildTot[i];j++){
-                 cin &gt;&gt; buildings[i][j];
-             }
-         }
-    
-         // dfs, two-direction
-         for(int i=0;i&lt;caseNum;i++){
-             int res = 0;
-             int f2b=dfs(i,0,10000,0,1), 							b2f=dfs(i,buildTot[i]-1,10000,0,-1);
-         //  cout &lt;&lt; f2b &lt;&lt; ": " &lt;&lt; b2f &lt;&lt; endl;
-             res = max(res,max(f2b,b2f));
-             cout &lt;&lt; "Case" &lt;&lt; i &lt;&lt; ": " &lt;&lt; res &lt;&lt; endl;
-         }
-         return 0;
-     }  1. dp
-
-     // i表示最大的建筑下标，用于限制子问题
-     // j表示根据i得到的可能倒数第二个建筑下标
-     for(i=0;i&lt;n;i++){
-     a[i]=1;
-     }
-     a[0]=1;
-     for(i=1;i&lt;n;i++){
-     flag=0;
-     for(j=0;j&lt;i;j++){
-     if(buf[j]&gt;buf[i]&amp;&amp;a[i]&lt;a[j]+1){
-     a[i]=a[j]+1;
-     if(!flag)
-     flag=1;
-     }
-     }
-     if(!flag){
-     a[i]=1;
-     }
-        
-     }
-     int mx1=*max_element(a,a+n);
-</code></pre></div>    </div>
-  </li>
-</ol>
-
-<h1 id="知识点">知识点</h1>
-
-<ol>
-  <li>可以用dfs做</li>
-  <li>确定函数参数，哪些是递归下来的，需要做出改变的，哪些是全局坐标等</li>
-  <li>确定递归的退出条件</li>
-  <li>确定递归过程/递推公式，一般是分支或max(dfs(),dfs())</li>
-  <li>dp做</li>
-  <li>其他
-    <blockquote>
-      <ol>
-        <li>接受输入后
-          <ol>
-            <li>可以动态分配内存</li>
-            <li>或者初始化几个很大的全0数组, 然后按需置１</li>
-          </ol>
-        </li>
-        <li>整个流程
-          <ol>
-            <li>可以全部接受输入并存储（很多测试案例）后，统一处理</li>
-            <li>或者在循环中，每接受一个测试案例，处理一个</li>
-          </ol>
-        </li>
-      </ol>
-    </blockquote>
-  </li>
-</ol>
 
                 </div>
                 <div class="read-all">
@@ -338,6 +304,18 @@
                     
 
 
+<!-- <span class="point">•</span> -->
+<span class="categories">
+  <i class="fa fa-th-list"></i>
+  
+    
+        <a href="/category/#慧越泉--杂谈日志" title="Category: 慧越泉--杂谈日志" rel="category">慧越泉--杂谈日志</a>
+    
+  
+
+  <!-- <span class="point">•</span> -->
+</span>
+
 
                     </div>
 
@@ -357,92 +335,16 @@
                     </div>
                 </div>
                 <div class="excerpt">
-                    <h1 id="问题描述">问题描述</h1>
+                    <ul id="markdown-toc">
+  <li><a href="#问题描述" id="markdown-toc-问题描述">问题描述</a></li>
+</ul>
+
+<h1 id="问题描述">问题描述</h1>
 <p>C:岛屿面积
 总时间限制:  1000ms  内存限制:  65536kB
 描述
-用一个n<em>m的二维数组表示地图，1表示陆地，0代表海水，每一格都表示一个1</em>1的区域。地图中的格子只能横向或者纵向连接（不能对角连接），连接在一起的陆地称作岛屿，同时整个地图都被海水围绕。假设给出的地图中只会有一个岛屿，并且岛屿中不会有湖（即不会有水被陆地包围的情况出现）。请判断所给定的二维地图中岛屿的周长。
-输入
-第一行为n和m，表示地图的大小(1&lt;=n&lt;=100, 1&lt;=m&lt;=100)。接下来n行，每行有m个数，分别描述每一格的数值。数值之间均用空格隔开。
-输出
-只有一行，即岛屿的周长（正整数）。
-样例输入
-3 4
-1 1 1 0
-0 1 0 0
-1 1 0 0
-样例输出
-14</p>
+用一个n<em>m的二维数组表示地图，1表示陆地，0代表海水，每一格都表示一个1</em>1的区域。地图中的格子只能横向或者纵向连接（不能对角连接），连接在一起的陆地称作岛屿，同时整个地图都被海水围绕。假设给出的地图中只会有一个岛屿，并且岛屿中不会有湖（即不会有水被陆地包围的情况出现）。请判断所给定的二维地图中岛屿的周长。</p>
 
-<h1 id="解决方案">解决方案</h1>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#include&lt;iostream&gt;
-#include&lt;cmath&gt;
-#include&lt;string&gt;
-#include&lt;iterator&gt;
-
-using namespace std;
-
-int main(){
-    // get input
-    int r,c;
-    cin &gt;&gt; r &gt;&gt; c;
-    int **pr = new int*[r];
-    for(int i=0;i&lt;r;i++){
-        pr[i] = new int[c];
-    }
-    for(int i=0;i&lt;r;i++){
-        for(int j=0;j&lt;c;j++){
-            cin &gt;&gt; pr[i][j];
-        }
-    }
-
-    /* test input
-        int pr[3][4] = { {1,1,1,0},
-                      　{0,1,0,0},
-                      　{1,1,0,0} };
-    */
-
-    // calculate c
-    int tot = 0;
-    for(int i=0;i&lt;r;i++){
-        for(int j=0;j&lt;c;j++){
-            if(pr[i][j]==0) continue;
-            if((j-1&gt;=0 &amp;&amp; !pr[i][j-1])
-                    || (j-1&lt;0))  tot++;
-            if((j+1&lt;c &amp;&amp; !pr[i][j+1])
-                    || (j+1&gt;=c))  tot++;
-            if((i-1&gt;=0 &amp;&amp; !pr[i-1][j])
-                    || (i-1&lt;0)) tot++;
-            if((i+1&lt;r &amp;&amp; !pr[i+1][j])
-                    || (i+1&gt;=r))  tot++;
-        }
-    }
-
-    // delete space
-    for(int i=0;i&lt;r;i++){
-        delete[] pr[i];
-    }
-    cout &lt;&lt; tot &lt;&lt; endl;
-    return 0;
-}
-</code></pre></div></div>
-
-<h1 id="知识点以及优化">知识点以及优化</h1>
-<ol>
-  <li>可以写测试，避免手动重复输入数值</li>
-  <li>
-    <p>可以初始化一个全０的很大的二维数组，并令坐标从１开始，简化判断条件</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> for(i=1;i&lt;=n;i++){
-     for(j=1;j&lt;=m;j++){
-         if(a[i][j]==1){
-             cnt=cnt+4-(a[i-1][j]+a[i+1][j]+a[i][j-1]+a[i][j+1]);
-         }
-     }
- }
-</code></pre></div>    </div>
-  </li>
-</ol>
 
                 </div>
                 <div class="read-all">
@@ -471,6 +373,18 @@ int main(){
                     
 
 
+<!-- <span class="point">•</span> -->
+<span class="categories">
+  <i class="fa fa-th-list"></i>
+  
+    
+        <a href="/category/#缘因洞--计算机理论" title="Category: 缘因洞--计算机理论" rel="category">缘因洞--计算机理论</a>
+    
+  
+
+  <!-- <span class="point">•</span> -->
+</span>
+
 
                     </div>
 
@@ -490,7 +404,10 @@ int main(){
                     </div>
                 </div>
                 <div class="excerpt">
-                    <h1 id="cpp">cpp</h1>
+                    <ul id="markdown-toc">
+  <li><a href="#cpp" id="markdown-toc-cpp">cpp</a></li>
+</ul>
+<h1 id="cpp">cpp</h1>
 
 <p>short int  2个字节</p>
 
@@ -527,6 +444,18 @@ int main(){
                     
 
 
+<!-- <span class="point">•</span> -->
+<span class="categories">
+  <i class="fa fa-th-list"></i>
+  
+    
+        <a href="/category/#慧越泉--杂谈日志" title="Category: 慧越泉--杂谈日志" rel="category">慧越泉--杂谈日志</a>
+    
+  
+
+  <!-- <span class="point">•</span> -->
+</span>
+
 
                     </div>
 
@@ -546,75 +475,15 @@ int main(){
                     </div>
                 </div>
                 <div class="excerpt">
-                    <h1 id="题目描述">题目描述</h1>
+                    <ul id="markdown-toc">
+  <li><a href="#题目描述" id="markdown-toc-题目描述">题目描述</a></li>
+</ul>
+<h1 id="题目描述">题目描述</h1>
 <p>总时间限制:  1000ms  内存限制:  65536kB
 描述
 在数据压缩中，一个常用的方法是行程长度编码压缩。对于一个待压缩的字符串，我们可以依次记录每个字符及重复的次数。例如，待压缩的字符串为”aaabbbbcbb”，压缩结果为(a,3)(b,4)(c,1)(b,2)。这种压缩对于相邻数据重复较多的情况有效，如果重复状况较少，则压缩的效率较低。
-现要求根据输入的字符串，首先将字符串中所有大写字母转化为小写字母，然后将字符串进行压缩。
-输入
-一个字符串，长度大于0，且不超过1000，全部由大写或小写字母组成。
-输出
-输出为编码之后的字符串，形式为：(a,3)(b,4)(c,1)(d,2)，即每对括号内分别为小写字符及重复的次数，不含任何空格。
-样例输入
-aAABBbBCCCaaaaa
-样例输出
-(a,3)(b,4)(c,3)(a,5)</p>
+现要求根据输入的字符串，首先将字符串中所有大写字母转化为小写字母，然后将字符串进行压缩。</p>
 
-<h1 id="题解">题解</h1>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#include&lt;iostream&gt;
-#include&lt;cmath&gt;
-#include&lt;string&gt;
-#include&lt;iterator&gt;
-
-// 行程长度编码
-using namespace std;
-
-string l2g(string s){
-    for(auto it=s.begin();it!=s.end();it++){
-        if(*it&gt;='a' &amp;&amp; *it&lt;='z'){
-            *it -= 32;
-        }
-    }
-    return s;
-}
-
-string showLenCode(string s){
-    int len = 1,i=0;
-    string res;
-    for(i=0;i&lt;s.size();i++){
-        if(s[i+1]==s[i]){
-            len++;
-        }else{
-            // 重点关注，不能是: res+＝...
-            res = res + '('+s[i]+','+(char)(len+'0')+')';
-            len = 1;
-        }
-    }
-    return res;
-}
-
-int main(){
-    // get input
-    string s;
-    cin &gt;&gt; s;
-
-    // low-letter to high-letter
-    s = l2g(s);
-
-    // statics
-    string res;
-    res = showLenCode(s);
-    cout &lt;&lt; res &lt;&lt; endl;
-    return 0;
-}
-</code></pre></div></div>
-
-<p>#　重难点</p>
-<ol>
-  <li>先写注释，搭建基本框架，然后写对应的函数。控制复杂度</li>
-  <li>小写字母的ascii的编码比大写字母大32</li>
-  <li>字符串的拼接和格式化。<str> = <str> +... , 不能是<str>+=...</str></str></str></li>
-</ol>
 
                 </div>
                 <div class="read-all">
@@ -643,6 +512,18 @@ int main(){
                     
 
 
+<!-- <span class="point">•</span> -->
+<span class="categories">
+  <i class="fa fa-th-list"></i>
+  
+    
+        <a href="/category/#慧越泉--杂谈日志" title="Category: 慧越泉--杂谈日志" rel="category">慧越泉--杂谈日志</a>
+    
+  
+
+  <!-- <span class="point">•</span> -->
+</span>
+
 
                     </div>
 
@@ -662,7 +543,11 @@ int main(){
                     </div>
                 </div>
                 <div class="excerpt">
-                    <h1 id="判定给定两个数范围内的素数个数">判定给定两个数范围内的素数个数</h1>
+                    <ul id="markdown-toc">
+  <li><a href="#判定给定两个数范围内的素数个数" id="markdown-toc-判定给定两个数范围内的素数个数">判定给定两个数范围内的素数个数</a></li>
+</ul>
+
+<h1 id="判定给定两个数范围内的素数个数">判定给定两个数范围内的素数个数</h1>
 
 <ol>
   <li>对于1的特殊处理</li>
@@ -678,63 +563,6 @@ int main(){
                 <hr>
               </li>
             
-              <li>
-                <h2>
-                  <a class="post-link" href="/2019/02/26/git/">git</a>
-                </h2>
-                <div class="label">
-                    <div class="label-card">
-                        <i class="fa fa-calendar"></i>2019-02-26
-                    </div>
-                    <div class="label-card">
-                        <i class="fa fa-user"></i>jktian
-                        
-                    </div>
-                    <div class="label-card">
-                        
-                    </div>
-
-                    <div class="label-card">
-                    
-
-
-
-                    </div>
-
-                    <div class="label-card">
-                    
-<!-- <span class="point">•</span> -->
-<span class="pageTag">
-  <i class="fa fa-tags"></i>
-  
-    
-        <a href="/tag/#tools" title="Tag: tools" rel="tag">tools</a>&nbsp;
-    
-        <a href="/tag/#git" title="Tag: git" rel="tag">git</a>
-    
-  
-
-</span>
-
-                    </div>
-                </div>
-                <div class="excerpt">
-                    <h1 id="常用命令">常用命令</h1>
-<p>git status
-git add .
-git commit -m “”
-git commit -am “”
-git reset –hard HEAD^
-git log
-git reflog</p>
-
-                </div>
-                <div class="read-all">
-                    <a  href="/2019/02/26/git/"><i class="fa fa-newspaper-o"></i>Read All</a>
-                </div>
-                <hr>
-              </li>
-            
         </ul>
 
 
@@ -745,10 +573,10 @@ git reflog</p>
             <a href="/index.html" class="previous"><i class="fa fa-angle-double-left"></i></a>
             <a href="/page3" class="previous"><i class="fa fa-angle-left"></i></a>
           
-          <span class="page_number ">4/6</span>
+          <span class="page_number ">4/7</span>
           
             <a href="/page5" class="next"><i class="fa fa-angle-right"></i></a>
-            <a href="/page6" class="next"><i class="fa fa-angle-double-right"></i></a>
+            <a href="/page7" class="next"><i class="fa fa-angle-double-right"></i></a>
           
         </div>
     </div>
@@ -766,6 +594,8 @@ git reflog</p>
                     
                         <li><a href="/2019/03/20/java-socket/">java模拟路由表构建</a></li>
                     
+                        <li><a href="/2019/03/20/suoni-projecct/">关于降低员工离职率的策略研究</a></li>
+                    
                         <li><a href="/2019/03/20/senti-contest/">用户评论情感极性分析（三分类）</a></li>
                     
                         <li><a href="/2019/03/20/chatbolt/">多功能工具包（聊天机器人）</a></li>
@@ -780,8 +610,6 @@ git reflog</p>
                     
                         <li><a href="/2019/03/16/python-multiprocess/">python多进程/多进程</a></li>
                     
-                        <li><a href="/2019/03/15/cpp/">cpp/c在oj</a></li>
-                    
                 </ul>
             </div>
 
@@ -792,6 +620,42 @@ git reflog</p>
                     Categories
                 </div>
                 <ul class="content-ul" cate>
+                    
+                    <li>
+                        <a href="/category/#攀天索--工具" class="categories-list-item" cate="攀天索--工具">
+                            <span class="name">
+                                攀天索--工具
+                            </span>
+                            <span class="badge">9</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/category/#缘因洞--计算机理论" class="categories-list-item" cate="缘因洞--计算机理论">
+                            <span class="name">
+                                缘因洞--计算机理论
+                            </span>
+                            <span class="badge">8</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/category/#慧越泉--杂谈日志" class="categories-list-item" cate="慧越泉--杂谈日志">
+                            <span class="name">
+                                慧越泉--杂谈日志
+                            </span>
+                            <span class="badge">8</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/category/#历劫桥--项目实战" class="categories-list-item" cate="历劫桥--项目实战">
+                            <span class="name">
+                                历劫桥--项目实战
+                            </span>
+                            <span class="badge">4</span>
+                        </a>
+                    </li>
                     
                 </ul>
             </div>
@@ -815,13 +679,6 @@ git reflog</p>
                       
                       
                       
-                      <a href="/tag/#tools" style="font-size: 15pt; color: #333;">tools</a>
-                    
-                      
-                      
-                      
-                      
-                      
                       <a href="/tag/#博客搭建" style="font-size: 9pt; color: #999;">博客搭建</a>
                     
                       
@@ -836,14 +693,14 @@ git reflog</p>
                       
                       
                       
-                      <a href="/tag/#log" style="font-size: 13.5pt; color: #444;">log</a>
+                      <a href="/tag/#log" style="font-size: 12pt; color: #666;">log</a>
                     
                       
                       
                       
                       
                       
-                      <a href="/tag/#杂谈" style="font-size: 9pt; color: #999;">杂谈</a>
+                      <a href="/tag/#思维" style="font-size: 9pt; color: #999;">思维</a>
                     
                       
                       
@@ -872,6 +729,13 @@ git reflog</p>
                       
                       
                       <a href="/tag/#python" style="font-size: 15pt; color: #333;">python</a>
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#小土刀" style="font-size: 9pt; color: #999;">小土刀</a>
                     
                       
                       
@@ -934,14 +798,14 @@ git reflog</p>
                       
                       
                       
-                      <a href="/tag/#project" style="font-size: 12pt; color: #666;">project</a>
+                      <a href="/tag/#nlp" style="font-size: 9pt; color: #999;">nlp</a>
                     
                       
                       
                       
                       
                       
-                      <a href="/tag/#nlp" style="font-size: 9pt; color: #999;">nlp</a>
+                      <a href="/tag/#paper" style="font-size: 9pt; color: #999;">paper</a>
                     
                       
                       
@@ -989,7 +853,7 @@ git reflog</p>
             <a href="https://github.com/ixneo" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>  
             <a href="mailto:932154199@qq.com" title="email"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>  
             <a href="http://weibo.com/coolinear" title="Weibo"><i class="fa fa-weibo" aria-hidden="true"></i></a>  
-            <a href="https://www.zhihu.com/people/coolinear" title="Zhihu"><i class="iconfont icon-daoruzhihu"></i></a>      
+            <a href="https://www.zhihu.com/people/te-si-la-48-5" title="Zhihu"><i class="iconfont icon-daoruzhihu"></i></a>      
         </p>
         <p>
             本站总访问量<span id="busuanzi_value_site_pv"></span>次，本站访客数<span id="busuanzi_value_site_uv"></span>人次，本文总阅读量<span id="busuanzi_value_page_pv"></span>次

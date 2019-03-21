@@ -7,15 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>用户评论情感极性分析（三分类）</title>
-    <meta name="description" content="数据总览 &amp; 预处理      训练数据                            数据类型          列号范围          行数                                      食品餐饮          （1，13655）          1365...">
+    <meta name="description" content="  数据总览 &amp; 预处理数据总览 &amp; 预处理      训练数据                            数据类型          列号范围          行数                                      食品餐饮          （1，1365...">
 
     <link rel="shortcut icon" href="/favicon.ico?" type="image/x-icon">
     <link rel="icon" href="/favicon.ico?" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://at.alicdn.com/t/font_8v3czwksspqlg14i.css">
     <link rel="stylesheet" href="/css/main.css ">
-    <link rel="canonical" href="http://localhost:4002/2019/03/20/senti-contest/">
-    <link rel="alternate" type="application/rss+xml" title="jktian-logging" href="http://localhost:4002/feed.xml ">
+    <link rel="canonical" href="http://localhost:4001/2019/03/20/senti-contest/">
+    <link rel="alternate" type="application/rss+xml" title="jk.tian" href="http://localhost:4001/feed.xml ">
 
 
     <script>
@@ -39,8 +39,8 @@
 
     <header id="top">
     <div class="wrapper">
-        <a href="/" class="brand">jktian-logging</a>
-        <small>majon in data-science</small>
+        <a href="/" class="brand">jk.tian</a>
+        <small>major in data-science</small>
         <button id="headerMenu" class="menu"><i class="fa fa-bars"></i></button>
         <nav id="headerNav">
             <ul>
@@ -129,6 +129,8 @@
                 
                     
                 
+                    
+                
             </ul>
         </nav>
     </div>
@@ -159,6 +161,18 @@
             
 
 
+<!-- <span class="point">•</span> -->
+<span class="categories">
+  <i class="fa fa-th-list"></i>
+  
+    
+        <a href="/category/#历劫桥--项目实战" title="Category: 历劫桥--项目实战" rel="category">历劫桥--项目实战</a>
+    
+  
+
+  <!-- <span class="point">•</span> -->
+</span>
+
 
             </div>
 
@@ -173,10 +187,7 @@
         <a href="/tag/#log" title="Tag: log" rel="tag">log</a>&nbsp;
     
         <!--a href="/tag/#nlp" title="Tag: nlp" rel="tag">nlp</a-->
-        <a href="/tag/#nlp" title="Tag: nlp" rel="tag">nlp</a>&nbsp;
-    
-        <!--a href="/tag/#project" title="Tag: project" rel="tag">project</a-->
-        <a href="/tag/#project" title="Tag: project" rel="tag">project</a>
+        <a href="/tag/#nlp" title="Tag: nlp" rel="tag">nlp</a>
     
   
 
@@ -187,7 +198,13 @@
         </div>
         <hr>
         <article itemscope itemtype="http://schema.org/BlogPosting">
-        <h1 id="数据总览--预处理">数据总览 &amp; 预处理</h1>
+        <ul id="markdown-toc">
+  <li><a href="#数据总览--预处理" id="markdown-toc-数据总览--预处理">数据总览 &amp; 预处理</a></li>
+  <li><a href="#模型搭建--优化--得分结果" id="markdown-toc-模型搭建--优化--得分结果">模型搭建 &amp; 优化 &amp; 得分结果</a></li>
+  <li><a href="#心得体会" id="markdown-toc-心得体会">心得体会</a></li>
+</ul>
+<h1 id="数据总览--预处理">数据总览 &amp; 预处理</h1>
+
 <ul>
   <li>
     <p>训练数据</p>
@@ -272,10 +289,14 @@
   <li>
     <p>评判标准
   综合准确率和召回率，得到得分</p>
-    <h1 id="模型搭建--优化--得分结果">模型搭建 &amp; 优化 &amp; 得分结果</h1>
-    <ol>
-      <li>数据分类（预处理）</li>
-    </ol>
+  </li>
+</ul>
+
+<h1 id="模型搭建--优化--得分结果">模型搭建 &amp; 优化 &amp; 得分结果</h1>
+
+<ol>
+  <li>
+    <p>数据分类（预处理）</p>
 
     <table>
       <thead>
@@ -296,9 +317,6 @@
       </tbody>
     </table>
   </li>
-</ul>
-
-<ol>
   <li>jieba分词
     <ul>
       <li>三种分词模式：精确模式、全模式、搜索引擎模式。选择精确模式</li>
@@ -406,6 +424,19 @@
                 
                     
                 
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
                     
                 
             
@@ -417,42 +448,15 @@
                 
                     
                 
-                    
-                
             
-                
-                    
-                
-                    
+        
+            
+            
                 
                     
                         
                         <h2 id="similar_posts">Similar Posts</h2>
                         <ul>
-                        
-                        <li class="relatedPost">
-                            <a href="/2019/03/20/java-socket/">java模拟路由表构建
-                            
-                            </a>
-                        </li>
-                        
-                        
-                    
-                
-            
-                
-                    
-                
-                    
-                
-                    
-                
-            
-        
-            
-            
-                
-                    
                         
                         <li class="relatedPost">
                             <a href="/2019/03/20/chatbolt/">多功能工具包（聊天机器人）
@@ -465,11 +469,10 @@
                 
                     
                 
-                    
-                
             
-                
-                    
+        
+            
+            
                 
                     
                 
@@ -484,11 +487,10 @@
                 
                     
                 
-                    
-                
             
-                
-                    
+        
+            
+            
                 
                     
                 
@@ -503,8 +505,6 @@
                 
                     
                 
-                    
-                
             
         
             
@@ -514,41 +514,13 @@
                 
                     
                 
-                    
-                
-            
-        
-            
             
                 
                     
                 
                     
                 
-                    
-                
             
-        
-            
-            
-                
-                    
-                
-                    
-                
-                    
-                
-            
-                
-                    
-                
-                    
-                
-                    
-                
-            
-                
-                    
                 
                     
                 
@@ -563,30 +535,7 @@
                 
                     
                 
-                    
-                
             
-                
-                    
-                
-                    
-                
-                    
-                
-            
-        
-            
-            
-                
-                    
-                
-                    
-                
-                    
-                
-            
-                
-                    
                 
                     
                 
@@ -607,7 +556,7 @@
     <div class="nex">
 
         
-        <p><strong>下一篇</strong> <a href="/2019/03/20/java-socket/">java模拟路由表构建</a></p>
+        <p><strong>下一篇</strong> <a href="/2019/03/20/suoni-projecct/">关于降低员工离职率的策略研究</a></p>
         
     </div>
 </div>
@@ -669,7 +618,7 @@
             <a href="https://github.com/ixneo" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>  
             <a href="mailto:932154199@qq.com" title="email"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>  
             <a href="http://weibo.com/coolinear" title="Weibo"><i class="fa fa-weibo" aria-hidden="true"></i></a>  
-            <a href="https://www.zhihu.com/people/coolinear" title="Zhihu"><i class="iconfont icon-daoruzhihu"></i></a>      
+            <a href="https://www.zhihu.com/people/te-si-la-48-5" title="Zhihu"><i class="iconfont icon-daoruzhihu"></i></a>      
         </p>
         <p>
             本站总访问量<span id="busuanzi_value_site_pv"></span>次，本站访客数<span id="busuanzi_value_site_uv"></span>人次，本文总阅读量<span id="busuanzi_value_page_pv"></span>次

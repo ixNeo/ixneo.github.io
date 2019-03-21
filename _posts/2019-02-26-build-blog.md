@@ -6,15 +6,25 @@ date:       2019-02-26 				# 时间
 author:     jktian 						# 作者
 header-img: img/post-bg-2015.jpg 	#这篇文章标题背景图片
 catalog: true 						# 是否归档
+category: 攀天索--工具
 tags:							#标签
-    - tools
     - 博客搭建
 ---
+* content
+{:toc}
 # 我需要的博客
+
 1. 内容为本,不要花哨的东西
 2. 尽可能的空间利用率
 3. 标签,时间归档,目录类别,置顶
 4. 柏荧的博客: 有基本的功能,但仍然有些花哨,且对于归档的功能支持有限
+
+
+
+
+
+
+
 # 博客迭代
 
 1. 第一次，用腾讯云主机作为后台，买了域名，用wordpress，mysql, apache, linux搭建。

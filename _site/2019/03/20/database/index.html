@@ -7,15 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>数据库常见操作</title>
-    <meta name="description" content="数据库oracle数据库有默认的几张表,可以用于练习sql语句的书写数据类型;	char, varchar, date, number创建表,  对每个列进行约束:	默认值,主键,外键,非空增加:	insert into &lt;table&gt; values (col1,col2,…)删除:	drop tab...">
+    <meta name="description" content="  数据库数据库oracle数据库有默认的几张表,可以用于练习sql语句的书写数据类型;	char, varchar, date, number">
 
     <link rel="shortcut icon" href="/favicon.ico?" type="image/x-icon">
     <link rel="icon" href="/favicon.ico?" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://at.alicdn.com/t/font_8v3czwksspqlg14i.css">
     <link rel="stylesheet" href="/css/main.css ">
-    <link rel="canonical" href="http://localhost:4002/2019/03/20/database/">
-    <link rel="alternate" type="application/rss+xml" title="jktian-logging" href="http://localhost:4002/feed.xml ">
+    <link rel="canonical" href="http://localhost:4001/2019/03/20/database/">
+    <link rel="alternate" type="application/rss+xml" title="jk.tian" href="http://localhost:4001/feed.xml ">
 
 
     <script>
@@ -39,8 +39,8 @@
 
     <header id="top">
     <div class="wrapper">
-        <a href="/" class="brand">jktian-logging</a>
-        <small>majon in data-science</small>
+        <a href="/" class="brand">jk.tian</a>
+        <small>major in data-science</small>
         <button id="headerMenu" class="menu"><i class="fa fa-bars"></i></button>
         <nav id="headerNav">
             <ul>
@@ -129,6 +129,8 @@
                 
                     
                 
+                    
+                
             </ul>
         </nav>
     </div>
@@ -159,6 +161,18 @@
             
 
 
+<!-- <span class="point">•</span> -->
+<span class="categories">
+  <i class="fa fa-th-list"></i>
+  
+    
+        <a href="/category/#缘因洞--计算机理论" title="Category: 缘因洞--计算机理论" rel="category">缘因洞--计算机理论</a>
+    
+  
+
+  <!-- <span class="point">•</span> -->
+</span>
+
 
             </div>
 
@@ -181,29 +195,38 @@
         </div>
         <hr>
         <article itemscope itemtype="http://schema.org/BlogPosting">
-        <h1 id="数据库">数据库</h1>
+        <ul id="markdown-toc">
+  <li><a href="#数据库" id="markdown-toc-数据库">数据库</a></li>
+</ul>
+<h1 id="数据库">数据库</h1>
+
 <p>oracle数据库有默认的几张表,可以用于练习sql语句的书写</p>
 
 <p>数据类型;
-	char, varchar, date, number
-创建表,  对每个列进行约束:
-	默认值,主键,外键,非空
-增加:
-	insert into &lt;table&gt; values (col1,col2,…)
-删除:
+	char, varchar, date, number</p>
+
+<p>创建表,  对每个列进行约束:
+	默认值,主键,外键,非空</p>
+
+<p>增加:
+	insert into &lt;table&gt; values (col1,col2,…)</p>
+
+<p>删除:
 	drop table <table_name> # 直接删除表的定义,删除结构
 	drop database <database_name>
-	delete * from <table_name> # 删除数据
-改:	
+	delete * from <table_name> # 删除数据</table_name></database_name></table_name></p>
+
+<p>改:	
 	alter table student drop age # 更改结构
-	update <table_name> set <col_name>=<value> where ... # 更改数据,中间可以有select语句
-查:
+	update <table_name> set <col_name>=<value> where ... # 更改数据,中间可以有select语句</value></col_name></table_name></p>
+
+<p>查:
 	select dept_name dname, job
 	from table1, table2
 	where deptno in (select deptno from dept)
 	group by deptno
 	having avg(sal)&gt;2000
-	order by desc;</value></col_name></table_name></table_name></database_name></table_name></p>
+	order by desc;</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>为表起别名,
 自查询,多表联合查询,分组查询,嵌套查询(select可以出现在任何地方)
@@ -231,31 +254,8 @@
                     
                 
             
-                
-                    
-                
-            
         
             
-            
-                
-                    
-                
-            
-                
-                    
-                
-            
-                
-                    
-                
-            
-        
-            
-            
-                
-                    
-                
             
                 
                     
@@ -293,9 +293,8 @@
                     
                 
             
-                
-                    
-                
+        
+            
             
                 
                     
@@ -303,6 +302,10 @@
             
         
             
+            
+                
+                    
+                
             
                 
                     
@@ -395,7 +398,7 @@
             <a href="https://github.com/ixneo" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>  
             <a href="mailto:932154199@qq.com" title="email"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>  
             <a href="http://weibo.com/coolinear" title="Weibo"><i class="fa fa-weibo" aria-hidden="true"></i></a>  
-            <a href="https://www.zhihu.com/people/coolinear" title="Zhihu"><i class="iconfont icon-daoruzhihu"></i></a>      
+            <a href="https://www.zhihu.com/people/te-si-la-48-5" title="Zhihu"><i class="iconfont icon-daoruzhihu"></i></a>      
         </p>
         <p>
             本站总访问量<span id="busuanzi_value_site_pv"></span>次，本站访客数<span id="busuanzi_value_site_uv"></span>人次，本文总阅读量<span id="busuanzi_value_page_pv"></span>次

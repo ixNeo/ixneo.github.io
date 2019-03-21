@@ -7,13 +7,16 @@ date:       2019-03-20				# 时间
 author:     jktian 						# 作者
 header-img: img/post-bg-2015.jpg 	#这篇文章标题背景图片
 catalog: true 						# 是否归档
+category: 历劫桥--项目实战
 tags:								#标签
     - log
     - nlp
-    - project
 
 ---
+* content
+{:toc}
 # 数据总览 & 预处理
+
 - 训练数据
 
     | 数据类型 | 列号范围 | 行数 |
@@ -36,7 +39,21 @@ tags:								#标签
 
 - 评判标准
 	综合准确率和召回率，得到得分
+
+
+
+
+
+
+
+
+
+
+
+
+
 # 模型搭建 & 优化 & 得分结果
+
 1. 数据分类（预处理）
 
     |分类与否|得分|

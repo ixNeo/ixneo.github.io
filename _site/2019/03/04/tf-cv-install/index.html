@@ -7,15 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>环境搭建</title>
-    <meta name="description" content="conda  conda install &lt;url/package_name&gt;	# 可能需要事先切换到python36，代替py37  conda info 	# 打印关于包的信息，有不同版本的tar.gz下载urltensorflow  根据conda info, 得到依赖项。不仅要安装tensor...">
+    <meta name="description" content="  condaconda  conda install &lt;url/package_name&gt;	# 可能需要事先切换到python36，代替py37  conda info 	# 打印关于包的信息，有不同版本的tar.gz下载url">
 
     <link rel="shortcut icon" href="/favicon.ico?" type="image/x-icon">
     <link rel="icon" href="/favicon.ico?" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://at.alicdn.com/t/font_8v3czwksspqlg14i.css">
     <link rel="stylesheet" href="/css/main.css ">
-    <link rel="canonical" href="http://localhost:4002/2019/03/04/tf-cv-install/">
-    <link rel="alternate" type="application/rss+xml" title="jktian-logging" href="http://localhost:4002/feed.xml ">
+    <link rel="canonical" href="http://localhost:4001/2019/03/04/tf-cv-install/">
+    <link rel="alternate" type="application/rss+xml" title="jk.tian" href="http://localhost:4001/feed.xml ">
 
 
     <script>
@@ -39,8 +39,8 @@
 
     <header id="top">
     <div class="wrapper">
-        <a href="/" class="brand">jktian-logging</a>
-        <small>majon in data-science</small>
+        <a href="/" class="brand">jk.tian</a>
+        <small>major in data-science</small>
         <button id="headerMenu" class="menu"><i class="fa fa-bars"></i></button>
         <nav id="headerNav">
             <ul>
@@ -129,6 +129,8 @@
                 
                     
                 
+                    
+                
             </ul>
         </nav>
     </div>
@@ -159,6 +161,18 @@
             
 
 
+<!-- <span class="point">•</span> -->
+<span class="categories">
+  <i class="fa fa-th-list"></i>
+  
+    
+        <a href="/category/#攀天索--工具" title="Category: 攀天索--工具" rel="category">攀天索--工具</a>
+    
+  
+
+  <!-- <span class="point">•</span> -->
+</span>
+
 
             </div>
 
@@ -170,10 +184,7 @@
   
     
         <!--a href="/tag/#python" title="Tag: python" rel="tag">python</a-->
-        <a href="/tag/#python" title="Tag: python" rel="tag">python</a>&nbsp;
-    
-        <!--a href="/tag/#tools" title="Tag: tools" rel="tag">tools</a-->
-        <a href="/tag/#tools" title="Tag: tools" rel="tag">tools</a>
+        <a href="/tag/#python" title="Tag: python" rel="tag">python</a>
     
   
 
@@ -184,13 +195,21 @@
         </div>
         <hr>
         <article itemscope itemtype="http://schema.org/BlogPosting">
-        <h1 id="conda">conda</h1>
+        <ul id="markdown-toc">
+  <li><a href="#conda" id="markdown-toc-conda">conda</a></li>
+  <li><a href="#tensorflow" id="markdown-toc-tensorflow">tensorflow</a></li>
+  <li><a href="#opencv" id="markdown-toc-opencv">opencv</a></li>
+  <li><a href="#python包的安装方式" id="markdown-toc-python包的安装方式">python包的安装方式</a></li>
+</ul>
+<h1 id="conda">conda</h1>
+
 <ol>
   <li>conda install &lt;url/package_name&gt;	# 可能需要事先切换到python36，代替py37</li>
   <li>conda info <package_name>	# 打印关于包的信息，有不同版本的tar.gz下载url</package_name></li>
 </ol>
 
 <h1 id="tensorflow">tensorflow</h1>
+
 <ol>
   <li>根据conda info, 得到依赖项。不仅要安装tensorflow本身，同时也要conda info 依赖项，来安装依赖的包</li>
   <li>和tensorboard
@@ -229,8 +248,6 @@
                 
                     
                 
-                    
-                
             
         
             
@@ -238,17 +255,7 @@
                 
                     
                 
-                    
-                
             
-                
-                    
-                
-                    
-                
-            
-                
-                    
                 
                     
                 
@@ -259,17 +266,14 @@
                 
                     
                 
-                    
-                
+            
+        
+            
             
                 
                     
                 
-                    
-                
             
-                
-                    
                 
                     
                 
@@ -280,11 +284,10 @@
                 
                     
                 
-                    
-                
             
-                
-                    
+        
+            
+            
                 
                     
                 
@@ -294,51 +297,23 @@
             
                 
                     
+                
+            
+        
+            
+            
+                
+                    
+                
+            
+        
+            
+            
                 
                     
                         
                         <h2 id="similar_posts">Similar Posts</h2>
                         <ul>
-                        
-                        <li class="relatedPost">
-                            <a href="/2019/03/20/linux-manjaro/">博客搭建
-                            
-                            </a>
-                        </li>
-                        
-                        
-                    
-                
-            
-                
-                    
-                
-                    
-                
-            
-        
-            
-            
-                
-                    
-                
-                    
-                
-            
-        
-            
-            
-                
-                    
-                
-                    
-                
-            
-        
-            
-            
-                
-                    
                         
                         <li class="relatedPost">
                             <a href="/2019/03/16/python-magic/">python黑魔法
@@ -347,8 +322,6 @@
                         </li>
                         
                         
-                    
-                
                     
                 
             
@@ -367,32 +340,11 @@
                         
                     
                 
-                    
-                
             
                 
                     
                 
-                    
-                
             
-                
-                    
-                
-                    
-                
-            
-        
-            
-            
-                
-                    
-                
-                    
-                
-            
-                
-                    
                 
                     
                 
@@ -473,7 +425,7 @@
             <a href="https://github.com/ixneo" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>  
             <a href="mailto:932154199@qq.com" title="email"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>  
             <a href="http://weibo.com/coolinear" title="Weibo"><i class="fa fa-weibo" aria-hidden="true"></i></a>  
-            <a href="https://www.zhihu.com/people/coolinear" title="Zhihu"><i class="iconfont icon-daoruzhihu"></i></a>      
+            <a href="https://www.zhihu.com/people/te-si-la-48-5" title="Zhihu"><i class="iconfont icon-daoruzhihu"></i></a>      
         </p>
         <p>
             本站总访问量<span id="busuanzi_value_site_pv"></span>次，本站访客数<span id="busuanzi_value_site_uv"></span>人次，本文总阅读量<span id="busuanzi_value_page_pv"></span>次

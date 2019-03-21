@@ -6,10 +6,12 @@ date:       2019-03-01				# 时间
 author:     jktian 						# 作者
 header-img: img/post-bg-2015.jpg 	#这篇文章标题背景图片
 catalog: true 						# 是否归档
+category: 慧越泉--杂谈日志
 tags:								#标签
     - oj
 ---
-
+* content
+{:toc}
 # 问题描述
 假设城市中一共有N幢建筑排成一条线，每幢建筑的高度各不相同。初始时，怪盗基德可以在任何一幢建筑的顶端。他可以选择一个方向逃跑，但是不能中途改变方向（因为中森警部会在后面追击）。因为滑翔翼动力装置受损，他只能往下滑行（即：只能从较高的建筑滑翔到较低的建筑）。他希望尽可能多地经过不同建筑的顶部，这样可以减缓下降时的冲击力，减少受伤的可能性。请问，他最多可以经过多少幢不同建筑的顶部（包含初始时的建筑）？
 
@@ -20,6 +22,18 @@ tags:								#标签
 输出
 对于每一组测试数据，输出一行，包含一个整数，代表怪盗基德最多可以经过的建筑数量。
 
+
+
+
+
+
+
+
+
+
+
+
+
 # 解决方案
 
 1. dfs
@@ -29,7 +43,7 @@ tags:								#标签
             #include<string>
             #include<iterator>
             #include<algorithm>
-        
+            
             using namespace std;
             /* test-input
                 3
@@ -47,7 +61,7 @@ tags:								#标签
             */
             int buildings[200][200] = {0};
             int buildTot[200] = {0};
-        
+            
             int dfs(int caseIndex, int curBuilding,int pVal, int tot, int inc){
             //    cout << curBuilding << endl;
                 if(inc==1 && curBuilding>=buildTot[caseIndex]){
@@ -74,7 +88,7 @@ tags:								#标签
                         cin >> buildings[i][j];
                     }
                 }
-        
+            
                 // dfs, two-direction
                 for(int i=0;i<caseNum;i++){
                     int res = 0;

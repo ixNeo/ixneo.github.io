@@ -7,15 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>多功能工具包（聊天机器人）</title>
-    <meta name="description" content="1 TODO	(DONE)      重构代码，易扩展性        加入数据库存储        爬虫优化：尝试scrapy框架        推荐算法设计    项目地址  2 问题以及解决2.1 字体显示问题  linux中的python无法正常显示中文。​	$ cp *.ttf /usr/share/f...">
+    <meta name="description" content="  1 TODO	(DONE)1 TODO	(DONE)      重构代码，易扩展性        加入数据库存储        爬虫优化：尝试scrapy框架        推荐算法设计    项目地址  ">
 
     <link rel="shortcut icon" href="/favicon.ico?" type="image/x-icon">
     <link rel="icon" href="/favicon.ico?" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://at.alicdn.com/t/font_8v3czwksspqlg14i.css">
     <link rel="stylesheet" href="/css/main.css ">
-    <link rel="canonical" href="http://localhost:4002/2019/03/20/chatbolt/">
-    <link rel="alternate" type="application/rss+xml" title="jktian-logging" href="http://localhost:4002/feed.xml ">
+    <link rel="canonical" href="http://localhost:4001/2019/03/20/chatbolt/">
+    <link rel="alternate" type="application/rss+xml" title="jk.tian" href="http://localhost:4001/feed.xml ">
 
 
     <script>
@@ -39,8 +39,8 @@
 
     <header id="top">
     <div class="wrapper">
-        <a href="/" class="brand">jktian-logging</a>
-        <small>majon in data-science</small>
+        <a href="/" class="brand">jk.tian</a>
+        <small>major in data-science</small>
         <button id="headerMenu" class="menu"><i class="fa fa-bars"></i></button>
         <nav id="headerNav">
             <ul>
@@ -129,6 +129,8 @@
                 
                     
                 
+                    
+                
             </ul>
         </nav>
     </div>
@@ -159,6 +161,18 @@
             
 
 
+<!-- <span class="point">•</span> -->
+<span class="categories">
+  <i class="fa fa-th-list"></i>
+  
+    
+        <a href="/category/#历劫桥--项目实战" title="Category: 历劫桥--项目实战" rel="category">历劫桥--项目实战</a>
+    
+  
+
+  <!-- <span class="point">•</span> -->
+</span>
+
 
             </div>
 
@@ -170,10 +184,7 @@
   
     
         <!--a href="/tag/#log" title="Tag: log" rel="tag">log</a-->
-        <a href="/tag/#log" title="Tag: log" rel="tag">log</a>&nbsp;
-    
-        <!--a href="/tag/#project" title="Tag: project" rel="tag">project</a-->
-        <a href="/tag/#project" title="Tag: project" rel="tag">project</a>
+        <a href="/tag/#log" title="Tag: log" rel="tag">log</a>
     
   
 
@@ -184,7 +195,39 @@
         </div>
         <hr>
         <article itemscope itemtype="http://schema.org/BlogPosting">
-        <h1 id="1-todo-done">1 TODO	(DONE)</h1>
+        <ul id="markdown-toc">
+  <li><a href="#1-todo-done" id="markdown-toc-1-todo-done">1 TODO	(DONE)</a></li>
+  <li><a href="#2-问题以及解决" id="markdown-toc-2-问题以及解决">2 问题以及解决</a>    <ul>
+      <li><a href="#21-字体显示问题" id="markdown-toc-21-字体显示问题">2.1 字体显示问题</a>        <ul>
+          <li><a href="#summary" id="markdown-toc-summary">summary</a></li>
+          <li><a href="#扩展" id="markdown-toc-扩展">扩展</a></li>
+        </ul>
+      </li>
+      <li><a href="#22-几个批量操作自动化" id="markdown-toc-22-几个批量操作自动化">2.2 几个批量操作（自动化）</a>        <ul>
+          <li><a href="#summary-1" id="markdown-toc-summary-1">summary</a></li>
+        </ul>
+      </li>
+      <li><a href="#23-数据库--智能回复算法设计" id="markdown-toc-23-数据库--智能回复算法设计">2.3 数据库 &amp; 智能回复算法设计</a>        <ul>
+          <li><a href="#jieba概览" id="markdown-toc-jieba概览">jieba概览</a></li>
+          <li><a href="#目标" id="markdown-toc-目标">目标</a>            <ul>
+              <li><a href="#summary-2" id="markdown-toc-summary-2">summary</a></li>
+              <li><a href="#后续研究方向" id="markdown-toc-后续研究方向">后续研究方向</a></li>
+            </ul>
+          </li>
+          <li><a href="#数据库选择--基本使用" id="markdown-toc-数据库选择--基本使用">数据库选择 &amp; 基本使用</a></li>
+          <li><a href="#python字符串和列表的转换" id="markdown-toc-python字符串和列表的转换">python字符串和列表的转换</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#3-最终改动" id="markdown-toc-3-最终改动">3 最终改动</a>    <ul>
+      <li><a href="#消息记录的存储" id="markdown-toc-消息记录的存储">消息记录的存储</a></li>
+      <li><a href="#智能回复" id="markdown-toc-智能回复">智能回复</a></li>
+    </ul>
+  </li>
+</ul>
+<h1 id="1-todo-done">1 TODO	(DONE)</h1>
+
 <ol>
   <li>
     <p>重构代码，易扩展性</p>
@@ -432,6 +475,15 @@ $ use database_name</p>
                 
                     
                 
+            
+        
+            
+            
+                
+                    
+                
+            
+                
                     
                 
             
@@ -441,38 +493,15 @@ $ use database_name</p>
                 
                     
                 
-                    
-                
             
-                
-                    
+        
+            
+            
                 
                     
                         
                         <h2 id="similar_posts">Similar Posts</h2>
                         <ul>
-                        
-                        <li class="relatedPost">
-                            <a href="/2019/03/20/java-socket/">java模拟路由表构建
-                            
-                            </a>
-                        </li>
-                        
-                        
-                    
-                
-            
-                
-                    
-                
-                    
-                
-            
-        
-            
-            
-                
-                    
                         
                         <li class="relatedPost">
                             <a href="/2019/03/20/senti-contest/">用户评论情感极性分析（三分类）
@@ -483,17 +512,7 @@ $ use database_name</p>
                         
                     
                 
-                    
-                
             
-                
-                    
-                
-                    
-                
-            
-                
-                    
                 
                     
                 
@@ -504,11 +523,10 @@ $ use database_name</p>
                 
                     
                 
-                    
-                
             
-                
-                    
+        
+            
+            
                 
                     
                 
@@ -519,23 +537,10 @@ $ use database_name</p>
                 
                     
                 
-                    
-                
             
         
             
             
-                
-                    
-                
-                    
-                
-            
-        
-            
-            
-                
-                    
                 
                     
                 
@@ -546,17 +551,11 @@ $ use database_name</p>
                 
                     
                 
-                    
-                
             
                 
                     
                 
-                    
-                
             
-                
-                    
                 
                     
                 
@@ -567,26 +566,7 @@ $ use database_name</p>
                 
                     
                 
-                    
-                
             
-                
-                    
-                
-                    
-                
-            
-        
-            
-            
-                
-                    
-                
-                    
-                
-            
-                
-                    
                 
                     
                 
@@ -667,7 +647,7 @@ $ use database_name</p>
             <a href="https://github.com/ixneo" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>  
             <a href="mailto:932154199@qq.com" title="email"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>  
             <a href="http://weibo.com/coolinear" title="Weibo"><i class="fa fa-weibo" aria-hidden="true"></i></a>  
-            <a href="https://www.zhihu.com/people/coolinear" title="Zhihu"><i class="iconfont icon-daoruzhihu"></i></a>      
+            <a href="https://www.zhihu.com/people/te-si-la-48-5" title="Zhihu"><i class="iconfont icon-daoruzhihu"></i></a>      
         </p>
         <p>
             本站总访问量<span id="busuanzi_value_site_pv"></span>次，本站访客数<span id="busuanzi_value_site_uv"></span>人次，本文总阅读量<span id="busuanzi_value_page_pv"></span>次
