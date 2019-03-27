@@ -15,6 +15,8 @@ tags:								#标签
 ---
 * content
 {:toc}
+
+[项目地址](https://github.com/ixNeo/Emotional-Polarity-Analysis)
 # 数据总览 & 预处理
 
 - 训练数据
