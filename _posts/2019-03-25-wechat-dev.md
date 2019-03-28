@@ -19,6 +19,10 @@ tags:								#标签
 # 环境搭建
 微信小程序开发工具: 只支持windows/macos
 本机的win7无法正常显示
+
+
+
+
 linux下:
 1. wine	# windows虚拟模拟程序,可以选择windows版本
 
