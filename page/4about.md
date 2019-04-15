@@ -39,7 +39,7 @@ jktian, 一个自嗨的人, 正在渡劫中
 
 ## 友情链接
 
-[岐山凤鸣](http://www.ecohnoch.cn/) \|
+ \|
 
 ## Comments
 
