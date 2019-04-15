@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>python命令＆工具使用</title>
-    <meta name="description" content="  总结总结  shell操作。命令行解释器的设置。如提示符样式等  改变显示界面样式。          set命令，如是否回显、分隔符设置、显示执行时间、限制显示行数等      表的结构        基本概念：connect、commit(原子操作)  脚本装载与执行  操作流程：          连接...">
+    <title>数据库复习</title>
+    <meta name="description" content="  数据库          语句类型      语句      数据库语句类型  DDL: 数据库定义语言．对数据库结构的增删改查  DML　数据库管理语言．对表内容的增删改查  DCL　数据库控制语言．事务，用户等  DQL　数据库查询语言oracle数据库有默认的几张表,可以用于练习sql语句的书写语句数据...">
 
     <link rel="shortcut icon" href="/favicon.ico?" type="image/x-icon">
     <link rel="icon" href="/favicon.ico?" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://at.alicdn.com/t/font_8v3czwksspqlg14i.css">
     <link rel="stylesheet" href="/css/main.css ">
-    <link rel="canonical" href="http://localhost:4001/2019/03/04/db-oracle/">
+    <link rel="canonical" href="http://localhost:4001/2019/04/02/database/">
     <link rel="alternate" type="application/rss+xml" title="jk.tian" href="http://localhost:4001/feed.xml ">
 
 
@@ -131,6 +131,10 @@
                 
                     
                 
+                    
+                
+                    
+                
             </ul>
         </nav>
     </div>
@@ -139,11 +143,11 @@
 
         <div class="page clearfix" post>
     <div class="left">
-        <h1>python命令＆工具使用</h1>
+        <h1>数据库复习</h1>
         <div class="label">
 
             <div class="label-card">
-                <i class="fa fa-calendar"></i>2019-03-04
+                <i class="fa fa-calendar"></i>2019-04-02
             </div>
 
             <div class="label-card">
@@ -196,28 +200,228 @@
         <hr>
         <article itemscope itemtype="http://schema.org/BlogPosting">
         <ul id="markdown-toc">
-  <li><a href="#总结" id="markdown-toc-总结">总结</a></li>
+  <li><a href="#数据库" id="markdown-toc-数据库">数据库</a>    <ul>
+      <li><a href="#语句类型" id="markdown-toc-语句类型">语句类型</a></li>
+      <li><a href="#语句" id="markdown-toc-语句">语句</a></li>
+    </ul>
+  </li>
+  <li><a href="#锁" id="markdown-toc-锁">锁</a></li>
+  <li><a href="#如何提高并发效率" id="markdown-toc-如何提高并发效率">如何提高并发效率</a></li>
+  <li><a href="#dml" id="markdown-toc-dml">DML</a>    <ul>
+      <li><a href="#查询分类" id="markdown-toc-查询分类">查询分类</a></li>
+      <li><a href="#command" id="markdown-toc-command">command</a></li>
+    </ul>
+  </li>
+  <li><a href="#复习重点" id="markdown-toc-复习重点">复习重点</a>    <ul>
+      <li><a href="#语句执行顺序" id="markdown-toc-语句执行顺序">语句执行顺序</a></li>
+      <li><a href="#事务" id="markdown-toc-事务">事务</a></li>
+      <li><a href="#jdbc" id="markdown-toc-jdbc">JDBC</a></li>
+      <li><a href="#三个范式" id="markdown-toc-三个范式">三个范式</a></li>
+    </ul>
+  </li>
+  <li><a href="#代码优化" id="markdown-toc-代码优化">代码优化</a></li>
+  <li><a href="#知识点" id="markdown-toc-知识点">知识点</a>    <ul>
+      <li><a href="#判断" id="markdown-toc-判断">判断</a></li>
+    </ul>
+  </li>
+  <li><a href="#er图--表" id="markdown-toc-er图--表">ER图 ==&gt; 表</a></li>
+  <li><a href="#反规范化的思想" id="markdown-toc-反规范化的思想">反规范化的思想</a></li>
+</ul>
+<h1 id="数据库">数据库</h1>
+
+<h3 id="语句类型">语句类型</h3>
+<ul>
+  <li>DDL: 数据库定义语言．对数据库结构的增删改查</li>
+  <li>DML　数据库管理语言．对表内容的增删改查</li>
+  <li>DCL　数据库控制语言．事务，用户等</li>
+  <li>DQL　数据库查询语言
+oracle数据库有默认的几张表,可以用于练习sql语句的书写</li>
 </ul>
 
-<h1 id="总结">总结</h1>
+<h3 id="语句">语句</h3>
+<p>数据类型;</p>
+<ul>
+  <li>char, varchar, date, number</li>
+</ul>
+
+<p>创建表,  对每个列进行约束:</p>
+<ul>
+  <li>默认值,主键,外键,非空
+    <h1 id="锁">锁</h1>
+  </li>
+  <li>悲观锁
+    <ul>
+      <li>共享锁 s</li>
+      <li>排它锁 e</li>
+      <li>更新锁：和共享锁兼容．和排它锁互斥．为了解决死锁，可以升级为排它锁</li>
+      <li>意向锁：在为某行加排他锁时，顺便为表加了意向排他锁．避免以后再加排它锁时的逐行检查</li>
+    </ul>
+  </li>
+  <li>乐观锁：
+    <ul>
+      <li>时间戳
+        <blockquote>
+          <p>如何加锁，何时加锁，加什么锁，你可以通过hint手工强行指定，但大多是数据库系统自动决定的。</p>
+        </blockquote>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>锁的粒度就是指锁的生效范围，就是说是行锁，还是页锁，还是整表锁. 锁的粒度同样既可以由数据库自动管理，也可以通过手工指定hint来管理。</p>
+
+<h1 id="如何提高并发效率">如何提高并发效率</h1>
+<p>悲观锁：利用数据库本身的锁机制实现。通过上面对数据库锁的了解，可以根据具体业务情况综合使用事务隔离级别与合理的手工指定锁的方式比如降低锁的粒度等减少并发等待。
+乐观锁：利用程序处理并发。原理都比较好理解，基本一看即懂。方式大概有以下3种
+对记录加版本号.
+对记录加时间戳.</p>
+
+<h1 id="dml">DML</h1>
+
+<p>增加:</p>
+<ul>
+  <li>insert into &lt;table&gt; values (col1,col2,…)</li>
+</ul>
+
+<p>删除:</p>
+<ul>
+  <li>drop table <table_name> # 直接删除表的定义,删除结构</table_name></li>
+  <li>drop database <database_name></database_name></li>
+  <li>delete * from <table_name> # 删除数据</table_name></li>
+</ul>
+
+<p>改:</p>
+<ul>
+  <li>alter table student drop age # 更改结构</li>
+  <li>update <table_name> set <col_name>=<value> where ... # 更改数据,中间可以有select语句</value></col_name></table_name></li>
+</ul>
+
+<p>查:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	select dept_name dname, job
+	from table1, table2
+	where deptno in (select deptno from dept)
+	group by deptno
+	having avg(sal)&gt;2000
+	order by desc;
+</code></pre></div></div>
+
+<blockquote>
+  <p>为表起别名,
+自查询,多表联合查询,分组查询,嵌套查询(select可以出现在任何地方)</p>
+</blockquote>
+
+<h3 id="查询分类">查询分类</h3>
 <ol>
-  <li>shell操作。命令行解释器的设置。如提示符样式等</li>
-  <li>改变显示界面样式。
-    <ol>
-      <li>set命令，如是否回显、分隔符设置、显示执行时间、限制显示行数等</li>
-      <li>表的结构</li>
-    </ol>
+  <li>子查询
+    <ul>
+      <li>技巧：
+ 	- 重命名
+ 	- in (select * from [])</li>
+    </ul>
   </li>
-  <li>基本概念：connect、commit(原子操作)</li>
-  <li>脚本装载与执行</li>
-  <li>操作流程：
-    <ol>
-      <li>连接数据库，输入密码</li>
-      <li>增删改查</li>
-    </ol>
+  <li>连接查询（暴力破解）
+    <ul>
+      <li>内连接</li>
+      <li>外连接．左连接，右连接</li>
+      <li>全连接</li>
+    </ul>
   </li>
-  <li>备份与还原。即脚本的存储和装载</li>
+  <li>集合查询
+    <ul>
+      <li>union</li>
+      <li>intersect</li>
+      <li>minus</li>
+      <li>except
+4.聚集查询/分组查询</li>
+    </ul>
+  </li>
 </ol>
+
+<blockquote>
+  <p>核心：</p>
+  <ol>
+    <li>模块化，分治法</li>
+    <li>对问题的重新定义，对业务的理解</li>
+  </ol>
+</blockquote>
+
+<p>#　mysql in manjaro-linux
+使用：　sudo systemctl restart mysqld
+		mysql -u root -p;
+先选择数据库：　use <db>;
+然后开始操作</db></p>
+
+<h2 id="command">command</h2>
+<ul>
+  <li>desc table_name; 查看表结构</li>
+  <li>show databases;</li>
+  <li>show tables;</li>
+  <li>source file.sql;</li>
+  <li>commit;</li>
+</ul>
+
+<h1 id="复习重点">复习重点</h1>
+<h3 id="语句执行顺序">语句执行顺序</h3>
+<h3 id="事务">事务</h3>
+<p>ACID特性。其他三个都是为了保证一致性</p>
+
+<p>三种不考虑隔离性的结果现象</p>
+
+<p>四种隔离级别</p>
+
+<p>事务要么全提交，要么回滚。是原子性的体现。</p>
+
+<h3 id="jdbc">JDBC</h3>
+
+<h3 id="三个范式">三个范式</h3>
+<ol>
+  <li>1NF: 原子性，去除多值，只要是RDBMS的表，就满足</li>
+  <li>2NF: 非主属性对主属性完全函数依赖．如果主属性只有一个，则一定是2NF
+    <blockquote>
+      <p>候选码的属性都是主属性，主码是候选码中的一个</p>
+    </blockquote>
+  </li>
+  <li>3NF: 非主属性之间无函数依赖关系，去除了非主属性和主属性之间的传递依赖</li>
+  <li>BCNF: 去除了主属性之间的部分函数依赖和传递依赖. 原因：存在多个候选码．所有函数依赖决定因子都是主键</li>
+</ol>
+
+<blockquote>
+  <p>根本目的：将表划分的更加细致，而不是一张大表．尽量减少数据的冗余，方便增删改</p>
+</blockquote>
+
+<h1 id="代码优化">代码优化</h1>
+<p>省略机器运行步骤，写出高效程序</p>
+
+<ul>
+  <li>避免使用select *, 因为oracle会查询数据字典，转换为列名</li>
+  <li>将sql关键字写为大写。因为oracle会先将关键字变为大写。</li>
+  <li>where和having都是从右到左，尽量少用having. 明白数据是如何层层过滤的，底层实现</li>
+</ul>
+
+<h1 id="知识点">知识点</h1>
+<h3 id="判断">判断</h3>
+<ol>
+  <li>null: 是一种状态；判断：is null</li>
+  <li>模糊匹配：where colname like ‘_i%’</li>
+  <li>精确：=</li>
+</ol>
+
+<h1 id="er图--表">ER图 ==&gt; 表</h1>
+<ol>
+  <li>实体分为强实体和弱实体．弱实体依赖于强实体，所以，弱实体对应的表包含强实体的外键</li>
+  <li>关系
+    <ol>
+      <li>1:n/1:1, 直接在某个实体对应的表中加入外键即可</li>
+      <li>m:n, 需要创建额外的关系表，创建主键外键</li>
+    </ol>
+  </li>
+  <li>递归关系类似普通关系，只有在m:n时，进行关系表的创建</li>
+</ol>
+
+<h1 id="反规范化的思想">反规范化的思想</h1>
+<p>规范化减少了数据冗余，易于保证数据的完整性，也可能导致数据库性能降低．
+所以，可以适当地数据冗余</p>
 
         </article>
         <hr>
@@ -230,20 +434,6 @@
                     
                 
             
-        
-            
-            
-                
-                    
-                
-            
-                
-                    
-                
-            
-        
-            
-            
                 
                     
                 
@@ -273,28 +463,6 @@
                     
                 
             
-        
-            
-            
-                
-                    
-                        
-                        <h2 id="similar_posts">Similar Posts</h2>
-                        <ul>
-                        
-                        <li class="relatedPost">
-                            <a href="/2019/03/20/database/">数据库常见操作
-                            
-                            </a>
-                        </li>
-                        
-                        
-                    
-                
-            
-        
-            
-            
                 
                     
                 
@@ -322,20 +490,58 @@
                 
             
         
+            
+            
         
-            </ul>
+            
+            
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
         
 
         <div class="post-recent">
     <div class="pre">
         
-        <p><strong>上一篇</strong> <a href="/2019/03/04/climb-mountain/">小土山-不周山闲逛</a></p>
+        <p><strong>上一篇</strong> <a href="/2019/04/01/hack/">黑客攻击</a></p>
         
     </div>
     <div class="nex">
 
         
-        <p><strong>下一篇</strong> <a href="/2019/03/04/tf-cv-install/">环境搭建</a></p>
+        <p><strong>下一篇</strong> <a href="/2019/04/06/ojtrick/">OJ-trick</a></p>
         
     </div>
 </div>
@@ -359,8 +565,6 @@
                     Content
                 </div>
                 <ul id="content-side" class="content-ul">
-                    
-                    <li><a href="#similar_posts">Similar Posts</a></li>
                     
                     <li><a href="#comments">Comments</a></li>
                 </ul>

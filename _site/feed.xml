@@ -5,30 +5,59 @@
     <description></description>
     <link>http://localhost:4001/</link>
     <atom:link href="http://localhost:4001/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 21 Mar 2019 15:57:13 +0800</pubDate>
-    <lastBuildDate>Thu, 21 Mar 2019 15:57:13 +0800</lastBuildDate>
+    <pubDate>Mon, 15 Apr 2019 11:10:15 +0800</pubDate>
+    <lastBuildDate>Mon, 15 Apr 2019 11:10:15 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
-        <title>神经网络</title>
+        <title>微信小程序开发</title>
         <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#神经网络&quot; id=&quot;markdown-toc-神经网络&quot;&gt;神经网络&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#环境搭建&quot; id=&quot;markdown-toc-环境搭建&quot;&gt;环境搭建&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;a href=&quot;https://github.com/ixneo/kaoyanshuo&quot;&gt;项目地址&lt;/a&gt;
 
-&lt;h1 id=&quot;神经网络&quot;&gt;神经网络&lt;/h1&gt;
+&lt;a href=&quot;https://github.com/ixNeo/kaoyanshuo/tree/master/doc&quot;&gt;后端详细文档&lt;/a&gt;
 
-激励函数: elu/relu/linear/prelu/leaky_relu/softplus
-
-优化办法/梯度算法: adam/mom/msprop/sgd(随机梯度下降)
-
-神经网络是一种监督学习,需要大量的样本以及对应标签
+&lt;h1 id=&quot;环境搭建&quot;&gt;环境搭建&lt;/h1&gt;
+微信小程序开发工具: 只支持windows/macos
+本机的win7无法正常显示
 
 </description>
-        <pubDate>Wed, 20 Mar 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4001/2019/03/20/nn/</link>
-        <guid isPermaLink="true">http://localhost:4001/2019/03/20/nn/</guid>
+        <pubDate>Mon, 15 Apr 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4001/2019/04/15/wechat-dev/</link>
+        <guid isPermaLink="true">http://localhost:4001/2019/04/15/wechat-dev/</guid>
         
-        <category>神经网络</category>
+        <category>log</category>
+        
+        <category>web</category>
+        
+        
+        <category>历劫桥--项目实战</category>
+        
+      </item>
+    
+      <item>
+        <title>LSTM</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#lstm&quot; id=&quot;markdown-toc-lstm&quot;&gt;LSTM&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;lstm&quot;&gt;LSTM&lt;/h1&gt;
+长短时记忆网络(long short term memory)，为了解决RNN(循环神经网络)的无法利用长期依赖的问题
+
+LSTM通过三个这样的门结构来实现信息的保护和控制。这三个门分别输入门、遗忘门和输出门
+
+&lt;blockquote&gt;
+  门 可以实现选择性地让信息通过，主要是通过一个 sigmoid 的神经层 和一个逐点相乘的操作来实现的。
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Sun, 07 Apr 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4001/2019/04/07/lstm/</link>
+        <guid isPermaLink="true">http://localhost:4001/2019/04/07/lstm/</guid>
+        
+        <category>DL</category>
+        
+        <category>LSTM</category>
         
         
         <category>缘因洞--计算机理论</category>
@@ -36,159 +65,43 @@
       </item>
     
       <item>
-        <title>java模拟路由表构建</title>
+        <title>ROC曲线</title>
         <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#项目内容&quot; id=&quot;markdown-toc-项目内容&quot;&gt;项目内容&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#roc曲线&quot; id=&quot;markdown-toc-roc曲线&quot;&gt;ROC曲线&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&quot;项目内容&quot;&gt;项目内容&lt;/h1&gt;
 
-java模拟路由表构建
-
-socket
-
-multi-thread
+&lt;h1 id=&quot;roc曲线&quot;&gt;ROC曲线&lt;/h1&gt;
+&lt;a href=&quot;https://blog.csdn.net/u013385925/article/details/80385873&quot;&gt;CSDN&lt;/a&gt;
 
 </description>
-        <pubDate>Wed, 20 Mar 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4001/2019/03/20/java-socket/</link>
-        <guid isPermaLink="true">http://localhost:4001/2019/03/20/java-socket/</guid>
+        <pubDate>Sun, 07 Apr 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4001/2019/04/07/dlstandard/</link>
+        <guid isPermaLink="true">http://localhost:4001/2019/04/07/dlstandard/</guid>
         
-        <category>java</category>
-        
-        <category>多进程</category>
+        <category>DL</category>
         
         
-        <category>历劫桥--项目实战</category>
+        <category>缘因洞--计算机理论</category>
         
       </item>
     
       <item>
-        <title>关于降低员工离职率的策略研究</title>
-        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#降低员工离职率的方案&quot; id=&quot;markdown-toc-降低员工离职率的方案&quot;&gt;降低员工离职率的方案&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&quot;降低员工离职率的方案&quot;&gt;降低员工离职率的方案&lt;/h1&gt;
-
+        <title>OJ-trick</title>
+        <description>
 &lt;ol&gt;
-  &lt;li&gt;多层感知机预测员工离职率&lt;/li&gt;
-  &lt;li&gt;定义元动作和元成本&lt;/li&gt;
-  &lt;li&gt;运用强化学习方法, Q-learning/SARSA算法进行最优策略的输出&lt;/li&gt;
+  &lt;li&gt;注意输入和输出的格式&lt;/li&gt;
+  &lt;li&gt;考虑对输入的考察&lt;/li&gt;
+  &lt;li&gt;输出格式在最后做&lt;/li&gt;
 &lt;/ol&gt;
 
 </description>
-        <pubDate>Wed, 20 Mar 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4001/2019/03/20/suoni-projecct/</link>
-        <guid isPermaLink="true">http://localhost:4001/2019/03/20/suoni-projecct/</guid>
-        
-        <category>paper</category>
-        
-        
-        <category>历劫桥--项目实战</category>
-        
-      </item>
-    
-      <item>
-        <title>用户评论情感极性分析（三分类）</title>
-        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#数据总览--预处理&quot; id=&quot;markdown-toc-数据总览--预处理&quot;&gt;数据总览 &amp;amp; 预处理&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&quot;数据总览--预处理&quot;&gt;数据总览 &amp;amp; 预处理&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    训练数据
-
-    &lt;table&gt;
-      &lt;thead&gt;
-        &lt;tr&gt;
-          &lt;th style=&quot;text-align: center&quot;&gt;数据类型&lt;/th&gt;
-          &lt;th style=&quot;text-align: center&quot;&gt;列号范围&lt;/th&gt;
-          &lt;th style=&quot;text-align: center&quot;&gt;行数&lt;/th&gt;
-        &lt;/tr&gt;
-      &lt;/thead&gt;
-      &lt;tbody&gt;
-        &lt;tr&gt;
-          &lt;td style=&quot;text-align: center&quot;&gt;食品餐饮&lt;/td&gt;
-          &lt;td style=&quot;text-align: center&quot;&gt;（1，13655）&lt;/td&gt;
-          &lt;td style=&quot;text-align: center&quot;&gt;13655&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td style=&quot;text-align: center&quot;&gt;旅游住宿&lt;/td&gt;
-          &lt;td style=&quot;text-align: center&quot;&gt;（13656，32590）&lt;/td&gt;
-          &lt;td style=&quot;text-align: center&quot;&gt;18935&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td style=&quot;text-align: center&quot;&gt;金融服务&lt;/td&gt;
-          &lt;td style=&quot;text-align: center&quot;&gt;（32591，46934）&lt;/td&gt;
-          &lt;td style=&quot;text-align: center&quot;&gt;14344&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td style=&quot;text-align: center&quot;&gt;医疗服务&lt;/td&gt;
-          &lt;td style=&quot;text-align: center&quot;&gt;（46935，67246）&lt;/td&gt;
-          &lt;td style=&quot;text-align: center&quot;&gt;20312&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td style=&quot;text-align: center&quot;&gt;物流快递&lt;/td&gt;
-          &lt;td style=&quot;text-align: center&quot;&gt;（67247,82025）&lt;/td&gt;
-          &lt;td style=&quot;text-align: center&quot;&gt;14779&lt;/td&gt;
-        &lt;/tr&gt;
-      &lt;/tbody&gt;
-    &lt;/table&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    测试数据
-
-    &lt;table&gt;
-      &lt;thead&gt;
-        &lt;tr&gt;
-          &lt;th style=&quot;text-align: center&quot;&gt;数据类型&lt;/th&gt;
-          &lt;th style=&quot;text-align: center&quot;&gt;列号范围&lt;/th&gt;
-          &lt;th style=&quot;text-align: center&quot;&gt;行数&lt;/th&gt;
-        &lt;/tr&gt;
-      &lt;/thead&gt;
-      &lt;tbody&gt;
-        &lt;tr&gt;
-          &lt;td style=&quot;text-align: center&quot;&gt;食品餐饮&lt;/td&gt;
-          &lt;td style=&quot;text-align: center&quot;&gt;（1，5853）&lt;/td&gt;
-          &lt;td style=&quot;text-align: center&quot;&gt;5853&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td style=&quot;text-align: center&quot;&gt;旅游住宿&lt;/td&gt;
-          &lt;td style=&quot;text-align: center&quot;&gt;（5854，13968）&lt;/td&gt;
-          &lt;td style=&quot;text-align: center&quot;&gt;8115&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td style=&quot;text-align: center&quot;&gt;金融服务&lt;/td&gt;
-          &lt;td style=&quot;text-align: center&quot;&gt;（13969，20116）&lt;/td&gt;
-          &lt;td style=&quot;text-align: center&quot;&gt;6148&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td style=&quot;text-align: center&quot;&gt;医疗服务&lt;/td&gt;
-          &lt;td style=&quot;text-align: center&quot;&gt;（20117，28822）&lt;/td&gt;
-          &lt;td style=&quot;text-align: center&quot;&gt;8706&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td style=&quot;text-align: center&quot;&gt;物流快递&lt;/td&gt;
-          &lt;td style=&quot;text-align: center&quot;&gt;（28823,35157）&lt;/td&gt;
-          &lt;td style=&quot;text-align: center&quot;&gt;6335&lt;/td&gt;
-        &lt;/tr&gt;
-      &lt;/tbody&gt;
-    &lt;/table&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    评判标准
-  综合准确率和召回率，得到得分
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Wed, 20 Mar 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4001/2019/03/20/senti-contest/</link>
-        <guid isPermaLink="true">http://localhost:4001/2019/03/20/senti-contest/</guid>
+        <pubDate>Sat, 06 Apr 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4001/2019/04/06/ojtrick/</link>
+        <guid isPermaLink="true">http://localhost:4001/2019/04/06/ojtrick/</guid>
         
         <category>log</category>
         
-        <category>nlp</category>
+        <category>oj</category>
         
         
         <category>历劫桥--项目实战</category>
@@ -196,85 +109,35 @@ multi-thread
       </item>
     
       <item>
-        <title>多功能工具包（聊天机器人）</title>
+        <title>数据库复习</title>
         <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#1-todo-done&quot; id=&quot;markdown-toc-1-todo-done&quot;&gt;1 TODO	(DONE)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&quot;1-todo-done&quot;&gt;1 TODO	(DONE)&lt;/h1&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    重构代码，易扩展性
-  &lt;/li&gt;
-  &lt;li&gt;
-    加入数据库存储
-  &lt;/li&gt;
-  &lt;li&gt;
-    爬虫优化：尝试scrapy框架
-  &lt;/li&gt;
-  &lt;li&gt;
-    推荐算法设计
-
-    &lt;a href=&quot;https://github.com/ixNeo/ChatRobot&quot;&gt;项目地址&lt;/a&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-</description>
-        <pubDate>Wed, 20 Mar 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4001/2019/03/20/chatbolt/</link>
-        <guid isPermaLink="true">http://localhost:4001/2019/03/20/chatbolt/</guid>
-        
-        <category>log</category>
-        
-        
-        <category>历劫桥--项目实战</category>
-        
-      </item>
-    
-      <item>
-        <title>博客搭建</title>
-        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#1-常用命令&quot; id=&quot;markdown-toc-1-常用命令&quot;&gt;1 常用命令&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;1-常用命令&quot;&gt;1 常用命令&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;查找端口并删除进程:
-    &lt;ul&gt;
-      &lt;li&gt;$ lsof -i:&lt;post&gt;&lt;/post&gt;&lt;/li&gt;
-      &lt;li&gt;$ kill -9 &lt;pid&gt;&lt;/pid&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#数据库&quot; id=&quot;markdown-toc-数据库&quot;&gt;数据库&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#语句类型&quot; id=&quot;markdown-toc-语句类型&quot;&gt;语句类型&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#语句&quot; id=&quot;markdown-toc-语句&quot;&gt;语句&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
-
-</description>
-        <pubDate>Wed, 20 Mar 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4001/2019/03/20/linux-manjaro/</link>
-        <guid isPermaLink="true">http://localhost:4001/2019/03/20/linux-manjaro/</guid>
-        
-        <category>linux</category>
-        
-        
-        <category>攀天索--工具</category>
-        
-      </item>
-    
-      <item>
-        <title>数据库常见操作</title>
-        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#数据库&quot; id=&quot;markdown-toc-数据库&quot;&gt;数据库&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 &lt;h1 id=&quot;数据库&quot;&gt;数据库&lt;/h1&gt;
 
-oracle数据库有默认的几张表,可以用于练习sql语句的书写
+&lt;h3 id=&quot;语句类型&quot;&gt;语句类型&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;DDL: 数据库定义语言．对数据库结构的增删改查&lt;/li&gt;
+  &lt;li&gt;DML　数据库管理语言．对表内容的增删改查&lt;/li&gt;
+  &lt;li&gt;DCL　数据库控制语言．事务，用户等&lt;/li&gt;
+  &lt;li&gt;DQL　数据库查询语言
+oracle数据库有默认的几张表,可以用于练习sql语句的书写&lt;/li&gt;
+&lt;/ul&gt;
 
+&lt;h3 id=&quot;语句&quot;&gt;语句&lt;/h3&gt;
 数据类型;
-	char, varchar, date, number
+&lt;ul&gt;
+  &lt;li&gt;char, varchar, date, number&lt;/li&gt;
+&lt;/ul&gt;
 
 </description>
-        <pubDate>Wed, 20 Mar 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4001/2019/03/20/database/</link>
-        <guid isPermaLink="true">http://localhost:4001/2019/03/20/database/</guid>
+        <pubDate>Tue, 02 Apr 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4001/2019/04/02/database/</link>
+        <guid isPermaLink="true">http://localhost:4001/2019/04/02/database/</guid>
         
         <category>database</category>
         
@@ -284,52 +147,27 @@ oracle数据库有默认的几张表,可以用于练习sql语句的书写
       </item>
     
       <item>
-        <title>Q-learning / SARSA</title>
+        <title>黑客攻击</title>
         <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#q-learning&quot; id=&quot;markdown-toc-q-learning&quot;&gt;Q-learning&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&quot;q-learning&quot;&gt;Q-learning&lt;/h1&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;初始化q-table. row为状态，column为动作．选择动作时，通过找值最大的单元格的列坐标&lt;/li&gt;
-  &lt;li&gt;更新显示，通过判断是否终止，选择如何显示. time.sleep()&lt;/li&gt;
-  &lt;li&gt;选取动作：根据epslon&amp;gt;0.9, 随机选取或挑选q-table中最大的动作&lt;/li&gt;
-  &lt;li&gt;得到下一个状态以及由s_i==&amp;gt;s_{i+1}奖励值．if判断，应该可以从r表中得到
-    &lt;blockquote&gt;
-      奖励表是先验的，是人为设置的．q-table是动态更新的
-奖励是到达某一个状态的值，由到达的状态决定．q-table是联系自身状态得到的综合值
-    &lt;/blockquote&gt;
+  &lt;li&gt;&lt;a href=&quot;#sql注入&quot; id=&quot;markdown-toc-sql注入&quot;&gt;SQL注入&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#预防手段&quot; id=&quot;markdown-toc-预防手段&quot;&gt;预防手段&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
   &lt;/li&gt;
-&lt;/ol&gt;
-
-</description>
-        <pubDate>Wed, 20 Mar 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4001/2019/03/20/sarsa/</link>
-        <guid isPermaLink="true">http://localhost:4001/2019/03/20/sarsa/</guid>
-        
-        <category>强化学习</category>
-        
-        
-        <category>缘因洞--计算机理论</category>
-        
-      </item>
-    
-      <item>
-        <title>python黑魔法</title>
-        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#with&quot; id=&quot;markdown-toc-with&quot;&gt;with&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#xss脚本&quot; id=&quot;markdown-toc-xss脚本&quot;&gt;XSS脚本&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h1 id=&quot;with&quot;&gt;with&lt;/h1&gt;
-with只适用于上下文管理器的调用，除了文件外，with还支持 threading、decimal等模块，当然我们也可以自己定义可以给with调用的上下文管理器
-使用类定义上下文管理器。
+&lt;h1 id=&quot;sql注入&quot;&gt;SQL注入&lt;/h1&gt;
+&lt;h3 id=&quot;预防手段&quot;&gt;预防手段&lt;/h3&gt;
+java进行预编译，来保护SQL语句
 
+&lt;h1 id=&quot;xss脚本&quot;&gt;XSS脚本&lt;/h1&gt;
+利用js脚本，进行跨站攻击，网页重定向
 </description>
-        <pubDate>Sat, 16 Mar 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4001/2019/03/16/python-magic/</link>
-        <guid isPermaLink="true">http://localhost:4001/2019/03/16/python-magic/</guid>
+        <pubDate>Mon, 01 Apr 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4001/2019/04/01/hack/</link>
+        <guid isPermaLink="true">http://localhost:4001/2019/04/01/hack/</guid>
         
-        <category>python</category>
+        <category>hack</category>
         
         
         <category>攀天索--工具</category>
@@ -337,31 +175,127 @@ with只适用于上下文管理器的调用，除了文件外，with还支持 th
       </item>
     
       <item>
-        <title>python多进程/多进程</title>
+        <title>KBQA-demo</title>
         <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#进程线程&quot; id=&quot;markdown-toc-进程线程&quot;&gt;进程＆线程&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#最简单demo&quot; id=&quot;markdown-toc-最简单demo&quot;&gt;最简单demo&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h1 id=&quot;进程线程&quot;&gt;进程＆线程&lt;/h1&gt;
-进程只是用来把资源集中到一起（进程只是一个资源单位，或者说资源集合），而线程才是cpu上的执行单位．进程之间的内存空间是隔离的
-多线程（即多个控制线程）的概念是，在一个进程中存在多个控制线程，多个控制线程共享该进程的地址空间
-进程之间是竞争关系，线程之间是协作关系
-
-利用multiprocessing库，使用多进程，而不是多线程，充分利用多核cpu资源
+&lt;h1 id=&quot;最简单demo&quot;&gt;最简单demo&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;爬取内容&lt;/li&gt;
+  &lt;li&gt;mysql建表&lt;/li&gt;
+  &lt;li&gt;正则匹配输入，设立规则，变为查询语句，输出&lt;/li&gt;
+&lt;/ol&gt;
 
 </description>
-        <pubDate>Sat, 16 Mar 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4001/2019/03/16/python-multiprocess/</link>
-        <guid isPermaLink="true">http://localhost:4001/2019/03/16/python-multiprocess/</guid>
+        <pubDate>Fri, 29 Mar 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4001/2019/03/29/KBQA-demo/</link>
+        <guid isPermaLink="true">http://localhost:4001/2019/03/29/KBQA-demo/</guid>
         
-        <category>python</category>
+        <category>log</category>
         
-        <category>多进程</category>
+        <category>nlp</category>
         
-        <category>多线程</category>
+        <category>kg</category>
+        
+        
+        <category>历劫桥--项目实战</category>
+        
+      </item>
+    
+      <item>
+        <title>NP=P?</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#p类问题&quot; id=&quot;markdown-toc-p类问题&quot;&gt;P类问题&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;p类问题&quot;&gt;P类问题&lt;/h1&gt;
+P就是能在多项式时间内解决的问题。所有可以在多项式时间内求解的判定问题（输出是 or 否）构成P类问题
+
+</description>
+        <pubDate>Thu, 28 Mar 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4001/2019/03/28/NP=P_/</link>
+        <guid isPermaLink="true">http://localhost:4001/2019/03/28/NP=P_/</guid>
         
         
         <category>缘因洞--计算机理论</category>
+        
+      </item>
+    
+      <item>
+        <title>MySQL</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#问题解决&quot; id=&quot;markdown-toc-问题解决&quot;&gt;问题解决&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;问题解决&quot;&gt;问题解决&lt;/h1&gt;
+问题：must be a number, not str，但是想要数值类型，方便比较查询
+
+解决：所有语句的占位符均换为%s, 即使在表的定义中为%f
+
+debug手段：
+&lt;ul&gt;
+  &lt;li&gt;打印类型,&lt;/li&gt;
+  &lt;li&gt;比较execute和executemany语句&lt;/li&gt;
+  &lt;li&gt;比较定值插入和变值插入
+    &lt;blockquote&gt;
+      熟悉了数据库中的各种数据类型
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+</description>
+        <pubDate>Thu, 28 Mar 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4001/2019/03/28/mysql/</link>
+        <guid isPermaLink="true">http://localhost:4001/2019/03/28/mysql/</guid>
+        
+        <category>mysql</category>
+        
+        
+        <category>攀天索--工具</category>
+        
+      </item>
+    
+      <item>
+        <title>豆瓣-知识图谱初试</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#d2rq初试&quot; id=&quot;markdown-toc-d2rq初试&quot;&gt;D2RQ初试&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;d2rq初试&quot;&gt;D2RQ初试&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    官网安装需要翻墙
+github查找项目，得到source code
+  &lt;/li&gt;
+  &lt;li&gt;需要先安装apache ant, 对下载的源文件进行编译&lt;/li&gt;
+  &lt;li&gt;通过命令对数据库进行mapping, 生成ttl文件&lt;/li&gt;
+&lt;/ol&gt;
+
+生成.ttl的mapping文件
+./generate-mapping -u root -p &lt;password&gt; -o kg_demo_movie_mapping.ttl jdbc:mysql:///douban_demo&lt;/password&gt;
+
+生成nt格式的RDF文件
+./dump-rdf -o douban_demo.nt ./kg_demo_movie_mapping.ttl
+
+打开服务器
+./d2r-server kg_demo_movie_mapping.ttl
+
+</description>
+        <pubDate>Thu, 28 Mar 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4001/2019/03/28/douban-kg/</link>
+        <guid isPermaLink="true">http://localhost:4001/2019/03/28/douban-kg/</guid>
+        
+        <category>log</category>
+        
+        <category>nlp</category>
+        
+        <category>kg</category>
+        
+        
+        <category>历劫桥--项目实战</category>
         
       </item>
     

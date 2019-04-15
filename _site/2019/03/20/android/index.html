@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>数据库常见操作</title>
-    <meta name="description" content="  数据库数据库oracle数据库有默认的几张表,可以用于练习sql语句的书写数据类型;	char, varchar, date, number">
+    <title>android in manjaro</title>
+    <meta name="description" content="  环境搭建  gradle  本机环境搭建命令行pacman/yaourt下载android-studio/android-sdk在android-studio中的sdk-manager中进行对应sdk的查找以及下载软件安装后，首先要新建项目，进行测试，而不是直接导入项目．因为需要安装一些包（要翻墙）gradl...">
 
     <link rel="shortcut icon" href="/favicon.ico?" type="image/x-icon">
     <link rel="icon" href="/favicon.ico?" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://at.alicdn.com/t/font_8v3czwksspqlg14i.css">
     <link rel="stylesheet" href="/css/main.css ">
-    <link rel="canonical" href="http://localhost:4001/2019/03/20/database/">
+    <link rel="canonical" href="http://localhost:4001/2019/03/20/android/">
     <link rel="alternate" type="application/rss+xml" title="jk.tian" href="http://localhost:4001/feed.xml ">
 
 
@@ -131,6 +131,10 @@
                 
                     
                 
+                    
+                
+                    
+                
             </ul>
         </nav>
     </div>
@@ -139,7 +143,7 @@
 
         <div class="page clearfix" post>
     <div class="left">
-        <h1>数据库常见操作</h1>
+        <h1>android in manjaro</h1>
         <div class="label">
 
             <div class="label-card">
@@ -166,7 +170,7 @@
   <i class="fa fa-th-list"></i>
   
     
-        <a href="/category/#缘因洞--计算机理论" title="Category: 缘因洞--计算机理论" rel="category">缘因洞--计算机理论</a>
+        <a href="/category/#历劫桥--项目实战" title="Category: 历劫桥--项目实战" rel="category">历劫桥--项目实战</a>
     
   
 
@@ -183,8 +187,11 @@
   <i class="fa fa-tags"></i>
   
     
-        <!--a href="/tag/#database" title="Tag: database" rel="tag">database</a-->
-        <a href="/tag/#database" title="Tag: database" rel="tag">database</a>
+        <!--a href="/tag/#android" title="Tag: android" rel="tag">android</a-->
+        <a href="/tag/#android" title="Tag: android" rel="tag">android</a>&nbsp;
+    
+        <!--a href="/tag/#linux" title="Tag: linux" rel="tag">linux</a-->
+        <a href="/tag/#linux" title="Tag: linux" rel="tag">linux</a>
     
   
 
@@ -196,41 +203,34 @@
         <hr>
         <article itemscope itemtype="http://schema.org/BlogPosting">
         <ul id="markdown-toc">
-  <li><a href="#数据库" id="markdown-toc-数据库">数据库</a></li>
+  <li><a href="#环境搭建" id="markdown-toc-环境搭建">环境搭建</a></li>
+  <li><a href="#gradle" id="markdown-toc-gradle">gradle</a></li>
+  <li><a href="#本机" id="markdown-toc-本机">本机</a></li>
 </ul>
-<h1 id="数据库">数据库</h1>
 
-<p>oracle数据库有默认的几张表,可以用于练习sql语句的书写</p>
+<h1 id="环境搭建">环境搭建</h1>
+<p>命令行pacman/yaourt下载android-studio/android-sdk</p>
 
-<p>数据类型;
-	char, varchar, date, number</p>
+<p>在android-studio中的sdk-manager中进行对应sdk的查找以及下载</p>
 
-<p>创建表,  对每个列进行约束:
-	默认值,主键,外键,非空</p>
+<p>软件安装后，首先要新建项目，进行测试，而不是直接导入项目．因为需要安装一些包（要翻墙）</p>
 
-<p>增加:
-	insert into &lt;table&gt; values (col1,col2,…)</p>
+<p>gradle时，同步sync会下载一些包</p>
 
-<p>删除:
-	drop table <table_name> # 直接删除表的定义,删除结构
-	drop database <database_name>
-	delete * from <table_name> # 删除数据</table_name></database_name></table_name></p>
+<p>对于android-sdk和android-studio, 权限要足够</p>
+<blockquote>
+  <p>sudo chmod -R 777 android-sdk</p>
+</blockquote>
 
-<p>改:	
-	alter table student drop age # 更改结构
-	update <table_name> set <col_name>=<value> where ... # 更改数据,中间可以有select语句</value></col_name></table_name></p>
+<p>步骤：gradle-sync ==&gt; build ==&gt; run/debug</p>
 
-<p>查:
-	select dept_name dname, job
-	from table1, table2
-	where deptno in (select deptno from dept)
-	group by deptno
-	having avg(sal)&gt;2000
-	order by desc;</p>
+<h1 id="gradle">gradle</h1>
+<p>是一种自动构建工具，可以编写对应脚本，包含下载所需第三方包和编译步骤</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>为表起别名,
-自查询,多表联合查询,分组查询,嵌套查询(select可以出现在任何地方)
-</code></pre></div></div>
+<h1 id="本机">本机</h1>
+<p>打开虚拟机调试，会死机</p>
+
+<p>以后选择真机调试</p>
 
         </article>
         <hr>
@@ -242,21 +242,11 @@
                 
                     
                 
-            
-        
-            
-            
-                
                     
                 
             
                 
                     
-                
-            
-        
-            
-            
                 
                     
                 
@@ -267,7 +257,11 @@
                 
                     
                 
+                    
+                
             
+                
+                    
                 
                     
                 
@@ -278,11 +272,6 @@
                 
                     
                 
-            
-        
-            
-            
-                
                     
                 
             
@@ -292,25 +281,11 @@
                 
                     
                 
-            
-        
-            
-            
-                
-                    
-                
-            
-        
-            
-            
-                
                     
                 
             
                 
                     
-                
-            
                 
                     
                 
@@ -321,7 +296,68 @@
                 
                     
                 
+                    
+                
             
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+                
+                    
                 
                     
                 
@@ -332,13 +368,13 @@
         <div class="post-recent">
     <div class="pre">
         
-        <p><strong>上一篇</strong> <a href="/2019/03/20/sarsa/">Q-learning / SARSA</a></p>
+        <p><strong>上一篇</strong> <a href="/2019/03/20/linux-cmd/">linux命令总结</a></p>
         
     </div>
     <div class="nex">
 
         
-        <p><strong>下一篇</strong> <a href="/2019/03/20/linux-manjaro/">博客搭建</a></p>
+        <p><strong>下一篇</strong> <a href="/2019/03/24/english/">英语学习</a></p>
         
     </div>
 </div>

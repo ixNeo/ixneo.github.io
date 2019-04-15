@@ -22,8 +22,8 @@ jktian, 一个自嗨的人, 正在渡劫中
 	* 重构，软件工程
 	* web开发
 * 技能树
-	* 语言：python, cpp, js, lisp, sql
-	* 操作系统：linux
+	* 语言：Python, CPP, JavaScript, Java, Lisp, SQL
+	* 操作系统：Linux
 
 ## 联系我
 
@@ -39,7 +39,7 @@ jktian, 一个自嗨的人, 正在渡劫中
 
 ## 友情链接
 
- \|
+寻觅中 :)
 
 ## Comments
 

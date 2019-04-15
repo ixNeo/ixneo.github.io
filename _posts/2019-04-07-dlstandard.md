@@ -15,8 +15,12 @@ tags:								#标签
 
 # ROC曲线
 [CSDN](https://blog.csdn.net/u013385925/article/details/80385873)
+
+
+
 [segfault](https://segmentfault.com/a/1190000010410634?utm_source=tag-newest)
 ROC曲线下面的面积，就是AUC的值
+
 ### 混淆矩阵
 前面的部分是True／False表示真假，即代表着预测的正确性，后面的部分是positive／negative表示正负样本，即代表着预测的结果
 True negative(TN)，称为真阴率，表明实际是负样本预测成负样本的样本数

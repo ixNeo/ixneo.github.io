@@ -16,7 +16,9 @@ tags:								#标签
 * content
 {:toc}
 [项目地址](https://github.com/ixneo/kaoyanshuo)
-[后端详细文档](https://github.com/ixneo/kaoyanshuo/doc/back-front-introduce)
+
+
+[后端详细文档](https://github.com/ixNeo/kaoyanshuo/tree/master/doc)
 
 # 环境搭建
 微信小程序开发工具: 只支持windows/macos
@@ -61,6 +63,7 @@ NodeJS中的JavaScript 是由 ECMAScript 和 NPM以及Native模块组成，NodeJ
 
 
 # LOG
+
 20190409
 ---
 ### 知识点
@@ -96,6 +99,7 @@ NodeJS中的JavaScript 是由 ECMAScript 和 NPM以及Native模块组成，NodeJ
 - 实际设计
 1. posts表：包含帖子内容，每个帖子中包含follow_posts数组（显示跟帖信息）
 2. person表：我点赞过的帖子
+
 ```
  // posts表
 {
@@ -112,7 +116,6 @@ NodeJS中的JavaScript 是由 ECMAScript 和 NPM以及Native模块组成，NodeJ
         {"user_id": 2,"user_name": "wangZY","user_head": "../../images/icon1.jpeg","follow_content": "朱门酒肉臭路有冻死骨"}
     ]
 }
-
 // person表
 相当于posts表中某一行，加上了owner字段（标识点赞人）
 ```
@@ -124,6 +127,7 @@ NodeJS中的JavaScript 是由 ECMAScript 和 NPM以及Native模块组成，NodeJ
 	1. post
 	2. follow-posts
 	3. tags
+
 ```
 // 跟帖. 传一个item, 找到跳转按钮
 // page_from
@@ -144,7 +148,9 @@ url: '../toMybaby/babyDetail/babyDetail?jsonStr='+str,
     this.setData({ward:item});
   },
 ```
+
 2. 点赞/关注／跟帖
+
 ```
 // 更新posts
 // 存储当前post
@@ -169,8 +175,11 @@ url: '../toMybaby/babyDetail/babyDetail?jsonStr='+str,
 // 方案一：　直接遍历post
 // 方案二：　冗余存储我的表中，点赞过的文章
 ```
+
 > 由于云数据库的权限问题，决定全部迁移到云函数
+
 2. 搜索（只提供文本搜索）
+
 ```
 // 一个新的，但是类似论坛的页面，目的：存储不同的帖子列表数据
 ```
@@ -183,35 +192,38 @@ url: '../toMybaby/babyDetail/babyDetail?jsonStr='+str,
 1. 个人信息表，存openid, 点赞过的文章列表，和我的点赞(页面类似论坛)对接，
     1. 头像，昵称存**本地**，更改也在本地。每次开启读本地数据
 2. 资源tab
+
 ##### 妥协
- 采用很多冗余page的原因，每一个page有自己专属的json-data
+- 采用很多冗余page的原因，每一个page有自己专属的json-data
+
 ##### 待解决
 - 帖子头像存在哪里。利用云函数，存储路径
 - 权限管理
 - 数据都要存到云端。因为代码有大小限制
+
 ##### 进步空间
-改用jsp, 解决高并发，数据一致性问题
+- 改用jsp, 解决高并发，数据一致性问题
 
 
- ### FINAL
- 1. 数据库权限问题：从云数据库迁移到云函数
- 2. 云函数对日期类型的支持问题：在前端将json-date变为string, 在后端将string变为json-date. 放弃时间的存储
- 3. 每个用户对某个特定帖子的点赞和跟帖是有限制的
- 4. 很多用户的异常操作没有考虑
- 5. 函数式编程语言，就是无法确定执行顺序，只是映射，所以很少考虑异步问题，但对于机器来说，顺序问题又是真实存在的，所以函数式语言适合人写
- 6. 高亮搜索词
- 7. 针对广大用户的产品：就是一点一点打磨出来的
- 	1. 做最小可行性产品，逐段debug
+### FINAL
+1. 数据库权限问题：从云数据库迁移到云函数
+2. 云函数对日期类型的支持问题：在前端将json-date变为string, 在后端将string变为json-date. 放弃时间的存储
+3. 每个用户对某个特定帖子的点赞和跟帖是有限制的
+4. 很多用户的异常操作没有考虑
+5. 函数式编程语言，就是无法确定执行顺序，只是映射，所以很少考虑异步问题，但对于机器来说，顺序问题又是真实存在的，所以函数式语言适合人写
+6. 高亮搜索词
+7. 针对广大用户的产品：就是一点一点打磨出来的
+1. 做最小可行性产品，逐段debug
 
 20190412
 ---
 ### DONE
 - 论坛界面和后端的连接
-　　　　- 直接编写json文件，然后上传到云开发中即可
+  - 直接编写json文件，然后上传到云开发中即可
 - 某一帖子的界面．和后端的连接
-　　　　- 此界面下，关注代表点赞，跟帖代表新回答．点击后对应数字会变，和后端连接
+  - 此界面下，关注代表点赞，跟帖代表新回答．点击后对应数字会变，和后端连接
 - 搜索界面和后端的连接．
-　　　　- 支持搜索内容，摘要，标签，发帖人姓名．未区分，未排名
+  - 支持搜索内容，摘要，标签，发帖人姓名．未区分，未排名
 
 ### TODO
 1. 发帖和跟帖
@@ -227,6 +239,7 @@ url: '../toMybaby/babyDetail/babyDetail?jsonStr='+str,
 > - 要学会利用缓存，加快加载速度，提高用户体验
 
 ###### 我的收藏
+
 ```
     wx.getUserInfo({
       success(res) {

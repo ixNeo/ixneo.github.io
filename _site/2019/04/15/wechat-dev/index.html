@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>微信小程序开发</title>
+    <meta name="description" content="  环境搭建项目地址后端详细文档环境搭建微信小程序开发工具: 只支持windows/macos本机的win7无法正常显示">
+
+    <link rel="shortcut icon" href="/favicon.ico?" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico?" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_8v3czwksspqlg14i.css">
+    <link rel="stylesheet" href="/css/main.css ">
+    <link rel="canonical" href="http://localhost:4001/2019/04/15/wechat-dev/">
+    <link rel="alternate" type="application/rss+xml" title="jk.tian" href="http://localhost:4001/feed.xml ">
+
+
+    <script>
+    // 百度统计代码
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?eecae4e01c28263526649fed53c49b94";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
+
+
+
+</head>
+
+
+  <body>
+
+    <header id="top">
+    <div class="wrapper">
+        <a href="/" class="brand">jk.tian</a>
+        <small>major in data-science</small>
+        <button id="headerMenu" class="menu"><i class="fa fa-bars"></i></button>
+        <nav id="headerNav">
+            <ul>
+                <li>
+                    
+                    <a href="/">
+                    
+                        <i class="fa fa-home"></i>Home
+                    </a>
+                </li>
+
+                
+                    
+                    <li>
+                        
+                        <a href="/archive/">
+                        
+                            <i class="fa fa-archive"></i>Archives
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/category/">
+                        
+                            <i class="fa fa-th-list"></i>Categories
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/tag/">
+                        
+                            <i class="fa fa-tags"></i>Tags
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/collection/">
+                        
+                            <i class="fa fa-bookmark"></i>Collections
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/demo/">
+                        
+                            <i class="fa fa-play"></i>Demo
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/about/">
+                        
+                            <i class="fa fa-heart"></i>About
+                        </a>
+                    </li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+        <div class="page clearfix" post>
+    <div class="left">
+        <h1>微信小程序开发</h1>
+        <div class="label">
+
+            <div class="label-card">
+                <i class="fa fa-calendar"></i>2019-04-15
+            </div>
+
+            <div class="label-card">
+                <i class="fa fa-user"></i>jktian
+                
+            </div>
+            <div class="label-card">
+                <p>阅读：<span id="busuanzi_value_page_pv"></span></p>
+            </div>
+            <div class="label-card">
+                
+            </div>
+
+            <div class="label-card">
+            
+
+
+<!-- <span class="point">•</span> -->
+<span class="categories">
+  <i class="fa fa-th-list"></i>
+  
+    
+        <a href="/category/#历劫桥--项目实战" title="Category: 历劫桥--项目实战" rel="category">历劫桥--项目实战</a>
+    
+  
+
+  <!-- <span class="point">•</span> -->
+</span>
+
+
+            </div>
+
+            <div class="label-card">
+            
+<!-- <span class="point">•</span> -->
+<span class="pageTag">
+  <i class="fa fa-tags"></i>
+  
+    
+        <!--a href="/tag/#log" title="Tag: log" rel="tag">log</a-->
+        <a href="/tag/#log" title="Tag: log" rel="tag">log</a>&nbsp;
+    
+        <!--a href="/tag/#web" title="Tag: web" rel="tag">web</a-->
+        <a href="/tag/#web" title="Tag: web" rel="tag">web</a>
+    
+  
+
+</span>
+
+            </div>
+
+        </div>
+        <hr>
+        <article itemscope itemtype="http://schema.org/BlogPosting">
+        <ul id="markdown-toc">
+  <li><a href="#环境搭建" id="markdown-toc-环境搭建">环境搭建</a></li>
+  <li><a href="#开发工具语言" id="markdown-toc-开发工具语言">开发工具／语言</a></li>
+  <li><a href="#log" id="markdown-toc-log">LOG</a>    <ul>
+      <li><a href="#20190409" id="markdown-toc-20190409">20190409</a>        <ul>
+          <li><a href="#知识点" id="markdown-toc-知识点">知识点</a></li>
+          <li><a href="#初步设计" id="markdown-toc-初步设计">初步设计</a>            <ul>
+              <li><a href="#前端" id="markdown-toc-前端">前端</a></li>
+              <li><a href="#后端" id="markdown-toc-后端">后端</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#20190411" id="markdown-toc-20190411">20190411</a>        <ul>
+          <li><a href="#done" id="markdown-toc-done">DONE</a></li>
+          <li><a href="#todo" id="markdown-toc-todo">TODO</a>            <ul>
+              <li><a href="#妥协" id="markdown-toc-妥协">妥协</a></li>
+              <li><a href="#待解决" id="markdown-toc-待解决">待解决</a></li>
+              <li><a href="#进步空间" id="markdown-toc-进步空间">进步空间</a></li>
+            </ul>
+          </li>
+          <li><a href="#final" id="markdown-toc-final">FINAL</a></li>
+        </ul>
+      </li>
+      <li><a href="#20190412" id="markdown-toc-20190412">20190412</a>        <ul>
+          <li><a href="#done-1" id="markdown-toc-done-1">DONE</a></li>
+          <li><a href="#todo-1" id="markdown-toc-todo-1">TODO</a>            <ul>
+              <li><a href="#我的收藏" id="markdown-toc-我的收藏">我的收藏</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#20190413" id="markdown-toc-20190413">20190413</a>        <ul>
+          <li><a href="#done-2" id="markdown-toc-done-2">DONE</a></li>
+        </ul>
+      </li>
+      <li><a href="#20190414" id="markdown-toc-20190414">20190414</a>        <ul>
+          <li><a href="#done-3" id="markdown-toc-done-3">DONE</a></li>
+          <li><a href="#final-1" id="markdown-toc-final-1">FINAL</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<p><a href="https://github.com/ixneo/kaoyanshuo">项目地址</a></p>
+
+<p><a href="https://github.com/ixNeo/kaoyanshuo/tree/master/doc">后端详细文档</a></p>
+
+<h1 id="环境搭建">环境搭建</h1>
+<p>微信小程序开发工具: 只支持windows/macos
+本机的win7无法正常显示</p>
+
+<p>linux下:</p>
+<ol>
+  <li>
+    <p>wine	# windows虚拟模拟程序,可以选择windows版本</p>
+  </li>
+  <li>
+    <p>安装nwjs-sdk
+wget https://dl.nwjs.io/v0.25.4/nwjs-sdk-v0.25.4-linux-x64.tar.gz 
+tar xvf  nwjs-sdk-v0.25.4-linux-x64.tar.gz</p>
+  </li>
+  <li>
+    <p>获取微信开发工具包
+git clone https://github.com/cytle/wechat_web_devtools.git</p>
+  </li>
+  <li>结合nwjs和微信开发包
+复制微信开发工具包（package.nw在wechat_web_devtools目录下）到nwjs-sdk目录下</li>
+  <li>启动
+./nw</li>
+</ol>
+
+<h1 id="开发工具语言">开发工具／语言</h1>
+<p>标签，属性名（无引号），属性值（引号），　if/for可以作为wx:if，即标签的属性名存在
+表示变量，中间可以有布尔判断
+pages文件夹表示页面，每个页面有对应的三件套
+app表示全局设置
+data字段表示数据，以json格式
+json中的key和value都要引号</p>
+
+<p>ECMAScript是一种由Ecma国际通过ECMA-262标准化的脚本程序设计语言， JavaScript 是 ECMAScript 的一种实现</p>
+
+<p>浏览器中的JavaScript 是由 ECMAScript 和 BOM（浏览器对象模型）以及 DOM（文档对象模型）组成的，Web前端开发者会很熟悉这两个对象模型，它使得开发者可以去操作浏览器的一些表现，比如修改URL、修改页面呈现、记录数据等等。</p>
+
+<p>NodeJS中的JavaScript 是由 ECMAScript 和 NPM以及Native模块组成，NodeJS的开发者会非常熟悉 NPM 的包管理系统，通过各种拓展包来快速的实现一些功能，同时通过使用一些原生的模块例如 FS、HTTP、OS等等来拥有一些语言本身所不具有的能力。</p>
+
+<p>小程序中的 JavaScript 是由ECMAScript 以及小程序框架和小程序 API 来实现的。同浏览器中的JavaScript 相比没有 BOM 以及 DOM 对象，所以类似 JQuery、Zepto这种浏览器类库是无法在小程序中运行起来的，同样的缺少 Native 模块和NPM包管理的机制，小程序中无法加载原生库，也无法直接使用大部分的 NPM 包。</p>
+
+<p>引入模块
+局部变量和全局变量</p>
+
+<h1 id="log">LOG</h1>
+
+<h2 id="20190409">20190409</h2>
+<h3 id="知识点">知识点</h3>
+<ol>
+  <li>input标签可以指定类型，有默认类型</li>
+  <li>逐步排除错误</li>
+  <li>区分
+    <ul>
+      <li>this.data.value_name</li>
+      <li>e.details.value</li>
+    </ul>
+  </li>
+  <li>多线程模型
+ 在访问数据库时，success之后的操作，要写在<strong>回调函数</strong>中，避免操作顺序不一致，出现玄学错误</li>
+</ol>
+
+<h3 id="初步设计">初步设计</h3>
+<h5 id="前端">前端</h5>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />首页的论坛
+    <ul class="task-list">
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />列表项展示条目．条目包含：头像昵称，摘要，点赞数</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />滚动加载</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />搜索：根据标签，内容．高亮符合数据．<strong>查询帖子表</strong></li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />发帖：<strong>更新帖子表，更新个人信息表</strong></li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />点赞等对帖子的操作．<strong>更新个人信息表</strong></li>
+    </ul>
+  </li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />资源仓库
+    <ul class="task-list">
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />直接写死</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />提供下载和上传服务</li>
+    </ul>
+  </li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />我的
+    <ul class="task-list">
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />反馈信息，收集个人信息，上传头像图片等．<strong>更新个人信息表</strong>
+        <h5 id="后端">后端</h5>
+      </li>
+    </ul>
+  </li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />collections
+    <ul class="task-list">
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />帖子表(posts):: 帖子id(post_id), 发帖人的id(id_user),　帖子摘要，帖子内容，tag, 赞同数，评论数，发帖时间</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />个人信息表．用户id, 性别，昵称，头像，学校，专业，发过的帖子id, 跟过的帖子id, 点赞过的帖子id(用于推荐), 收藏的帖子id</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />反馈信息表．反馈id, 用户id, 反馈内容，反馈时间</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />资源表．资源id,　资源文件（pdf/xlsx等）</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />跟帖表．跟帖id, 主帖id, 跟帖时间，跟帖人，跟帖内容．</li>
+    </ul>
+  </li>
+  <li class="task-list-item">实际设计
+    <ol>
+      <li>posts表：包含帖子内容，每个帖子中包含follow_posts数组（显示跟帖信息）</li>
+      <li>person表：我点赞过的帖子</li>
+    </ol>
+  </li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> // posts表
+{
+    "user_id": 2,
+    "user_name": "jk.tian",
+    "user_head": "../../images/icon1.jpeg",
+    "post_brief": "考研的时候怎么查找资料",
+    "post_content": "给学姐学长发红包",
+    "post_tags": ["红包","资料","方法"],
+    "like_count": 3,
+    "follow_count": 2,
+    "follow_posts": [
+        {"user_id": 1,"user_name": "wangZY","user_head": "../../images/icon1.jpeg","follow_content": "+1"},
+        {"user_id": 2,"user_name": "wangZY","user_head": "../../images/icon1.jpeg","follow_content": "朱门酒肉臭路有冻死骨"}
+    ]
+}
+// person表
+相当于posts表中某一行，加上了owner字段（标识点赞人）
+</code></pre></div></div>
+
+<h2 id="20190411">20190411</h2>
+<h3 id="done">DONE</h3>
+<ol>
+  <li>查询循环展示：（跟帖写循环，<strong>跳转页面传数据</strong>）
+    <ol>
+      <li>post</li>
+      <li>follow-posts</li>
+      <li>tags</li>
+    </ol>
+  </li>
+</ol>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 跟帖. 传一个item, 找到跳转按钮
+// page_from
+  buttonListener:function(){
+    var that = this
+    wx.navigateTo({
+      url: '/pages/test2/test2?nameData=' + that.data.name + '&amp;ageData=' + that.data.age
+    })
+  }
+  let str=JSON.stringify(e.currentTarget.dataset.item);
+wx.navigateTo({
+url: '../toMybaby/babyDetail/babyDetail?jsonStr='+str,
+
+// page_to  
+      onLoad:function(options){
+    // 生命周期函数--监听页面加载
+    let item=JSON.parse(options.jsonStr);
+    this.setData({ward:item});
+  },
+</code></pre></div></div>
+
+<ol>
+  <li>点赞/关注／跟帖</li>
+</ol>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 更新posts
+// 存储当前post
+  update_post: function (e) {
+    var id = post._id;
+    var cfollow_posts = post.follow_posts;
+    cfollow_posts.push({,});
+    const db = wx.cloud.database();
+
+    db.collection(posts').where({
+      "_id": id,
+    })
+    .update({
+        data: {
+          follow_posts: cfollow_posts;
+          like_count: post.like_count+1,
+          
+        },
+      });
+
+// 在查询我点赞过的文章时，
+// 方案一：　直接遍历post
+// 方案二：　冗余存储我的表中，点赞过的文章
+</code></pre></div></div>
+
+<blockquote>
+  <p>由于云数据库的权限问题，决定全部迁移到云函数</p>
+</blockquote>
+
+<ol>
+  <li>搜索（只提供文本搜索）</li>
+</ol>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 一个新的，但是类似论坛的页面，目的：存储不同的帖子列表数据
+</code></pre></div></div>
+
+<ol>
+  <li>个人信息更改：更改
+    <blockquote>
+      <p>注意数据库的权限，否则会访问成功但无返回数据
+微信云开发用的是NoSQL. 所以图片要么云端存路径，要么本地随机抽取</p>
+    </blockquote>
+  </li>
+</ol>
+
+<h3 id="todo">TODO</h3>
+<ol>
+  <li>个人信息表，存openid, 点赞过的文章列表，和我的点赞(页面类似论坛)对接，
+    <ol>
+      <li>头像，昵称存<strong>本地</strong>，更改也在本地。每次开启读本地数据</li>
+    </ol>
+  </li>
+  <li>资源tab</li>
+</ol>
+
+<h5 id="妥协">妥协</h5>
+<ul>
+  <li>采用很多冗余page的原因，每一个page有自己专属的json-data</li>
+</ul>
+
+<h5 id="待解决">待解决</h5>
+<ul>
+  <li>帖子头像存在哪里。利用云函数，存储路径</li>
+  <li>权限管理</li>
+  <li>数据都要存到云端。因为代码有大小限制</li>
+</ul>
+
+<h5 id="进步空间">进步空间</h5>
+<ul>
+  <li>改用jsp, 解决高并发，数据一致性问题</li>
+</ul>
+
+<h3 id="final">FINAL</h3>
+<ol>
+  <li>数据库权限问题：从云数据库迁移到云函数</li>
+  <li>云函数对日期类型的支持问题：在前端将json-date变为string, 在后端将string变为json-date. 放弃时间的存储</li>
+  <li>每个用户对某个特定帖子的点赞和跟帖是有限制的</li>
+  <li>很多用户的异常操作没有考虑</li>
+  <li>函数式编程语言，就是无法确定执行顺序，只是映射，所以很少考虑异步问题，但对于机器来说，顺序问题又是真实存在的，所以函数式语言适合人写</li>
+  <li>高亮搜索词</li>
+  <li>针对广大用户的产品：就是一点一点打磨出来的</li>
+  <li>做最小可行性产品，逐段debug</li>
+</ol>
+
+<h2 id="20190412">20190412</h2>
+<h3 id="done-1">DONE</h3>
+<ul>
+  <li>论坛界面和后端的连接
+    <ul>
+      <li>直接编写json文件，然后上传到云开发中即可</li>
+    </ul>
+  </li>
+  <li>某一帖子的界面．和后端的连接
+    <ul>
+      <li>此界面下，关注代表点赞，跟帖代表新回答．点击后对应数字会变，和后端连接</li>
+    </ul>
+  </li>
+  <li>搜索界面和后端的连接．
+    <ul>
+      <li>支持搜索内容，摘要，标签，发帖人姓名．未区分，未排名</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="todo-1">TODO</h3>
+<ol>
+  <li>发帖和跟帖</li>
+  <li>我的点赞，我的回答</li>
+  <li>资源界面．下载上传</li>
+  <li>个人信息反馈界面</li>
+  <li>论坛界面的更新问题
+    <blockquote>
+      <ul>
+        <li>页面之间要少耦合．耦合应该在单个页面和数据库后端之间</li>
+        <li>明确page和app的生命周期，栈</li>
+        <li>按钮点击: 先捕获，再冒泡
+-由于js中作用域的问题，this指针记得改名，以区分作用域．　var that=this;</li>
+        <li>点赞后返回慢，是因为建立了多次网络连接，是代码的问题</li>
+        <li>要学会利用缓存，加快加载速度，提高用户体验</li>
+      </ul>
+    </blockquote>
+  </li>
+</ol>
+
+<h6 id="我的收藏">我的收藏</h6>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    wx.getUserInfo({
+      success(res) {
+        const userInfo = res.userInfo
+        const nickName = userInfo.nickName
+
+        db.collection('person').where({
+          owner: nickName,
+        })
+          .get({
+            success(res) {
+            // res.data 是包含以上定义的两条记录的数组
+              console.log(res.data)
+            }
+          });
+
+      }
+    });
+</code></pre></div></div>
+
+<h2 id="20190413">20190413</h2>
+<h3 id="done-2">DONE</h3>
+<ol>
+  <li>发帖和跟帖．和后端的连接</li>
+  <li>我的点赞，我的回答中可看见历史记录</li>
+  <li>资源界面</li>
+</ol>
+
+<h2 id="20190414">20190414</h2>
+<h3 id="done-3">DONE</h3>
+<ol>
+  <li>解决刷新问题．去除刷新特效</li>
+  <li>解决具体帖子的标签显示问题．将text标签换为label</li>
+  <li>在同一时刻，同一主帖下，点赞／关注的变灰效果，以及加减1</li>
+  <li>发帖／跟帖后自动返回页面</li>
+  <li>加入新帖子之后的搜索正常，关注新帖子后，也可在我的收藏中看到
+    <ol>
+      <li>解决办法：person数据库的插入问题．在调用云函数之前，删除json的_id和_openid字段</li>
+    </ol>
+  </li>
+  <li>对同一个帖子，在不同时刻，多次点赞，会当成对多个帖子的第一次点赞处理
+    <ol>
+      <li>相当于快照，因为我的收藏中保存的是点赞当时的状态（包括当时的点赞数）</li>
+    </ol>
+  </li>
+  <li>添加邀请功能</li>
+  <li>搜索：点击右上角的搜索图标／输入搜索词后直接回车</li>
+  <li>每个主帖下边的跟帖，按照时间顺序，最新的在最下边</li>
+</ol>
+
+<h3 id="final-1">FINAL</h3>
+<ol>
+  <li>出现了posts和person两个表的不一致性．
+    <ol>
+      <li>person表会冻结当时的点赞数．但是通过此途径进入具体的帖子，仍然会显示当前点赞数</li>
+    </ol>
+  </li>
+  <li>重新进入某个帖子时，关注按钮又变得可点击了．
+    <ol>
+      <li>解决：让点击次数成为page的变量，而不是全局变量（每次show都会刷新）</li>
+    </ol>
+  </li>
+  <li>发帖后自动返回页面</li>
+  <li>加入新帖子之后的搜索正常，关注后无法在我的中显示
+    <ol>
+      <li>person数据库的插入问题．在调用云函数之前，删除json的_id和_openid字段</li>
+    </ol>
+  </li>
+  <li>对同一个帖子，在不同时刻，多次点赞，会当成对多个帖子的第一次点赞处理
+    <ol>
+      <li>相当于快照，因为我的收藏中保存的是点赞当时的状态（包括当时的点赞数）</li>
+    </ol>
+  </li>
+</ol>
+
+        </article>
+        <hr>
+
+        
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                        
+                        <h2 id="similar_posts">Similar Posts</h2>
+                        <ul>
+                        
+                        <li class="relatedPost">
+                            <a href="/2019/04/06/ojtrick/">OJ-trick
+                            
+                            </a>
+                        </li>
+                        
+                        
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                        
+                        <li class="relatedPost">
+                            <a href="/2019/03/29/KBQA-demo/">KBQA-demo
+                            
+                            </a>
+                        </li>
+                        
+                        
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                        
+                        <li class="relatedPost">
+                            <a href="/2019/03/28/douban-kg/">豆瓣-知识图谱初试
+                            
+                            </a>
+                        </li>
+                        
+                        
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                        
+                        <li class="relatedPost">
+                            <a href="/2019/03/28/kg/">知识图谱
+                            
+                            </a>
+                        </li>
+                        
+                        
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+        
+        
+            </ul>
+        
+
+        <div class="post-recent">
+    <div class="pre">
+        
+        <p><strong>上一篇</strong> <a href="/2019/04/07/lstm/">LSTM</a></p>
+        
+    </div>
+    <div class="nex">
+
+        
+    </div>
+</div>
+
+
+        <h2 id="comments">Comments</h2>
+        
+
+
+
+
+
+    </div>
+    <button class="anchor"><i class="fa fa-anchor"></i></button>
+    <div class="right">
+        <div class="wrap">
+
+            <!-- Content -->
+            <div class="side content">
+                <div>
+                    Content
+                </div>
+                <ul id="content-side" class="content-ul">
+                    
+                    <li><a href="#similar_posts">Similar Posts</a></li>
+                    
+                    <li><a href="#comments">Comments</a></li>
+                </ul>
+            </div>
+            <!-- 其他div框放到这里 -->
+            <!-- <div class="side">bbbb</div> -->
+        </div>
+    </div>
+</div>
+<script>
+/**
+ * target _blank
+ */
+(function() {
+    var aTags = document.querySelectorAll('article a:not([id])')
+    for (var i = 0; i < aTags.length; i++) {
+        aTags[i].setAttribute('target', '_blank')
+    }
+}());
+</script>
+<script src="/js/pageContent.js " charset="utf-8"></script>
+
+
+    <footer class="site-footer">
+
+
+    <div class="wrapper">
+
+        <p class="description">
+             来自jktian的个人专栏！ 
+        </p>
+        <p class="contact">
+            Contact me at: 
+            <a href="https://github.com/ixneo" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>  
+            <a href="mailto:932154199@qq.com" title="email"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>  
+            <a href="http://weibo.com/coolinear" title="Weibo"><i class="fa fa-weibo" aria-hidden="true"></i></a>  
+            <a href="https://www.zhihu.com/people/te-si-la-48-5" title="Zhihu"><i class="iconfont icon-daoruzhihu"></i></a>      
+        </p>
+        <p>
+            本站总访问量<span id="busuanzi_value_site_pv"></span>次，本站访客数<span id="busuanzi_value_site_uv"></span>人次，本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+        </p>
+        <p class="power">
+            <span>
+                Site powered by <a href="https://jekyllrb.com/">Jekyll</a> & <a href="https://pages.github.com/">Github Pages</a>.
+            </span>
+            <span>
+                Theme designed by <a href="https://github.com/Gaohaoyang">HyG</a>.
+            </span>
+        </p>
+    </div>
+</footer>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <div class="back-to-top">
+    <a href="#top" data-scroll>
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    </a>
+</div>
+
+    <script src=" /js/main.js " charset="utf-8"></script>
+    <script src=" /js/smooth-scroll.min.js " charset="utf-8"></script>
+    <script type="text/javascript">
+      smoothScroll.init({
+        speed: 500, // Integer. How fast to complete the scroll in milliseconds
+        easing: 'easeInOutCubic', // Easing pattern to use
+        offset: 20, // Integer. How far to offset the scrolling anchor location in pixels
+      });
+    </script>
+    <!-- <script src=" /js/scroll.min.js " charset="utf-8"></script> -->
+  </body>
+
+</html>

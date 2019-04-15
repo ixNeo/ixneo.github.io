@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>OJ-trick</title>
+    <meta name="description" content="  注意输入和输出的格式  考虑对输入的考察  输出格式在最后做">
+
+    <link rel="shortcut icon" href="/favicon.ico?" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico?" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_8v3czwksspqlg14i.css">
+    <link rel="stylesheet" href="/css/main.css ">
+    <link rel="canonical" href="http://localhost:4001/2019/04/06/ojtrick/">
+    <link rel="alternate" type="application/rss+xml" title="jk.tian" href="http://localhost:4001/feed.xml ">
+
+
+    <script>
+    // 百度统计代码
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?eecae4e01c28263526649fed53c49b94";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
+
+
+
+</head>
+
+
+  <body>
+
+    <header id="top">
+    <div class="wrapper">
+        <a href="/" class="brand">jk.tian</a>
+        <small>major in data-science</small>
+        <button id="headerMenu" class="menu"><i class="fa fa-bars"></i></button>
+        <nav id="headerNav">
+            <ul>
+                <li>
+                    
+                    <a href="/">
+                    
+                        <i class="fa fa-home"></i>Home
+                    </a>
+                </li>
+
+                
+                    
+                    <li>
+                        
+                        <a href="/archive/">
+                        
+                            <i class="fa fa-archive"></i>Archives
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/category/">
+                        
+                            <i class="fa fa-th-list"></i>Categories
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/tag/">
+                        
+                            <i class="fa fa-tags"></i>Tags
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/collection/">
+                        
+                            <i class="fa fa-bookmark"></i>Collections
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/demo/">
+                        
+                            <i class="fa fa-play"></i>Demo
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/about/">
+                        
+                            <i class="fa fa-heart"></i>About
+                        </a>
+                    </li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+        <div class="page clearfix" post>
+    <div class="left">
+        <h1>OJ-trick</h1>
+        <div class="label">
+
+            <div class="label-card">
+                <i class="fa fa-calendar"></i>2019-04-06
+            </div>
+
+            <div class="label-card">
+                <i class="fa fa-user"></i>jktian
+                
+            </div>
+            <div class="label-card">
+                <p>阅读：<span id="busuanzi_value_page_pv"></span></p>
+            </div>
+            <div class="label-card">
+                
+            </div>
+
+            <div class="label-card">
+            
+
+
+<!-- <span class="point">•</span> -->
+<span class="categories">
+  <i class="fa fa-th-list"></i>
+  
+    
+        <a href="/category/#历劫桥--项目实战" title="Category: 历劫桥--项目实战" rel="category">历劫桥--项目实战</a>
+    
+  
+
+  <!-- <span class="point">•</span> -->
+</span>
+
+
+            </div>
+
+            <div class="label-card">
+            
+<!-- <span class="point">•</span> -->
+<span class="pageTag">
+  <i class="fa fa-tags"></i>
+  
+    
+        <!--a href="/tag/#log" title="Tag: log" rel="tag">log</a-->
+        <a href="/tag/#log" title="Tag: log" rel="tag">log</a>&nbsp;
+    
+        <!--a href="/tag/#oj" title="Tag: oj" rel="tag">oj</a-->
+        <a href="/tag/#oj" title="Tag: oj" rel="tag">oj</a>
+    
+  
+
+</span>
+
+            </div>
+
+        </div>
+        <hr>
+        <article itemscope itemtype="http://schema.org/BlogPosting">
+        <ul id="markdown-toc">
+  <li><a href="#stl" id="markdown-toc-stl">STL</a>    <ul>
+      <li><a href="#input" id="markdown-toc-input">input</a>        <ul>
+          <li><a href="#c-io" id="markdown-toc-c-io">c-io</a></li>
+        </ul>
+      </li>
+      <li><a href="#c的两类字符串" id="markdown-toc-c的两类字符串">c++的两类字符串</a>        <ul>
+          <li><a href="#string头文件" id="markdown-toc-string头文件">string头文件</a></li>
+        </ul>
+      </li>
+      <li><a href="#流" id="markdown-toc-流">流</a>        <ul>
+          <li><a href="#区分点" id="markdown-toc-区分点">区分点</a></li>
+        </ul>
+      </li>
+      <li><a href="#指针" id="markdown-toc-指针">指针</a></li>
+      <li><a href="#unsign-sign" id="markdown-toc-unsign-sign">unsign, sign</a></li>
+      <li><a href="#相等判断" id="markdown-toc-相等判断">相等判断</a></li>
+    </ul>
+  </li>
+  <li><a href="#内存" id="markdown-toc-内存">内存</a></li>
+</ul>
+
+<ol>
+  <li>注意输入和输出的格式</li>
+  <li>考虑对输入的考察</li>
+  <li>输出格式在最后做</li>
+</ol>
+
+<p>input/process/output</p>
+
+<h1 id="stl">STL</h1>
+<p>string.append(index,char);</p>
+
+<p>string的相加操作，需要都是string ,不能是char</p>
+
+<h3 id="input">input</h3>
+<ul>
+  <li>fgets(string,sizeof(len),stdin) # 只接受len长度的输入，多余部分截断</li>
+  <li>char s[6];cin.width(6);cin » s;
+    <h5 id="c-io">c-io</h5>
+    <ol>
+      <li>scanf, printf, putc, getc, puts, gets</li>
+      <li>fgetc, fputc, fgets, fputs, fprintf, fscanf</li>
+      <li>二进制：fread, fwrite
+        <h3 id="c的两类字符串">c++的两类字符串</h3>
+      </li>
+      <li>以null即’\0’结尾的, char str[6] = {‘’,’’,’’}，有strcat/strlen/strcopy等函数</li>
+      <li>string类
+        <h5 id="string头文件">string头文件</h5>
+      </li>
+    </ol>
+  </li>
+  <li>文件cstring，和string.h对应，c++版本的头文件，包含比如strcpy之类的字符串处理函数</li>
+  <li>文件string.h，和cstring对应，c版本的头文件，包含比如strcpy之类的字符串处理函数</li>
+  <li>文件string，包含std::string的定义，属于STL范畴</li>
+</ul>
+
+<h3 id="流">流</h3>
+<ol>
+  <li>iostream</li>
+  <li>stringstream, 头文件是sstream
+    <ol>
+      <li>多用于数据类型格式转换，不用stdio.h了，把int/float/bool转换为string/char[]</li>
+      <li>优点：不用严格指定类型．%d之类的．类型安全＆可扩展性</li>
+      <li>使用：ss «, ss ». 若要复用ss, 需要ss.clear();</li>
+    </ol>
+  </li>
+  <li>fstream
+    <ol>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>fileObject.open(filname, [ios::app, ios::out</td>
+              <td> </td>
+              <td>ios::trunc,  ios::in, ]) # trunc防止文件已存在．可以在定义时直接初始化为(filename,[ios::])，或者使用open()</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>指针重定位：seekg(seek get)读指针, seekg(n, [ios::cur, ios::beg, ios::end])</td>
+              <td>seekp(seek put)写指针</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>可以使用相对路径，../file.txt, 要有两个点．绝对路径一定可以</li>
+    </ol>
+  </li>
+</ol>
+
+<ul>
+  <li>相当于对cout/cin名字的替换．cin默认忽略前置空格，将空格作为分隔符</li>
+  <li>getline(cin, s, dlim) 默认用’\n’分割, 和get()的区别，getline会读取并丢弃换行符，get会保存换行符在输入序列中，而不是读取并保存，所以连续两次调用get, 第二个会直接返回,　get针对char[], 可以设置字符数，属于string头文件
+  -或者cin.getline(str/char[], size(包含’\0’),结束符);</li>
+  <li>ifstream fin(‘thisfile.txt’); getline(fin, s); stringstream ss(s); ss » s1; ss»s2;其中s1是以空格作为分隔符的</li>
+</ul>
+
+<h5 id="区分点">区分点</h5>
+<ol>
+  <li>分隔符是什么．是否包含空格，是否可自定义dlim</li>
+  <li>针对的是string还是char[], 是否可以自定义长度
+    <h3 id="指针">指针</h3>
+    <p>对是否是野指针进行判断</p>
+    <h3 id="unsign-sign">unsign, sign</h3>
+    <p>从二进制角度考虑，隐型类型转换</p>
+    <h3 id="相等判断">相等判断</h3>
+    <ul>
+      <li>java中，对象本身是指针，==直接判断地址相等；值为equals()</li>
+    </ul>
+  </li>
+</ol>
+
+<h1 id="内存">内存</h1>
+<p>代码区 ==&gt; 数据区 ==&gt; 栈 ==&gt; 堆</p>
+
+        </article>
+        <hr>
+
+        
+        
+            
+            
+                
+                    
+                        
+                        <h2 id="similar_posts">Similar Posts</h2>
+                        <ul>
+                        
+                        <li class="relatedPost">
+                            <a href="/2019/04/15/wechat-dev/">微信小程序开发
+                            
+                            </a>
+                        </li>
+                        
+                        
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                        
+                        <li class="relatedPost">
+                            <a href="/2019/03/29/KBQA-demo/">KBQA-demo
+                            
+                            </a>
+                        </li>
+                        
+                        
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                        
+                        <li class="relatedPost">
+                            <a href="/2019/03/28/douban-kg/">豆瓣-知识图谱初试
+                            
+                            </a>
+                        </li>
+                        
+                        
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                        
+                        <li class="relatedPost">
+                            <a href="/2019/03/28/kg/">知识图谱
+                            
+                            </a>
+                        </li>
+                        
+                        
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+                
+                    
+                
+                    
+                
+            
+        
+        
+            </ul>
+        
+
+        <div class="post-recent">
+    <div class="pre">
+        
+        <p><strong>上一篇</strong> <a href="/2019/04/02/database/">数据库复习</a></p>
+        
+    </div>
+    <div class="nex">
+
+        
+        <p><strong>下一篇</strong> <a href="/2019/04/07/dlstandard/">ROC曲线</a></p>
+        
+    </div>
+</div>
+
+
+        <h2 id="comments">Comments</h2>
+        
+
+
+
+
+
+    </div>
+    <button class="anchor"><i class="fa fa-anchor"></i></button>
+    <div class="right">
+        <div class="wrap">
+
+            <!-- Content -->
+            <div class="side content">
+                <div>
+                    Content
+                </div>
+                <ul id="content-side" class="content-ul">
+                    
+                    <li><a href="#similar_posts">Similar Posts</a></li>
+                    
+                    <li><a href="#comments">Comments</a></li>
+                </ul>
+            </div>
+            <!-- 其他div框放到这里 -->
+            <!-- <div class="side">bbbb</div> -->
+        </div>
+    </div>
+</div>
+<script>
+/**
+ * target _blank
+ */
+(function() {
+    var aTags = document.querySelectorAll('article a:not([id])')
+    for (var i = 0; i < aTags.length; i++) {
+        aTags[i].setAttribute('target', '_blank')
+    }
+}());
+</script>
+<script src="/js/pageContent.js " charset="utf-8"></script>
+
+
+    <footer class="site-footer">
+
+
+    <div class="wrapper">
+
+        <p class="description">
+             来自jktian的个人专栏！ 
+        </p>
+        <p class="contact">
+            Contact me at: 
+            <a href="https://github.com/ixneo" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>  
+            <a href="mailto:932154199@qq.com" title="email"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>  
+            <a href="http://weibo.com/coolinear" title="Weibo"><i class="fa fa-weibo" aria-hidden="true"></i></a>  
+            <a href="https://www.zhihu.com/people/te-si-la-48-5" title="Zhihu"><i class="iconfont icon-daoruzhihu"></i></a>      
+        </p>
+        <p>
+            本站总访问量<span id="busuanzi_value_site_pv"></span>次，本站访客数<span id="busuanzi_value_site_uv"></span>人次，本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+        </p>
+        <p class="power">
+            <span>
+                Site powered by <a href="https://jekyllrb.com/">Jekyll</a> & <a href="https://pages.github.com/">Github Pages</a>.
+            </span>
+            <span>
+                Theme designed by <a href="https://github.com/Gaohaoyang">HyG</a>.
+            </span>
+        </p>
+    </div>
+</footer>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <div class="back-to-top">
+    <a href="#top" data-scroll>
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    </a>
+</div>
+
+    <script src=" /js/main.js " charset="utf-8"></script>
+    <script src=" /js/smooth-scroll.min.js " charset="utf-8"></script>
+    <script type="text/javascript">
+      smoothScroll.init({
+        speed: 500, // Integer. How fast to complete the scroll in milliseconds
+        easing: 'easeInOutCubic', // Easing pattern to use
+        offset: 20, // Integer. How far to offset the scrolling anchor location in pixels
+      });
+    </script>
+    <!-- <script src=" /js/scroll.min.js " charset="utf-8"></script> -->
+  </body>
+
+</html>
