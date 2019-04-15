@@ -28,9 +28,10 @@ jktian, 一个自嗨的人, 正在渡劫中
 ## 联系我
 
 * GitHub：[ixneo](https://github.com/ixneo)
-* email：932154199@qq.com
-* [知乎](https://www.zhihu.com/people/te-si-la-48-5/)
-
+* email：
+	* jk.tian@foxmail.com
+	* 932154199@qq.com
+	* jktian6@gmail.com
 ## 关于本站
 
 **感谢: [主题作者HyG](https://github.com/Gaohaoyang)**
