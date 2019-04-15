@@ -20,7 +20,7 @@ jktian, 一个自嗨的人, 正在渡劫中
 * 兴趣
 	* 机器学习，数据挖掘，模型搭建与算法设计
 	* 重构，软件工程
-	* web开发
+	* 玄学. 沉浸在任何事物或产品中，细细品味，形成taste
 * 技能树
 	* 语言：Python, CPP, JavaScript, Java, Lisp, SQL
 	* 操作系统：Linux
