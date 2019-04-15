@@ -7,7 +7,7 @@
 
 # Site settings
 title: jk.tian
-brief-intro: major in data-science 
+brief-intro: major in data-science & software-engineering 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://ixneo.github.io" # the base hostname & protocol for your site
 
