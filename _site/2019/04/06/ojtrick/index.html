@@ -135,6 +135,8 @@
                 
                     
                 
+                    
+                
             </ul>
         </nav>
     </div>
@@ -204,6 +206,7 @@
         <article itemscope itemtype="http://schema.org/BlogPosting">
         <ul id="markdown-toc">
   <li><a href="#stl" id="markdown-toc-stl">STL</a>    <ul>
+      <li><a href="#io" id="markdown-toc-io">io</a></li>
       <li><a href="#input" id="markdown-toc-input">input</a>        <ul>
           <li><a href="#c-io" id="markdown-toc-c-io">c-io</a></li>
         </ul>
@@ -222,6 +225,8 @@
     </ul>
   </li>
   <li><a href="#内存" id="markdown-toc-内存">内存</a></li>
+  <li><a href="#string与char" id="markdown-toc-string与char">string与char</a></li>
+  <li><a href="#stl-1" id="markdown-toc-stl-1">STL</a></li>
 </ul>
 
 <ol>
@@ -236,6 +241,9 @@
 <p>string.append(index,char);</p>
 
 <p>string的相加操作，需要都是string ,不能是char</p>
+<h3 id="io">io</h3>
+<p>流操作基本都是以空格为分隔符
+getline这样的全局函数是自定义分隔符</p>
 
 <h3 id="input">input</h3>
 <ul>
@@ -322,6 +330,38 @@
 <h1 id="内存">内存</h1>
 <p>代码区 ==&gt; 数据区 ==&gt; 栈 ==&gt; 堆</p>
 
+<h1 id="string与char">string与char</h1>
+<blockquote>
+  <p>string.push_back(string);
+string.append(chars);</p>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#include &lt;string&gt;
+using namespace std;
+...
+        char c = 'A';
+	char* lvlpcStr = "hello";
+	string lvStr,lvSubStr = "sub string";
+	lvStr.push_back(c);
+	lvStr.append(lvlpcStr);
+	lvStr.append(lvSubStr);
+	char lvBuf[100];
+	_itoa_s(1234, lvBuf,10);
+	lvStr.append(lvBuf);
+	cout &lt;&lt; lvStr &lt;&lt; endl;
+</code></pre></div>  </div>
+</blockquote>
+
+<h1 id="stl-1">STL</h1>
+<p>https://www.cnblogs.com/skyfsm/p/6934246.html
+string
+vector
+set: 有序且唯一
+list: 链表, 有自己的sort函数, 无法使用algorithm的排序算法,因为无法随机访问
+map: key-value, 采用了hash思想, key尽量为string</p>
+<ol>
+  <li>dict采用了哈希表，最低能在 O(1)时间内完成搜索。同样的java的HashMap也是采用了哈希表实现，不同是dict在发生哈希冲突的时候采用了开放寻址法，而HashMap采用了链接法。
+iterator: 常迭代器, 逆迭代器</li>
+</ol>
+
         </article>
         <hr>
 
@@ -331,9 +371,57 @@
             
                 
                     
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
+                
+                    
                         
                         <h2 id="similar_posts">Similar Posts</h2>
                         <ul>
+                        
+                        <li class="relatedPost">
+                            <a href="/2019/05/02/dfs/">DFS
+                            
+                            </a>
+                        </li>
+                        
+                        
+                    
+                
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+            
+                
+                    
                         
                         <li class="relatedPost">
                             <a href="/2019/04/15/wechat-dev/">微信小程序开发
@@ -370,126 +458,6 @@
             
         
             
-            
-                
-                    
-                
-                    
-                
-            
-        
-            
-            
-                
-                    
-                
-                    
-                
-            
-        
-            
-            
-                
-                    
-                
-                    
-                
-            
-        
-            
-            
-                
-                    
-                        
-                        <li class="relatedPost">
-                            <a href="/2019/03/29/KBQA-demo/">KBQA-demo
-                            
-                            </a>
-                        </li>
-                        
-                        
-                    
-                
-                    
-                
-            
-                
-                    
-                
-                    
-                
-            
-                
-                    
-                
-                    
-                
-            
-        
-            
-            
-        
-            
-            
-                
-                    
-                
-                    
-                
-            
-        
-            
-            
-                
-                    
-                        
-                        <li class="relatedPost">
-                            <a href="/2019/03/28/douban-kg/">豆瓣-知识图谱初试
-                            
-                            </a>
-                        </li>
-                        
-                        
-                    
-                
-                    
-                
-            
-                
-                    
-                
-                    
-                
-            
-                
-                    
-                
-                    
-                
-            
-        
-            
-            
-                
-                    
-                        
-                        <li class="relatedPost">
-                            <a href="/2019/03/28/kg/">知识图谱
-                            
-                            </a>
-                        </li>
-                        
-                        
-                    
-                
-                    
-                
-            
-                
-                    
-                
-                    
-                
             
                 
                     
@@ -571,9 +539,7 @@
         <p class="contact">
             Contact me at: 
             <a href="https://github.com/ixneo" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>  
-            <a href="mailto:932154199@qq.com" title="email"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>  
-            <a href="http://weibo.com/coolinear" title="Weibo"><i class="fa fa-weibo" aria-hidden="true"></i></a>  
-            <a href="https://www.zhihu.com/people/te-si-la-48-5" title="Zhihu"><i class="iconfont icon-daoruzhihu"></i></a>      
+            <a href="mailto:932154199@qq.com" title="email"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>        
         </p>
         <p>
             本站总访问量<span id="busuanzi_value_site_pv"></span>次，本站访客数<span id="busuanzi_value_site_uv"></span>人次，本文总阅读量<span id="busuanzi_value_page_pv"></span>次

@@ -5,9 +5,189 @@
     <description></description>
     <link>http://localhost:4001/</link>
     <atom:link href="http://localhost:4001/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 15 Apr 2019 12:07:35 +0800</pubDate>
-    <lastBuildDate>Mon, 15 Apr 2019 12:07:35 +0800</lastBuildDate>
+    <pubDate>Sun, 05 May 2019 08:16:46 +0800</pubDate>
+    <lastBuildDate>Sun, 05 May 2019 08:16:46 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>概率与统计</title>
+        <description>
+</description>
+        <pubDate>Fri, 03 May 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4001/2019/05/03/statics/</link>
+        <guid isPermaLink="true">http://localhost:4001/2019/05/03/statics/</guid>
+        
+        <category>math</category>
+        
+        
+        <category>缘因洞--计算机理论</category>
+        
+      </item>
+    
+      <item>
+        <title>DFS</title>
+        <description>
+&lt;blockquote&gt;
+  dfs: 定义好最优子结构
+dp: 要定义好递推公式
+做好充分的测试用例, 不然就是在碰运气. 尝试性修改
+&lt;/blockquote&gt;
+
+</description>
+        <pubDate>Thu, 02 May 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4001/2019/05/02/dfs/</link>
+        <guid isPermaLink="true">http://localhost:4001/2019/05/02/dfs/</guid>
+        
+        <category>oj</category>
+        
+        
+        <category>缘因洞--计算机理论</category>
+        
+      </item>
+    
+      <item>
+        <title>Project Manage</title>
+        <description>&lt;h2 id=&quot;软件项目管理&quot;&gt;软件项目管理&lt;/h2&gt;
+
+项目: 在一定约束条件下具有特定目标的一次性任务, 不同于运作(每日如此)
+
+&lt;h1 id=&quot;需求&quot;&gt;需求&lt;/h1&gt;
+功能性需求
+非功能性需求: 性能
+</description>
+        <pubDate>Tue, 23 Apr 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4001/2019/04/23/project-manage/</link>
+        <guid isPermaLink="true">http://localhost:4001/2019/04/23/project-manage/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>B树和B+树</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#几种树&quot; id=&quot;markdown-toc-几种树&quot;&gt;几种树&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;几种树&quot;&gt;几种树&lt;/h1&gt;
+二叉搜索树(基础) ==&amp;gt; AVL(需要左右旋以保持平衡) ==&amp;gt; B/B+(多叉树,自平衡) ==&amp;gt; 红黑树(平衡)
+
+&lt;strong&gt;B 树&lt;/strong&gt;可以看作是对2-3查找树的一种扩展，即他允许每个节点有M-1个子节点。
+阶数表示了一个结点最多有多少个孩子结点，一般用字母m表示阶数
+http://www.cnblogs.com/nullzx/p/8729425.html
+一颗m阶的B树定义如下：
+
+1）每个结点最多有m-1个关键字。
+
+2）根结点最少可以只有1个关键字。
+
+3）非根结点至少有Math.ceil(m/2)-1个关键字。
+
+4）每个结点中的关键字都按照从小到大的顺序排列，每个关键字的左子树中的所有关键字都小于它，而右子树中的所有关键字都大于它。
+
+5）所有叶子结点都位于同一层，或者说根结点到每个叶子结点的长度都相同。
+在实际应用中的B树的阶数m都非常大（通常大于100），所以即使存储大量的数据，B树的高度仍然比较小
+
+&lt;strong&gt;B+&lt;/strong&gt;树是对B树的一种变形树，它与B树的差异在于：
+
+&lt;ul&gt;
+  &lt;li&gt;有k个子结点的结点必然有k个关键码；&lt;/li&gt;
+  &lt;li&gt;非叶结点仅具有索引作用，跟记录有关的信息均存放在叶结点中。&lt;/li&gt;
+  &lt;li&gt;树的所有叶结点构成一个有序链表，可以按照关键码排序的次序遍历全部记录。&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Fri, 19 Apr 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4001/2019/04/19/btree/</link>
+        <guid isPermaLink="true">http://localhost:4001/2019/04/19/btree/</guid>
+        
+        
+        <category>缘因洞--计算机理论</category>
+        
+      </item>
+    
+      <item>
+        <title>操作系统复习</title>
+        <description>
+DMA：CPU和外存之间的数据传输方式，还有程序传送方式／中断传送方式
+
+</description>
+        <pubDate>Fri, 19 Apr 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4001/2019/04/19/os/</link>
+        <guid isPermaLink="true">http://localhost:4001/2019/04/19/os/</guid>
+        
+        
+        <category>缘因洞--计算机理论</category>
+        
+      </item>
+    
+      <item>
+        <title>红黑树</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#概念&quot; id=&quot;markdown-toc-概念&quot;&gt;概念&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;概念&quot;&gt;概念&lt;/h1&gt;
+红黑树不仅是二叉搜索树，且必须满足以下5条平衡规则：
+
+1）每个结点或是红色，或是是黑色。
+2）根结点是黑的。
+3）所有的叶结点(NULL)是黑色的。（NULL被视为一个哨兵结点，所有应该指向NULL的指针，都看成指向了NULL结点。）
+4）如果一个结点是红色的，则它的两个儿子节点都是黑色的。
+5）对每个结点，从该结点到其子孙结点的所有路径上包含相同数目的黑结点。
+
+简单的记法就是：红黑 黑 黑 红黑黑 黑
+
+</description>
+        <pubDate>Mon, 15 Apr 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4001/2019/04/15/rbtree/</link>
+        <guid isPermaLink="true">http://localhost:4001/2019/04/15/rbtree/</guid>
+        
+        
+        <category>缘因洞--计算机理论</category>
+        
+      </item>
+    
+      <item>
+        <title>Java</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#一门编程语言的要点&quot; id=&quot;markdown-toc-一门编程语言的要点&quot;&gt;一门编程语言的要点&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#static&quot; id=&quot;markdown-toc-static&quot;&gt;static&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;一门编程语言的要点&quot;&gt;一门编程语言的要点&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;关键字／标识符&lt;/li&gt;
+  &lt;li&gt;运算符：算数，关系，逻辑&lt;/li&gt;
+  &lt;li&gt;流程控制语句：判断／循环&lt;/li&gt;
+  &lt;li&gt;函数&lt;/li&gt;
+  &lt;li&gt;类／对象&lt;/li&gt;
+  &lt;li&gt;面向对象的思想&lt;/li&gt;
+  &lt;li&gt;多线程编程&lt;/li&gt;
+  &lt;li&gt;网络Socket编程&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;static&quot;&gt;static&lt;/h1&gt;
+
+修饰函数的局部变量：在函数的栈退出之后，静态变量的值仍然保存
+
+类的静态变量：在类被加载时，进行初始化；与对象无关
+
+类的静态函数：属于类，而不是对象，无this指针.
+
+类的静态代码块：static {} 在类加载时，执行，只执行了一次，即使创建了多个对象
+
+类的非静态代码块：{} 在类的静态代码块之后，在构造函数之前进行执行．
+</description>
+        <pubDate>Mon, 15 Apr 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4001/2019/04/15/java/</link>
+        <guid isPermaLink="true">http://localhost:4001/2019/04/15/java/</guid>
+        
+        <category>Java</category>
+        
+        
+        <category>攀天索--工具</category>
+        
+      </item>
     
       <item>
         <title>微信小程序开发</title>
@@ -82,220 +262,6 @@ LSTM通过三个这样的门结构来实现信息的保护和控制。这三个�
         
         
         <category>缘因洞--计算机理论</category>
-        
-      </item>
-    
-      <item>
-        <title>OJ-trick</title>
-        <description>
-&lt;ol&gt;
-  &lt;li&gt;注意输入和输出的格式&lt;/li&gt;
-  &lt;li&gt;考虑对输入的考察&lt;/li&gt;
-  &lt;li&gt;输出格式在最后做&lt;/li&gt;
-&lt;/ol&gt;
-
-</description>
-        <pubDate>Sat, 06 Apr 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4001/2019/04/06/ojtrick/</link>
-        <guid isPermaLink="true">http://localhost:4001/2019/04/06/ojtrick/</guid>
-        
-        <category>log</category>
-        
-        <category>oj</category>
-        
-        
-        <category>历劫桥--项目实战</category>
-        
-      </item>
-    
-      <item>
-        <title>数据库复习</title>
-        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#数据库&quot; id=&quot;markdown-toc-数据库&quot;&gt;数据库&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#语句类型&quot; id=&quot;markdown-toc-语句类型&quot;&gt;语句类型&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#语句&quot; id=&quot;markdown-toc-语句&quot;&gt;语句&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&quot;数据库&quot;&gt;数据库&lt;/h1&gt;
-
-&lt;h3 id=&quot;语句类型&quot;&gt;语句类型&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;DDL: 数据库定义语言．对数据库结构的增删改查&lt;/li&gt;
-  &lt;li&gt;DML　数据库管理语言．对表内容的增删改查&lt;/li&gt;
-  &lt;li&gt;DCL　数据库控制语言．事务，用户等&lt;/li&gt;
-  &lt;li&gt;DQL　数据库查询语言
-oracle数据库有默认的几张表,可以用于练习sql语句的书写&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;语句&quot;&gt;语句&lt;/h3&gt;
-数据类型;
-&lt;ul&gt;
-  &lt;li&gt;char, varchar, date, number&lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Tue, 02 Apr 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4001/2019/04/02/database/</link>
-        <guid isPermaLink="true">http://localhost:4001/2019/04/02/database/</guid>
-        
-        <category>database</category>
-        
-        
-        <category>缘因洞--计算机理论</category>
-        
-      </item>
-    
-      <item>
-        <title>黑客攻击</title>
-        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#sql注入&quot; id=&quot;markdown-toc-sql注入&quot;&gt;SQL注入&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#预防手段&quot; id=&quot;markdown-toc-预防手段&quot;&gt;预防手段&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#xss脚本&quot; id=&quot;markdown-toc-xss脚本&quot;&gt;XSS脚本&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;sql注入&quot;&gt;SQL注入&lt;/h1&gt;
-&lt;h3 id=&quot;预防手段&quot;&gt;预防手段&lt;/h3&gt;
-java进行预编译，来保护SQL语句
-
-&lt;h1 id=&quot;xss脚本&quot;&gt;XSS脚本&lt;/h1&gt;
-利用js脚本，进行跨站攻击，网页重定向
-</description>
-        <pubDate>Mon, 01 Apr 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4001/2019/04/01/hack/</link>
-        <guid isPermaLink="true">http://localhost:4001/2019/04/01/hack/</guid>
-        
-        <category>hack</category>
-        
-        
-        <category>攀天索--工具</category>
-        
-      </item>
-    
-      <item>
-        <title>KBQA-demo</title>
-        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#最简单demo&quot; id=&quot;markdown-toc-最简单demo&quot;&gt;最简单demo&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;最简单demo&quot;&gt;最简单demo&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;爬取内容&lt;/li&gt;
-  &lt;li&gt;mysql建表&lt;/li&gt;
-  &lt;li&gt;正则匹配输入，设立规则，变为查询语句，输出&lt;/li&gt;
-&lt;/ol&gt;
-
-</description>
-        <pubDate>Fri, 29 Mar 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4001/2019/03/29/KBQA-demo/</link>
-        <guid isPermaLink="true">http://localhost:4001/2019/03/29/KBQA-demo/</guid>
-        
-        <category>log</category>
-        
-        <category>nlp</category>
-        
-        <category>kg</category>
-        
-        
-        <category>历劫桥--项目实战</category>
-        
-      </item>
-    
-      <item>
-        <title>NP=P?</title>
-        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#p类问题&quot; id=&quot;markdown-toc-p类问题&quot;&gt;P类问题&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;p类问题&quot;&gt;P类问题&lt;/h1&gt;
-P就是能在多项式时间内解决的问题。所有可以在多项式时间内求解的判定问题（输出是 or 否）构成P类问题
-
-</description>
-        <pubDate>Thu, 28 Mar 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4001/2019/03/28/NP=P_/</link>
-        <guid isPermaLink="true">http://localhost:4001/2019/03/28/NP=P_/</guid>
-        
-        
-        <category>缘因洞--计算机理论</category>
-        
-      </item>
-    
-      <item>
-        <title>MySQL</title>
-        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#问题解决&quot; id=&quot;markdown-toc-问题解决&quot;&gt;问题解决&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;问题解决&quot;&gt;问题解决&lt;/h1&gt;
-问题：must be a number, not str，但是想要数值类型，方便比较查询
-
-解决：所有语句的占位符均换为%s, 即使在表的定义中为%f
-
-debug手段：
-&lt;ul&gt;
-  &lt;li&gt;打印类型,&lt;/li&gt;
-  &lt;li&gt;比较execute和executemany语句&lt;/li&gt;
-  &lt;li&gt;比较定值插入和变值插入
-    &lt;blockquote&gt;
-      熟悉了数据库中的各种数据类型
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-</description>
-        <pubDate>Thu, 28 Mar 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4001/2019/03/28/mysql/</link>
-        <guid isPermaLink="true">http://localhost:4001/2019/03/28/mysql/</guid>
-        
-        <category>mysql</category>
-        
-        
-        <category>攀天索--工具</category>
-        
-      </item>
-    
-      <item>
-        <title>豆瓣-知识图谱初试</title>
-        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#d2rq初试&quot; id=&quot;markdown-toc-d2rq初试&quot;&gt;D2RQ初试&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;d2rq初试&quot;&gt;D2RQ初试&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;
-    官网安装需要翻墙
-github查找项目，得到source code
-  &lt;/li&gt;
-  &lt;li&gt;需要先安装apache ant, 对下载的源文件进行编译&lt;/li&gt;
-  &lt;li&gt;通过命令对数据库进行mapping, 生成ttl文件&lt;/li&gt;
-&lt;/ol&gt;
-
-生成.ttl的mapping文件
-./generate-mapping -u root -p &lt;password&gt; -o kg_demo_movie_mapping.ttl jdbc:mysql:///douban_demo&lt;/password&gt;
-
-生成nt格式的RDF文件
-./dump-rdf -o douban_demo.nt ./kg_demo_movie_mapping.ttl
-
-打开服务器
-./d2r-server kg_demo_movie_mapping.ttl
-
-</description>
-        <pubDate>Thu, 28 Mar 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4001/2019/03/28/douban-kg/</link>
-        <guid isPermaLink="true">http://localhost:4001/2019/03/28/douban-kg/</guid>
-        
-        <category>log</category>
-        
-        <category>nlp</category>
-        
-        <category>kg</category>
-        
-        
-        <category>历劫桥--项目实战</category>
         
       </item>
     

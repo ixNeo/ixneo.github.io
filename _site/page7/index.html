@@ -135,6 +135,8 @@
                 
                     
                 
+                    
+                
             </ul>
         </nav>
     </div>
@@ -150,11 +152,80 @@
             
               <li>
                 <h2>
-                  <a class="post-link" href="/2019/03/01/data-type/">oj-数据类型</a>
+                  <a class="post-link" href="/2019/03/04/tf-cv-install/">环境搭建</a>
                 </h2>
                 <div class="label">
                     <div class="label-card">
-                        <i class="fa fa-calendar"></i>2019-03-01
+                        <i class="fa fa-calendar"></i>2019-03-04
+                    </div>
+                    <div class="label-card">
+                        <i class="fa fa-user"></i>jktian
+                        
+                    </div>
+                    <div class="label-card">
+                        
+                    </div>
+
+                    <div class="label-card">
+                    
+
+
+<!-- <span class="point">•</span> -->
+<span class="categories">
+  <i class="fa fa-th-list"></i>
+  
+    
+        <a href="/category/#攀天索--工具" title="Category: 攀天索--工具" rel="category">攀天索--工具</a>
+    
+  
+
+  <!-- <span class="point">•</span> -->
+</span>
+
+
+                    </div>
+
+                    <div class="label-card">
+                    
+<!-- <span class="point">•</span> -->
+<span class="pageTag">
+  <i class="fa fa-tags"></i>
+  
+    
+        <a href="/tag/#python" title="Tag: python" rel="tag">python</a>
+    
+  
+
+</span>
+
+                    </div>
+                </div>
+                <div class="excerpt">
+                    <ul id="markdown-toc">
+  <li><a href="#conda" id="markdown-toc-conda">conda</a></li>
+</ul>
+<h1 id="conda">conda</h1>
+
+<ol>
+  <li>conda install &lt;url/package_name&gt;	# 可能需要事先切换到python36，代替py37</li>
+  <li>conda info <package_name>	# 打印关于包的信息，有不同版本的tar.gz下载url</package_name></li>
+</ol>
+
+
+                </div>
+                <div class="read-all">
+                    <a  href="/2019/03/04/tf-cv-install/"><i class="fa fa-newspaper-o"></i>Read All</a>
+                </div>
+                <hr>
+              </li>
+            
+              <li>
+                <h2>
+                  <a class="post-link" href="/2019/03/04/climb-mountain/">小土山-不周山闲逛</a>
+                </h2>
+                <div class="label">
+                    <div class="label-card">
+                        <i class="fa fa-calendar"></i>2019-03-04
                     </div>
                     <div class="label-card">
                         <i class="fa fa-user"></i>jktian
@@ -190,7 +261,7 @@
   <i class="fa fa-tags"></i>
   
     
-        <a href="/tag/#oj" title="Tag: oj" rel="tag">oj</a>
+        <a href="/tag/#小土刀" title="Tag: 小土刀" rel="tag">小土刀</a>
     
   
 
@@ -199,33 +270,22 @@
                     </div>
                 </div>
                 <div class="excerpt">
-                    <ul id="markdown-toc">
-  <li><a href="#cpp" id="markdown-toc-cpp">cpp</a></li>
-</ul>
-<h1 id="cpp">cpp</h1>
-
-<p>short int  2个字节</p>
-
-<p>int 2/4字节</p>
-
-<p>long 4/8字节</p>
-
-<p>long long 8字节</p>
+                    
 
                 </div>
                 <div class="read-all">
-                    <a  href="/2019/03/01/data-type/"><i class="fa fa-newspaper-o"></i>Read All</a>
+                    <a  href="/2019/03/04/climb-mountain/"><i class="fa fa-newspaper-o"></i>Read All</a>
                 </div>
                 <hr>
               </li>
             
               <li>
                 <h2>
-                  <a class="post-link" href="/2019/02/27/oj-string-code/">oj-行程长度编码</a>
+                  <a class="post-link" href="/2019/03/01/py-tools/">python命令＆工具使用</a>
                 </h2>
                 <div class="label">
                     <div class="label-card">
-                        <i class="fa fa-calendar"></i>2019-02-27
+                        <i class="fa fa-calendar"></i>2019-03-01
                     </div>
                     <div class="label-card">
                         <i class="fa fa-user"></i>jktian
@@ -244,7 +304,7 @@
   <i class="fa fa-th-list"></i>
   
     
-        <a href="/category/#慧越泉--杂谈日志" title="Category: 慧越泉--杂谈日志" rel="category">慧越泉--杂谈日志</a>
+        <a href="/category/#攀天索--工具" title="Category: 攀天索--工具" rel="category">攀天索--工具</a>
     
   
 
@@ -261,7 +321,7 @@
   <i class="fa fa-tags"></i>
   
     
-        <a href="/tag/#oj" title="Tag: oj" rel="tag">oj</a>
+        <a href="/tag/#python" title="Tag: python" rel="tag">python</a>
     
   
 
@@ -271,179 +331,38 @@
                 </div>
                 <div class="excerpt">
                     <ul id="markdown-toc">
-  <li><a href="#题目描述" id="markdown-toc-题目描述">题目描述</a></li>
-</ul>
-<h1 id="题目描述">题目描述</h1>
-<p>总时间限制:  1000ms  内存限制:  65536kB
-描述
-在数据压缩中，一个常用的方法是行程长度编码压缩。对于一个待压缩的字符串，我们可以依次记录每个字符及重复的次数。例如，待压缩的字符串为”aaabbbbcbb”，压缩结果为(a,3)(b,4)(c,1)(b,2)。这种压缩对于相邻数据重复较多的情况有效，如果重复状况较少，则压缩的效率较低。
-现要求根据输入的字符串，首先将字符串中所有大写字母转化为小写字母，然后将字符串进行压缩。</p>
-
-
-                </div>
-                <div class="read-all">
-                    <a  href="/2019/02/27/oj-string-code/"><i class="fa fa-newspaper-o"></i>Read All</a>
-                </div>
-                <hr>
-              </li>
-            
-              <li>
-                <h2>
-                  <a class="post-link" href="/2019/02/27/oj-prime/">oj-prime</a>
-                </h2>
-                <div class="label">
-                    <div class="label-card">
-                        <i class="fa fa-calendar"></i>2019-02-27
-                    </div>
-                    <div class="label-card">
-                        <i class="fa fa-user"></i>jktian
-                        
-                    </div>
-                    <div class="label-card">
-                        
-                    </div>
-
-                    <div class="label-card">
-                    
-
-
-<!-- <span class="point">•</span> -->
-<span class="categories">
-  <i class="fa fa-th-list"></i>
-  
-    
-        <a href="/category/#慧越泉--杂谈日志" title="Category: 慧越泉--杂谈日志" rel="category">慧越泉--杂谈日志</a>
-    
-  
-
-  <!-- <span class="point">•</span> -->
-</span>
-
-
-                    </div>
-
-                    <div class="label-card">
-                    
-<!-- <span class="point">•</span> -->
-<span class="pageTag">
-  <i class="fa fa-tags"></i>
-  
-    
-        <a href="/tag/#oj" title="Tag: oj" rel="tag">oj</a>
-    
-  
-
-</span>
-
-                    </div>
-                </div>
-                <div class="excerpt">
-                    <ul id="markdown-toc">
-  <li><a href="#判定给定两个数范围内的素数个数" id="markdown-toc-判定给定两个数范围内的素数个数">判定给定两个数范围内的素数个数</a></li>
+  <li><a href="#requirementtxt文件" id="markdown-toc-requirementtxt文件">requirement.txt文件</a></li>
 </ul>
 
-<h1 id="判定给定两个数范围内的素数个数">判定给定两个数范围内的素数个数</h1>
-
+<h1 id="requirementtxt文件">requirement.txt文件</h1>
 <ol>
-  <li>对于1的特殊处理</li>
-  <li>判断给的两个数的相对大小</li>
-  <li>可以用筛法，或者找因子（设置标志位）的方法，优化性能</li>
-  <li>可以把判别是否是素数单独抽象成一个函数</li>
-</ol>
-
-                </div>
-                <div class="read-all">
-                    <a  href="/2019/02/27/oj-prime/"><i class="fa fa-newspaper-o"></i>Read All</a>
-                </div>
-                <hr>
-              </li>
-            
-              <li>
-                <h2>
-                  <a class="post-link" href="/2019/02/26/system/">马老师的《系统分析与设计课程》</a>
-                </h2>
-                <div class="label">
-                    <div class="label-card">
-                        <i class="fa fa-calendar"></i>2019-02-26
-                    </div>
-                    <div class="label-card">
-                        <i class="fa fa-user"></i>jktian
-                        
-                    </div>
-                    <div class="label-card">
-                        
-                    </div>
-
-                    <div class="label-card">
-                    
-
-
-<!-- <span class="point">•</span> -->
-<span class="categories">
-  <i class="fa fa-th-list"></i>
-  
-    
-        <a href="/category/#慧越泉--杂谈日志" title="Category: 慧越泉--杂谈日志" rel="category">慧越泉--杂谈日志</a>
-    
-  
-
-  <!-- <span class="point">•</span> -->
-</span>
-
-
-                    </div>
-
-                    <div class="label-card">
-                    
-<!-- <span class="point">•</span> -->
-<span class="pageTag">
-  <i class="fa fa-tags"></i>
-  
-    
-        <a href="/tag/#思维" title="Tag: 思维" rel="tag">思维</a>
-    
-  
-
-</span>
-
-                    </div>
-                </div>
-                <div class="excerpt">
-                    <ul id="markdown-toc">
-  <li><a href="#走出新手村" id="markdown-toc-走出新手村">走出新手村</a></li>
-</ul>
-<h1 id="走出新手村">走出新手村</h1>
-
-<ol>
-  <li>总结归纳模式。走出舒适圈，找到根本原因，用理性代替情绪。
-    <ul>
-      <li>提出目标。例如成本函数或者距离度量方法</li>
-      <li>根据现实情况，提出多种解决方案</li>
-      <li>选出最优方案</li>
-      <li>执行</li>
-      <li>优化以及维护</li>
-    </ul>
+  <li>创建
+    <ol>
+      <li>当前环境的依赖
+ pip freeze &gt; requirement.txt</li>
+      <li>当前项目的依赖
+ pip install pipreqs
+ pipreqs ./</li>
+    </ol>
   </li>
-  <li>勇于暴露弱点。在开放的世界中，杂交才会进步。</li>
-  <li>思维：整体性，科学性，系统性</li>
-  <li>建立个人知识库</li>
-  <li>要创新，不要发明。创新是在踏实的基础上。</li>
+  <li>使用
+ pip install -r requirement.txt</li>
 </ol>
 
                 </div>
                 <div class="read-all">
-                    <a  href="/2019/02/26/system/"><i class="fa fa-newspaper-o"></i>Read All</a>
+                    <a  href="/2019/03/01/py-tools/"><i class="fa fa-newspaper-o"></i>Read All</a>
                 </div>
                 <hr>
               </li>
             
               <li>
                 <h2>
-                  <a class="post-link" href="/2019/02/26/phone-network/">小米手机的网络连接问题</a>
+                  <a class="post-link" href="/2019/03/01/oj-bignum/">oj-大数的四则运算</a>
                 </h2>
                 <div class="label">
                     <div class="label-card">
-                        <i class="fa fa-calendar"></i>2019-02-26
+                        <i class="fa fa-calendar"></i>2019-03-01
                     </div>
                     <div class="label-card">
                         <i class="fa fa-user"></i>jktian
@@ -479,7 +398,7 @@
   <i class="fa fa-tags"></i>
   
     
-        <a href="/tag/#log" title="Tag: log" rel="tag">log</a>
+        <a href="/tag/#oj" title="Tag: oj" rel="tag">oj</a>
     
   
 
@@ -489,29 +408,40 @@
                 </div>
                 <div class="excerpt">
                     <ul id="markdown-toc">
-  <li><a href="#问题" id="markdown-toc-问题">问题</a></li>
+  <li><a href="#知识点" id="markdown-toc-知识点">知识点</a></li>
 </ul>
-<h1 id="问题">问题</h1>
 
-<p>电脑无法连接手机热点</p>
+<h1 id="知识点">知识点</h1>
+<ol>
+  <li>文本文件是字符均为ascii编码的文件；其余为二进制文件</li>
+  <li>注意’0’在char和int之间的作用</li>
+  <li>第一步。对输入的数据标准化，明确每个数据/变量的含义、类型，增强代码的可解释性</li>
+  <li>测试用例的挑选。选最小的规模的能体现问题所在的用例。一旦出现问题，马上进行分析更改，脑中运行后，再开始run, 节省机器运行时间</li>
+  <li>解决问题的思路：搭建步骤框架，解决最小子问题（构建积木），然后搭积木（建大厦）。
+    <ol>
+      <li>单元测试和集成测试必不可少</li>
+    </ol>
+  </li>
+</ol>
 
 
                 </div>
                 <div class="read-all">
-                    <a  href="/2019/02/26/phone-network/"><i class="fa fa-newspaper-o"></i>Read All</a>
+                    <a  href="/2019/03/01/oj-bignum/"><i class="fa fa-newspaper-o"></i>Read All</a>
                 </div>
                 <hr>
               </li>
             
               <li>
                 <h2>
-                  <a class="post-link" href="/2019/02/26/network/">Network</a>
+                  <a class="post-link" href="/2019/03/01/laddder/">搬瓦工vps+shadowsocks</a>
                 </h2>
                 <div class="label">
                     <div class="label-card">
-                        <i class="fa fa-calendar"></i>2019-02-26
+                        <i class="fa fa-calendar"></i>2019-03-01
                     </div>
                     <div class="label-card">
+                        <i class="fa fa-user"></i>jktian
                         
                     </div>
                     <div class="label-card">
@@ -521,6 +451,18 @@
                     <div class="label-card">
                     
 
+
+<!-- <span class="point">•</span> -->
+<span class="categories">
+  <i class="fa fa-th-list"></i>
+  
+    
+        <a href="/category/#攀天索--工具" title="Category: 攀天索--工具" rel="category">攀天索--工具</a>
+    
+  
+
+  <!-- <span class="point">•</span> -->
+</span>
 
 
                     </div>
@@ -532,6 +474,8 @@
   <i class="fa fa-tags"></i>
   
     
+        <a href="/tag/#科学上网" title="Tag: 科学上网" rel="tag">科学上网</a>
+    
   
 
 </span>
@@ -539,11 +483,91 @@
                     </div>
                 </div>
                 <div class="excerpt">
-                    
+                    <ul id="markdown-toc">
+  <li><a href="#流程" id="markdown-toc-流程">流程</a></li>
+</ul>
+
+<h1 id="流程">流程</h1>
+<ol>
+  <li>手机用shadowsocks</li>
+  <li>pc端也要配置</li>
+</ol>
+
 
                 </div>
                 <div class="read-all">
-                    <a  href="/2019/02/26/network/"><i class="fa fa-newspaper-o"></i>Read All</a>
+                    <a  href="/2019/03/01/laddder/"><i class="fa fa-newspaper-o"></i>Read All</a>
+                </div>
+                <hr>
+              </li>
+            
+              <li>
+                <h2>
+                  <a class="post-link" href="/2019/03/01/oj-weird-kid/">oj-怪盗基德的滑翔翼</a>
+                </h2>
+                <div class="label">
+                    <div class="label-card">
+                        <i class="fa fa-calendar"></i>2019-03-01
+                    </div>
+                    <div class="label-card">
+                        <i class="fa fa-user"></i>jktian
+                        
+                    </div>
+                    <div class="label-card">
+                        
+                    </div>
+
+                    <div class="label-card">
+                    
+
+
+<!-- <span class="point">•</span> -->
+<span class="categories">
+  <i class="fa fa-th-list"></i>
+  
+    
+        <a href="/category/#慧越泉--杂谈日志" title="Category: 慧越泉--杂谈日志" rel="category">慧越泉--杂谈日志</a>
+    
+  
+
+  <!-- <span class="point">•</span> -->
+</span>
+
+
+                    </div>
+
+                    <div class="label-card">
+                    
+<!-- <span class="point">•</span> -->
+<span class="pageTag">
+  <i class="fa fa-tags"></i>
+  
+    
+        <a href="/tag/#oj" title="Tag: oj" rel="tag">oj</a>
+    
+  
+
+</span>
+
+                    </div>
+                </div>
+                <div class="excerpt">
+                    <ul id="markdown-toc">
+  <li><a href="#问题描述" id="markdown-toc-问题描述">问题描述</a></li>
+</ul>
+<h1 id="问题描述">问题描述</h1>
+<p>假设城市中一共有N幢建筑排成一条线，每幢建筑的高度各不相同。初始时，怪盗基德可以在任何一幢建筑的顶端。他可以选择一个方向逃跑，但是不能中途改变方向（因为中森警部会在后面追击）。因为滑翔翼动力装置受损，他只能往下滑行（即：只能从较高的建筑滑翔到较低的建筑）。他希望尽可能多地经过不同建筑的顶部，这样可以减缓下降时的冲击力，减少受伤的可能性。请问，他最多可以经过多少幢不同建筑的顶部（包含初始时的建筑）？</p>
+
+<p>输入
+输入数据第一行是一个整数K（K &lt; 100），代表有K组测试数据。 
+每组测试数据包含两行：第一行是一个整数N(N &lt; 100)，代表有N幢建筑。第二行包含N个不同的整数，每一个对应一幢建筑的高度h（0 &lt; h &lt; 10000），按照建筑的排列顺序给出。
+输出
+对于每一组测试数据，输出一行，包含一个整数，代表怪盗基德最多可以经过的建筑数量。</p>
+
+
+                </div>
+                <div class="read-all">
+                    <a  href="/2019/03/01/oj-weird-kid/"><i class="fa fa-newspaper-o"></i>Read All</a>
                 </div>
                 <hr>
               </li>
@@ -558,10 +582,10 @@
             <a href="/index.html" class="previous"><i class="fa fa-angle-double-left"></i></a>
             <a href="/page6" class="previous"><i class="fa fa-angle-left"></i></a>
           
-          <span class="page_number ">7/9</span>
+          <span class="page_number ">7/10</span>
           
             <a href="/page8" class="next"><i class="fa fa-angle-right"></i></a>
-            <a href="/page9" class="next"><i class="fa fa-angle-double-right"></i></a>
+            <a href="/page10" class="next"><i class="fa fa-angle-double-right"></i></a>
           
         </div>
     </div>
@@ -575,25 +599,25 @@
                 </div>
                 <ul class="content-ul" recent>
                     
+                        <li><a href="/2019/05/03/statics/">概率与统计</a></li>
+                    
+                        <li><a href="/2019/05/02/dfs/">DFS</a></li>
+                    
+                        <li><a href="/2019/04/23/project-manage/">Project Manage</a></li>
+                    
+                        <li><a href="/2019/04/19/btree/">B树和B+树</a></li>
+                    
+                        <li><a href="/2019/04/19/os/">操作系统复习</a></li>
+                    
+                        <li><a href="/2019/04/15/rbtree/">红黑树</a></li>
+                    
+                        <li><a href="/2019/04/15/java/">Java</a></li>
+                    
                         <li><a href="/2019/04/15/wechat-dev/">微信小程序开发</a></li>
                     
                         <li><a href="/2019/04/07/lstm/">LSTM</a></li>
                     
                         <li><a href="/2019/04/07/dlstandard/">ROC曲线</a></li>
-                    
-                        <li><a href="/2019/04/06/ojtrick/">OJ-trick</a></li>
-                    
-                        <li><a href="/2019/04/02/database/">数据库复习</a></li>
-                    
-                        <li><a href="/2019/04/01/hack/">黑客攻击</a></li>
-                    
-                        <li><a href="/2019/03/29/KBQA-demo/">KBQA-demo</a></li>
-                    
-                        <li><a href="/2019/03/28/NP=P_/">NP=P?</a></li>
-                    
-                        <li><a href="/2019/03/28/mysql/">MySQL</a></li>
-                    
-                        <li><a href="/2019/03/28/douban-kg/">豆瓣-知识图谱初试</a></li>
                     
                 </ul>
             </div>
@@ -611,7 +635,7 @@
                             <span class="name">
                                 攀天索--工具
                             </span>
-                            <span class="badge">13</span>
+                            <span class="badge">14</span>
                         </a>
                     </li>
                     
@@ -620,7 +644,7 @@
                             <span class="name">
                                 缘因洞--计算机理论
                             </span>
-                            <span class="badge">12</span>
+                            <span class="badge">17</span>
                         </a>
                     </li>
                     
@@ -692,7 +716,7 @@
                       
                       
                       
-                      <a href="/tag/#oj" style="font-size: 17pt; color: #111;">oj</a>
+                      <a href="/tag/#oj" style="font-size: 18pt; color: #000;">oj</a>
                     
                       
                       
@@ -855,6 +879,20 @@
                       
                       <a href="/tag/#LSTM" style="font-size: 9pt; color: #999;">LSTM</a>
                     
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#Java" style="font-size: 9pt; color: #999;">Java</a>
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#math" style="font-size: 9pt; color: #999;">math</a>
+                    
                 </div>
             </div>
 
@@ -885,9 +923,7 @@
         <p class="contact">
             Contact me at: 
             <a href="https://github.com/ixneo" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>  
-            <a href="mailto:932154199@qq.com" title="email"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>  
-            <a href="http://weibo.com/coolinear" title="Weibo"><i class="fa fa-weibo" aria-hidden="true"></i></a>  
-            <a href="https://www.zhihu.com/people/te-si-la-48-5" title="Zhihu"><i class="iconfont icon-daoruzhihu"></i></a>      
+            <a href="mailto:932154199@qq.com" title="email"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>        
         </p>
         <p>
             本站总访问量<span id="busuanzi_value_site_pv"></span>次，本站访客数<span id="busuanzi_value_site_uv"></span>人次，本文总阅读量<span id="busuanzi_value_page_pv"></span>次

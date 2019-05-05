@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>红黑树</title>
+    <meta name="description" content="  概念概念红黑树不仅是二叉搜索树，且必须满足以下5条平衡规则：1）每个结点或是红色，或是是黑色。2）根结点是黑的。3）所有的叶结点(NULL)是黑色的。（NULL被视为一个哨兵结点，所有应该指向NULL的指针，都看成指向了NULL结点。）4）如果一个结点是红色的，则它的两个儿子节点都是黑色的。5）对每个结点，从...">
+
+    <link rel="shortcut icon" href="/favicon.ico?" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico?" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_8v3czwksspqlg14i.css">
+    <link rel="stylesheet" href="/css/main.css ">
+    <link rel="canonical" href="http://localhost:4001/2019/04/15/rbtree/">
+    <link rel="alternate" type="application/rss+xml" title="jk.tian" href="http://localhost:4001/feed.xml ">
+
+
+    <script>
+    // 百度统计代码
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?eecae4e01c28263526649fed53c49b94";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
+
+
+
+</head>
+
+
+  <body>
+
+    <header id="top">
+    <div class="wrapper">
+        <a href="/" class="brand">jk.tian</a>
+        <small>major in data-science & software-engineering</small>
+        <button id="headerMenu" class="menu"><i class="fa fa-bars"></i></button>
+        <nav id="headerNav">
+            <ul>
+                <li>
+                    
+                    <a href="/">
+                    
+                        <i class="fa fa-home"></i>Home
+                    </a>
+                </li>
+
+                
+                    
+                    <li>
+                        
+                        <a href="/archive/">
+                        
+                            <i class="fa fa-archive"></i>Archives
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/category/">
+                        
+                            <i class="fa fa-th-list"></i>Categories
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/tag/">
+                        
+                            <i class="fa fa-tags"></i>Tags
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/collection/">
+                        
+                            <i class="fa fa-bookmark"></i>Collections
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/demo/">
+                        
+                            <i class="fa fa-play"></i>Demo
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/about/">
+                        
+                            <i class="fa fa-heart"></i>About
+                        </a>
+                    </li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+        <div class="page clearfix" post>
+    <div class="left">
+        <h1>红黑树</h1>
+        <div class="label">
+
+            <div class="label-card">
+                <i class="fa fa-calendar"></i>2019-04-15
+            </div>
+
+            <div class="label-card">
+                <i class="fa fa-user"></i>jktian
+                
+            </div>
+            <div class="label-card">
+                <p>阅读：<span id="busuanzi_value_page_pv"></span></p>
+            </div>
+            <div class="label-card">
+                
+            </div>
+
+            <div class="label-card">
+            
+
+
+<!-- <span class="point">•</span> -->
+<span class="categories">
+  <i class="fa fa-th-list"></i>
+  
+    
+        <a href="/category/#缘因洞--计算机理论" title="Category: 缘因洞--计算机理论" rel="category">缘因洞--计算机理论</a>
+    
+  
+
+  <!-- <span class="point">•</span> -->
+</span>
+
+
+            </div>
+
+            <div class="label-card">
+            
+<!-- <span class="point">•</span> -->
+<span class="pageTag">
+  <i class="fa fa-tags"></i>
+  
+    
+  
+
+</span>
+
+            </div>
+
+        </div>
+        <hr>
+        <article itemscope itemtype="http://schema.org/BlogPosting">
+        <ul id="markdown-toc">
+  <li><a href="#概念" id="markdown-toc-概念">概念</a></li>
+  <li><a href="#插入和删除" id="markdown-toc-插入和删除">插入和删除</a>    <ul>
+      <li><a href="#插入的三种情况" id="markdown-toc-插入的三种情况">插入的三种情况</a></li>
+      <li><a href="#删除的四种情况" id="markdown-toc-删除的四种情况">删除的四种情况</a></li>
+      <li><a href="#左旋代码" id="markdown-toc-左旋代码">左旋代码</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="概念">概念</h1>
+<p>红黑树不仅是二叉搜索树，且必须满足以下5条平衡规则：</p>
+
+<p>1）每个结点或是红色，或是是黑色。
+2）根结点是黑的。
+3）所有的叶结点(NULL)是黑色的。（NULL被视为一个哨兵结点，所有应该指向NULL的指针，都看成指向了NULL结点。）
+4）如果一个结点是红色的，则它的两个儿子节点都是黑色的。
+5）对每个结点，从该结点到其子孙结点的所有路径上包含相同数目的黑结点。</p>
+
+<p>简单的记法就是：红黑 黑 黑 红黑黑 黑</p>
+
+<p>黑高度的定义： 从某个结点出发(不包括该结点)到达一个叶结点的任意一条路径上，黑色结点的个数成为该结点x的黑高度。红黑树的黑高度定义为其根结点的黑高度</p>
+
+<p>红黑树是真正的在实际中得到大量应用的复杂数据结构：C++STL中的关联容器map,set都是红黑树的应用（所以标准库容器的效率太好了，能用标准库容器尽量使用标准库容器）；Linux内核中的用户态地址空间管理也使用了红黑树</p>
+
+<h1 id="插入和删除">插入和删除</h1>
+<p>插入的节点为红</p>
+
+<p>操作是一定会破坏五条规则中的某些的，之后会进行修复．比起破坏（５），可以破坏（２）（４）</p>
+
+<p>循环的每次迭代两种结果：要么指针z沿着树上移，要么执行某些旋转然后循环结束</p>
+
+<p>为了维持插入、或删除结点后的树，仍然是一颗红黑树，所以有必要对树的结构做部分调整，从而恢复红黑树的原本性质。</p>
+
+<p>而为了恢复红黑性质而作的动作包括：</p>
+
+<p>结点颜色的改变(重新着色)，和结点的调整。</p>
+
+<p>这部分结点调整工作，改变指针结构，即是通过左旋或右旋而达到目的。</p>
+
+<p>从而使插入、或删除结点的树重新成为一颗新的红黑树。</p>
+
+<h3 id="插入的三种情况">插入的三种情况</h3>
+<h3 id="删除的四种情况">删除的四种情况</h3>
+<p>在二叉搜索树的删除中，分三种情况</p>
+<ol>
+  <li>删除节点为叶子节点．直接删除</li>
+  <li>删除节点有一个孩子．直接删除并替换</li>
+  <li>删除节点有两个孩子．找到中序后继节点，和删除节点交换值，然后转为情况1/2</li>
+</ol>
+
+<p>在中序后继节点为黑色时，进行修复．因为</p>
+<ol>
+  <li>树中各节点的黑高度会变化</li>
+</ol>
+
+<p>判断类型的时候，先看待删除的节点的颜色，再看兄弟节点的颜色，再看侄子节点的颜色（侄子节点先看远侄子再看近侄子），最后看父亲节点的颜色</p>
+<blockquote>
+  <p>具体：被删除节点为黑色，兄弟节点为红色，侄子节点为红色（远侄或近侄）
+被删除节点为黑色，兄弟节点为黑色，父节点（黑或红），若为黑，则要上溯</p>
+</blockquote>
+
+<p>尽量要把对黑高度的影响，控制在子树内，实在不行，再进行兄弟树和父节点的查看</p>
+
+<p>规则5的限制，会要求黑色节点之后要么为nil, 要么为红色节点（然后nil）</p>
+
+<p>在左子树的黑高度-1之后，最好的情况是右子树有红色节点，父节点为黑，直接旋转就好了．否则，不仅旋转，还要考虑变色</p>
+
+<h3 id="左旋代码">左旋代码</h3>
+<p>分三步．全面考虑两个对象各自的三个指针parent/left/right，考虑空指针的情况</p>
+<ol>
+  <li>关注x和y.left</li>
+  <li>关注y和x.parent</li>
+  <li>关注x和y</li>
+</ol>
+
+        </article>
+        <hr>
+
+        
+        
+            
+            
+                
+            
+        
+            
+            
+                
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+                
+            
+        
+            
+            
+                
+            
+                
+            
+        
+            
+            
+                
+            
+                
+            
+        
+            
+            
+                
+            
+        
+            
+            
+                
+            
+                
+            
+        
+        
+
+        <div class="post-recent">
+    <div class="pre">
+        
+        <p><strong>上一篇</strong> <a href="/2019/04/15/java/">Java</a></p>
+        
+    </div>
+    <div class="nex">
+
+        
+        <p><strong>下一篇</strong> <a href="/2019/04/19/os/">操作系统复习</a></p>
+        
+    </div>
+</div>
+
+
+        <h2 id="comments">Comments</h2>
+        
+
+
+
+
+
+    </div>
+    <button class="anchor"><i class="fa fa-anchor"></i></button>
+    <div class="right">
+        <div class="wrap">
+
+            <!-- Content -->
+            <div class="side content">
+                <div>
+                    Content
+                </div>
+                <ul id="content-side" class="content-ul">
+                    
+                    <li><a href="#comments">Comments</a></li>
+                </ul>
+            </div>
+            <!-- 其他div框放到这里 -->
+            <!-- <div class="side">bbbb</div> -->
+        </div>
+    </div>
+</div>
+<script>
+/**
+ * target _blank
+ */
+(function() {
+    var aTags = document.querySelectorAll('article a:not([id])')
+    for (var i = 0; i < aTags.length; i++) {
+        aTags[i].setAttribute('target', '_blank')
+    }
+}());
+</script>
+<script src="/js/pageContent.js " charset="utf-8"></script>
+
+
+    <footer class="site-footer">
+
+
+    <div class="wrapper">
+
+        <p class="description">
+             来自jktian的个人专栏！ 
+        </p>
+        <p class="contact">
+            Contact me at: 
+            <a href="https://github.com/ixneo" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>  
+            <a href="mailto:932154199@qq.com" title="email"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>        
+        </p>
+        <p>
+            本站总访问量<span id="busuanzi_value_site_pv"></span>次，本站访客数<span id="busuanzi_value_site_uv"></span>人次，本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+        </p>
+        <p class="power">
+            <span>
+                Site powered by <a href="https://jekyllrb.com/">Jekyll</a> & <a href="https://pages.github.com/">Github Pages</a>.
+            </span>
+            <span>
+                Theme designed by <a href="https://github.com/Gaohaoyang">HyG</a>.
+            </span>
+        </p>
+    </div>
+</footer>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <div class="back-to-top">
+    <a href="#top" data-scroll>
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    </a>
+</div>
+
+    <script src=" /js/main.js " charset="utf-8"></script>
+    <script src=" /js/smooth-scroll.min.js " charset="utf-8"></script>
+    <script type="text/javascript">
+      smoothScroll.init({
+        speed: 500, // Integer. How fast to complete the scroll in milliseconds
+        easing: 'easeInOutCubic', // Easing pattern to use
+        offset: 20, // Integer. How far to offset the scrolling anchor location in pixels
+      });
+    </script>
+    <!-- <script src=" /js/scroll.min.js " charset="utf-8"></script> -->
+  </body>
+
+</html>
