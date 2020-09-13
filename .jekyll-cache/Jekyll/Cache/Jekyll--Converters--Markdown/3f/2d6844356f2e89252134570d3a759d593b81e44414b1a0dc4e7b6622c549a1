@@ -1,0 +1,30 @@
+I"<ul id="markdown-toc">
+  <li><a href="#环境搭建" id="markdown-toc-环境搭建">环境搭建</a></li>
+  <li><a href="#gradle" id="markdown-toc-gradle">gradle</a></li>
+  <li><a href="#本机" id="markdown-toc-本机">本机</a></li>
+</ul>
+
+<h1 id="环境搭建">环境搭建</h1>
+<p>命令行pacman/yaourt下载android-studio/android-sdk</p>
+
+<p>在android-studio中的sdk-manager中进行对应sdk的查找以及下载</p>
+
+<p>软件安装后，首先要新建项目，进行测试，而不是直接导入项目．因为需要安装一些包（要翻墙）</p>
+
+<p>gradle时，同步sync会下载一些包</p>
+
+<p>对于android-sdk和android-studio, 权限要足够</p>
+<blockquote>
+  <p>sudo chmod -R 777 android-sdk</p>
+</blockquote>
+
+<p>步骤：gradle-sync ==&gt; build ==&gt; run/debug</p>
+
+<h1 id="gradle">gradle</h1>
+<p>是一种自动构建工具，可以编写对应脚本，包含下载所需第三方包和编译步骤</p>
+
+<h1 id="本机">本机</h1>
+<p>打开虚拟机调试，会死机</p>
+
+<p>以后选择真机调试</p>
+:ET

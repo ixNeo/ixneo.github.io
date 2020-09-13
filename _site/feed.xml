@@ -3,19 +3,18 @@
   <channel>
     <title>jk.tian</title>
     <description></description>
-    <link>http://localhost:4001/</link>
-    <atom:link href="http://localhost:4001/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 05 May 2019 08:16:46 +0800</pubDate>
-    <lastBuildDate>Sun, 05 May 2019 08:16:46 +0800</lastBuildDate>
-    <generator>Jekyll v3.8.5</generator>
+    <link>http://localhost:4020/</link>
+    <atom:link href="http://localhost:4020/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 13 Sep 2020 22:16:08 +0800</pubDate>
+    <lastBuildDate>Sun, 13 Sep 2020 22:16:08 +0800</lastBuildDate>
+    <generator>Jekyll v4.1.1</generator>
     
       <item>
         <title>概率与统计</title>
-        <description>
-</description>
+        <description></description>
         <pubDate>Fri, 03 May 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4001/2019/05/03/statics/</link>
-        <guid isPermaLink="true">http://localhost:4001/2019/05/03/statics/</guid>
+        <link>http://localhost:4020/2019/05/03/statics/</link>
+        <guid isPermaLink="true">http://localhost:4020/2019/05/03/statics/</guid>
         
         <category>math</category>
         
@@ -32,11 +31,10 @@
 dp: 要定义好递推公式
 做好充分的测试用例, 不然就是在碰运气. 尝试性修改
 &lt;/blockquote&gt;
-
 </description>
         <pubDate>Thu, 02 May 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4001/2019/05/02/dfs/</link>
-        <guid isPermaLink="true">http://localhost:4001/2019/05/02/dfs/</guid>
+        <link>http://localhost:4020/2019/05/02/dfs/</link>
+        <guid isPermaLink="true">http://localhost:4020/2019/05/02/dfs/</guid>
         
         <category>oj</category>
         
@@ -50,14 +48,10 @@ dp: 要定义好递推公式
         <description>&lt;h2 id=&quot;软件项目管理&quot;&gt;软件项目管理&lt;/h2&gt;
 
 项目: 在一定约束条件下具有特定目标的一次性任务, 不同于运作(每日如此)
-
-&lt;h1 id=&quot;需求&quot;&gt;需求&lt;/h1&gt;
-功能性需求
-非功能性需求: 性能
 </description>
         <pubDate>Tue, 23 Apr 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4001/2019/04/23/project-manage/</link>
-        <guid isPermaLink="true">http://localhost:4001/2019/04/23/project-manage/</guid>
+        <link>http://localhost:4020/2019/04/23/project-manage/</link>
+        <guid isPermaLink="true">http://localhost:4020/2019/04/23/project-manage/</guid>
         
         
       </item>
@@ -70,35 +64,10 @@ dp: 要定义好递推公式
 
 &lt;h1 id=&quot;几种树&quot;&gt;几种树&lt;/h1&gt;
 二叉搜索树(基础) ==&amp;gt; AVL(需要左右旋以保持平衡) ==&amp;gt; B/B+(多叉树,自平衡) ==&amp;gt; 红黑树(平衡)
-
-&lt;strong&gt;B 树&lt;/strong&gt;可以看作是对2-3查找树的一种扩展，即他允许每个节点有M-1个子节点。
-阶数表示了一个结点最多有多少个孩子结点，一般用字母m表示阶数
-http://www.cnblogs.com/nullzx/p/8729425.html
-一颗m阶的B树定义如下：
-
-1）每个结点最多有m-1个关键字。
-
-2）根结点最少可以只有1个关键字。
-
-3）非根结点至少有Math.ceil(m/2)-1个关键字。
-
-4）每个结点中的关键字都按照从小到大的顺序排列，每个关键字的左子树中的所有关键字都小于它，而右子树中的所有关键字都大于它。
-
-5）所有叶子结点都位于同一层，或者说根结点到每个叶子结点的长度都相同。
-在实际应用中的B树的阶数m都非常大（通常大于100），所以即使存储大量的数据，B树的高度仍然比较小
-
-&lt;strong&gt;B+&lt;/strong&gt;树是对B树的一种变形树，它与B树的差异在于：
-
-&lt;ul&gt;
-  &lt;li&gt;有k个子结点的结点必然有k个关键码；&lt;/li&gt;
-  &lt;li&gt;非叶结点仅具有索引作用，跟记录有关的信息均存放在叶结点中。&lt;/li&gt;
-  &lt;li&gt;树的所有叶结点构成一个有序链表，可以按照关键码排序的次序遍历全部记录。&lt;/li&gt;
-&lt;/ul&gt;
-
 </description>
         <pubDate>Fri, 19 Apr 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4001/2019/04/19/btree/</link>
-        <guid isPermaLink="true">http://localhost:4001/2019/04/19/btree/</guid>
+        <link>http://localhost:4020/2019/04/19/btree/</link>
+        <guid isPermaLink="true">http://localhost:4020/2019/04/19/btree/</guid>
         
         
         <category>缘因洞--计算机理论</category>
@@ -109,11 +78,10 @@ http://www.cnblogs.com/nullzx/p/8729425.html
         <title>操作系统复习</title>
         <description>
 DMA：CPU和外存之间的数据传输方式，还有程序传送方式／中断传送方式
-
 </description>
         <pubDate>Fri, 19 Apr 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4001/2019/04/19/os/</link>
-        <guid isPermaLink="true">http://localhost:4001/2019/04/19/os/</guid>
+        <link>http://localhost:4020/2019/04/19/os/</link>
+        <guid isPermaLink="true">http://localhost:4020/2019/04/19/os/</guid>
         
         
         <category>缘因洞--计算机理论</category>
@@ -128,19 +96,10 @@ DMA：CPU和外存之间的数据传输方式，还有程序传送方式／中�
 
 &lt;h1 id=&quot;概念&quot;&gt;概念&lt;/h1&gt;
 红黑树不仅是二叉搜索树，且必须满足以下5条平衡规则：
-
-1）每个结点或是红色，或是是黑色。
-2）根结点是黑的。
-3）所有的叶结点(NULL)是黑色的。（NULL被视为一个哨兵结点，所有应该指向NULL的指针，都看成指向了NULL结点。）
-4）如果一个结点是红色的，则它的两个儿子节点都是黑色的。
-5）对每个结点，从该结点到其子孙结点的所有路径上包含相同数目的黑结点。
-
-简单的记法就是：红黑 黑 黑 红黑黑 黑
-
 </description>
         <pubDate>Mon, 15 Apr 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4001/2019/04/15/rbtree/</link>
-        <guid isPermaLink="true">http://localhost:4001/2019/04/15/rbtree/</guid>
+        <link>http://localhost:4020/2019/04/15/rbtree/</link>
+        <guid isPermaLink="true">http://localhost:4020/2019/04/15/rbtree/</guid>
         
         
         <category>缘因洞--计算机理论</category>
@@ -179,8 +138,8 @@ DMA：CPU和外存之间的数据传输方式，还有程序传送方式／中�
 类的非静态代码块：{} 在类的静态代码块之后，在构造函数之前进行执行．
 </description>
         <pubDate>Mon, 15 Apr 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4001/2019/04/15/java/</link>
-        <guid isPermaLink="true">http://localhost:4001/2019/04/15/java/</guid>
+        <link>http://localhost:4020/2019/04/15/java/</link>
+        <guid isPermaLink="true">http://localhost:4020/2019/04/15/java/</guid>
         
         <category>Java</category>
         
@@ -201,11 +160,10 @@ DMA：CPU和外存之间的数据传输方式，还有程序传送方式／中�
 &lt;h1 id=&quot;环境搭建&quot;&gt;环境搭建&lt;/h1&gt;
 微信小程序开发工具: 只支持windows/macos
 本机的win7无法正常显示
-
 </description>
         <pubDate>Mon, 15 Apr 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4001/2019/04/15/wechat-dev/</link>
-        <guid isPermaLink="true">http://localhost:4001/2019/04/15/wechat-dev/</guid>
+        <link>http://localhost:4020/2019/04/15/wechat-dev/</link>
+        <guid isPermaLink="true">http://localhost:4020/2019/04/15/wechat-dev/</guid>
         
         <category>log</category>
         
@@ -232,8 +190,8 @@ LSTM通过三个这样的门结构来实现信息的保护和控制。这三个�
 &lt;/blockquote&gt;
 </description>
         <pubDate>Sun, 07 Apr 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4001/2019/04/07/lstm/</link>
-        <guid isPermaLink="true">http://localhost:4001/2019/04/07/lstm/</guid>
+        <link>http://localhost:4020/2019/04/07/lstm/</link>
+        <guid isPermaLink="true">http://localhost:4020/2019/04/07/lstm/</guid>
         
         <category>DL</category>
         
@@ -252,11 +210,10 @@ LSTM通过三个这样的门结构来实现信息的保护和控制。这三个�
 
 &lt;h1 id=&quot;roc曲线&quot;&gt;ROC曲线&lt;/h1&gt;
 &lt;a href=&quot;https://blog.csdn.net/u013385925/article/details/80385873&quot;&gt;CSDN&lt;/a&gt;
-
 </description>
         <pubDate>Sun, 07 Apr 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4001/2019/04/07/dlstandard/</link>
-        <guid isPermaLink="true">http://localhost:4001/2019/04/07/dlstandard/</guid>
+        <link>http://localhost:4020/2019/04/07/dlstandard/</link>
+        <guid isPermaLink="true">http://localhost:4020/2019/04/07/dlstandard/</guid>
         
         <category>DL</category>
         

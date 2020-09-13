@@ -6,8 +6,8 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: jk.tian
-brief-intro: major in data-science & software-engineering 
+title: 阿鲲的博客
+brief-intro: 主修软件工程和算法模型，极客成长中
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://ixneo.github.io" # the base hostname & protocol for your site
 

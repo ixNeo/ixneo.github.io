@@ -1,0 +1,13 @@
+I"<ul id="markdown-toc">
+  <li><a href="#lstm" id="markdown-toc-lstm">LSTM</a></li>
+</ul>
+
+<h1 id="lstm">LSTM</h1>
+<p>长短时记忆网络(long short term memory)，为了解决RNN(循环神经网络)的无法利用长期依赖的问题</p>
+
+<p>LSTM通过三个这样的门结构来实现信息的保护和控制。这三个门分别输入门、遗忘门和输出门</p>
+
+<blockquote>
+  <p>门 可以实现选择性地让信息通过，主要是通过一个 sigmoid 的神经层 和一个逐点相乘的操作来实现的。</p>
+</blockquote>
+:ET

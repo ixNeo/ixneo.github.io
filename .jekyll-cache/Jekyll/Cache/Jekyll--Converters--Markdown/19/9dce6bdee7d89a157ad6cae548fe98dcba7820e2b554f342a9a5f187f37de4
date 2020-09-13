@@ -1,0 +1,17 @@
+I"!<ul id="markdown-toc">
+  <li><a href="#q-learning" id="markdown-toc-q-learning">Q-learning</a></li>
+</ul>
+<h1 id="q-learning">Q-learning</h1>
+
+<ol>
+  <li>初始化q-table. row为状态，column为动作．选择动作时，通过找值最大的单元格的列坐标</li>
+  <li>更新显示，通过判断是否终止，选择如何显示. time.sleep()</li>
+  <li>选取动作：根据epslon&gt;0.9, 随机选取或挑选q-table中最大的动作</li>
+  <li>得到下一个状态以及由s_i==&gt;s_{i+1}奖励值．if判断，应该可以从r表中得到
+    <blockquote>
+      <p>奖励表是先验的，是人为设置的．q-table是动态更新的
+奖励是到达某一个状态的值，由到达的状态决定．q-table是联系自身状态得到的综合值</p>
+    </blockquote>
+  </li>
+</ol>
+:ET

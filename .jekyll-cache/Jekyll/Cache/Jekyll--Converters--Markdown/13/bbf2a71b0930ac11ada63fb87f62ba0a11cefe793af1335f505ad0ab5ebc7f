@@ -1,0 +1,10 @@
+I"Y<ul id="markdown-toc">
+  <li><a href="#conda" id="markdown-toc-conda">conda</a></li>
+</ul>
+<h1 id="conda">conda</h1>
+
+<ol>
+  <li>conda install &lt;url/package_name&gt;	# 可能需要事先切换到python36，代替py37</li>
+  <li>conda info <package_name>	# 打印关于包的信息，有不同版本的tar.gz下载url</package_name></li>
+</ol>
+:ET

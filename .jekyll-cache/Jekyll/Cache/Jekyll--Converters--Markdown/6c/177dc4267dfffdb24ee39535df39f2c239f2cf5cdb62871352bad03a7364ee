@@ -1,0 +1,37 @@
+I"�<ul id="markdown-toc">
+  <li><a href="#流程" id="markdown-toc-流程">流程</a></li>
+  <li><a href="#问题" id="markdown-toc-问题">问题</a></li>
+  <li><a href="#重新安装" id="markdown-toc-重新安装">重新安装</a></li>
+</ul>
+
+<h1 id="流程">流程</h1>
+<ol>
+  <li>手机用shadowsocks</li>
+  <li>pc端也要配置</li>
+</ol>
+
+<h1 id="问题">问题</h1>
+
+<ol>
+  <li>端口问题，不要用 80 8888 8080 443这些主流端口</li>
+  <li>网络问题
+    <ol>
+      <li>校园网dlut可以pip和conda install成功。但是翻墙速度慢</li>
+      <li>移动网pip一直retrying, 但是可以访问谷歌</li>
+      <li>dlut-eda均可</li>
+    </ol>
+  </li>
+</ol>
+
+<h1 id="重新安装">重新安装</h1>
+
+<p>vps直接重新安装系统</p>
+
+<p>​	https://www.banpie.info/shadowsocks-pac-gfw/</p>
+
+<p>打开隐藏网址，跑脚本，安装ss</p>
+
+<p>​	https://kiwivm.64clouds.com/main-exec.php?mode=extras_shadowsocks</p>
+
+<p>pc端和手机端可以用二维码分享</p>
+:ET

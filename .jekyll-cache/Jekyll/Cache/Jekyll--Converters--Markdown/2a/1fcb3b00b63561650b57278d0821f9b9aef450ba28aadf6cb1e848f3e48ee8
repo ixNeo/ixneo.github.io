@@ -1,0 +1,15 @@
+I"�<ul id="markdown-toc">
+  <li><a href="#sql注入" id="markdown-toc-sql注入">SQL注入</a>    <ul>
+      <li><a href="#预防手段" id="markdown-toc-预防手段">预防手段</a></li>
+    </ul>
+  </li>
+  <li><a href="#xss脚本" id="markdown-toc-xss脚本">XSS脚本</a></li>
+</ul>
+
+<h1 id="sql注入">SQL注入</h1>
+<h3 id="预防手段">预防手段</h3>
+<p>java进行预编译，来保护SQL语句</p>
+
+<h1 id="xss脚本">XSS脚本</h1>
+<p>利用js脚本，进行跨站攻击，网页重定向</p>
+:ET

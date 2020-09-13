@@ -1,0 +1,64 @@
+I"<ul id="markdown-toc">
+  <li><a href="#python-in-linux" id="markdown-toc-python-in-linux">python in linux</a></li>
+  <li><a href="#anaconda" id="markdown-toc-anaconda">anaconda</a></li>
+  <li><a href="#解决方法" id="markdown-toc-解决方法">解决方法</a></li>
+  <li><a href="#类和实例的命名空间" id="markdown-toc-类和实例的命名空间">类和实例的命名空间</a>    <ul>
+      <li><a href="#困境" id="markdown-toc-困境">困境</a></li>
+    </ul>
+  </li>
+  <li><a href="#函数的嵌套与返回" id="markdown-toc-函数的嵌套与返回">函数的嵌套与返回</a></li>
+  <li><a href="#从windows迁移到linux" id="markdown-toc-从windows迁移到linux">从windows迁移到linux</a></li>
+</ul>
+<h1 id="python-in-linux">python in linux</h1>
+
+<p>$ where is python 	# 找到Python可执行文件的位置</p>
+
+<p>~/.conda/envs/python36/bin/python</p>
+
+<p># sublime 安装插件</p>
+
+<p>选项卡：preferences ==&gt; package-settings ==&gt; package-control–user
+ 位置：~/.config/sublime-text-3/Packages/User
+ 文件package control.sublime-settings–user: 人工下载channel.json文件
+     “channels”:[
+            “/home/jktian/sublime3-channel/channel_v3.json”
+        ],</p>
+
+<h1 id="anaconda">anaconda</h1>
+
+<p>python36的位置：/home/jktian/.conda/envs/python36/bin/python</p>
+
+<h1 id="解决方法">解决方法</h1>
+
+<p>eval(): 将字符串str当成有效的表达式来求值并返回计算结果。最终的结果是一个右值
+globals(): 左值。返回的是当前模块的全局变量。若此模块中定义了类，则包含类
+locals()：s返回的是当前所在最小命名空间的局部变量的一个拷贝。如果在类的一个函数中，则是函数内的局部变量.只读
+vars()：返回对象object的属性和属性值的<strong>字典对象</strong>。如果默认不输入参数，就打印当前调用位置的属性和属性值，相当于locals()的功能。如果有参数输入，就只打印这个参数相应的属性和属性值
+setattr()/getattr()</p>
+
+<h1 id="类和实例的命名空间">类和实例的命名空间</h1>
+<p>两者的__dict__不同
+self.var表示的是实例的成员变量，只出现在实例.__dict__中
+dir()命令查看模块的属性和成员变量
+类的实例动态增加属性和方法</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">locals</span><span class="p">()[</span><span class="s">'self'</span><span class="p">].</span><span class="nb">setattr</span><span class="p">(</span><span class="s">'but_cnt'</span><span class="o">+</span><span class="n">name</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">Button</span><span class="p">(</span><span class="n">frame</span><span class="p">.</span><span class="n">fra_cnt</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="n">name</span><span class="p">,</span><span class="n">font</span><span class="o">=</span><span class="n">font</span><span class="p">,</span><span class="n">fg</span><span class="o">=</span><span class="n">fg_color</span><span class="p">,</span><span class="n">bg</span><span class="o">=</span><span class="n">bg_color</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span><span class="n">command</span><span class="o">=</span><span class="n">funcname</span><span class="p">)</span>
+</code></pre></div></div>
+<p>当python在使用变量时，会按照下面的步骤去搜索：
+函数或类的局部变量。
+全局变量。
+内置变量。 
+setattr()
+getattr()</p>
+
+<h3 id="困境">困境</h3>
+<p>globals()是全局的，可读可写，但是只有类的属性，即不是self的，修改了没用
+locals()可以返回具体的对象的属性，但是是深赋值。
+本质上是动态和静态。只能在动态运行时才能确定的，只能用setattr(),地址传递</p>
+<h1 id="函数的嵌套与返回">函数的嵌套与返回</h1>
+<p>装饰器的原理：返回一个函数名</p>
+
+<h1 id="从windows迁移到linux">从windows迁移到linux</h1>
+<p>原本python程序tkinter在Linux上显示不友好，认为界面编程还是windows优于linux
+结果，window7还要更新组件才能运行
+果断返回Linux</p>
+:ET

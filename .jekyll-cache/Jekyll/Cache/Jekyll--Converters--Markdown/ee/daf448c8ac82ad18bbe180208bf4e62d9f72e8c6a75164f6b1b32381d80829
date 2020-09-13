@@ -1,0 +1,21 @@
+I"o<ul id="markdown-toc">
+  <li><a href="#常用命令" id="markdown-toc-常用命令">常用命令</a></li>
+</ul>
+
+<h1 id="常用命令">常用命令</h1>
+<p>git status</p>
+
+<p>git add .</p>
+
+<p>git commit -m “”</p>
+
+<p>git commit -am “”</p>
+
+<p>git reset –hard HEAD^</p>
+
+<p>git log</p>
+
+<p>git reflog</p>
+
+<p>git checkout -b <branch_name></branch_name></p>
+:ET

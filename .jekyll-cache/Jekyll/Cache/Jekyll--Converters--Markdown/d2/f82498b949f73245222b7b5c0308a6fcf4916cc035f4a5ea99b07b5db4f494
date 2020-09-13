@@ -1,0 +1,43 @@
+I"�<ul id="markdown-toc">
+  <li><a href="#conda" id="markdown-toc-conda">conda</a></li>
+  <li><a href="#tensorflow" id="markdown-toc-tensorflow">tensorflow</a></li>
+  <li><a href="#opencv" id="markdown-toc-opencv">opencv</a></li>
+  <li><a href="#python包的安装方式" id="markdown-toc-python包的安装方式">python包的安装方式</a></li>
+</ul>
+<h1 id="conda">conda</h1>
+
+<ol>
+  <li>conda install &lt;url/package_name&gt;	# 可能需要事先切换到python36，代替py37</li>
+  <li>conda info <package_name>	# 打印关于包的信息，有不同版本的tar.gz下载url</package_name></li>
+</ol>
+
+<h1 id="tensorflow">tensorflow</h1>
+
+<ol>
+  <li>根据conda info, 得到依赖项。不仅要安装tensorflow本身，同时也要conda info 依赖项，来安装依赖的包</li>
+  <li>和tensorboard
+    <ol>
+      <li>可能会有版本问题</li>
+      <li>重新安装大法好。pip upgrade不靠谱，直接uninstall再install即可</li>
+      <li>命令：tensorboard –logdir <log_path>
+</log_path>        <blockquote>
+          <p>调试技巧：
+	判断大概位置，逐步调试，验证假设，模块化问题点</p>
+        </blockquote>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+<h1 id="opencv">opencv</h1>
+<ol>
+  <li>import cv2</li>
+</ol>
+
+<h1 id="python包的安装方式">python包的安装方式</h1>
+<ol>
+  <li>pip install</li>
+  <li>conda info, 然后conda install <url></url></li>
+  <li>setup.py, 安装.whl</li>
+</ol>
+:ET

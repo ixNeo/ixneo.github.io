@@ -1,0 +1,325 @@
+I"�%<ul id="markdown-toc">
+  <li><a href="#知识点" id="markdown-toc-知识点">知识点</a></li>
+  <li><a href="#加法" id="markdown-toc-加法">加法</a></li>
+  <li><a href="#减法" id="markdown-toc-减法">减法</a></li>
+  <li><a href="#乘法" id="markdown-toc-乘法">乘法</a></li>
+  <li><a href="#除法" id="markdown-toc-除法">除法</a></li>
+</ul>
+
+<h1 id="知识点">知识点</h1>
+<ol>
+  <li>文本文件是字符均为ascii编码的文件；其余为二进制文件</li>
+  <li>注意’0’在char和int之间的作用</li>
+  <li>第一步。对输入的数据标准化，明确每个数据/变量的含义、类型，增强代码的可解释性</li>
+  <li>测试用例的挑选。选最小的规模的能体现问题所在的用例。一旦出现问题，马上进行分析更改，脑中运行后，再开始run, 节省机器运行时间</li>
+  <li>解决问题的思路：搭建步骤框架，解决最小子问题（构建积木），然后搭积木（建大厦）。
+    <ol>
+      <li>单元测试和集成测试必不可少</li>
+    </ol>
+  </li>
+</ol>
+
+<h1 id="加法">加法</h1>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    #include&lt;iostream&gt;
+    #include&lt;cmath&gt;
+    #include&lt;string&gt;
+    #include&lt;iterator&gt;
+    #include&lt;algorithm&gt;
+
+    using namespace std;
+    
+    // big num add
+    string bigNumAdd(string num1,string num2){
+        // reverse
+        reverse(num1.begin(),num1.end());
+        reverse(num2.begin(),num2.end());
+
+        // standard-process data
+        string bignum,smallnum,sumnum;
+        if(num1.size()&gt;num2.size()){
+            bignum = num1; smallnum = num2;
+        }else{
+            bignum = num2; smallnum = num1;
+        }
+        sumnum = bignum;
+
+        // add
+        for(int i=0;i&lt;smallnum.size();i++){
+            int lowposVal = smallnum[i]-'0'+sumnum[i]-'0';
+            int lowpos = i;
+            sumnum[lowpos] = lowposVal+'0';
+            while(lowposVal&gt;9){
+                sumnum[lowpos] = lowposVal+'0'-10;
+                if(lowpos+1&gt;=sumnum.size()){
+                    sumnum.append(1,'0');
+                }
+                sumnum[lowpos+1] += 1;
+                lowposVal = sumnum[lowpos+1]-'0';
+                lowpos += 1;
+            }
+
+        }
+
+        // return
+        reverse(sumnum.begin(),sumnum.end());
+        cout &lt;&lt;  sumnum &lt;&lt; endl;
+        return sumnum;
+    }
+
+    int main(){
+        string num1,num2,sumnum;
+        cin &gt;&gt; num1 &gt;&gt; num2;
+        sumnum = bigNumAdd(num1,num2);
+        return 0;
+    }
+</code></pre></div></div>
+
+<h1 id="减法">减法</h1>
+<ol>
+  <li>
+    <p>在加法的基础上改动，增加了符号判断函数</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> char cmpStr(string num1,string num2){
+     char sign = '+';
+     // 1.size; 2. equation
+    if(num1.size()&gt;num2.size()){
+        sign = '+';
+    }else if(num1.size()&lt;num2.size()){
+        sign = '-';
+    }else{
+        for(int i=0;i&lt;num1.size();i++){
+            if(num1[i]&gt;num2[i]){
+                sign = '+';  break;
+            }else if(num1[i]&lt;num2[i]){
+                sign = '-';  break;
+            }else{}
+        }
+    }
+    return sign;
+ }
+ // big num sub
+ string bigNumSub(string num1,string num2){
+     // get-sign
+     char sign = cmpStr(num1,num2);
+    
+     // reverse
+     reverse(num1.begin(),num1.end());
+     reverse(num2.begin(),num2.end());
+    
+     // standard-process data
+     string bignum,smallnum,sumnum;
+     if(sign=='+'){
+         bignum = num1; smallnum = num2;
+     }else{
+         bignum = num2; smallnum = num1;
+     }
+     sumnum = bignum;
+    
+     // sub
+     for(int i=0;i&lt;smallnum.size();i++){
+         int lowposVal = sumnum[i]-smallnum[i];
+         int lowpos = i;
+         sumnum[lowpos] = lowposVal+'0';
+         while(lowposVal&lt;0){
+             sumnum[lowpos] = 10+lowposVal+'0';
+ //            if(lowpos+1&gt;=sumnum.size()){
+ //                sumnum.append(1,'0');
+ //            }
+             sumnum[lowpos+1] -= 1;
+             lowposVal = sumnum[lowpos+1]-'0';
+             lowpos += 1;
+         }
+    
+     }
+    
+     // return
+     reverse(sumnum.begin(),sumnum.end());
+     cout &lt;&lt;  sign &lt;&lt; sumnum &lt;&lt; endl;
+     return sumnum;
+ }
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h1 id="乘法">乘法</h1>
+<ol>
+  <li>
+    <p>先写出函数，实现大数与一位整数相乘</p>
+
+    <p>#include<iostream>
+ #include<cmath>
+ #include<string>
+ #include<iterator>
+ #include<algorithm>
+ #include "bignumadd.h"
+ using namespace std; 
+ string mulOnepos(string bignum, char smallOne){
+     string res;
+     int curNum=0, lowNum=0, highNum=0;</algorithm></iterator></string></cmath></iostream></p>
+
+    <p>// reverse(bignum.begin(),bignum.end());</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> for(int i=0;i&lt;bignum.size();i++){
+     curNum = highNum + (bignum[i]-'0')*(smallOne-'0');
+     lowNum = curNum % 10;
+     if(curNum&gt;=10){
+         highNum = curNum / 10;
+     }else{
+         highNum = 0;
+     }
+     res.append(1,lowNum+'0');
+ }
+ if(highNum!=0){
+     res.append(1,highNum+'0');
+ }
+ reverse(res.begin(),res.end());
+ return res;  }
+</code></pre></div>    </div>
+
+    <p>// big num multiply
+ string bigNumMul(string num1,string num2){
+     // reverse
+     reverse(num1.begin(),num1.end());
+     reverse(num2.begin(),num2.end());</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> // standard-process data
+ string bignum,smallnum,sumnum;
+ if(num1.size()&gt;num2.size()){
+     bignum = num1; smallnum = num2;
+ }else{
+     bignum = num2; smallnum = num1;
+ }
+    
+ // multiply
+ for(int i=0;i&lt;smallnum.size();i++){
+     string tmp = mulOnepos(bignum, smallnum[i]);
+     tmp.append(i,'0');  //        cout &lt;&lt; i &lt;&lt; " : tmp after o-add: " &lt;&lt; tmp &lt;&lt; endl;
+     sumnum = bigNumAdd(tmp,sumnum);  //        cout &lt;&lt; i &lt;&lt; " : sumnum " &lt;&lt; sumnum &lt;&lt; endl;
+ }
+</code></pre></div>    </div>
+
+    <p>//    reverse(sumnum.begin(),sumnum.end());
+     cout «  sumnum « endl;
+     return sumnum;
+ }</p>
+
+    <p>int main(){
+     string num1,num2,sumnum;
+     cin » num1 » num2;
+     sumnum = bigNumMul(num1,num2);
+ //    cout « mulOnepos(num1,num2[0]) « endl;
+     return 0;
+ }</p>
+  </li>
+</ol>
+
+<h1 id="除法">除法</h1>
+<ol>
+  <li>基于减法操作</li>
+  <li>
+    <p>符号判断时，要加入为０的判断。同时，要去除前缀的冗余０</p>
+
+    <p>string rmDupZero(string num1){
+     int len = num1.size(),i;
+     for(i=0;i&lt;len;i++){
+         if(num1[i]!=’0’){
+             break;
+         }
+     }
+     num1 = num1.substr(i,len-i);
+     return num1;
+ }
+ char cmpStr(string num1,string num2){
+     char sign = ‘+’;
+     // remove duplicate-zero
+     num1 = rmDupZero(num1);
+     num2 = rmDupZero(num2);</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 1.size; 2. equation
+if(num1.size()&gt;num2.size()){
+    sign = '+';
+}else if(num1.size()&lt;num2.size()){
+    sign = '-';
+}else{
+    for(int i=0;i&lt;num1.size();i++){
+        if(num1[i]&gt;num2[i]){
+            sign = '+';  break;
+        }else if(num1[i]&lt;num2[i]){
+            sign = '-';  break;
+        }else{
+            sign = '=';
+        }
+    }
+}
+return sign;  }  // big num sub  string bigNumSub(string num1,string num2){
+ // get-sign
+ char sign = cmpStr(num1,num2);
+
+ // reverse
+ reverse(num1.begin(),num1.end());
+ reverse(num2.begin(),num2.end());
+
+ // standard-process data
+ string bignum,smallnum,sumnum;
+ if(sign=='+'){
+     bignum = num1; smallnum = num2;
+ }else{
+     bignum = num2; smallnum = num1;
+ }
+ sumnum = bignum;
+
+ // sub
+ for(int i=0;i&lt;smallnum.size();i++){
+     int lowposVal = sumnum[i]-smallnum[i];
+     int lowpos = i;
+     sumnum[lowpos] = lowposVal+'0';
+     while(lowposVal&lt;0){
+         sumnum[lowpos] = 10+lowposVal+'0';  //            if(lowpos+1&gt;=sumnum.size()){  //                sumnum.append(1,'0');  //            }
+         sumnum[lowpos+1] -= 1;
+         lowposVal = sumnum[lowpos+1]-'0';
+         lowpos += 1;
+     }
+
+ }
+
+ // return
+ reverse(sumnum.begin(),sumnum.end());  //    cout &lt;&lt;  sign &lt;&lt; sumnum &lt;&lt; endl;
+ return sign+sumnum;  }
+</code></pre></div>    </div>
+
+    <p>string bigNumDiv(string num1, string num2){
+     if(num2[0]==’0’){
+         string hint = “zero-error”;
+         return hint;
+     }
+     string res,tmp;
+     string num1Copy = num1, num2Copy = num2;
+     int len1 = num1.size();
+     int len2 = num2.size();
+     int dlen = len1 - len2;
+     for(int i=0;i&lt;=dlen;i++){
+         res.append(1,’0’);
+         num2.append(dlen-i,’0’);
+         tmp = bigNumSub(num1,num2);
+         while(tmp[0]==’+’){
+             res[i] += 1;
+             num1 = tmp.substr(1,tmp.size()-1);</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>         cout &lt;&lt; "num1(after-sub): num2(division) = " &lt;&lt; num1 &lt;&lt; " , " &lt;&lt; num2&lt;&lt; endl;
+         cout &lt;&lt; "res: " &lt;&lt; res &lt;&lt; endl;
+         tmp = bigNumSub(num1,num2);
+         cout &lt;&lt; "tmp(next-try): " &lt;&lt; tmp &lt;&lt; endl;
+         cout &lt;&lt; "******************" &lt;&lt; endl;
+     }
+     num2 = num2Copy;
+ }
+ if(tmp[0]=='='){
+     res[res.size()-1] += 1;
+ }
+ cout &lt;&lt; res &lt;&lt; endl;
+ return res;  }
+</code></pre></div>    </div>
+  </li>
+</ol>
+:ET

@@ -1,0 +1,28 @@
+I"H<ul id="markdown-toc">
+  <li><a href="#d2rq初试" id="markdown-toc-d2rq初试">D2RQ初试</a></li>
+  <li><a href="#sparql" id="markdown-toc-sparql">SPARQL</a></li>
+</ul>
+
+<h1 id="d2rq初试">D2RQ初试</h1>
+<ol>
+  <li>
+    <p>官网安装需要翻墙
+github查找项目，得到source code</p>
+  </li>
+  <li>需要先安装apache ant, 对下载的源文件进行编译</li>
+  <li>通过命令对数据库进行mapping, 生成ttl文件</li>
+</ol>
+
+<p>生成.ttl的mapping文件
+./generate-mapping -u root -p <password> -o kg_demo_movie_mapping.ttl jdbc:mysql:///douban_demo</password></p>
+
+<p>生成nt格式的RDF文件
+./dump-rdf -o douban_demo.nt ./kg_demo_movie_mapping.ttl</p>
+
+<p>打开服务器
+./d2r-server kg_demo_movie_mapping.ttl</p>
+
+<h1 id="sparql">SPARQL</h1>
+<p>所有语句都是三元组，?命名任意
+可以有filter</p>
+:ET

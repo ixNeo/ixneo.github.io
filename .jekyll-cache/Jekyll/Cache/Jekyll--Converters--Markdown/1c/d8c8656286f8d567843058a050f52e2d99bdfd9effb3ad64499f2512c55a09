@@ -1,0 +1,45 @@
+I"�<ul id="markdown-toc">
+  <li><a href="#问题解决" id="markdown-toc-问题解决">问题解决</a></li>
+  <li><a href="#语句" id="markdown-toc-语句">语句</a></li>
+</ul>
+
+<h1 id="问题解决">问题解决</h1>
+<p>问题：must be a number, not str，但是想要数值类型，方便比较查询</p>
+
+<p>解决：所有语句的占位符均换为%s, 即使在表的定义中为%f</p>
+
+<p>debug手段：</p>
+<ul>
+  <li>打印类型,</li>
+  <li>比较execute和executemany语句</li>
+  <li>比较定值插入和变值插入
+    <blockquote>
+      <p>熟悉了数据库中的各种数据类型</p>
+    </blockquote>
+  </li>
+</ul>
+
+<hr />
+
+<p>问题：直接使用sql脚本进行数据库的选择，表的建立和插入</p>
+
+<p>解决：在py与mysql进行连接时，选定了数据库，其余的插入语句可以在文件中，逐行读入</p>
+
+<hr />
+<p>问题：auto_increment的初值</p>
+
+<p>解决：删表，重建</p>
+
+<hr />
+<p>问题：　字符串列解析错误，　代码1057</p>
+
+<p>解决：　把占位符加上’’</p>
+
+<h1 id="语句">语句</h1>
+<p>data = cursor.fetchall()
+print(data)</p>
+
+<p>conn.commit()
+cursor.close()
+conn.close()</p>
+:ET

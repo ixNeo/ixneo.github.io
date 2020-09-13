@@ -1,0 +1,54 @@
+I"�<ul id="markdown-toc">
+  <li><a href="#q-learning" id="markdown-toc-q-learning">Q-learning</a></li>
+  <li><a href="#q-learning--sarsa--sarsalambda" id="markdown-toc-q-learning--sarsa--sarsalambda">Q-learning / SARSA / SARSA(lambda)</a></li>
+  <li><a href="#reward--vlaue" id="markdown-toc-reward--vlaue">reward / vlaue</a></li>
+</ul>
+<h1 id="q-learning">Q-learning</h1>
+
+<ol>
+  <li>初始化q-table. row为状态，column为动作．选择动作时，通过找值最大的单元格的列坐标</li>
+  <li>更新显示，通过判断是否终止，选择如何显示. time.sleep()</li>
+  <li>选取动作：根据epslon&gt;0.9, 随机选取或挑选q-table中最大的动作</li>
+  <li>得到下一个状态以及由s_i==&gt;s_{i+1}奖励值．if判断，应该可以从r表中得到
+    <blockquote>
+      <p>奖励表是先验的，是人为设置的．q-table是动态更新的
+奖励是到达某一个状态的值，由到达的状态决定．q-table是联系自身状态得到的综合值</p>
+    </blockquote>
+  </li>
+</ol>
+
+<h1 id="q-learning--sarsa--sarsalambda">Q-learning / SARSA / SARSA(lambda)</h1>
+<ul>
+  <li>同：
+  两者都会根据当前状态，根据epslon和q-table选取动作. 要考虑当前的利益r+下一步的利益gamma*max(q(s_next,a))+自身的状态＋学习率</li>
+  <li>异：
+    <ul>
+      <li>之后．qlearning会根据q-table表，选取下一状态中值最大的那一个（max），去更新q-table的当前状态项,off-policy. 进入下一状态后，执行的动作仍然用epslon-greedy；　</li>
+      <li>sarsa是说到做到，进入下一个状态后，动作不再使用epslon，直接选用上一步确定好的，但是在为此状态选取下一状态时，要用epslon. 相当于，sarsa把q-learning的epslon换为了确定，将其的max换为epslon
+q-learning比较冒险拿宝藏最重要．sarsa实际，保命最重要</li>
+    </ul>
+  </li>
+  <li>Sarsa(lambda) 　表示走lambda步之后，进行一次更新．用回合更新代替单步更新
+ dqn: q-learning+神经网络: 解决state和action表格太大的问题</li>
+</ul>
+
+<p>任何一个求最值的模型，都会引入随机值以避免局部最优解，如模拟退火算法或者此处的epslon-greedy策略</p>
+
+<h1 id="reward--vlaue">reward / vlaue</h1>
+<ul>
+  <li>reward: 可以根据表中某个状态为定值，也可以根据现场的局势判断得到reward, 但一定是短期的
+    <ul>
+      <li>在某个状态下，进行某个动作，会得到多少reward．可以动态得到</li>
+      <li>Reward 定义了强化学习问题中的目标。在每个时间步，环境向agent发送一个称为reward的单个数字。Agent的唯一目标是最大化其长期收到的total reward。</li>
+    </ul>
+  </li>
+  <li>value: 长期的，基于reward. 有利于最终reward最大化. 综合考虑当前状态和未来状态</li>
+</ul>
+
+<p>如果说reward表明的是在短时间内什么是好的，那么value function则指出从长远来看什么是好的</p>
+
+<p>reward基本上由环境直接给出，但value必须根据agent在其整个生命周期中所做的观察序列来估计和重新估计</p>
+
+<p>参考链接: <a href="https://morvanzhou.github.io/tutorials/machine-learning/reinforcement-learning/2-2-A-q-learning/">莫烦python</a></p>
+
+:ET

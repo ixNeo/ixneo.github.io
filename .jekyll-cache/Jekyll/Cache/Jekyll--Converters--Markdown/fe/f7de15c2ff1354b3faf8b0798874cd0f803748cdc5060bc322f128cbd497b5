@@ -1,0 +1,38 @@
+I""	<ul id="markdown-toc">
+  <li><a href="#降低员工离职率的方案" id="markdown-toc-降低员工离职率的方案">降低员工离职率的方案</a></li>
+  <li><a href="#论文问题" id="markdown-toc-论文问题">论文问题</a></li>
+  <li><a href="#几种方法的比较" id="markdown-toc-几种方法的比较">几种方法的比较</a>    <ul>
+      <li><a href="#q-learning--sarsa" id="markdown-toc-q-learning--sarsa">Q-learning &amp; SARSA</a></li>
+      <li><a href="#本方案和dqn" id="markdown-toc-本方案和dqn">本方案和DQN</a></li>
+    </ul>
+  </li>
+</ul>
+<h1 id="降低员工离职率的方案">降低员工离职率的方案</h1>
+
+<ol>
+  <li>多层感知机预测员工离职率</li>
+  <li>定义元动作和元成本</li>
+  <li>运用强化学习方法, Q-learning/SARSA算法进行最优策略的输出</li>
+</ol>
+
+<h1 id="论文问题">论文问题</h1>
+
+<ol>
+  <li>写有研究型论文深度不够，应该写应用型论文</li>
+  <li>语言有问题，不像学术论文，偏白话</li>
+  <li>风格不行，没有按照论文的基本套路来，建议先读两篇应用型论文，然后严格按照套路来（可以在百度学术－－＞计算机工程与应用上选几篇应用型的参考）</li>
+  <li>摘要过少，应该能从摘要里读取主要内容</li>
+  <li>工作量过少，还有最后实验结果不能只有一组，要几组结果互相对比，显示出优越性</li>
+  <li>编辑者会根据自己的期刊对论文的格式进行修改，需要word文件．图片／表格／公式／字号／标题</li>
+</ol>
+
+<h1 id="几种方法的比较">几种方法的比较</h1>
+<h2 id="q-learning--sarsa">Q-learning &amp; SARSA</h2>
+<p>Q-learning算法是off-policy的, 较为大胆,在本状态下对下一状态下采取的动作估计,并不一定代表真实的动作
+Sarsa算法是on-policy的</p>
+<h2 id="本方案和dqn">本方案和DQN</h2>
+<ul>
+  <li>本方案是先利用神经网络进行员工离职率的计算,之后仍然利用Q-table进行更新,Q-table中的状态为员工的离职率,以0.01为间隔,从0.60到0.80, 设置0.80为成功标志</li>
+  <li>DQN是针对Q-table的状态数过多而提出的方案,利用两个神经网络, 输入状态,即特征向量,将Q-target作为标签, 两大特点:fixed-value和double-nn. 但是训练时间长</li>
+</ul>
+:ET

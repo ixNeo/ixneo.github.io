@@ -1,0 +1,95 @@
+I"!<ul id="markdown-toc">
+  <li><a href="#问题描述" id="markdown-toc-问题描述">问题描述</a></li>
+  <li><a href="#解决方案" id="markdown-toc-解决方案">解决方案</a></li>
+  <li><a href="#知识点以及优化" id="markdown-toc-知识点以及优化">知识点以及优化</a></li>
+</ul>
+
+<h1 id="问题描述">问题描述</h1>
+<p>C:岛屿面积
+总时间限制:  1000ms  内存限制:  65536kB
+描述
+用一个n<em>m的二维数组表示地图，1表示陆地，0代表海水，每一格都表示一个1</em>1的区域。地图中的格子只能横向或者纵向连接（不能对角连接），连接在一起的陆地称作岛屿，同时整个地图都被海水围绕。假设给出的地图中只会有一个岛屿，并且岛屿中不会有湖（即不会有水被陆地包围的情况出现）。请判断所给定的二维地图中岛屿的周长。</p>
+
+<p>输入
+第一行为n和m，表示地图的大小(1&lt;=n&lt;=100, 1&lt;=m&lt;=100)。接下来n行，每行有m个数，分别描述每一格的数值。数值之间均用空格隔开。
+输出
+只有一行，即岛屿的周长（正整数）。
+样例输入
+3 4
+1 1 1 0
+0 1 0 0
+1 1 0 0
+样例输出
+14</p>
+
+<h1 id="解决方案">解决方案</h1>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#include&lt;iostream&gt;
+#include&lt;cmath&gt;
+#include&lt;string&gt;
+#include&lt;iterator&gt;
+
+using namespace std;
+
+int main(){
+    // get input
+    int r,c;
+    cin &gt;&gt; r &gt;&gt; c;
+    int **pr = new int*[r];
+    for(int i=0;i&lt;r;i++){
+        pr[i] = new int[c];
+    }
+    for(int i=0;i&lt;r;i++){
+        for(int j=0;j&lt;c;j++){
+            cin &gt;&gt; pr[i][j];
+        }
+    }
+
+    /* test input
+        int pr[3][4] = { {1,1,1,0},
+                      　{0,1,0,0},
+                      　{1,1,0,0} };
+    */
+
+    // calculate c
+    int tot = 0;
+    for(int i=0;i&lt;r;i++){
+        for(int j=0;j&lt;c;j++){
+            if(pr[i][j]==0) continue;
+            if((j-1&gt;=0 &amp;&amp; !pr[i][j-1])
+                    || (j-1&lt;0))  tot++;
+            if((j+1&lt;c &amp;&amp; !pr[i][j+1])
+                    || (j+1&gt;=c))  tot++;
+            if((i-1&gt;=0 &amp;&amp; !pr[i-1][j])
+                    || (i-1&lt;0)) tot++;
+            if((i+1&lt;r &amp;&amp; !pr[i+1][j])
+                    || (i+1&gt;=r))  tot++;
+        }
+    }
+
+    // delete space
+    for(int i=0;i&lt;r;i++){
+        delete[] pr[i];
+    }
+    cout &lt;&lt; tot &lt;&lt; endl;
+    return 0;
+}
+</code></pre></div></div>
+
+<h1 id="知识点以及优化">知识点以及优化</h1>
+<ol>
+  <li>可以写测试，避免手动重复输入数值</li>
+  <li>
+    <p>可以初始化一个全０的很大的二维数组，并令坐标从１开始，简化判断条件</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> for(i=1;i&lt;=n;i++){
+     for(j=1;j&lt;=m;j++){
+         if(a[i][j]==1){
+             cnt=cnt+4-(a[i-1][j]+a[i+1][j]+a[i][j-1]+a[i][j+1]);
+         }
+     }
+ }
+</code></pre></div>    </div>
+  </li>
+</ol>
+:ET

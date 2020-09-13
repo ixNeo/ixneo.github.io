@@ -1,0 +1,24 @@
+I"�<ul id="markdown-toc">
+  <li><a href="#软件开发案例第一次上机" id="markdown-toc-软件开发案例第一次上机">软件开发案例——第一次上机</a>    <ul>
+      <li><a href="#表格布局" id="markdown-toc-表格布局">表格布局</a></li>
+      <li><a href="#div布局" id="markdown-toc-div布局">div布局</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="软件开发案例第一次上机">软件开发案例——第一次上机</h1>
+<blockquote>
+  <p>收获主要是页面布局方面</p>
+  <ul>
+    <li>综合使用浏览器开发者选项，查看元素以及父子链接关系</li>
+    <li>查看官方文档</li>
+  </ul>
+</blockquote>
+
+<h2 id="表格布局">表格布局</h2>
+<p>task: 注册页面的制作
+直接表格布局table==&gt;tr==&gt;td, form表单是其中一个tr.td</p>
+<h2 id="div布局">div布局</h2>
+<p>task: 北京银行的首页制作
+div嵌套着table/div/p.span. 只需要限制每个div的宽度和高度即可，偶尔需要float</p>
+:ET

@@ -1,0 +1,31 @@
+I"	<ul id="markdown-toc">
+  <li><a href="#with" id="markdown-toc-with">with</a></li>
+  <li><a href="#time" id="markdown-toc-time">time</a></li>
+</ul>
+
+<h1 id="with">with</h1>
+<p>with只适用于上下文管理器的调用，除了文件外，with还支持 threading、decimal等模块，当然我们也可以自己定义可以给with调用的上下文管理器
+使用类定义上下文管理器。</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">class</span> <span class="nc">A</span><span class="p">():</span>
+        <span class="k">def</span> <span class="nf">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="bp">self</span><span class="p">.</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span>
+            <span class="k">return</span> <span class="bp">self</span>
+        <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="k">print</span> <span class="s">'f'</span>
+        <span class="k">def</span> <span class="nf">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">):</span>
+            <span class="k">print</span> <span class="s">'exit'</span>
+    <span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
+        <span class="k">return</span> <span class="n">A</span><span class="p">()</span>
+
+    <span class="k">with</span> <span class="n">A</span><span class="p">()</span> <span class="k">as</span> <span class="n">a</span><span class="p">:</span>
+        <span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
+        <span class="n">a</span><span class="p">.</span><span class="n">f</span><span class="p">()</span>
+        <span class="k">print</span> <span class="n">a</span><span class="p">.</span><span class="n">a</span>
+</code></pre></div></div>
+
+<h1 id="time">time</h1>
+
+<p>time.sleep()模拟时间延迟/读写数据延迟/网络延迟
+计算耗时：time.time()用于记录起始和结束时间</p>
+:ET

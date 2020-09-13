@@ -1,0 +1,215 @@
+I"�'
+<p>1.系统登录、退出、关机和重启</p>
+<ul>
+  <li>login          : 登录系统</li>
+  <li>logout        : 退出登录的shell</li>
+  <li>exit            : 退出登录的shell(常用)</li>
+  <li>rlogin         : 远程登录服务器</li>
+  <li>poweroff    : 关闭系统，然后关闭记录被写入 /var/log/wtmp日志文件中</li>
+  <li>ctrlaltdel    : 强制或者安全重新启动服务器</li>
+  <li>shutdown  : 安全地关闭或者重启系统(常用)</li>
+  <li>halt            : 关闭系统</li>
+  <li>reboot        :  重启linux系统(常用)</li>
+  <li>init 0/6       :  init 0为关机，init 6为重启</li>
+</ul>
+
+<p>2.获取命令的系统帮助信息</p>
+<ul>
+  <li>help        : 查看内部shell命令的帮助信息(常用)</li>
+  <li>man         :  显示在线帮助手册(常用)</li>
+  <li>info          :  info格式的帮助文档</li>
+</ul>
+
+<p>3.文本编辑器</p>
+<ul>
+  <li>vi            :  linux下面功能异常强大的编辑器，快捷键多如牛毛</li>
+  <li>nano      :  系统自带的一个编辑器，有的时候只能使用它编辑少部分配置文件</li>
+</ul>
+
+<p>4.目录和文件操作，这一系列命令都常用</p>
+<ul>
+  <li>pwd        : 显示当前用户所处的工作目录的绝对路径</li>
+  <li>cd           : 更改工作目录路径</li>
+  <li>ls            : 列出当前工作目录和目录和文件信息</li>
+  <li>dirs         : 显示目录列表，在只需要显示目录的时候比较简单实用</li>
+  <li>touch      : 创建空文件或更改文件时间</li>
+  <li>mkdir      : 创建目录</li>
+  <li>rmdir      : 删除空目录</li>
+  <li>cp          : 复制文件和目录</li>
+  <li>mv         : 给文件和目录改名、移动文件和目录的路径</li>
+  <li>rm          : 删除文件或目录</li>
+  <li>file         : 查询文件的文件类型</li>
+  <li>du          : 显示目录或文件的磁盘占用量(文件系统数据库的情况)</li>
+  <li>wc          : 统计文件的行数、单词数、字节数和字符数</li>
+  <li>tree        : 以树状图逐级列出目录的内容</li>
+  <li>cksum    : 显示文件的CRC校验值和字节统计</li>
+  <li>mk5sum : 显示或检查MD5(128-bit)校验和</li>
+  <li>sum       : 为文件输出校验和及块计数</li>
+  <li>dirname : 输出去除尾”/”字符部分的名称，名称不包含”/”则显示”.”</li>
+  <li>basename : 去掉前导的目录部分后显示名称，如果指定后缀的话会去掉后缀</li>
+  <li>ln           : 创建链接文件</li>
+  <li>stat        : 显示文件或文件系统状态</li>
+</ul>
+
+<p>5.文本文件内容显示</p>
+<ul>
+  <li>cat        : 显示文本文件内容</li>
+  <li>more    : 分页显示文本文件</li>
+  <li>less      : 回卷显示文本文件的内容</li>
+  <li>head     : 显示文件指定的前若干行</li>
+  <li>tail        : 显示文件指定的后若干行</li>
+  <li>nl         :  显示文件的行号和内容</li>
+</ul>
+
+<p>6.文件处理</p>
+<ul>
+  <li>sort      : 对文件中的数据进行排序</li>
+  <li>uniq      : 将重复行从输出文件中删除</li>
+  <li>cut        : 从文件的每行中输出指定的字节、字符或字段(域名)</li>
+  <li>comm   : 逐行比较两个已排序的文件</li>
+  <li>diff        : 逐行比较两个文本文件，列出不同</li>
+  <li>diff3      : 按行比较三个文件</li>
+  <li>cmp      : 按字节比较两个文件</li>
+  <li>tr          : 从标准输入中替换、缩减和/或删除字符</li>
+  <li>split      : 将输入文件进行分割成片，输出固定大小的块</li>
+  <li>tee       : 将标准输入复制到每一个指定的文件</li>
+  <li>awk      : 模式扫描和处理语言，比较复杂，功能强大常用</li>
+  <li>sed      : 用于过滤和转换文本的流编辑器，比较复杂，功能强大常用</li>
+</ul>
+
+<p>7.查找字符串、文件</p>
+<ul>
+  <li>grep      : 查找文件中符合条件的字符串，比较复杂，功能强大常用</li>
+  <li>egrep    : 可以在每个文件或是标准输入中查找模式</li>
+  <li>find       : 列出文件系统内符合条件的文件，比较复杂，功能强大常用</li>
+  <li>whereis : 查找指定文件、命令和手册页位置</li>
+  <li>whatis   : 在whatis数据库中搜寻特定命令</li>
+  <li>which    : 显示可执行命令的路径</li>
+</ul>
+
+<p>8.日期和时间</p>
+<ul>
+  <li>cal        : 显示日历信息</li>
+  <li>date      : 显示和设置系统日期和时间</li>
+  <li>hwclock: 查看和设置硬件时钟</li>
+  <li>clockdiff: 主机之间测量时钟差</li>
+  <li>rdate     : 通过网络获取时间</li>
+  <li>sleep     : 暂停指定的时间</li>
+</ul>
+
+<p>9.数字计算相关命令</p>
+<ul>
+  <li>bc      : 任意精度的计算器</li>
+  <li>expr   : 将表达式的值列印到标准输出，注意转义</li>
+</ul>
+
+<p>10.用户和用户组管理</p>
+<ul>
+  <li>useradd       : 创建用户账户</li>
+  <li>adduser       : 是useradd命令的符号链接</li>
+  <li>newuser       : 更新和批量创建新用户</li>
+  <li>lnewuser      : 使用lnewusers命令可以从标准输入中读取数据来创建账户</li>
+  <li>usermod      : 修改用户账户属性</li>
+  <li>userdel        : 删除用户账户</li>
+  <li>groupadd     : 创建组群</li>
+  <li>groupmod    : 修改组群</li>
+  <li>groupdel      : 删除组群</li>
+  <li>passwd        : 设置或者修改用户密码</li>
+  <li>chpasswd    : 成批更新用户口令</li>
+  <li>change        : 更改用户密码到期信息</li>
+  <li>chsh            : 更改用户账户的shell类型</li>
+  <li>pwck           : 校验/etc/passwd 和/etc/shadow文件的内容是否合法和完整</li>
+  <li>grpck          : 验证组群文件的完整性，/etc/grous和/etc/gshadow文件</li>
+  <li>newgrp       : 将用户账户以另一个组群的身份进行登录</li>
+  <li>finger          : 用户信息查找</li>
+  <li>groups        : 显示指定用户账户的组群成员身份</li>
+  <li>id                : 显示用户的uid及该用户所属组群的gid</li>
+  <li>su               : 切换到其他用户账户进行登录</li>
+  <li>sudo           : 以另外一个用户执行命令</li>
+</ul>
+
+<p>11.显示登录的用户</p>
+<ul>
+  <li>w            : 详细查询已登录当前计算机的用户</li>
+  <li>who        : 显示已登录当前计算机用户的简单信息</li>
+  <li>logname : 显示当前用户的登录名称</li>
+  <li>users      : 用单独的一行显示出当前登录的用户</li>
+  <li>last         : 显示近期用户登录情况</li>
+  <li>lastb       : 列出登录系统失败的用户信息</li>
+  <li>lastlog    : 查看用户上次登录的时间</li>
+</ul>
+
+<p>12.文件目录的权限和属性</p>
+<ul>
+  <li>chmod       : 更改文件和目录的模式</li>
+  <li>chown       : 更改文件和目录的用户所有者和组群的所有者</li>
+  <li>chgrp        : 更改文件或目录的所属组</li>
+  <li>umask       : 显示和设置文件及目录创建默认权限掩码</li>
+  <li>getfacl       : 显示文件或目录的ACL</li>
+  <li>setfacl       : 设置文件或目录的ACL</li>
+  <li>chacl         : 更改文件或目录的ACL</li>
+  <li>lsattr         : 查看文件和目录的属性</li>
+  <li>chattr        : 更改文件和目录的属性</li>
+</ul>
+
+<p>13.归档与压缩</p>
+<ul>
+  <li>tar           : 将许多文件一起保存进行归档和压缩</li>
+  <li>gzip         : 压缩或解压缩gzip文件</li>
+  <li>gunzip     : 解压缩gzip文件</li>
+  <li>zcmp       : 调用diff比较gzip压缩文件</li>
+  <li>zip           : 压缩zip文件</li>
+  <li>unzip       : 解压缩zip文件</li>
+  <li>zcat         : 查看zip压缩文件</li>
+  <li>zless       : 查看zip压缩文件</li>
+  <li>zipinfo     : 列出zip文件相关的详细信息</li>
+  <li>zipsplit    : 拆分zip文件</li>
+  <li>zipgrep   : 在zip压缩文件中搜索匹配指定的字符串或模式</li>
+  <li>zmore     : 查看gzip/zip/compress压缩文件</li>
+</ul>
+
+<p>14.进程和服务管理，这块命令都比较常用</p>
+<ul>
+  <li>ps          : 查看当前进程的瞬时快照；</li>
+  <li>top         : 显示当前正在运行的进程</li>
+  <li>pgrep     : 按名称和其他属性查找进程</li>
+  <li>pidof      : 根据进程名查找正在运行的进程的进程号</li>
+  <li>kill          : 终止进程</li>
+  <li>killall      : 按名称杀死进程</li>
+  <li>pkill        : 按名称和其他属性杀死进程</li>
+  <li>timeout  : 在指定时间后仍在运行则杀死该进程</li>
+  <li>wait       : 等待指定的进程</li>
+  <li>fuser      : 显示哪些进程使用指定的文件、套接字或文件系统</li>
+  <li>nohup    : 运行指定的命令不受挂起</li>
+  <li>pmap     : 报告进程的内存映射</li>
+  <li>lsof        : 列出打开的文件</li>
+  <li>chkconfig : 为系统服务更新和查询运行级别信息</li>
+  <li>bg          : 恢复在后台暂停工作的作业</li>
+  <li>fg           : 将程序或命令放到前台执行</li>
+  <li>jobs       : 列出活动的作业</li>
+</ul>
+
+<p>15.性能监控，有点儿难度的重要命令，需要了解操作系统的相关知识</p>
+<ul>
+  <li>sar          : 收集、报告或保存系统活动信息</li>
+  <li>iostat      : 报告CUP统计数据和设备、分区输入/输出信息</li>
+  <li>iotop       : 进行I/O监控</li>
+  <li>mpstat    : 报告CPU相关的统计数据</li>
+  <li>vmstat    : 报告虚拟内存统计</li>
+  <li>tload       : 加载显示系统平均负载，加载显示当前系统指定tty终端平均负载</li>
+  <li>time        : 给出资源使用的时间</li>
+  <li>uptime    : 显示系统已经运行的时间</li>
+  <li>ipcs        : 提供IPC设施信息</li>
+  <li>ipcrm      : 删除消息队列、信号量集或共享内存ID</li>
+  <li>lslk         : 列出本地锁</li>
+</ul>
+
+<p>16.任务计划</p>
+<ul>
+  <li>crontab   : 针对用户维护的crontab文件</li>
+  <li>at            : 在指定时间执行命令</li>
+  <li>atq          : 列出用户等待执行的作业</li>
+  <li>atrm        : 删除作业</li>
+  <li>watch      : 定期执行一个程序</li>
+</ul>
+:ET

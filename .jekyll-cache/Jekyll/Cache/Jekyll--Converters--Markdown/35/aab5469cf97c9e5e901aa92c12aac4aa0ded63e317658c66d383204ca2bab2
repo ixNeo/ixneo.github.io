@@ -1,0 +1,13 @@
+I"�<ul id="markdown-toc">
+  <li><a href="#cpp" id="markdown-toc-cpp">cpp</a></li>
+</ul>
+<h1 id="cpp">cpp</h1>
+
+<p>short int  2个字节</p>
+
+<p>int 2/4字节</p>
+
+<p>long 4/8字节</p>
+
+<p>long long 8字节</p>
+:ET

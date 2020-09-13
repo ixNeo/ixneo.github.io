@@ -1,0 +1,186 @@
+I"�<ul id="markdown-toc">
+  <li><a href="#常用命令" id="markdown-toc-常用命令">常用命令</a></li>
+  <li><a href="#文件" id="markdown-toc-文件">文件</a></li>
+  <li><a href="#系统工具" id="markdown-toc-系统工具">系统工具</a></li>
+  <li><a href="#命令工具" id="markdown-toc-命令工具">命令工具</a></li>
+  <li><a href="#文件系统" id="markdown-toc-文件系统">文件系统</a></li>
+  <li><a href="#比较文件" id="markdown-toc-比较文件">比较文件</a></li>
+  <li><a href="#登录和注销" id="markdown-toc-登录和注销">登录和注销</a></li>
+  <li><a href="#目录" id="markdown-toc-目录">目录</a></li>
+  <li><a href="#进程和作业控制" id="markdown-toc-进程和作业控制">进程和作业控制</a></li>
+  <li><a href="#系统工具-1" id="markdown-toc-系统工具-1">系统工具</a></li>
+  <li><a href="#工具" id="markdown-toc-工具">工具</a></li>
+  <li><a href="#显示数据" id="markdown-toc-显示数据">显示数据</a></li>
+  <li><a href="#shell" id="markdown-toc-shell">shell</a></li>
+  <li><a href="#用户和用户标识" id="markdown-toc-用户和用户标识">用户和用户标识</a></li>
+  <li><a href="#文档资料" id="markdown-toc-文档资料">文档资料</a></li>
+  <li><a href="#选择数据" id="markdown-toc-选择数据">选择数据</a></li>
+  <li><a href="#变量" id="markdown-toc-变量">变量</a></li>
+  <li><a href="#编辑" id="markdown-toc-编辑">编辑</a></li>
+  <li><a href="#用户管理" id="markdown-toc-用户管理">用户管理</a></li>
+</ul>
+
+<h2 id="常用命令">常用命令</h2>
+
+<ul>
+  <li>查找端口并删除进程:
+    <ul>
+      <li>$ lsof -i:<post></post></li>
+      <li>$ kill -9 <pid></pid></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="文件">文件</h1>
+<ul>
+  <li>touch 更新文件的访问／修改时间；创建文件
+    <h1 id="系统工具">系统工具</h1>
+    <h1 id="命令工具">命令工具</h1>
+  </li>
+  <li>which 显示命令的路径名和别名</li>
+  <li>tar -zxvf file # 解压缩</li>
+  <li>tar -zcvf file # 压缩</li>
+</ul>
+
+<h1 id="文件系统">文件系统</h1>
+<ul>
+  <li>du</li>
+  <li>df 显示文件系统已使用／可使用的磁盘空间</li>
+  <li>mount 挂载文件系统</li>
+  <li>umount 卸载文件系统</li>
+  <li>fdisk 磁盘分区工具，可以扩展分区</li>
+</ul>
+
+<h1 id="比较文件">比较文件</h1>
+<ul>
+  <li>cmp</li>
+  <li>diff</li>
+  <li>sdiff(推荐)　比较两个文件，显示区别</li>
+</ul>
+
+<h1 id="登录和注销">登录和注销</h1>
+<ul>
+  <li>login 终止登录shell并初始化一个新登录</li>
+  <li>loginout 终止登录shell</li>
+  <li>passwd 改变登录口令</li>
+</ul>
+
+<h1 id="目录">目录</h1>
+<ul>
+  <li>cd 改变工作目录</li>
+  <li>chmod 改变文件或目录的文件权限</li>
+  <li>chown 改变文件属组</li>
+  <li>du 显示文件使用的磁盘空间量</li>
+  <li>file 分析文件类型</li>
+  <li>ls 显示文件的各种类型信息</li>
+  <li>dirs 显示目录列表</li>
+  <li>mkdir 创建目录</li>
+  <li>mv 移动或重命名文件或目录</li>
+  <li>pwd 显示工作目录的路径名</li>
+  <li>rm 删除文件或目录</li>
+  <li>rmdir 删除空目录</li>
+  <li>tree 显示目录树的图表</li>
+</ul>
+
+<h1 id="进程和作业控制">进程和作业控制</h1>
+<ul>
+  <li>&amp; 在后台挂起程序</li>
+  <li>fg 将作业移到前台</li>
+  <li>bg 将作业移至后台</li>
+  <li>suspend 挂起（暂停）shell</li>
+  <li>jobs 显示作业信息</li>
+  <li>ps 显示显示进程信息</li>
+  <li>top 显示使用最多CPU的进程的数据</li>
+  <li>pstree 显示进程树图表</li>
+  <li>kill 终止进程；给进程发送信号</li>
+  <li>kill -9 pid # 只杀进程本身</li>
+  <li>kill pid 杀本身和子进程</li>
+  <li>nice 使用指定的调度优先级运行程序</li>
+</ul>
+
+<h1 id="系统工具-1">系统工具</h1>
+<ul>
+  <li>dmesg 显示启动信息</li>
+  <li>reboot</li>
+  <li>shutdown</li>
+  <li>su 改变到超级用户</li>
+  <li>sudo</li>
+  <li>uname</li>
+  <li>uptime</li>
+  <li>free 查看内存使用情况</li>
+  <li>service 服务相关</li>
+  <li>crontab -l　查看定时任务</li>
+  <li>crontab -e 新增</li>
+</ul>
+
+<h1 id="工具">工具</h1>
+<ul>
+  <li>cal 显示一个日历</li>
+</ul>
+
+<h1 id="显示数据">显示数据</h1>
+<ul>
+  <li>cat 组合文件，将标准输入复制到标准输出</li>
+  <li>echo 将参数写到标准输出</li>
+  <li>less 分页程序</li>
+  <li>more</li>
+  <li>head 从数据的开头选择行</li>
+  <li>tail 在数据的末尾选择行</li>
+</ul>
+
+<h1 id="shell">shell</h1>
+<ul>
+  <li>exit 退出shell</li>
+  <li>history 显示历史命令</li>
+</ul>
+
+<h1 id="用户和用户标识">用户和用户标识</h1>
+<ul>
+  <li>group 显示用户标识所属的组</li>
+  <li>id　显示当前用户标识和组标识</li>
+  <li>last　查看用户标识上一次登录时间</li>
+  <li>w　显示用户标识和活动进程的信息</li>
+  <li>who</li>
+  <li>whoami</li>
+</ul>
+
+<h1 id="文档资料">文档资料</h1>
+<ul>
+  <li>info 从info参考系统中显示文件</li>
+  <li>man 显示Unix联机参考手册的页面</li>
+  <li>help</li>
+</ul>
+
+<h1 id="选择数据">选择数据</h1>
+<ul>
+  <li>grep 正则表达式 file #  选择包含指定模式的行</li>
+  <li>cut</li>
+  <li>head</li>
+  <li>look</li>
+  <li>tail</li>
+  <li>find /path/to -name “”</li>
+</ul>
+
+<h1 id="变量">变量</h1>
+<ul>
+  <li>env 显示环境变量</li>
+  <li>set 设置／显示shell选项和shell变量</li>
+</ul>
+
+<h1 id="编辑">编辑</h1>
+<ul>
+  <li>vi vi文本编辑器</li>
+  <li>vim vim文本编辑器</li>
+</ul>
+
+<h1 id="用户管理">用户管理</h1>
+<ul>
+  <li>su USER 切换用户</li>
+  <li>useradd USER 添加用户 -u 指定uid，-g指定gid</li>
+  <li>userdel USER 删除用户 -r删除家目录和mail账户</li>
+  <li>groupadd  GROUP 添加组</li>
+  <li>groupdel GROUP 删除组</li>
+  <li>passwd [USER] 默认修改自身密码（普通用户可以），加用户名修改某用户密码（root）</li>
+</ul>
+
+:ET

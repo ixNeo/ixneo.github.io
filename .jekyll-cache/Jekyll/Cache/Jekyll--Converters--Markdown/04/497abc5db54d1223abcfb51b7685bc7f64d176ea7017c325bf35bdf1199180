@@ -1,0 +1,13 @@
+I"�<ul id="markdown-toc">
+  <li><a href="#cpp" id="markdown-toc-cpp">cpp</a></li>
+</ul>
+<h1 id="cpp">cpp</h1>
+
+<ul>
+  <li>取消科学计数法: 头文件<iomanip>
+  cout.setf(ios::fixed,ios::floatfield);</iomanip></li>
+  <li>保留小数精度: cout « fixed « setpresicion(1) « num ;</li>
+  <li>流式写法: 每次接受一个输入,立刻判断处理.一次循环.</li>
+  <li>缓冲式写法: 批量写入数据,批量处理.多个单循环</li>
+</ul>
+:ET

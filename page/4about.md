@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About
+title: 关于
 permalink: /about/
 icon: heart
 type: page
@@ -11,12 +11,12 @@ type: page
 
 ## 关于我
 
-<iframe src="https://githubbadge.appspot.com/ixneo?s=1" style="border: 0;height: 142px;width: 200px;overflow: hidden;" frameBorder="0"></iframe>
+<!-- <iframe src="https://githubbadge.appspot.com/ixneo?s=1" style="border: 0;height: 142px;width: 200px;overflow: hidden;" frameBorder="0"></iframe> -->
 
-jktian, 一个自嗨的人, 正在渡劫中
+笔名coolinear
 
 * 教育背景
-	* DLUT, SE.　大三在读
+	* 大连理工大学的本科毕业，中国人民大学的硕士在读，专业软件工程，目前在搞多模态研究
 * 兴趣
 	* 机器学习，数据挖掘，模型搭建与算法设计
 	* 重构，软件工程

@@ -1,0 +1,47 @@
+I"W<ul id="markdown-toc">
+  <li><a href="#最简单demo" id="markdown-toc-最简单demo">最简单demo</a></li>
+  <li><a href="#知识图谱" id="markdown-toc-知识图谱">知识图谱</a></li>
+  <li><a href="#术语" id="markdown-toc-术语">术语</a></li>
+</ul>
+
+<h1 id="最简单demo">最简单demo</h1>
+<ol>
+  <li>爬取内容</li>
+  <li>mysql建表</li>
+  <li>正则匹配输入，设立规则，变为查询语句，输出</li>
+</ol>
+
+<h1 id="知识图谱">知识图谱</h1>
+<ol>
+  <li>爬取内容。多源，异构</li>
+  <li>mysql建表</li>
+  <li>protege建立本体文件owl</li>
+  <li>
+    <ol>
+      <li>D2RQ将mysql表变为mapping文件以及rdf, 结合owl进行修改，融合。三元组。</li>
+      <li>或者用jena框架，直接上传rdf文件，owl提供推理功能</li>
+    </ol>
+  </li>
+  <li>对输入进行对象级别的正则匹配。用sparql查询。</li>
+</ol>
+
+<blockquote>
+  <ul>
+    <li>把表变为rdf</li>
+    <li>把sql换为sparql</li>
+    <li>把re换为refo</li>
+    <li>方便后续的推理。更加符合现实的结构关系。易扩展性</li>
+  </ul>
+</blockquote>
+
+<h1 id="术语">术语</h1>
+<ol>
+  <li>embedding: 让计算机理解人类语言．数学领域的有名词，是指某个对象 X 被嵌入到另外一个对象 Y 中，映射 f : X → Y ，例如有理数嵌入实数。
+    <ol>
+      <li>Word Embedding 是NLP中一组语言模型和特征学习技术的总称，把词汇表中的单词或者短语映射成由实数构成的向量上(映射)．一个词是一个向量</li>
+      <li>one-hot, n-gram</li>
+      <li>word2vec</li>
+    </ol>
+  </li>
+</ol>
+:ET

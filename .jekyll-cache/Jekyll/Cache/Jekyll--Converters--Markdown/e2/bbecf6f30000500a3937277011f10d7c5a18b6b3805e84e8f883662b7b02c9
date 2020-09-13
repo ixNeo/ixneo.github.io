@@ -1,0 +1,7 @@
+I"�<ul id="markdown-toc">
+  <li><a href="#n-gram" id="markdown-toc-n-gram">N-gram</a></li>
+</ul>
+<h1 id="n-gram">N-gram</h1>
+
+<p>N-Gram是基于一个假设：第n个词出现与前n-1个词相关，而与其他任何词不相关。（这也是隐马尔可夫当中的假设。）整个句子出现的概率就等于各个词出现的概率乘积。各个词的概率可以通过语料中统计计算得到。考虑句子中单词之间的顺序.</p>
+:ET

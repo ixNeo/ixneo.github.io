@@ -1,0 +1,8 @@
+I"T<ul id="markdown-toc">
+  <li><a href="#with" id="markdown-toc-with">with</a></li>
+</ul>
+
+<h1 id="with">with</h1>
+<p>with只适用于上下文管理器的调用，除了文件外，with还支持 threading、decimal等模块，当然我们也可以自己定义可以给with调用的上下文管理器
+使用类定义上下文管理器。</p>
+:ET

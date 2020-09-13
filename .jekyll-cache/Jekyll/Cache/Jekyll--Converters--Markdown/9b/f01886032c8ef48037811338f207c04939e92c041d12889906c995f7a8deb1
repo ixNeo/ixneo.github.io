@@ -1,0 +1,22 @@
+I"B<ul id="markdown-toc">
+  <li><a href="#问题解决" id="markdown-toc-问题解决">问题解决</a></li>
+</ul>
+
+<h1 id="问题解决">问题解决</h1>
+<p>问题：must be a number, not str，但是想要数值类型，方便比较查询</p>
+
+<p>解决：所有语句的占位符均换为%s, 即使在表的定义中为%f</p>
+
+<p>debug手段：</p>
+<ul>
+  <li>打印类型,</li>
+  <li>比较execute和executemany语句</li>
+  <li>比较定值插入和变值插入
+    <blockquote>
+      <p>熟悉了数据库中的各种数据类型</p>
+    </blockquote>
+  </li>
+</ul>
+
+<hr />
+:ET

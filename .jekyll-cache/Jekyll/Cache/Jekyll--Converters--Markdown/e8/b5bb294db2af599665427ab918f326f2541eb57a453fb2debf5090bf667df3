@@ -1,0 +1,29 @@
+I"Z<ul id="markdown-toc">
+  <li><a href="#常用命令" id="markdown-toc-常用命令">常用命令</a></li>
+  <li><a href="#文件" id="markdown-toc-文件">文件</a></li>
+  <li><a href="#系统工具" id="markdown-toc-系统工具">系统工具</a></li>
+  <li><a href="#命令工具" id="markdown-toc-命令工具">命令工具</a></li>
+</ul>
+
+<h2 id="常用命令">常用命令</h2>
+
+<ul>
+  <li>查找端口并删除进程:
+    <ul>
+      <li>$ lsof -i:<post></post></li>
+      <li>$ kill -9 <pid></pid></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="文件">文件</h1>
+<ul>
+  <li>touch 更新文件的访问／修改时间；创建文件
+    <h1 id="系统工具">系统工具</h1>
+    <h1 id="命令工具">命令工具</h1>
+  </li>
+  <li>which 显示命令的路径名和别名</li>
+  <li>tar -zxvf file # 解压缩</li>
+  <li>tar -zcvf file # 压缩</li>
+</ul>
+:ET

@@ -1,0 +1,54 @@
+I"]<ul id="markdown-toc">
+  <li><a href="#roc曲线" id="markdown-toc-roc曲线">ROC曲线</a>    <ul>
+      <li><a href="#混淆矩阵" id="markdown-toc-混淆矩阵">混淆矩阵</a></li>
+      <li><a href="#其他评价指标" id="markdown-toc-其他评价指标">其他评价指标</a></li>
+    </ul>
+  </li>
+  <li><a href="#auc" id="markdown-toc-auc">AUC</a></li>
+  <li><a href="#summary" id="markdown-toc-summary">summary</a></li>
+  <li><a href="#数据脱敏" id="markdown-toc-数据脱敏">数据脱敏</a></li>
+</ul>
+
+<h1 id="roc曲线">ROC曲线</h1>
+<p><a href="https://blog.csdn.net/u013385925/article/details/80385873">CSDN</a></p>
+
+<p><a href="https://segmentfault.com/a/1190000010410634?utm_source=tag-newest">segfault</a>
+ROC曲线下面的面积，就是AUC的值</p>
+
+<h3 id="混淆矩阵">混淆矩阵</h3>
+<p>前面的部分是True／False表示真假，即代表着预测的正确性，后面的部分是positive／negative表示正负样本，即代表着预测的结果
+True negative(TN)，称为真阴率，表明实际是负样本预测成负样本的样本数
+False positive(FP)，称为假阳率，表明实际是负样本预测成正样本的样本数
+False negative(FN)，称为假阴率，表明实际是正样本预测成负样本的样本数
+True positive(TP)，称为真阳率，表明实际是正样本预测成正样本的样本数</p>
+
+<p>横轴：False Positive Rate（假阳率，FPR）
+纵轴：True Positive Rate（真阳率，TPR）</p>
+
+<p>(0,0)：假阳率和真阳率都为0，即分类器全部预测成负样本
+(0,1)：假阳率为0，真阳率为1，全部完美预测正确，happy
+(1,0)：假阳率为1，真阳率为0，全部完美预测错误，悲剧
+(1,1)：假阳率和真阳率都为1，即分类器全部预测成正样本
+TPR＝FPR，斜对角线，预测为正样本的结果一半是对的，一半是错的，代表随机分类器的预测效果</p>
+
+<p>ROC曲线在斜对角线以下，则表示该分类器效果差于随机分类器，反之，效果好于随机分类器，当然，我们希望ROC曲线尽量除于斜对角线以上，也就是向左上角（0,1）凸。</p>
+<h3 id="其他评价指标">其他评价指标</h3>
+<p>准确率、精准率、召回率、F1-score，AUC</p>
+
+<h1 id="auc">AUC</h1>
+<p>AUC(Area under the ROC curve)</p>
+
+<p>AUC ＝ 1，代表完美分类器
+0.5 &lt; AUC &lt; 1，优于随机分类器
+0 &lt; AUC &lt; 0.5，差于随机分类器</p>
+
+<h1 id="summary">summary</h1>
+<p>ROC曲线反映了分类器的分类能力，结合考虑了分类器输出概率的准确性. 一定程度上可以理解成一种鲁棒能力吧
+AUC量化了ROC曲线的分类能力，越大分类效果越好，输出概率越合理
+AUC常用作CTR的离线评价，AUC越大，CTR的排序能力越强</p>
+
+<h1 id="数据脱敏">数据脱敏</h1>
+<p>指对某些敏感信息通过脱敏规则进行数据的变形，实现敏感隐私数据 的可靠保护。这样，就可以在开发、测试和其它非生产环境以及外包环境中安全地使用脱敏后的真实数据集。</p>
+
+<p>用户隐私数据保护与挖掘用户数据价值是两个互相冲突的矛盾体，彻底的数据脱敏，需要抹去全部的用户标识信息，使得数据潜在的分析价值大大降低。另一方面，完全保留用户隐私数据信息，可最大化数据的分析价值，同时导致用户隐私泄露的风险无法控制。</p>
+:ET

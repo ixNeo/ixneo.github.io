@@ -1,0 +1,63 @@
+I"p<ul id="markdown-toc">
+  <li><a href="#20190304" id="markdown-toc-20190304">20190304</a></li>
+  <li><a href="#总结" id="markdown-toc-总结">总结</a>    <ul>
+      <li><a href="#20190327" id="markdown-toc-20190327">20190327</a></li>
+    </ul>
+  </li>
+  <li><a href="#约束-constraint" id="markdown-toc-约束-constraint">约束-constraint</a></li>
+  <li><a href="#索引" id="markdown-toc-索引">索引</a></li>
+  <li><a href="#权限管理" id="markdown-toc-权限管理">权限管理</a></li>
+  <li><a href="#身份认证" id="markdown-toc-身份认证">身份认证</a></li>
+  <li><a href="#用户管理" id="markdown-toc-用户管理">用户管理</a></li>
+  <li><a href="#概要文件" id="markdown-toc-概要文件">概要文件</a></li>
+  <li><a href="#数据类型" id="markdown-toc-数据类型">数据类型</a></li>
+</ul>
+
+<h2 id="20190304">20190304</h2>
+<h1 id="总结">总结</h1>
+<ol>
+  <li>shell操作。命令行解释器的设置。如提示符样式等</li>
+  <li>改变显示界面样式。
+    <ol>
+      <li>set命令，如是否回显、分隔符设置、显示执行时间、限制显示行数等</li>
+      <li>表的结构</li>
+    </ol>
+  </li>
+  <li>基本概念：connect、commit(原子操作)</li>
+  <li>脚本装载与执行</li>
+  <li>操作流程：
+    <ol>
+      <li>连接数据库，输入密码</li>
+      <li>增删改查</li>
+    </ol>
+  </li>
+  <li>备份与还原。即脚本的存储和装载</li>
+</ol>
+
+<h2 id="20190327">20190327</h2>
+<h1 id="约束-constraint">约束-constraint</h1>
+<p>列约束和表约束,</p>
+
+<p>尽量使用表约束</p>
+<h1 id="索引">索引</h1>
+<p>单索引,符合索引</p>
+
+<p>索引的效率比平常查询高&gt;=2%-4%</p>
+<h1 id="权限管理">权限管理</h1>
+<p>创建角色，指定权限</p>
+
+<h1 id="身份认证">身份认证</h1>
+
+<h1 id="用户管理">用户管理</h1>
+<p>sys: 
+system:
+scott: 用于测试网络
+public: 创建的任何用户</p>
+
+<h1 id="概要文件">概要文件</h1>
+<p>举例：
+可以指定输入4次密码后锁定账号，10天后解锁</p>
+
+<h1 id="数据类型">数据类型</h1>
+<p>Number https://www.cnblogs.com/oumyye/p/4448656.html</p>
+:ET

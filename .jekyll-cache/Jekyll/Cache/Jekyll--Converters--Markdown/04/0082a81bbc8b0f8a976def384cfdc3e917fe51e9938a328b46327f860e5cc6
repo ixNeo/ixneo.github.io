@@ -1,0 +1,7 @@
+I"�<ul id="markdown-toc">
+  <li><a href="#概念" id="markdown-toc-概念">概念</a></li>
+</ul>
+
+<h1 id="概念">概念</h1>
+<p>红黑树不仅是二叉搜索树，且必须满足以下5条平衡规则：</p>
+:ET

@@ -1,0 +1,19 @@
+I"�<ul id="markdown-toc">
+  <li><a href="#requirementtxt文件" id="markdown-toc-requirementtxt文件">requirement.txt文件</a></li>
+</ul>
+
+<h1 id="requirementtxt文件">requirement.txt文件</h1>
+<ol>
+  <li>创建
+    <ol>
+      <li>当前环境的依赖
+ pip freeze &gt; requirement.txt</li>
+      <li>当前项目的依赖
+ pip install pipreqs
+ pipreqs ./</li>
+    </ol>
+  </li>
+  <li>使用
+ pip install -r requirement.txt</li>
+</ol>
+:ET

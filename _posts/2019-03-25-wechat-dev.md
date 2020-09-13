@@ -28,8 +28,7 @@ tags:								#标签
 
 
 linux下:
-1. wine	# windows虚拟模拟程序,可以选择windows版本
-
+1. wine，即windows虚拟模拟程序,可以选择windows版本
 2. 安装nwjs-sdk
 wget https://dl.nwjs.io/v0.25.4/nwjs-sdk-v0.25.4-linux-x64.tar.gz 
 tar xvf  nwjs-sdk-v0.25.4-linux-x64.tar.gz

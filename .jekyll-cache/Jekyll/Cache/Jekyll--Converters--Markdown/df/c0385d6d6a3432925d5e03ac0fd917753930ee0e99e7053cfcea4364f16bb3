@@ -1,0 +1,41 @@
+I"}<ul id="markdown-toc">
+  <li><a href="#常用命令" id="markdown-toc-常用命令">常用命令</a></li>
+  <li><a href="#多人协作" id="markdown-toc-多人协作">多人协作</a></li>
+  <li><a href="#git-clone" id="markdown-toc-git-clone">git clone</a></li>
+  <li><a href="#fork" id="markdown-toc-fork">fork</a></li>
+</ul>
+
+<h1 id="常用命令">常用命令</h1>
+<p>git status</p>
+
+<p>git add .</p>
+
+<p>git commit -m “”</p>
+
+<p>git commit -am “”</p>
+
+<p>git reset –hard HEAD^</p>
+
+<p>git log</p>
+
+<p>git reflog</p>
+
+<p>git checkout -b <branch_name></branch_name></p>
+
+<h1 id="多人协作">多人协作</h1>
+<p>开发者，需要在仓库的建立者中，仓库settings中进行添加</p>
+
+<p>普通用户，可以提交issue</p>
+
+<p>被开发者认可后，可以被添加为contributor</p>
+
+<h1 id="git-clone">git clone</h1>
+<p>复制到本地</p>
+<ul>
+  <li>http: 需要用户的用户名和密码即可</li>
+  <li>ssh: 如git clone git@github.com:project/resp . 需要在github远程认证，可能直接拒绝</li>
+</ul>
+
+<h1 id="fork">fork</h1>
+<p>添加对方的仓库到自己的仓库中，可能需要更改.git文件</p>
+:ET

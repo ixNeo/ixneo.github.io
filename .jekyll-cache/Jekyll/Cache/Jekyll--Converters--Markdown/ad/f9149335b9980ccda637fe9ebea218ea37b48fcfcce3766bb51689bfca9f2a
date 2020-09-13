@@ -1,0 +1,15 @@
+I"�
+<p>1.系统登录、退出、关机和重启</p>
+<ul>
+  <li>login          : 登录系统</li>
+  <li>logout        : 退出登录的shell</li>
+  <li>exit            : 退出登录的shell(常用)</li>
+  <li>rlogin         : 远程登录服务器</li>
+  <li>poweroff    : 关闭系统，然后关闭记录被写入 /var/log/wtmp日志文件中</li>
+  <li>ctrlaltdel    : 强制或者安全重新启动服务器</li>
+  <li>shutdown  : 安全地关闭或者重启系统(常用)</li>
+  <li>halt            : 关闭系统</li>
+  <li>reboot        :  重启linux系统(常用)</li>
+  <li>init 0/6       :  init 0为关机，init 6为重启</li>
+</ul>
+:ET

@@ -1,0 +1,66 @@
+I"?
+<blockquote>
+  <p>dfs: 定义好最优子结构
+dp: 要定义好递推公式
+做好充分的测试用例, 不然就是在碰运气. 尝试性修改</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+#include &lt;string&gt;
+#include &lt;fstream&gt;
+
+using namespace std;
+
+/* 问题: 从所有可行的起点开始,得到的是多条路径长度的最值,但是得不到所有经过的节点数目
+* 解决: 最优子结构定义错误
+*/
+
+const int ROW = 3, COL=3;
+const int map[ROW][COL] = {0,1,1,
+                           1,1,1,
+                           0,1,0};
+
+int dfs(int i, int j, int flag[ROW][COL]){
+    flag[i][j] = 1;
+    int num = 1;
+    int tmp = 0;
+    int num1=0, num2=0,num3=0,num4=0;
+    if(i+1&lt;ROW &amp;&amp; map[i+1][j] &amp;&amp; !flag[i+1][j]){
+        num1 = dfs(i+1,j, flag);
+    }
+    if(i-1&gt;=0 &amp;&amp; map[i-1][j] &amp;&amp; !flag[i-1][j]){
+        num2 = dfs(i-1,j, flag);
+    }
+    if(j+1&lt;COL &amp;&amp; map[i][j+1] &amp;&amp; !flag[i][j+1]){
+        num3 = dfs(i,j+1, flag);
+    }
+    if(j-1&gt;=0 &amp;&amp; map[i][j-1] &amp;&amp; !flag[i][j-1]){
+        num4 = dfs(i,j-1, flag);
+    }
+    num += num1 + num2 + num3 + num4;
+//    flag[i][j] = 0;
+    return num;
+}
+
+int main(){
+    int flag[ROW][COL] = {0,0,0,
+                      0,0,0,
+                      0,0,0};
+
+    int num = 0;
+    for(int i=0;i&lt;ROW;i++){
+        for(int j=0;j&lt;COL;j++){
+            if(!flag[i][j] &amp;&amp; map[i][j]){
+                int tmp = dfs(i,j,flag);
+                cout &lt;&lt; i &lt;&lt; " "&lt;&lt; j &lt;&lt; " " &lt;&lt; tmp &lt;&lt; endl;
+                num = num&gt;tmp?num:tmp;
+            }
+        }
+    }
+    cout &lt;&lt; num &lt;&lt; endl;
+    return 0;
+}
+
+</code></pre></div></div>
+:ET

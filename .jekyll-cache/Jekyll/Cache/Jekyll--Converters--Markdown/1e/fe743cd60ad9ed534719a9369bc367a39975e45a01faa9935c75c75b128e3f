@@ -1,0 +1,216 @@
+I"U<ul id="markdown-toc">
+  <li><a href="#数据总览--预处理" id="markdown-toc-数据总览--预处理">数据总览 &amp; 预处理</a></li>
+  <li><a href="#模型搭建--优化--得分结果" id="markdown-toc-模型搭建--优化--得分结果">模型搭建 &amp; 优化 &amp; 得分结果</a></li>
+  <li><a href="#心得体会" id="markdown-toc-心得体会">心得体会</a></li>
+</ul>
+
+<p><a href="https://github.com/ixNeo/Emotional-Polarity-Analysis">项目地址</a></p>
+<h1 id="数据总览--预处理">数据总览 &amp; 预处理</h1>
+
+<ul>
+  <li>
+    <p>训练数据</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: center">数据类型</th>
+          <th style="text-align: center">列号范围</th>
+          <th style="text-align: center">行数</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: center">食品餐饮</td>
+          <td style="text-align: center">（1，13655）</td>
+          <td style="text-align: center">13655</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">旅游住宿</td>
+          <td style="text-align: center">（13656，32590）</td>
+          <td style="text-align: center">18935</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">金融服务</td>
+          <td style="text-align: center">（32591，46934）</td>
+          <td style="text-align: center">14344</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">医疗服务</td>
+          <td style="text-align: center">（46935，67246）</td>
+          <td style="text-align: center">20312</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">物流快递</td>
+          <td style="text-align: center">（67247,82025）</td>
+          <td style="text-align: center">14779</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <p>测试数据</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: center">数据类型</th>
+          <th style="text-align: center">列号范围</th>
+          <th style="text-align: center">行数</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: center">食品餐饮</td>
+          <td style="text-align: center">（1，5853）</td>
+          <td style="text-align: center">5853</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">旅游住宿</td>
+          <td style="text-align: center">（5854，13968）</td>
+          <td style="text-align: center">8115</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">金融服务</td>
+          <td style="text-align: center">（13969，20116）</td>
+          <td style="text-align: center">6148</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">医疗服务</td>
+          <td style="text-align: center">（20117，28822）</td>
+          <td style="text-align: center">8706</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">物流快递</td>
+          <td style="text-align: center">（28823,35157）</td>
+          <td style="text-align: center">6335</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <p>评判标准
+  综合准确率和召回率，得到得分</p>
+  </li>
+</ul>
+
+<h1 id="模型搭建--优化--得分结果">模型搭建 &amp; 优化 &amp; 得分结果</h1>
+
+<ol>
+  <li>
+    <p>数据分类（预处理）</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: center">分类与否</th>
+          <th style="text-align: center">得分</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: center">有分类</td>
+          <td style="text-align: center">0.8703</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">无分类</td>
+          <td style="text-align: center">0.64</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>jieba分词
+    <ul>
+      <li>三种分词模式：精确模式、全模式、搜索引擎模式。选择精确模式</li>
+      <li>默认启用HMM模型</li>
+    </ul>
+  </li>
+  <li>
+    <p>停用词表的选择</p>
+
+    <ul>
+      <li>中科院计算机所的停用词表</li>
+    </ul>
+  </li>
+  <li>
+    <p>word2vec：字符串词向量 ==&gt; 数值化词向量</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: center">word2vec的size（词向量的维度）</th>
+          <th style="text-align: center">得分</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: center">100</td>
+          <td style="text-align: center">0.8703</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">200</td>
+          <td style="text-align: center">0.8747</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">300</td>
+          <td style="text-align: center">0.8768</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">400</td>
+          <td style="text-align: center">0.8724</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>SVM（支持向量机）分类器，生成分类器模型
+    <ol>
+      <li>核函数的选择
+        <ul>
+          <li>rbf，gaussian为未知情况的选择</li>
+          <li>线性、多项式为大概有图景时的选择</li>
+          <li>softmax用于后续神经网络的搭建</li>
+        </ul>
+      </li>
+      <li>
+        <p>惩罚系数</p>
+
+        <p>| 惩罚系数 | 得分|
+ |:—:|:—:|
+ | 0.1 | 0.8636 |
+ |1|0.8780|
+ |100|0.8815|
+ |500|0.8851|
+ |1000|待测|</p>
+        <blockquote>
+          <ul>
+            <li>以上为word2vec的size为300时的具体情况：</li>
+            <li>惩罚系数: 越高越好，越费时，过拟合的风险越大</li>
+            <li>用时：5个类别，每个类别两个svm模型，共十个模型。c=500时，每个模型10-20min</li>
+          </ul>
+        </blockquote>
+      </li>
+    </ol>
+  </li>
+  <li>查找并补全缺失项</li>
+</ol>
+
+<ul>
+  <li>通过现实情况，多种方案间的对比，进行人工加工</li>
+</ul>
+
+<h1 id="心得体会">心得体会</h1>
+<ol>
+  <li>数据分析的根本目的是描述或者预测，具体的应用方法和分析手段并不重要，重要的是那个结果，即输出。中间可以掺杂多种分析手段，可以混合机器和人工</li>
+  <li>例如，可以混合使用wps查看excel和用python批量处理数据</li>
+  <li>遍的理念，用于控制复杂度。根据不同的目的，对全体数据进行多遍处理，类似编译器的制作。
+    <ol>
+      <li>第一遍进行分词，第二遍进行词法分析，第三遍语义处理</li>
+      <li>本次查找并补全缺失项中。第一遍查找缺失的行，第二遍进行补充
+        <blockquote>
+          <p>要有针对性，想要一次性地做好全部事情的想法，是不现实的。分步骤来</p>
+        </blockquote>
+      </li>
+    </ol>
+  </li>
+</ol>
+:ET

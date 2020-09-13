@@ -1,0 +1,12 @@
+I"v<ul id="markdown-toc">
+  <li><a href="#神经网络" id="markdown-toc-神经网络">神经网络</a></li>
+</ul>
+
+<h1 id="神经网络">神经网络</h1>
+
+<p>激励函数: elu/relu/linear/prelu/leaky_relu/softplus</p>
+
+<p>优化办法/梯度算法: adam/mom/msprop/sgd(随机梯度下降)</p>
+
+<p>神经网络是一种监督学习,需要大量的样本以及对应标签</p>
+:ET

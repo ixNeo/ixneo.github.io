@@ -1,0 +1,158 @@
+I"�<ul id="markdown-toc">
+  <li><a href="#stl" id="markdown-toc-stl">STL</a>    <ul>
+      <li><a href="#io" id="markdown-toc-io">io</a></li>
+      <li><a href="#input" id="markdown-toc-input">input</a>        <ul>
+          <li><a href="#c-io" id="markdown-toc-c-io">c-io</a></li>
+        </ul>
+      </li>
+      <li><a href="#c的两类字符串" id="markdown-toc-c的两类字符串">c++的两类字符串</a>        <ul>
+          <li><a href="#string头文件" id="markdown-toc-string头文件">string头文件</a></li>
+        </ul>
+      </li>
+      <li><a href="#流" id="markdown-toc-流">流</a>        <ul>
+          <li><a href="#区分点" id="markdown-toc-区分点">区分点</a></li>
+        </ul>
+      </li>
+      <li><a href="#指针" id="markdown-toc-指针">指针</a></li>
+      <li><a href="#unsign-sign" id="markdown-toc-unsign-sign">unsign, sign</a></li>
+      <li><a href="#相等判断" id="markdown-toc-相等判断">相等判断</a></li>
+    </ul>
+  </li>
+  <li><a href="#内存" id="markdown-toc-内存">内存</a></li>
+  <li><a href="#string与char" id="markdown-toc-string与char">string与char</a></li>
+  <li><a href="#stl-1" id="markdown-toc-stl-1">STL</a></li>
+</ul>
+
+<ol>
+  <li>注意输入和输出的格式</li>
+  <li>考虑对输入的考察</li>
+  <li>输出格式在最后做</li>
+</ol>
+
+<p>input/process/output</p>
+
+<h1 id="stl">STL</h1>
+<p>string.append(index,char);</p>
+
+<p>string的相加操作，需要都是string ,不能是char</p>
+<h3 id="io">io</h3>
+<p>流操作基本都是以空格为分隔符
+getline这样的全局函数是自定义分隔符</p>
+
+<h3 id="input">input</h3>
+<ul>
+  <li>fgets(string,sizeof(len),stdin) # 只接受len长度的输入，多余部分截断</li>
+  <li>char s[6];cin.width(6);cin » s;
+    <h5 id="c-io">c-io</h5>
+    <ol>
+      <li>scanf, printf, putc, getc, puts, gets</li>
+      <li>fgetc, fputc, fgets, fputs, fprintf, fscanf</li>
+      <li>二进制：fread, fwrite
+        <h3 id="c的两类字符串">c++的两类字符串</h3>
+      </li>
+      <li>以null即’\0’结尾的, char str[6] = {‘’,’’,’’}，有strcat/strlen/strcopy等函数</li>
+      <li>string类
+        <h5 id="string头文件">string头文件</h5>
+      </li>
+    </ol>
+  </li>
+  <li>文件cstring，和string.h对应，c++版本的头文件，包含比如strcpy之类的字符串处理函数</li>
+  <li>文件string.h，和cstring对应，c版本的头文件，包含比如strcpy之类的字符串处理函数</li>
+  <li>文件string，包含std::string的定义，属于STL范畴</li>
+</ul>
+
+<h3 id="流">流</h3>
+<ol>
+  <li>iostream</li>
+  <li>stringstream, 头文件是sstream
+    <ol>
+      <li>多用于数据类型格式转换，不用stdio.h了，把int/float/bool转换为string/char[]</li>
+      <li>优点：不用严格指定类型．%d之类的．类型安全＆可扩展性</li>
+      <li>使用：ss «, ss ». 若要复用ss, 需要ss.clear();</li>
+    </ol>
+  </li>
+  <li>fstream
+    <ol>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>fileObject.open(filname, [ios::app, ios::out</td>
+              <td> </td>
+              <td>ios::trunc,  ios::in, ]) # trunc防止文件已存在．可以在定义时直接初始化为(filename,[ios::])，或者使用open()</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>指针重定位：seekg(seek get)读指针, seekg(n, [ios::cur, ios::beg, ios::end])</td>
+              <td>seekp(seek put)写指针</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>可以使用相对路径，../file.txt, 要有两个点．绝对路径一定可以</li>
+    </ol>
+  </li>
+</ol>
+
+<ul>
+  <li>相当于对cout/cin名字的替换．cin默认忽略前置空格，将空格作为分隔符</li>
+  <li>getline(cin, s, dlim) 默认用’\n’分割, 和get()的区别，getline会读取并丢弃换行符，get会保存换行符在输入序列中，而不是读取并保存，所以连续两次调用get, 第二个会直接返回,　get针对char[], 可以设置字符数，属于string头文件
+  -或者cin.getline(str/char[], size(包含’\0’),结束符);</li>
+  <li>ifstream fin(‘thisfile.txt’); getline(fin, s); stringstream ss(s); ss » s1; ss»s2;其中s1是以空格作为分隔符的</li>
+</ul>
+
+<h5 id="区分点">区分点</h5>
+<ol>
+  <li>分隔符是什么．是否包含空格，是否可自定义dlim</li>
+  <li>针对的是string还是char[], 是否可以自定义长度
+    <h3 id="指针">指针</h3>
+    <p>对是否是野指针进行判断</p>
+    <h3 id="unsign-sign">unsign, sign</h3>
+    <p>从二进制角度考虑，隐型类型转换</p>
+    <h3 id="相等判断">相等判断</h3>
+    <ul>
+      <li>java中，对象本身是指针，==直接判断地址相等；值为equals()</li>
+    </ul>
+  </li>
+</ol>
+
+<h1 id="内存">内存</h1>
+<p>代码区 ==&gt; 数据区 ==&gt; 栈 ==&gt; 堆</p>
+
+<h1 id="string与char">string与char</h1>
+<blockquote>
+  <p>string.push_back(string);
+string.append(chars);</p>
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#include &lt;string&gt;
+using namespace std;
+...
+        char c = 'A';
+	char* lvlpcStr = "hello";
+	string lvStr,lvSubStr = "sub string";
+	lvStr.push_back(c);
+	lvStr.append(lvlpcStr);
+	lvStr.append(lvSubStr);
+	char lvBuf[100];
+	_itoa_s(1234, lvBuf,10);
+	lvStr.append(lvBuf);
+	cout &lt;&lt; lvStr &lt;&lt; endl;
+</code></pre></div>  </div>
+</blockquote>
+
+<h1 id="stl-1">STL</h1>
+<p>https://www.cnblogs.com/skyfsm/p/6934246.html
+string
+vector
+set: 有序且唯一
+list: 链表, 有自己的sort函数, 无法使用algorithm的排序算法,因为无法随机访问
+map: key-value, 采用了hash思想, key尽量为string</p>
+<ol>
+  <li>dict采用了哈希表，最低能在 O(1)时间内完成搜索。同样的java的HashMap也是采用了哈希表实现，不同是dict在发生哈希冲突的时候采用了开放寻址法，而HashMap采用了链接法。
+iterator: 常迭代器, 逆迭代器</li>
+</ol>
+:ET
